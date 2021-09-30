@@ -3,6 +3,7 @@ package work.lclpnet.mmoblocks;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
+import org.lwjgl.system.CallbackI;
 import work.lclpnet.mmoblocks.block.MMOBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 
@@ -20,5 +21,11 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().register("iron_plate");
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK))
 				.withSlab().withStairs().register("rusty_iron_plate");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withStairs().withWall().register("marble");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withStairs().withWall().register("marble_bricks");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withStairs().register("polished_marble");
 	}
 }

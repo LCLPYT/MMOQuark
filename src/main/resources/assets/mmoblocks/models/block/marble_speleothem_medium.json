@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/speleothem_medium",
+  "textures": {
+    "block": "mmoblocks:block/marble"
+  }
+}

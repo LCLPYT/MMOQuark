@@ -4,6 +4,9 @@
     "mmoblocks:weeping_blackstone_bricks_stairs",
     "mmoblocks:charred_nether_bricks_stairs",
     "mmoblocks:iron_plate_stairs",
-    "mmoblocks:rusty_iron_plate_stairs"
+    "mmoblocks:rusty_iron_plate_stairs",
+    "mmoblocks:marble_bricks_stairs",
+    "mmoblocks:marble_stairs",
+    "mmoblocks:polished_marble_stairs"
   ]
 }
