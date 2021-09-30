@@ -3,5 +3,10 @@
   "block.mmoblocks.weeping_blackstone_bricks_stairs": "Weeping Polished Blackstone Brick Stairs",
   "block.mmoblocks.weeping_blackstone_bricks_slab": "Weeping Polished Blackstone Brick Slab",
   "block.mmoblocks.weeping_blackstone_bricks_vertical_slab": "Weeping Polished Blackstone Brick Vertical Slab",
-  "block.mmoblocks.weeping_blackstone_bricks_wall": "Weeping Polished Blackstone Brick Wall"
+  "block.mmoblocks.weeping_blackstone_bricks_wall": "Weeping Polished Blackstone Brick Wall",
+  "block.mmoblocks.charred_nether_bricks": "Charred Nether Bricks",
+  "block.mmoblocks.charred_nether_bricks_stairs": "Charred Nether Brick Stairs",
+  "block.mmoblocks.charred_nether_bricks_slab": "Charred Nether Brick Slab",
+  "block.mmoblocks.charred_nether_bricks_vertical_slab": "Charred Nether Brick Vertical Slab",
+  "block.mmoblocks.charred_nether_bricks_wall": "Charred Nether Brick Wall"
 }

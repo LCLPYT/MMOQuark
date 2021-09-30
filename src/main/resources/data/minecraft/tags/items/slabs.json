@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "quark:weeping_blackstone_bricks_slab"
+    "mmoblocks:weeping_blackstone_bricks_slab",
+    "mmoblocks:charred_nether_bricks_slab"
   ]
 }

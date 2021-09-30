@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "mmoblocks:weeping_blackstone_bricks_stairs"
+    "mmoblocks:weeping_blackstone_bricks_stairs",
+    "mmoblocks:charred_nether_bricks_stairs"
   ]
 }

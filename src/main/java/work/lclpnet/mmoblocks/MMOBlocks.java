@@ -13,5 +13,7 @@ public class MMOBlocks implements ModInitializer {
 	public void onInitialize() {
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.BLACKSTONE))
 				.withSlab().withStairs().withWall().register("weeping_blackstone_bricks");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.NETHER_BRICKS))
+				.withSlab().withStairs().withWall().register("charred_nether_bricks");
 	}
 }
