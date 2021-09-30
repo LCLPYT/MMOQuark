@@ -1,8 +1,8 @@
 package work.lclpnet.mmoblocks;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Material;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Blocks;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 
 public class MMOBlocks implements ModInitializer {
@@ -11,7 +11,7 @@ public class MMOBlocks implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE).strength(2.0F))
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.BLACKSTONE))
 				.withSlab().withStairs().withWall().register("weeping_blackstone_bricks");
 	}
 }
