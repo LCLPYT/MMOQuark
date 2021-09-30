@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mmoblocks:rusty_iron_plate"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:rusty_iron_plate_slab",
+    "count": 6
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "iron_plates"
+    }
+  ]
+} 
