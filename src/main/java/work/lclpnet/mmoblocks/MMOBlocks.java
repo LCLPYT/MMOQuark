@@ -2,6 +2,7 @@ package work.lclpnet.mmoblocks;
 
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.util.Identifier;
@@ -55,6 +56,17 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(copy(Blocks.STONE_BRICKS))
 				.withSlab().withWall().withStairs().withVerticalSlab()
 				.register("mossy_cobblestone_bricks");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("potato_crate");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withStairs().withWall()
+				.register("permafrost");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withWall().withStairs()
+				.register("permafrost_bricks");
 
 		registerCrystals();
 	}

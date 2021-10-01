@@ -83,5 +83,16 @@
   "block.mmoblocks.polished_blackstone_vertical_slab": "Polished Blackstone Vertical Slab",
   "block.mmoblocks.polished_blackstone_brick_vertical_slab": "Polished Blackstone Brick Vertical Slab",
   "block.mmoblocks.crimson_vertical_slab": "Crimson Vertical Slab",
-  "block.mmoblocks.warped_vertical_slab": "Warped Vertical Slab"
+  "block.mmoblocks.warped_vertical_slab": "Warped Vertical Slab",
+  "block.mmoblocks.potato_crate": "Potato Crate",
+  "block.mmoblocks.permafrost": "Permafrost",
+  "block.mmoblocks.permafrost_bricks": "Permafrost Bricks",
+  "block.mmoblocks.permafrost_bricks_stairs": "Permafrost Brick Stairs",
+  "block.mmoblocks.permafrost_bricks_slab": "Permafrost Brick Slab",
+  "block.mmoblocks.permafrost_bricks_wall": "Permafrost Brick Wall",
+  "block.mmoblocks.permafrost_stairs": "Permafrost Stairs",
+  "block.mmoblocks.permafrost_slab": "Permafrost Slab",
+  "block.mmoblocks.permafrost_wall": "Permafrost Wall",
+  "block.mmoblocks.permafrost_bricks_vertical_slab": "Permafrost Brick Vertical Slab",
+  "block.mmoblocks.permafrost_vertical_slab": "Permafrost Vertical Slab"
 }

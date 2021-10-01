@@ -9,6 +9,8 @@
     "mmoblocks:marble_slab",
     "mmoblocks:polished_marble_slab",
     "mmoblocks:mossy_cobblestone_bricks_slab",
-    "mmoblocks:cobblestone_bricks_slab"
+    "mmoblocks:cobblestone_bricks_slab",
+    "mmoblocks:permafrost_bricks_slab",
+    "mmoblocks:permafrost_slab"
   ]
 }

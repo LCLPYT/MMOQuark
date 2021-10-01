@@ -9,6 +9,10 @@
     "mmoblocks:marble_stairs",
     "mmoblocks:polished_marble_stairs",
     "mmoblocks:mossy_cobblestone_bricks_stairs",
-    "mmoblocks:cobblestone_bricks_stairs"
+    "mmoblocks:cobblestone_bricks_stairs",
+    "mmoblocks:permafrost_bricks_stairs",
+    "mmoblocks:permafrost_stairs",
+    "mmoblocks:permafrost_bricks_wall",
+    "mmoblocks:permafrost_wall"
   ]
 }
