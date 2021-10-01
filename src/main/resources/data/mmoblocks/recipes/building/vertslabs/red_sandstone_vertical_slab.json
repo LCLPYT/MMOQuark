@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_sandstone_slab"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:red_sandstone_vertical_slab",
+    "count": 3
+  }
+}

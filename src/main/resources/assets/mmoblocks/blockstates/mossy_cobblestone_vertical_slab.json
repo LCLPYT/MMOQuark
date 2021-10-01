@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "type=north": { "model": "mmoblocks:block/mossy_cobblestone_vertical_slab", "y": 0, "uvlock": true },
+        "type=south": { "model": "mmoblocks:block/mossy_cobblestone_vertical_slab", "y": 180, "uvlock": true },
+        "type=east": { "model": "mmoblocks:block/mossy_cobblestone_vertical_slab", "y": 90, "uvlock": true },
+        "type=west": { "model": "mmoblocks:block/mossy_cobblestone_vertical_slab", "y": 270, "uvlock": true },
+        "type=double": { "model": "block/mossy_cobblestone" }
+    }
+}

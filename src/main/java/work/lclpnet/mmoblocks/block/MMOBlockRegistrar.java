@@ -12,12 +12,16 @@ import java.util.Objects;
 
 public class MMOBlockRegistrar {
 
-    protected final AbstractBlock.Settings settings;
-    protected boolean slab = false, stairs = false, wall = false;
+    protected final MMOBlock block;
+    protected boolean slab = false, stairs = false, wall = false, verticalSlab = false;
     protected ItemGroup group = ItemGroup.BUILDING_BLOCKS;
 
+    public MMOBlockRegistrar(MMOBlock block) {
+        this.block = Objects.requireNonNull(block);
+    }
+
     public MMOBlockRegistrar(AbstractBlock.Settings settings) {
-        this.settings = Objects.requireNonNull(settings);
+        this(new MMOBlock(Objects.requireNonNull(settings)));
     }
 
     public MMOBlockRegistrar setItemGroup(ItemGroup group) {
@@ -40,17 +44,29 @@ public class MMOBlockRegistrar {
         return this;
     }
 
+    public MMOBlockRegistrar withVerticalSlab() {
+        this.verticalSlab = true;
+        return this;
+    }
+
     public void register(String name) {
         final Identifier blockId = new Identifier(MMOBlocks.MOD_ID, name);
-        MMOBlock block = new MMOBlock(settings);
         Registry.register(Registry.BLOCK, blockId, block);
         Registry.register(Registry.ITEM, blockId, new BlockItem(block, new FabricItemSettings().group(group)));
 
-        if (slab) {
-            final Identifier slabId = new Identifier(MMOBlocks.MOD_ID, name + "_slab");
-            MMOSlabBlock slab = new MMOSlabBlock(block);
-            Registry.register(Registry.BLOCK, slabId, slab);
-            Registry.register(Registry.ITEM, slabId, new BlockItem(slab, new FabricItemSettings().group(group)));
+        if (slab || verticalSlab) {
+            MMOSlabBlock slabBlock = new MMOSlabBlock(block);
+            if (slab) {
+                final Identifier slabId = new Identifier(MMOBlocks.MOD_ID, name + "_slab");
+                Registry.register(Registry.BLOCK, slabId, slabBlock);
+                Registry.register(Registry.ITEM, slabId, new BlockItem(slabBlock, new FabricItemSettings().group(group)));
+            }
+            if (verticalSlab) {
+                final Identifier verticalSlabId = new Identifier(MMOBlocks.MOD_ID, name + "_vertical_slab");
+                VerticalSlabBlock verticalSlab = new VerticalSlabBlock(slabBlock);
+                Registry.register(Registry.BLOCK, verticalSlabId, verticalSlab);
+                Registry.register(Registry.ITEM, verticalSlabId, new BlockItem(verticalSlab, new FabricItemSettings().group(group)));
+            }
         }
         if (stairs) {
             final Identifier stairsId = new Identifier(MMOBlocks.MOD_ID, name + "_stairs");
@@ -64,8 +80,5 @@ public class MMOBlockRegistrar {
             Registry.register(Registry.BLOCK, wallId, wall);
             Registry.register(Registry.ITEM, wallId, new BlockItem(wall, new FabricItemSettings().group(group)));
         }
-//        if (verticalSlab) {
-//
-//        }
     }
 }

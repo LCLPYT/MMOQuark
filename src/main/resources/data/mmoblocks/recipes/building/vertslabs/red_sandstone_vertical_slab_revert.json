@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoblocks:red_sandstone_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_sandstone_slab",
+    "count": 1
+  }
+}

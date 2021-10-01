@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoblocks:acacia_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:acacia_slab",
+    "count": 1
+  }
+}

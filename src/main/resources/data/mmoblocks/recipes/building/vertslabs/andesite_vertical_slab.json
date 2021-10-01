@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:andesite_slab"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:andesite_vertical_slab",
+    "count": 3
+  }
+}

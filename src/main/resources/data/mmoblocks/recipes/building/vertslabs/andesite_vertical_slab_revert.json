@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoblocks:andesite_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:andesite_slab",
+    "count": 1
+  }
+}
