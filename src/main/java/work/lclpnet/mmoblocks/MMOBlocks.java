@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MaterialColor;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.block.CaveCrystalBlock;
@@ -58,14 +59,14 @@ public class MMOBlocks implements ModInitializer {
 				.register("mossy_cobblestone_bricks");
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
-				.register("potato_crate");
+				.register("potato_crate", ItemGroup.DECORATIONS);
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withSlab().withStairs().withWall()
+				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register("permafrost");
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withSlab().withWall().withStairs()
+				.withSlab().withWall().withStairs().withVerticalSlab()
 				.register("permafrost_bricks");
 
 		registerCrystals();

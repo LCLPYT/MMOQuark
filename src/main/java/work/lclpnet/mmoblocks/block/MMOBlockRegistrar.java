@@ -14,7 +14,6 @@ public class MMOBlockRegistrar {
 
     protected final MMOBlock block;
     protected boolean slab = false, stairs = false, wall = false, verticalSlab = false;
-    protected ItemGroup group = ItemGroup.BUILDING_BLOCKS;
 
     public MMOBlockRegistrar(MMOBlock block) {
         this.block = Objects.requireNonNull(block);
@@ -22,11 +21,6 @@ public class MMOBlockRegistrar {
 
     public MMOBlockRegistrar(AbstractBlock.Settings settings) {
         this(new MMOBlock(Objects.requireNonNull(settings)));
-    }
-
-    public MMOBlockRegistrar setItemGroup(ItemGroup group) {
-        this.group = Objects.requireNonNull(group);
-        return this;
     }
 
     public MMOBlockRegistrar withSlab() {
@@ -50,6 +44,10 @@ public class MMOBlockRegistrar {
     }
 
     public void register(String name) {
+        register(name, ItemGroup.BUILDING_BLOCKS);
+    }
+
+    public void register(String name, ItemGroup group) {
         final Identifier blockId = new Identifier(MMOBlocks.MOD_ID, name);
         Registry.register(Registry.BLOCK, blockId, block);
         Registry.register(Registry.ITEM, blockId, new BlockItem(block, new FabricItemSettings().group(group)));

@@ -13,11 +13,5 @@
   "result": {
     "item": "mmoblocks:mossy_cobblestone_bricks_stairs",
     "count": 4
-  },
-  "conditions": [
-    {
-      "type": "mmoblocks:flag",
-      "flag": "cobblestone_bricks"
-    }
-  ]
+  }
 } 

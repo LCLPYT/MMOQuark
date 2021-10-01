@@ -13,11 +13,5 @@
   "result": {
     "item": "mmoblocks:cobblestone_bricks_stairs",
     "count": 4
-  },
-  "conditions": [
-    {
-      "type": "mmoblocks:flag",
-      "flag": "cobblestone_bricks"
-    }
-  ]
+  }
 } 
