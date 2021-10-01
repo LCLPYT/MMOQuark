@@ -7,6 +7,8 @@
     "mmoblocks:rusty_iron_plate_stairs",
     "mmoblocks:marble_bricks_stairs",
     "mmoblocks:marble_stairs",
-    "mmoblocks:polished_marble_stairs"
+    "mmoblocks:polished_marble_stairs",
+    "mmoblocks:mossy_cobblestone_bricks_stairs",
+    "mmoblocks:cobblestone_bricks_stairs"
   ]
 }

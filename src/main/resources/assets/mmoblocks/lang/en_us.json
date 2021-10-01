@@ -34,5 +34,15 @@
   "block.mmoblocks.marble_bricks_slab": "Polished Marble Brick Slab",
   "block.mmoblocks.marble_bricks_vertical_slab": "Polished Marble Brick Vertical Slab",
   "block.mmoblocks.marble_bricks_wall": "Polished Marble Brick Wall",
-  "block.mmoblocks.marble_pillar": "Polished Marble Pillar"
+  "block.mmoblocks.marble_pillar": "Polished Marble Pillar",
+  "block.mmoblocks.cobblestone_bricks": "Cobblestone Bricks",
+  "block.mmoblocks.mossy_cobblestone_bricks": "Mossy Cobblestone Bricks",
+  "block.mmoblocks.cobblestone_bricks_stairs": "Cobblestone Brick Stairs",
+  "block.mmoblocks.mossy_cobblestone_bricks_stairs": "Mossy Cobblestone Brick Stairs",
+  "block.mmoblocks.cobblestone_bricks_slab": "Cobblestone Brick Slab",
+  "block.mmoblocks.mossy_cobblestone_bricks_slab": "Mossy Cobblestone Brick Slab",
+  "block.mmoblocks.cobblestone_bricks_vertical_slab": "Cobblestone Brick Vertical Slab",
+  "block.mmoblocks.mossy_cobblestone_bricks_vertical_slab": "Mossy Cobblestone Brick Vertical Slab",
+  "block.mmoblocks.cobblestone_bricks_wall": "Cobblestone Brick Wall",
+  "block.mmoblocks.mossy_cobblestone_bricks_wall": "Mossy Cobblestone Brick Wall"
 }

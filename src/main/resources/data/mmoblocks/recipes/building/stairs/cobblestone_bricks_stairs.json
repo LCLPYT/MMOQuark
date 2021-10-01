@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mmoblocks:cobblestone_bricks"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:cobblestone_bricks_stairs",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "cobblestone_bricks"
+    }
+  ]
+} 

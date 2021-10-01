@@ -27,5 +27,9 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().withWall().register("marble_bricks");
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withSlab().withStairs().register("polished_marble");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS))
+				.withSlab().withStairs().withWall().register("cobblestone_bricks");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS))
+				.withSlab().withWall().withStairs().register("mossy_cobblestone_bricks");
 	}
 }
