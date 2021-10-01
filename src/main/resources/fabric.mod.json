@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "work.lclpnet.mmoblocks.MMOBlocks"
+    ],
+    "client": [
+      "work.lclpnet.mmoblocks.MMOBlocksClient"
     ]
   },
   "mixins": [
