@@ -15,6 +15,8 @@ public class MMOBlocks implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		registerVanillaVerticalSlabs();
+
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.BLACKSTONE))
 				.withSlab().withStairs().withWall().withVerticalSlab().register("weeping_blackstone_bricks");
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.NETHER_BRICKS))
