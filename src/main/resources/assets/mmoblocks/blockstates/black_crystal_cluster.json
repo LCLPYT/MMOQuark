@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "mmoblocks:block/black_crystal_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "mmoblocks:block/black_crystal_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mmoblocks:block/black_crystal_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "mmoblocks:block/black_crystal_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "mmoblocks:block/black_crystal_cluster"
+    },
+    "facing=west": {
+      "model": "mmoblocks:block/black_crystal_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mmoblocks:block/red_crystal_cluster"
+  }
+}

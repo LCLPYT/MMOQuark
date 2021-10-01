@@ -9,6 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.block.CaveCrystalBlock;
+import work.lclpnet.mmoblocks.block.CaveCrystalClusterBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.VerticalSlabBlock;
 
@@ -106,12 +107,12 @@ public class MMOBlocks implements ModInitializer {
 
 	private void crystal(String name, int color, MaterialColor material) {
 		CaveCrystalBlock crystal = new CaveCrystalBlock(material, color);
-		new MMOBlockRegistrar(crystal).register(String.format("%s_crystal", name));
+		String crystalName = name + "_crystal";
+		new MMOBlockRegistrar(crystal)
+				.withPane()
+				.register(crystalName);
 
-//		new QuarkInheritedPaneBlock(crystal);
-//		CaveCrystalClusterBlock cluster = new CaveCrystalClusterBlock(crystal);
-//
-//		ClusterConnection connection = new ClusterConnection(cluster);
-//		IIndirectConnector.INDIRECT_STICKY_BLOCKS.add(Pair.of(connection::isValidState, connection));
+		new MMOBlockRegistrar(new CaveCrystalClusterBlock(crystal))
+				.register(crystalName + "_cluster");
 	}
 }

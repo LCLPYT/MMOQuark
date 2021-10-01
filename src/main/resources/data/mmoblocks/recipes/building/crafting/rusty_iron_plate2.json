@@ -16,11 +16,5 @@
   "result": {
     "item": "mmoblocks:rusty_iron_plate",
     "count": 8
-  },
-  "conditions": [
-    {
-      "type": "mmoblocks:flag",
-      "flag": "iron_plates"
-    }
-  ]
+  }
 } 

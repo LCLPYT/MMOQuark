@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "tag": "forge:ingots/iron"
+      "item": "minecraft:iron_ingot"
     },
     "W": {
       "item": "minecraft:water_bucket"
@@ -16,11 +16,5 @@
   "result": {
     "item": "mmoblocks:rusty_iron_plate",
     "count": 24
-  },
-  "conditions": [
-    {
-      "type": "mmoblocks:flag",
-      "flag": "iron_plates"
-    }
-  ]
+  }
 } 

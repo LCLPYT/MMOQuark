@@ -13,11 +13,5 @@
   "result": {
     "item": "mmoblocks:rusty_iron_plate_stairs",
     "count": 4
-  },
-  "conditions": [
-    {
-      "type": "mmoblocks:flag",
-      "flag": "iron_plates"
-    }
-  ]
+  }
 } 

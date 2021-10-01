@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_post",
+    "textures": {
+        "edge": "mmoblocks:block/violet_crystal",
+        "pane": "mmoblocks:block/violet_crystal"
+    }
+}

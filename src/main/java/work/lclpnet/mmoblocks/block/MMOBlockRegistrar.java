@@ -13,7 +13,7 @@ import java.util.Objects;
 public class MMOBlockRegistrar {
 
     protected final MMOBlock block;
-    protected boolean slab = false, stairs = false, wall = false, verticalSlab = false;
+    protected boolean slab = false, stairs = false, wall = false, verticalSlab = false, pane = false;
 
     public MMOBlockRegistrar(MMOBlock block) {
         this.block = Objects.requireNonNull(block);
@@ -40,6 +40,11 @@ public class MMOBlockRegistrar {
 
     public MMOBlockRegistrar withVerticalSlab() {
         this.verticalSlab = true;
+        return this;
+    }
+
+    public MMOBlockRegistrar withPane() {
+        this.pane = true;
         return this;
     }
 
@@ -77,6 +82,12 @@ public class MMOBlockRegistrar {
             MMOWallBlock wall = new MMOWallBlock(block);
             Registry.register(Registry.BLOCK, wallId, wall);
             Registry.register(Registry.ITEM, wallId, new BlockItem(wall, new FabricItemSettings().group(group)));
+        }
+        if (pane) {
+            final Identifier paneId = new Identifier(MMOBlocks.MOD_ID, name + "_pane");
+            MMOInheritedPaneBlock pane = new MMOInheritedPaneBlock(block);
+            Registry.register(Registry.BLOCK, paneId, pane);
+            Registry.register(Registry.ITEM, paneId, new BlockItem(pane, new FabricItemSettings().group(group)));
         }
     }
 }
