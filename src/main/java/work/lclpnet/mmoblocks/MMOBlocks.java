@@ -37,6 +37,10 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withWall().withStairs().register("mossy_cobblestone_bricks");
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
 				.register("potato_crate");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withStairs().withWall().register("permafrost");
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withSlab().withWall().withStairs().register("permafrost_bricks");
 	}
 
 	private void registerVanillaVerticalSlabs() {

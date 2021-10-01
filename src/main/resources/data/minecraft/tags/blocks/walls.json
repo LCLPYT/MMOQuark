@@ -6,6 +6,8 @@
     "mmoblocks:marble_bricks_wall",
     "mmoblocks:marble_wall",
     "mmoblocks:cobblestone_bricks_wall",
-    "mmoblocks:mossy_cobblestone_bricks_wall"
+    "mmoblocks:mossy_cobblestone_bricks_wall",
+    "mmoblocks:permafrost_bricks_wall",
+    "mmoblocks:permafrost_wall"
   ]
 }
