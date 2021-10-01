@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "mmoblocks:block/marble_speleothem_small" },
+        "size=medium": { "model": "mmoblocks:block/marble_speleothem_medium" },
+        "size=big": { "model": "mmoblocks:block/marble_speleothem_big" }
+    }
+}

@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "mmoblocks:weeping_blackstone_bricks_wall"
+    "mmoblocks:weeping_blackstone_bricks_wall",
+    "mmoblocks:charred_nether_bricks_wall",
+    "mmoblocks:marble_bricks_wall",
+    "mmoblocks:marble_wall",
+    "mmoblocks:mossy_cobblestone_bricks_wall",
+    "mmoblocks:cobblestone_bricks_wall"
   ]
 }
