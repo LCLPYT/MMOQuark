@@ -14,7 +14,7 @@ public class Env {
             try {
                 Class.forName("net.minecraft.client.gui.screen.TitleScreen");
                 currentEnv = EnvType.CLIENT;
-            } catch (ClassNotFoundException e) {
+            } catch (Exception e) {
                 currentEnv = EnvType.SERVER;
             }
         }

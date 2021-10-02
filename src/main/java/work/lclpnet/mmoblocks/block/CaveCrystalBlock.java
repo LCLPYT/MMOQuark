@@ -8,11 +8,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.util.math.Vector3d;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import work.lclpnet.mmoblocks.MMOBlocksClient;
 import work.lclpnet.mmoblocks.util.Env;
@@ -22,7 +22,7 @@ import java.util.Random;
 public class CaveCrystalBlock extends MMOGlassBlock {
 
     public final float[] colorComponents;
-    public final Vector3d colorVector;
+    public final Vec3d colorVector;
 
     public CaveCrystalBlock(MaterialColor materialColor, int color) {
         super(FabricBlockSettings.of(Material.GLASS, materialColor)
@@ -37,7 +37,7 @@ public class CaveCrystalBlock extends MMOGlassBlock {
         float g = ((color >> 8) & 0xff) / 255f;
         float b = (color & 0xff) / 255f;
         colorComponents = new float[]{r, g, b};
-        colorVector = new Vector3d(r, g, b);
+        colorVector = new Vec3d(r, g, b);
 
         if (Env.isClient()) registerRenderLayer();
     }
