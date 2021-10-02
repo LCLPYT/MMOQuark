@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "mmoblocks:block/brown_framed_glass"
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "mmoblocks:framed_glass"
+    },
+    {
+      "item": "minecraft:brown_dye"
+    }
+  ],
+  "result": {
+    "item": "mmoblocks:brown_framed_glass",
+    "count": 8
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_side_alt",
+    "textures": {
+        "edge": "mmoblocks:block/framed_glass_pane_top",
+        "pane": "mmoblocks:block/green_framed_glass"
+    }
+}

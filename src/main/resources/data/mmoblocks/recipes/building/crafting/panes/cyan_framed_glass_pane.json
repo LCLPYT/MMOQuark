@@ -2,16 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "###",
-    "# #",
     "###"
   ],
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "mmoblocks:cyan_framed_glass"
     }
   },
   "result": {
-    "item": "mmoblocks:iron_plate",
-    "count": 24
+    "item": "mmoblocks:cyan_framed_glass_pane",
+    "count": 16
   }
 } 
