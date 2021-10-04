@@ -2,9 +2,11 @@ package work.lclpnet.mmoblocks;
 
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Blocks;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.*;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.module.CaveCrystalsModule;
 import work.lclpnet.mmoblocks.module.FramedGlassModule;
@@ -65,6 +67,14 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withSlab().withWall().withStairs().withVerticalSlab()
 				.register("permafrost_bricks");
+
+		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY)
+				.requiresTool()
+				.breakByTool(FabricToolTags.PICKAXES)
+				.strength(1.5F, 10F)
+				.sounds(BlockSoundGroup.STONE))
+				.withSlab().withStairs().withWall().withVerticalSlab()
+				.register("cobbedstone");
 
 		// modules
 		ImmutableSet.of(
