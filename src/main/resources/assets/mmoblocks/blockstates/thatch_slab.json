@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "mmoblocks:block/thatch_slab" },
+        "type=top": { "model": "mmoblocks:block/thatch_slab_top" },
+        "type=double": { "model": "mmoblocks:block/thatch" }
+    }
+}

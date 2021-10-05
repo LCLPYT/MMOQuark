@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mmoblocks:block/stick_block" },
+        "axis=z":   { "model": "mmoblocks:block/stick_block", "x": 90 },
+        "axis=x":   { "model": "mmoblocks:block/stick_block", "x": 90, "y": 90 }
+    }
+}

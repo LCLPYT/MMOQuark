@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "mmoblocks:block/iron_ladder" },
+        "facing=east":  { "model": "mmoblocks:block/iron_ladder", "y": 90 },
+        "facing=south": { "model": "mmoblocks:block/iron_ladder", "y": 180 },
+        "facing=west":  { "model": "mmoblocks:block/iron_ladder", "y": 270 }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoblocks:block/chorus_fruit_block_top",
+        "side": "mmoblocks:block/chorus_fruit_block"
+    }
+}

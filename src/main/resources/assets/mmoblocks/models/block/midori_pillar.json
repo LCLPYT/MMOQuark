@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoblocks:block/midori_pillar_top",
+        "side": "mmoblocks:block/midori_pillar"
+    }
+}

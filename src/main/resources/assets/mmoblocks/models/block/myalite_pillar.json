@@ -1,0 +1,7 @@
+{
+    "parent": "mmoblocks:block/cube_column_tinted",
+    "textures": {
+        "end": "mmoblocks:block/myalite_pillar_top",
+        "side": "mmoblocks:block/myalite_pillar"
+    }
+}

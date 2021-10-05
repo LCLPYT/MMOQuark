@@ -1,0 +1,7 @@
+{
+  "parent": "mmoblocks:block/hedge_post",
+  "textures": {
+    "log": "minecraft:block/birch_log",
+    "leaf": "minecraft:block/birch_leaves"
+  }
+}

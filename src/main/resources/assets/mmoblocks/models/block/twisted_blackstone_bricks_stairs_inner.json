@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mmoblocks:block/twisted_blackstone_bricks",
+        "top": "mmoblocks:block/twisted_blackstone_bricks",
+        "side": "mmoblocks:block/twisted_blackstone_bricks"
+    }
+}

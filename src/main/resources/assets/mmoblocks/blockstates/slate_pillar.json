@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mmoblocks:block/slate_pillar" },
+        "axis=z":   { "model": "mmoblocks:block/slate_pillar", "x": 90 },
+        "axis=x":   { "model": "mmoblocks:block/slate_pillar", "x": 90, "y": 90 }
+    }
+}

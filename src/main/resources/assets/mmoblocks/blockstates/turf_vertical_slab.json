@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "type=north": { "model": "mmoblocks:block/turf_vertical_slab", "y": 0, "uvlock": true },
+        "type=south": { "model": "mmoblocks:block/turf_vertical_slab", "y": 180, "uvlock": true },
+        "type=east": { "model": "mmoblocks:block/turf_vertical_slab", "y": 90, "uvlock": true },
+        "type=west": { "model": "mmoblocks:block/turf_vertical_slab", "y": 270, "uvlock": true },
+        "type=double": [
+			{ "model": "mmoblocks:block/turf" },
+			{ "model": "mmoblocks:block/turf", "y": 90 },
+			{ "model": "mmoblocks:block/turf", "y": 180 },
+			{ "model": "mmoblocks:block/turf", "y": 270 }
+		]
+    }
+}

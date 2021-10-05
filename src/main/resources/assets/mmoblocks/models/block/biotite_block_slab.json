@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoblocks:block/biotite_block",
+        "top": "mmoblocks:block/biotite_block",
+        "side": "mmoblocks:block/biotite_block"
+    }
+}

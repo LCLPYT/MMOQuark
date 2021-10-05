@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/post",
+  "textures": {
+    "texture": "minecraft:block/warped_stem"
+  }
+}

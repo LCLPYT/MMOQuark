@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/speleothem_big",
+  "textures": {
+    "block": "block/netherrack"
+  }
+}

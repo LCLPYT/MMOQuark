@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoblocks:block/jasper_pillar_top",
+        "side": "mmoblocks:block/jasper_pillar"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/hedge_extend",
+  "textures": {
+    "leaf": "minecraft:block/birch_leaves"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "mmoblocks:block/orange_blossom_sapling"
+    }
+}

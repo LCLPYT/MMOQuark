@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "mmoblocks:block/netherrack_speleothem_small" },
+        "size=medium": { "model": "mmoblocks:block/netherrack_speleothem_medium" },
+        "size=big": { "model": "mmoblocks:block/netherrack_speleothem_big" }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoblocks:block/stick_block_top",
+        "side": "mmoblocks:block/stick_block"
+    }
+}

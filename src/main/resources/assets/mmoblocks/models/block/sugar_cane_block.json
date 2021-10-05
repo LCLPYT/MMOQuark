@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoblocks:block/sugar_cane_block_top",
+        "side": "mmoblocks:block/sugar_cane_block"
+    }
+}

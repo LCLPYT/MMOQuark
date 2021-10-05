@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "mmoblocks:block/turf" },
+			{ "model": "mmoblocks:block/turf", "y": 90 },
+			{ "model": "mmoblocks:block/turf", "y": 180 },
+			{ "model": "mmoblocks:block/turf", "y": 270 }
+		]
+	}
+}

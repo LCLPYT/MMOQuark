@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/hedge_side",
+  "textures": {
+    "leaf": "mmoblocks:block/red_blossom_leaves"
+  }
+}

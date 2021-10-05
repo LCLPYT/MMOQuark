@@ -1,0 +1,6 @@
+{
+    "parent": "mmoblocks:block/wall_side_tall_tinted",
+    "textures": {
+        "wall": "mmoblocks:block/myalite_bricks"
+    }
+}

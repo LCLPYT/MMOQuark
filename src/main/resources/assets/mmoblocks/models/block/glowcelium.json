@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "mmoblocks:block/glowcelium_side",
+        "down": "minecraft:block/dirt",
+        "up": "mmoblocks:block/glowcelium_top",
+        "north": "mmoblocks:block/glowcelium_side",
+        "east": "mmoblocks:block/glowcelium_side",
+        "south": "mmoblocks:block/glowcelium_side",
+        "west": "mmoblocks:block/glowcelium_side"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/candle",
+  "textures": {
+    "candle": "mmoblocks:block/green_candle"
+  }
+}

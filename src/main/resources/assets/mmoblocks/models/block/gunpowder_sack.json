@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "mmoblocks:block/gunpowder_sack_top",
+        "bottom": "mmoblocks:block/gunpowder_sack_bottom",
+        "side": "mmoblocks:block/gunpowder_sack"
+    }
+}

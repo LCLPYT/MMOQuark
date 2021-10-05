@@ -90,11 +90,11 @@ public class MMOBlocks implements ModInitializer {
 				.register("elder_prismarine");
 
 		new MMOBlockRegistrar(FabricBlockSettings.copy(ELDER_PRISMARINE))
-				.withSlab().withVerticalSlab().withStairs().withWall()
+				.withSlab().withVerticalSlab().withStairs()
 				.register("elder_prismarine_bricks");
 
 		new MMOBlockRegistrar(FabricBlockSettings.copy(ELDER_PRISMARINE))
-				.withSlab().withVerticalSlab().withStairs().withWall()
+				.withSlab().withVerticalSlab().withStairs()
 				.register("dark_elder_prismarine");
 
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.GLASS, MaterialColor.ORANGE)

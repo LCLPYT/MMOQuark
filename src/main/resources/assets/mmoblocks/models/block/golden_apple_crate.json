@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "mmoblocks:block/golden_apple_crate_top",
+        "bottom": "mmoblocks:block/golden_apple_crate_bottom",
+        "side": "mmoblocks:block/golden_apple_crate"
+    }
+}

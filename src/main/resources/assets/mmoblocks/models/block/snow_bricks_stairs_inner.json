@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mmoblocks:block/snow_bricks",
+        "top": "mmoblocks:block/snow_bricks",
+        "side": "mmoblocks:block/snow_bricks"
+    }
+}

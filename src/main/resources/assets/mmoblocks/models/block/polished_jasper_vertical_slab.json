@@ -1,0 +1,8 @@
+{
+    "parent": "mmoblocks:block/vertical_slab",
+    "textures": {
+        "bottom": "mmoblocks:block/polished_jasper",
+        "top": "mmoblocks:block/polished_jasper",
+        "side": "mmoblocks:block/polished_jasper"
+    }
+}

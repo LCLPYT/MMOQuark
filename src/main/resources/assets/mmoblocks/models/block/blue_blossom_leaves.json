@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "mmoblocks:block/blue_blossom_leaves"
+    }
+}

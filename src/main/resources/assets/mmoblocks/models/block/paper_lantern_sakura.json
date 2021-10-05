@@ -1,0 +1,7 @@
+{
+	"parent": "mmoblocks:block/paper_lantern",
+	"textures": {
+		"particle": "mmoblocks:block/paper_lantern_side_sakura",
+		"side": "mmoblocks:block/paper_lantern_side_sakura"
+	}
+}

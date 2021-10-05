@@ -1,0 +1,6 @@
+{
+    "parent": "mmoblocks:block/wall_inventory_tinted",
+    "textures": {
+        "wall": "mmoblocks:block/myalite"
+    }
+}

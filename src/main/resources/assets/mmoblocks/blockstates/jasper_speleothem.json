@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "mmoblocks:block/jasper_speleothem_small" },
+        "size=medium": { "model": "mmoblocks:block/jasper_speleothem_medium" },
+        "size=big": { "model": "mmoblocks:block/jasper_speleothem_big" }
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/speleothem_small",
+  "textures": {
+    "block": "mmoblocks:block/jasper"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoblocks:block/jasper",
+        "top": "mmoblocks:block/jasper",
+        "side": "mmoblocks:block/jasper"
+    }
+}

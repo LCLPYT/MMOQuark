@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "type=bottom": [
+			{ "model": "mmoblocks:block/turf_slab" },
+			{ "model": "mmoblocks:block/turf_slab", "y": 90 },
+			{ "model": "mmoblocks:block/turf_slab", "y": 180 },
+			{ "model": "mmoblocks:block/turf_slab", "y": 270 }
+		],
+		"type=top": [
+			{ "model": "mmoblocks:block/turf_slab_top" },
+			{ "model": "mmoblocks:block/turf_slab_top", "y": 90 },
+			{ "model": "mmoblocks:block/turf_slab_top", "y": 180 },
+			{ "model": "mmoblocks:block/turf_slab_top", "y": 270 }
+		],
+        "type=double": [
+			{ "model": "mmoblocks:block/turf" },
+			{ "model": "mmoblocks:block/turf", "y": 90 },
+			{ "model": "mmoblocks:block/turf", "y": 180 },
+			{ "model": "mmoblocks:block/turf", "y": 270 }
+		]
+    }
+}
