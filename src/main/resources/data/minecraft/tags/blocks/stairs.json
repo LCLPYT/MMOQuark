@@ -11,7 +11,21 @@
     "mmoblocks:cobblestone_bricks_stairs",
     "mmoblocks:mossy_cobblestone_bricks_stairs",
     "mmoblocks:permafrost_bricks_stairs",
-    "mmoblocks:permafrost_stairs"
-
+    "mmoblocks:permafrost_stairs",
+    "mmoblocks:cobbedstone_stairs",
+    "mmoblocks:magma_bricks_stairs",
+    "mmoblocks:turf_stairs",
+    "mmoblocks:elder_prismarine_stairs",
+    "mmoblocks:elder_prismarine_bricks_stairs",
+    "mmoblocks:dark_elder_prismarine_stairs",
+    "mmoblocks:sandy_bricks_stairs",
+    "mmoblocks:snow_bricks_stairs",
+    "mmoblocks:charred_nether_bricks_stairs",
+    "mmoblocks:blue_nether_bricks_stairs",
+    "mmoblocks:sandstone_bricks_stairs",
+    "mmoblocks:red_sandstone_bricks_stairs",
+    "mmoblocks:soul_sandstone_bricks_stairs",
+    "mmoblocks:twisted_blackstone_bricks_stairs",
+    "mmoblocks:weeping_blackstone_bricks_stairs"
   ]
 }

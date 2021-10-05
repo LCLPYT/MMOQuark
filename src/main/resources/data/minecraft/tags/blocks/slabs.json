@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "mmoblocks:weeping_blackstone_bricks_slab",
-    "mmoblocks:charred_nether_bricks_slab",
     "mmoblocks:iron_plate_slab",
     "mmoblocks:rusty_iron_plate_slab",
     "mmoblocks:marble_bricks_slab",
@@ -11,6 +9,21 @@
     "mmoblocks:mossy_cobblestone_bricks_slab",
     "mmoblocks:cobblestone_bricks_slab",
     "mmoblocks:permafrost_bricks_slab",
-    "mmoblocks:permafrost_slab"
+    "mmoblocks:permafrost_slab",
+    "mmoblocks:cobbedstone_slab",
+    "mmoblocks:magma_bricks_slab",
+    "mmoblocks:turf_slab",
+    "mmoblocks:elder_prismarine_slab",
+    "mmoblocks:elder_prismarine_bricks_slab",
+    "mmoblocks:dark_elder_prismarine_slab",
+    "mmoblocks:sandy_bricks_slab",
+    "mmoblocks:snow_bricks_slab",
+    "mmoblocks:charred_nether_bricks_slab",
+    "mmoblocks:blue_nether_bricks_slab",
+    "mmoblocks:sandstone_bricks_slab",
+    "mmoblocks:red_sandstone_bricks_slab",
+    "mmoblocks:soul_sandstone_bricks_slab",
+    "mmoblocks:twisted_blackstone_bricks_slab",
+    "mmoblocks:weeping_blackstone_bricks_slab"
   ]
 }

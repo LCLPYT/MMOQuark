@@ -8,6 +8,18 @@
     "mmoblocks:cobblestone_bricks_wall",
     "mmoblocks:mossy_cobblestone_bricks_wall",
     "mmoblocks:permafrost_bricks_wall",
-    "mmoblocks:permafrost_wall"
+    "mmoblocks:permafrost_wall",
+    "mmoblocks:cobbedstone_wall",
+    "mmoblocks:magma_bricks_wall",
+    "mmoblocks:elder_prismarine_wall",
+    "mmoblocks:sandy_bricks_wall",
+    "mmoblocks:snow_bricks_wall",
+    "mmoblocks:charred_nether_bricks_wall",
+    "mmoblocks:blue_nether_bricks_wall",
+    "mmoblocks:sandstone_bricks_wall",
+    "mmoblocks:red_sandstone_bricks_wall",
+    "mmoblocks:soul_sandstone_bricks_wall",
+    "mmoblocks:twisted_blackstone_bricks_wall",
+    "mmoblocks:weeping_blackstone_bricks_wall"
   ]
 }
