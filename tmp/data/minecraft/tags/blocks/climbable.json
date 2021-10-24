@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+	"mmoblocks:acacia_ladder",
+	"mmoblocks:birch_ladder",
+	"mmoblocks:dark_oak_ladder",
+	"mmoblocks:jungle_ladder",
+	"mmoblocks:spruce_ladder",
+	"mmoblocks:crimson_ladder",
+	"mmoblocks:warped_ladder",
+	"mmoblocks:iron_ladder"
+  ]
+}

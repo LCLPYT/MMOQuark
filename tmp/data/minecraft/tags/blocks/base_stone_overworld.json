@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mmoblocks:jasper",
+	"mmoblocks:limestone",
+	"mmoblocks:marble",
+	"mmoblocks:slate"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "mmoblocks:warped_chest",
+	"mmoblocks:crimson_chest",
+	"mmoblocks:warped_ladder",
+	"mmoblocks:crimson_ladder",
+	"mmoblocks:warped_post",
+	"mmoblocks:crimson_post",
+	"mmoblocks:warped_bookshelf",
+	"mmoblocks:crimson_bookshelf"
+  ]
+}

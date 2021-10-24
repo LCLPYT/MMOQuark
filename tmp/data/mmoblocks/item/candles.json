@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mmoblocks:black_candle",
+	"mmoblocks:blue_candle",
+	"mmoblocks:brown_candle",
+	"mmoblocks:cyan_candle",
+	"mmoblocks:gray_candle",
+	"mmoblocks:green_candle",
+	"mmoblocks:light_blue_candle",
+	"mmoblocks:light_gray_candle",
+	"mmoblocks:lime_candle",
+	"mmoblocks:magenta_candle",
+	"mmoblocks:orange_candle",
+	"mmoblocks:pink_candle",
+	"mmoblocks:purple_candle",
+	"mmoblocks:red_candle",
+	"mmoblocks:white_candle",
+	"mmoblocks:yellow_candle"
+  ]
+}
