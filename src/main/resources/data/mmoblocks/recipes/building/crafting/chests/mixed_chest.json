@@ -1,0 +1,10 @@
+{
+  "type": "mmoblocks:mixed_chest",
+  "log": false,
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "variant_chests"
+    }
+  ]
+} 

@@ -2,20 +2,24 @@ package work.lclpnet.mmoblocks.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class MMOBlockRegistrar {
 
-    protected final MMOBlock block;
+    protected final Block block;
     protected boolean slab = false, stairs = false, wall = false, verticalSlab = false, pane = false;
+    protected Item item = null;
 
-    public MMOBlockRegistrar(MMOBlock block) {
+    public MMOBlockRegistrar(Block block) {
         this.block = Objects.requireNonNull(block);
     }
 
@@ -55,7 +59,10 @@ public class MMOBlockRegistrar {
     public void register(String name, ItemGroup group) {
         final Identifier blockId = new Identifier(MMOBlocks.MOD_ID, name);
         Registry.register(Registry.BLOCK, blockId, block);
-        Registry.register(Registry.ITEM, blockId, new BlockItem(block, new FabricItemSettings().group(group)));
+
+        final FabricItemSettings blockItemSettings = new FabricItemSettings().group(group);
+        item = block instanceof IMMOBlock ? ((IMMOBlock) block).provideBlockItem(blockItemSettings) : new BlockItem(block, blockItemSettings);
+        Registry.register(Registry.ITEM, blockId, item);
 
         if (slab || verticalSlab) {
             MMOSlabBlock slabBlock = new MMOSlabBlock(block);
@@ -81,13 +88,18 @@ public class MMOBlockRegistrar {
             final Identifier wallId = new Identifier(MMOBlocks.MOD_ID, name + "_wall");
             MMOWallBlock wall = new MMOWallBlock(block);
             Registry.register(Registry.BLOCK, wallId, wall);
-            Registry.register(Registry.ITEM, wallId, new BlockItem(wall, new FabricItemSettings().group(group)));
+            Registry.register(Registry.ITEM, wallId, new BlockItem(wall, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
         if (pane) {
             final Identifier paneId = new Identifier(MMOBlocks.MOD_ID, name + "_pane");
             MMOInheritedPaneBlock pane = new MMOInheritedPaneBlock(block);
             Registry.register(Registry.BLOCK, paneId, pane);
-            Registry.register(Registry.ITEM, paneId, new BlockItem(pane, new FabricItemSettings().group(group)));
+            Registry.register(Registry.ITEM, paneId, new BlockItem(pane, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
+    }
+
+    @Nullable
+    public Item getItem() {
+        return item;
     }
 }

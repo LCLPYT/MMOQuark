@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "mmoblocks:acacia_bookshelf",
+    "mmoblocks:birch_bookshelf",
+    "mmoblocks:dark_oak_bookshelf",
+    "mmoblocks:jungle_bookshelf",
+    "mmoblocks:spruce_bookshelf",
+    "mmoblocks:warped_bookshelf",
+    "mmoblocks:crimson_bookshelf"
+  ]
+}

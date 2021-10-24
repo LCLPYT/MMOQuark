@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "jungle_chest",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_planks"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:jungle_chest",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "variant_chests"
+    }
+  ]
+} 

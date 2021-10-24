@@ -12,11 +12,21 @@ import work.lclpnet.mmoblocks.block.MMOBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.module.*;
 
+import java.util.Set;
+
 import static net.minecraft.block.AbstractBlock.Settings.copy;
 
 public class MMOBlocks implements ModInitializer {
 
 	public static final String MOD_ID = "mmoblocks";
+
+	public static final Set<IModule> MODULES = ImmutableSet.of(
+			new VanillaVerticalSlabsModule(),
+			new CaveCrystalsModule(),
+			new FramedGlassModule(),
+			new MoreBricksModule(),
+			new WoodExtraModule()
+	);
 
 	@Override
 	public void onInitialize() {
@@ -111,11 +121,6 @@ public class MMOBlocks implements ModInitializer {
 				.register("charcoal_block");
 
 		// modules
-		ImmutableSet.of(
-				new VanillaVerticalSlabsModule(),
-				new CaveCrystalsModule(),
-				new FramedGlassModule(),
-				new MoreBricksModule()
-		).forEach(IModule::register);
+		MODULES.forEach(IModule::register);
 	}
 }

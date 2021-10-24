@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "warped_chest",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:warped_planks"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:warped_chest",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "mmoblocks:flag",
+          "flag": "variant_chests"
+        }
+      ]
+    }
+  ]
+} 

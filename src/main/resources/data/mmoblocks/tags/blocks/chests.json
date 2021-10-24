@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "mmoblocks:oak_chest",
+    "mmoblocks:spruce_chest",
+    "mmoblocks:birch_chest",
+    "mmoblocks:jungle_chest",
+    "mmoblocks:acacia_chest",
+    "mmoblocks:dark_oak_chest",
+    "mmoblocks:warped_chest",
+    "mmoblocks:crimson_chest",
+    "mmoblocks:oak_trapped_chest",
+    "mmoblocks:spruce_trapped_chest",
+    "mmoblocks:birch_trapped_chest",
+    "mmoblocks:jungle_trapped_chest",
+    "mmoblocks:acacia_trapped_chest",
+    "mmoblocks:dark_oak_trapped_chest",
+    "mmoblocks:warped_trapped_chest",
+    "mmoblocks:crimson_trapped_chest",
+    "mmoblocks:nether_brick_chest",
+    "mmoblocks:purpur_chest",
+    "mmoblocks:prismarine_chest",
+    "mmoblocks:mushroom_chest"
+  ]
+}

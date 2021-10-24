@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoblocks:warped_chest"
+    },
+    {
+      "item": "minecraft:tripwire_hook"
+    }
+  ],
+  "result": {
+    "item": "mmoblocks:warped_trapped_chest"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "mmoblocks:flag",
+          "flag": "variant_chests"
+        }
+      ]
+    }
+  ]
+}
