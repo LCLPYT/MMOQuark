@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
+import org.lwjgl.system.CallbackI;
 import work.lclpnet.mmoblocks.block.GlowceliumBlock;
 import work.lclpnet.mmoblocks.block.MMOBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
@@ -60,6 +61,12 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
 				.register("potato_crate", ItemGroup.DECORATIONS);
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("carrot_crate");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("beetroot_crate");
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
