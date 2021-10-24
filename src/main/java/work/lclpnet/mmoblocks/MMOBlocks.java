@@ -68,6 +68,18 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
 				.register("beetroot_crate");
 
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("berry_sack");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("cocoa_beans_sack");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("gunpowder_sack");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("nether_wart_sack");
+
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register("permafrost");
