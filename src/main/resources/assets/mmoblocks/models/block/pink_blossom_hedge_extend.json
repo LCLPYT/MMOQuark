@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/hedge_extend",
+  "textures": {
+    "leaf": "mmoblocks:block/pink_blossom_leaves"
+  }
+}

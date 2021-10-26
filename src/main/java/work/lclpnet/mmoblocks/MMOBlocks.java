@@ -4,9 +4,13 @@ import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
+import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.GlowceliumBlock;
 import work.lclpnet.mmoblocks.block.MMOBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
@@ -25,7 +29,8 @@ public class MMOBlocks implements ModInitializer {
 			new CaveCrystalsModule(),
 			new FramedGlassModule(),
 			new MoreBricksModule(),
-			new WoodExtraModule()
+			new WoodExtraModule(),
+			new TreesModule()
 	);
 
 	@Override
@@ -122,5 +127,9 @@ public class MMOBlocks implements ModInitializer {
 
 		// modules
 		MODULES.forEach(IModule::register);
+	}
+
+	public static Identifier identifier(String path) {
+		return new Identifier(MOD_ID, path);
 	}
 }
