@@ -10,7 +10,6 @@ import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.GlowceliumBlock;
 import work.lclpnet.mmoblocks.block.MMOBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
@@ -65,6 +64,24 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
 				.register("potato_crate", ItemGroup.DECORATIONS);
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("carrot_crate");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("beetroot_crate");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("berry_sack");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("cocoa_beans_sack");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("gunpowder_sack");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+				.register("nether_wart_sack");
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
