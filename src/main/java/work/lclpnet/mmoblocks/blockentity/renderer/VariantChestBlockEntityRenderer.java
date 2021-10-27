@@ -62,9 +62,9 @@ public class VariantChestBlockEntityRenderer<T extends ChestBlockEntity> extends
     }
 
     private static void add(ClientSpriteRegistryCallback.Registry registry, Identifier atlas, Block chest, String path, String normal, String left, String right) {
-        Identifier resNormal = new Identifier(MMOBlocks.MOD_ID, path + normal);
-        Identifier resLeft = new Identifier(MMOBlocks.MOD_ID, path + left);
-        Identifier resRight = new Identifier(MMOBlocks.MOD_ID, path + right);
+        Identifier resNormal = MMOBlocks.identifier(path + normal);
+        Identifier resLeft = MMOBlocks.identifier(path + left);
+        Identifier resRight = MMOBlocks.identifier(path + right);
 
         ChestTextureBatch batch = new ChestTextureBatch(atlas, resNormal, resLeft, resRight);
         chestTextures.put(chest, batch);
