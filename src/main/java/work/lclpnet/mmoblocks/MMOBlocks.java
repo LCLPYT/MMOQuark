@@ -68,6 +68,12 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
 				.register("beetroot_crate");
 
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("apple_crate");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
+				.register("golden_apple_crate");
+
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
 				.register("berry_sack");
 
