@@ -11,10 +11,7 @@ import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import work.lclpnet.mmoblocks.block.GlowceliumBlock;
-import work.lclpnet.mmoblocks.block.MMOBlock;
-import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
-import work.lclpnet.mmoblocks.block.TurfBlock;
+import work.lclpnet.mmoblocks.block.*;
 import work.lclpnet.mmoblocks.module.*;
 
 import java.util.Set;
@@ -123,6 +120,24 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone_bricks");
+
+		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.withStairs().withSlab().withWall().withVerticalSlab().register("myalite");
+
+		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.withStairs().withSlab().withVerticalSlab().register("polished_myalite");
+
+		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.withStairs().withSlab().withWall().withVerticalSlab().register("myalite_bricks");
+
+		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.register("chiseled_myalite_bricks");
+
+		new MMOBlockRegistrar(new MyalitePillarBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.register("myalite_pillar");
+
+		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.register("myalite_pavement");
 
 		new MMOBlockRegistrar(new GlowceliumBlock())
 				.register("glowcelium");
