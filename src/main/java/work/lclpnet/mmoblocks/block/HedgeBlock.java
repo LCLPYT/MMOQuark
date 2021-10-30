@@ -5,10 +5,12 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.FenceBlock;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +20,7 @@ import work.lclpnet.mmoblocks.MMOBlocksClient;
 import work.lclpnet.mmoblocks.module.WoodExtraModule;
 import work.lclpnet.mmoblocks.util.Env;
 
-public class HedgeBlock extends FenceBlock {
+public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
 
 	final Block leaf;
 
@@ -73,5 +75,17 @@ public class HedgeBlock extends FenceBlock {
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		super.appendProperties(builder);
 		builder.add(EXTEND);
+	}
+
+	@Override
+	public void registerBlockColor(BlockColors colors) {
+		final BlockState leafState = leaf.getDefaultState();
+		colors.registerColorProvider((state, world, pos, tintIndex) -> colors.getColor(leafState, world, pos, tintIndex), this);
+	}
+
+	@Override
+	public void registerItemColor(ItemColors colors) {
+		final ItemStack leafStack = new ItemStack(leaf);
+		colors.register((stack, tintIndex) -> colors.getColorMultiplier(leafStack, tintIndex), this);
 	}
 }

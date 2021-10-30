@@ -8,8 +8,8 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 public interface IClientModule {
 
     @Environment(EnvType.CLIENT)
-    void registerClient();
+    default void registerClient() {}
 
     @Environment(EnvType.CLIENT)
-    void registerSprites(SpriteAtlasTexture atlasTexture, ClientSpriteRegistryCallback.Registry registry);
+    default void registerSprites(SpriteAtlasTexture atlasTexture, ClientSpriteRegistryCallback.Registry registry) {}
 }

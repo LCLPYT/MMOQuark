@@ -9,6 +9,8 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
@@ -19,7 +21,7 @@ import work.lclpnet.mmoblocks.util.Env;
 
 import java.util.Random;
 
-public class BlossomLeavesBlock extends LeavesBlock {
+public class BlossomLeavesBlock extends LeavesBlock implements IMMOBlock {
 
     public BlossomLeavesBlock(MaterialColor color) {
         super(FabricBlockSettings.of(Material.LEAVES, color)
@@ -49,5 +51,10 @@ public class BlossomLeavesBlock extends LeavesBlock {
 
             world.addParticle(new BlockStateParticleEffect(ParticleTypes.BLOCK, state), pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, windX, -1.0, windZ);
         }
+    }
+
+    @Override
+    public BlockItem provideBlockItem(Item.Settings settings) {
+        return new BlockItem(this, settings);
     }
 }

@@ -4,7 +4,9 @@
   "package": "work.lclpnet.mmoblocks.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "client.MixinBuiltinModelItemRenderer"
+    "client.MixinBlockColors",
+    "client.MixinBuiltinModelItemRenderer",
+    "client.MixinItemColors"
   ],
   "injectors": {
     "defaultRequire": 1

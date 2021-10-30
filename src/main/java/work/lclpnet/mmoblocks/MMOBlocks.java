@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.GlowceliumBlock;
 import work.lclpnet.mmoblocks.block.MMOBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
+import work.lclpnet.mmoblocks.block.TurfBlock;
 import work.lclpnet.mmoblocks.module.*;
 
 import java.util.Set;
@@ -112,7 +113,7 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register("magma_bricks");
 
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK))
+		new MMOBlockRegistrar(new TurfBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)))
 				.withSlab().withStairs().withVerticalSlab()
 				.register("turf");
 

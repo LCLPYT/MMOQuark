@@ -1,14 +1,16 @@
 package work.lclpnet.mmoblocks.block;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
+import work.lclpnet.mmoblocks.util.Env;
+import work.lclpnet.mmoblocks.util.MMOBlockColors;
 
 import java.util.Objects;
 
@@ -56,43 +58,66 @@ public class MMOBlockRegistrar {
 
     public void register(String name, ItemGroup group) {
         final Identifier blockId = MMOBlocks.identifier(name);
-        Registry.register(Registry.BLOCK, blockId, block);
+        registerBlock(blockId, block);
 
         final FabricItemSettings blockItemSettings = new FabricItemSettings().group(group);
-        Item item = block instanceof IMMOBlock ? ((IMMOBlock) block).provideBlockItem(blockItemSettings) : new BlockItem(block, blockItemSettings);
-        Registry.register(Registry.ITEM, blockId, item);
+        BlockItem item = block instanceof IMMOBlock ? ((IMMOBlock) block).provideBlockItem(blockItemSettings) : new BlockItem(block, blockItemSettings);
+        registerBlockItem(blockId, item);
 
         if (slab || verticalSlab) {
-            MMOSlabBlock slabBlock = new MMOSlabBlock(block);
+            SlabBlock slabBlock = block instanceof IBlockOverride ? ((IBlockOverride) block).provideSlab(block) : new MMOSlabBlock(block);
             if (slab) {
                 final Identifier slabId = MMOBlocks.identifier(name + "_slab");
-                Registry.register(Registry.BLOCK, slabId, slabBlock);
-                Registry.register(Registry.ITEM, slabId, new BlockItem(slabBlock, new FabricItemSettings().group(group)));
+                registerBlock(slabId, slabBlock);
+                registerBlockItem(slabId, new BlockItem(slabBlock, new FabricItemSettings().group(group)));
             }
             if (verticalSlab) {
                 final Identifier verticalSlabId = MMOBlocks.identifier(name + "_vertical_slab");
-                VerticalSlabBlock verticalSlab = new VerticalSlabBlock(slabBlock);
-                Registry.register(Registry.BLOCK, verticalSlabId, verticalSlab);
-                Registry.register(Registry.ITEM, verticalSlabId, new BlockItem(verticalSlab, new FabricItemSettings().group(group)));
+                VerticalSlabBlock verticalSlab = block instanceof IBlockOverride ? ((IBlockOverride) block).provideVerticalSlab(slabBlock) : new VerticalSlabBlock(slabBlock);
+                registerBlock(verticalSlabId, verticalSlab);
+                registerBlockItem(verticalSlabId, new BlockItem(verticalSlab, new FabricItemSettings().group(group)));
             }
         }
         if (stairs) {
             final Identifier stairsId = MMOBlocks.identifier(name + "_stairs");
-            MMOStairsBlock stairs = new MMOStairsBlock(block);
-            Registry.register(Registry.BLOCK, stairsId, stairs);
-            Registry.register(Registry.ITEM, stairsId, new BlockItem(stairs, new FabricItemSettings().group(group)));
+            StairsBlock stairs = block instanceof IBlockOverride ? ((IBlockOverride) block).provideStairs(block) : new MMOStairsBlock(block);
+            registerBlock(stairsId, stairs);
+            registerBlockItem(stairsId, new BlockItem(stairs, new FabricItemSettings().group(group)));
         }
         if (wall) {
             final Identifier wallId = MMOBlocks.identifier(name + "_wall");
-            MMOWallBlock wall = new MMOWallBlock(block);
-            Registry.register(Registry.BLOCK, wallId, wall);
-            Registry.register(Registry.ITEM, wallId, new BlockItem(wall, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+            WallBlock wall = block instanceof IBlockOverride ? ((IBlockOverride) block).provideWall(block) : new MMOWallBlock(block);
+            registerBlock(wallId, wall);
+            registerBlockItem(wallId, new BlockItem(wall, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
         if (pane) {
             final Identifier paneId = MMOBlocks.identifier(name + "_pane");
-            MMOInheritedPaneBlock pane = new MMOInheritedPaneBlock(block);
-            Registry.register(Registry.BLOCK, paneId, pane);
-            Registry.register(Registry.ITEM, paneId, new BlockItem(pane, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+            PaneBlock pane = block instanceof IBlockOverride ? ((IBlockOverride) block).providePane(block) : new MMOInheritedPaneBlock(block);
+            registerBlock(paneId, pane);
+            registerBlockItem(paneId, new BlockItem(pane, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
+    }
+
+    private void registerBlockItem(Identifier blockId, BlockItem blockItem) {
+        Registry.register(Registry.ITEM, blockId, blockItem);
+        if (Env.isClient()) {
+            Block block = blockItem.getBlock();
+            if (block instanceof IItemColorProvider) registerItemColor((IItemColorProvider) block);
+        }
+    }
+
+    private void registerBlock(Identifier identifier, Block block) {
+        Registry.register(Registry.BLOCK, identifier, block);
+        if (Env.isClient() && block instanceof IBlockColorProvider) registerBlockColor((IBlockColorProvider) block);
+    }
+
+    @Environment(EnvType.CLIENT)
+    private void registerItemColor(IItemColorProvider provider) {
+        MMOBlockColors.registerItemColorProvider(provider);
+    }
+
+    @Environment(EnvType.CLIENT)
+    private void registerBlockColor(IBlockColorProvider provider) {
+        MMOBlockColors.registerBlockColorProvider(provider);
     }
 }
