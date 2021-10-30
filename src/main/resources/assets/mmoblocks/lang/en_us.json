@@ -342,5 +342,10 @@
   "block.mmoblocks.myalite_pillar": "Polished Myalite Pillar",
   "block.mmoblocks.thatch": "Thatch",
   "block.mmoblocks.thatch_slab": "Thatch Slab",
-  "block.mmoblocks.thatch_stairs": "Thatch Stairs"
+  "block.mmoblocks.thatch_stairs": "Thatch Stairs",
+  "block.mmoblocks.midori_block": "Midori Block",
+  "block.mmoblocks.midori_pillar": "Midori Pillar",
+  "block.mmoblocks.midori_block_stairs": "Midori Stairs",
+  "block.mmoblocks.midori_block_slab": "Midori Slab",
+  "block.mmoblocks.midori_block_vertical_slab": "Midori Vertical Slab"
 }
