@@ -4,21 +4,30 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.item.ItemConvertible;
 
 import java.util.function.BiConsumer;
 
 @Environment(EnvType.CLIENT)
 public class ColoredMMOStairsBlock extends MMOStairsBlock implements IBlockColorProvider {
 
-    private final BiConsumer<BlockColors, Block> registrar;
+    private final BiConsumer<BlockColors, Block> blockColorRegistrar;
+    private final BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar;
 
-    protected ColoredMMOStairsBlock(Block parent, BiConsumer<BlockColors, Block> registrar) {
+    protected ColoredMMOStairsBlock(Block parent, BiConsumer<BlockColors, Block> blockColorRegistrar, BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar) {
         super(parent);
-        this.registrar = registrar;
+        this.blockColorRegistrar = blockColorRegistrar;
+        this.itemColorRegistrar = itemColorRegistrar;
     }
 
     @Override
     public void registerBlockColor(BlockColors colors) {
-        registrar.accept(colors, this);
+        blockColorRegistrar.accept(colors, this);
+    }
+
+    @Override
+    public void registerItemColor(ItemColors colors) {
+        itemColorRegistrar.accept(colors, this);
     }
 }

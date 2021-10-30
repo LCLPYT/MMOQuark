@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.MixinBlockColors",
-    "client.MixinBuiltinModelItemRenderer"
+    "client.MixinBuiltinModelItemRenderer",
+    "client.MixinItemColors"
   ],
   "injectors": {
     "defaultRequire": 1
