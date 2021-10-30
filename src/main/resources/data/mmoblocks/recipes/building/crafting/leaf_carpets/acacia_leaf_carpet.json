@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:acacia_leaves"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:acacia_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "leaf_carpet"
+    }
+  ]
+} 

@@ -16,8 +16,8 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import work.lclpnet.mmoblocks.MMOBlocksClient;
 import work.lclpnet.mmoblocks.util.Env;
+import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 import java.util.Random;
 
@@ -39,7 +39,7 @@ public class BlossomLeavesBlock extends LeavesBlock implements IMMOBlock {
 
     @Environment(EnvType.CLIENT)
     private void registerRenderLayer() {
-        MMOBlocksClient.setBlockRenderType(this, RenderLayer.getCutoutMipped());
+        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutoutMipped());
     }
 
     @Override

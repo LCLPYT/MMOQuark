@@ -16,9 +16,9 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
-import work.lclpnet.mmoblocks.MMOBlocksClient;
 import work.lclpnet.mmoblocks.module.WoodExtraModule;
 import work.lclpnet.mmoblocks.util.Env;
+import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
 
@@ -44,7 +44,7 @@ public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
 
 	@Environment(EnvType.CLIENT)
 	private void registerRenderLayer() {
-		MMOBlocksClient.setBlockRenderType(this, RenderLayer.getCutout());
+		MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
 	}
 	
 	@Override

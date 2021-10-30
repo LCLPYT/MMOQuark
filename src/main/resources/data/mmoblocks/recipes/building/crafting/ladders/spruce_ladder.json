@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "#W#",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:spruce_ladder",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "variant_ladders"
+    }
+  ]
+}

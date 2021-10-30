@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F",
+    "F",
+    "F"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:warped_hyphae"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:warped_post",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "wooden_posts"
+    }
+  ]
+}
