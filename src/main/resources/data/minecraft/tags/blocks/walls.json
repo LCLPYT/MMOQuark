@@ -20,6 +20,8 @@
     "mmoblocks:red_sandstone_bricks_wall",
     "mmoblocks:soul_sandstone_bricks_wall",
     "mmoblocks:twisted_blackstone_bricks_wall",
-    "mmoblocks:weeping_blackstone_bricks_wall"
+    "mmoblocks:weeping_blackstone_bricks_wall",
+    "mmoblocks:myalite_wall",
+    "mmoblocks:myalite_bricks_wall"
   ]
 }
