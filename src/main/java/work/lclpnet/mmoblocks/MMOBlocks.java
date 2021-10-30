@@ -116,6 +116,12 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().withVerticalSlab()
 				.register("turf");
 
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone_bricks");
+
 		new MMOBlockRegistrar(new GlowceliumBlock())
 				.register("glowcelium");
 
