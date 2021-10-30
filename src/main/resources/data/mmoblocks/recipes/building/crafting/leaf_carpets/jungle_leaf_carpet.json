@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_leaves"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:jungle_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "leaf_carpet"
+    }
+  ]
+} 

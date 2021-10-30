@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:warped_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "mmoblocks:warped_bookshelf",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "mmoblocks:flag",
+      "flag": "variant_bookshelves"
+    }
+  ]
+} 

@@ -3,8 +3,8 @@ package work.lclpnet.mmoblocks.block;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.RenderLayer;
-import work.lclpnet.mmoblocks.MMOBlocksClient;
 import work.lclpnet.mmoblocks.util.Env;
+import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 public class FramedGlassBlock extends MMOGlassBlock {
 
@@ -15,6 +15,6 @@ public class FramedGlassBlock extends MMOGlassBlock {
 
     @Environment(EnvType.CLIENT)
     private void registerRenderLayer(boolean translucent) {
-        MMOBlocksClient.setBlockRenderType(this, translucent ? RenderLayer.getTranslucent() : RenderLayer.getCutout());
+        MMORenderLayers.setBlockRenderType(this, translucent ? RenderLayer.getTranslucent() : RenderLayer.getCutout());
     }
 }

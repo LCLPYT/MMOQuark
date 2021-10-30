@@ -23,8 +23,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoblocks.MMOBlocksClient;
 import work.lclpnet.mmoblocks.util.Env;
+import work.lclpnet.mmoblocks.util.MMORenderLayers;
 import work.lclpnet.mmoblocks.util.States;
 
 public class CaveCrystalClusterBlock extends MMOBlock {
@@ -41,7 +41,7 @@ public class CaveCrystalClusterBlock extends MMOBlock {
 
     @Environment(EnvType.CLIENT)
     private void registerRenderLayer() {
-        MMOBlocksClient.setBlockRenderType(this, RenderLayer.getCutout());
+        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override
