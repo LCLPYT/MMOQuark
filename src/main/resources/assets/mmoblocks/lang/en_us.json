@@ -339,5 +339,8 @@
   "block.mmoblocks.myalite_bricks": "Polished Myalite Bricks",
   "block.mmoblocks.chiseled_myalite_bricks": "Chiseled Polished Myalite Bricks",
   "block.mmoblocks.myalite_pavement": "Polished Myalite Pavement",
-  "block.mmoblocks.myalite_pillar": "Polished Myalite Pillar"
+  "block.mmoblocks.myalite_pillar": "Polished Myalite Pillar",
+  "block.mmoblocks.thatch": "Thatch",
+  "block.mmoblocks.thatch_slab": "Thatch Slab",
+  "block.mmoblocks.thatch_stairs": "Thatch Stairs"
 }

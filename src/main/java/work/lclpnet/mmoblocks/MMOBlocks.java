@@ -121,6 +121,9 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone_bricks");
 
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK))
+				.withSlab().withStairs().register("thatch");
+
 		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
 				.withStairs().withSlab().withWall().withVerticalSlab().register("myalite");
 
