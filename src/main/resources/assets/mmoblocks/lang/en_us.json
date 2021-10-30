@@ -311,5 +311,15 @@
   "block.mmoblocks.nether_brick_trapped_chest": "Nether Brick Trapped Chest",
   "block.mmoblocks.purpur_trapped_chest": "Purpur Trapped Chest",
   "block.mmoblocks.prismarine_trapped_chest": "Prismarine Trapped Chest",
-  "block.mmoblocks.mushroom_trapped_chest": "Mushroom Trapped Chest"
+  "block.mmoblocks.mushroom_trapped_chest": "Mushroom Trapped Chest",
+  "block.mmoblocks.brimstone": "Brimstone",
+  "block.mmoblocks.brimstone_bricks": "Brimstone Bricks",
+  "block.mmoblocks.brimstone_bricks_stairs": "Brimstone Brick Stairs",
+  "block.mmoblocks.brimstone_bricks_slab": "Brimstone Brick Slab",
+  "block.mmoblocks.brimstone_bricks_wall": "Brimstone Brick Wall",
+  "block.mmoblocks.brimstone_stairs": "Brimstone Stairs",
+  "block.mmoblocks.brimstone_slab": "Brimstone Slab",
+  "block.mmoblocks.brimstone_wall": "Brimstone Wall",
+  "block.mmoblocks.brimstone_bricks_vertical_slab": "Brimstone Brick Vertical Slab",
+  "block.mmoblocks.brimstone_vertical_slab": "Brimstone Vertical Slab"
 }
