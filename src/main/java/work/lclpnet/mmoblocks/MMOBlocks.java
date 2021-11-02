@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.*;
 import work.lclpnet.mmoblocks.module.*;
 
+import java.lang.management.MemoryManagerMXBean;
 import java.util.Set;
 
 import static net.minecraft.block.AbstractBlock.Settings.copy;
@@ -121,6 +122,15 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone_bricks");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK))
+				.withSlab().withStairs().register("thatch");
+
+		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
+				.withStairs().withSlab().withVerticalSlab().register("midori_block");
+
+		new MMOBlockRegistrar(new MidoriPillarBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
+				.register("midori_pillar");
 
 		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
 				.withStairs().withSlab().withWall().withVerticalSlab().register("myalite");
