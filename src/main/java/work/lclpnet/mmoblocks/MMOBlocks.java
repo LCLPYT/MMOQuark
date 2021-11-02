@@ -29,7 +29,8 @@ public class MMOBlocks implements ModInitializer {
 			new MoreBricksModule(),
 			new WoodExtraModule(),
 			new TreesModule(),
-			new VariantLaddersModule()
+			new VariantLaddersModule(),
+			new WoodPostsModule()
 	);
 
 	@Override
