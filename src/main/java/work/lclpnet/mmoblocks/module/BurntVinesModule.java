@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.VineBlock;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
@@ -27,7 +28,7 @@ public class BurntVinesModule implements IModule {
     @Override
     public void register() {
         new MMOBlockRegistrar(burnt_vine = new BurntVineBlock())
-                .register("burnt_vine");
+                .register("burnt_vine", ItemGroup.DECORATIONS);
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             ItemStack stack = player.getStackInHand(hand);

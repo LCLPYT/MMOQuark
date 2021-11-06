@@ -8,7 +8,6 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.*;
@@ -32,7 +31,8 @@ public class MMOBlocks implements ModInitializer {
 			new TreesModule(),
 			new VariantLaddersModule(),
 			new WoodPostsModule(),
-			new BurntVinesModule()
+			new BurntVinesModule(),
+			new CompressedBlocksModule()
 	);
 
 	@Override
@@ -64,33 +64,6 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(copy(Blocks.STONE_BRICKS))
 				.withSlab().withWall().withStairs().withVerticalSlab()
 				.register("mossy_cobblestone_bricks");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
-				.register("potato_crate", ItemGroup.DECORATIONS);
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
-				.register("carrot_crate");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
-				.register("beetroot_crate");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
-				.register("apple_crate");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS))
-				.register("golden_apple_crate");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
-				.register("berry_sack");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
-				.register("cocoa_beans_sack");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
-				.register("gunpowder_sack");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
-				.register("nether_wart_sack");
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
@@ -177,13 +150,6 @@ public class MMOBlocks implements ModInitializer {
 				.luminance(b -> 15) // lightValue
 				.sounds(BlockSoundGroup.GLASS))
 				.register("elder_sea_lantern");
-
-		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
-				.requiresTool()
-				.breakByTool(FabricToolTags.PICKAXES)
-				.strength(5F, 10F)
-				.sounds(BlockSoundGroup.STONE))
-				.register("charcoal_block");
 
 		new MMOBlockRegistrar(new BambooMatBlock())
 				.register("bamboo_mat");
