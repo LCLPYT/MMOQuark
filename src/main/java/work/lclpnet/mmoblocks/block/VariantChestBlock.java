@@ -13,6 +13,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.BlockView;
+import work.lclpnet.mmoblocks.block.ext.IMMOBlock;
 import work.lclpnet.mmoblocks.blockentity.MMOItemBlockEntities;
 import work.lclpnet.mmoblocks.blockentity.VariantChestBlockEntity;
 import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;

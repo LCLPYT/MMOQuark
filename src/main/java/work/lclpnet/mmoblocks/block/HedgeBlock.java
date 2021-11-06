@@ -16,6 +16,8 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
+import work.lclpnet.mmoblocks.block.ext.IBlockColorProvider;
+import work.lclpnet.mmoblocks.block.ext.MMOFenceBlock;
 import work.lclpnet.mmoblocks.module.WoodExtraModule;
 import work.lclpnet.mmoblocks.util.Env;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;

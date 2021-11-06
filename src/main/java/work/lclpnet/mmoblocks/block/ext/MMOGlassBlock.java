@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 public class MMOGlassBlock extends MMOBlock {
 

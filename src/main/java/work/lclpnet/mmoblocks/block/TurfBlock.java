@@ -8,6 +8,7 @@ import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import work.lclpnet.mmoblocks.block.ext.*;
 import work.lclpnet.mmoblocks.util.Env;
 
 public class TurfBlock extends MMOBlock implements IBlockColorProvider, IBlockOverride {

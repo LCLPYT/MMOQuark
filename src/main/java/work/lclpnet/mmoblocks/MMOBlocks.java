@@ -12,9 +12,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.*;
+import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 import work.lclpnet.mmoblocks.module.*;
 
-import java.lang.management.MemoryManagerMXBean;
 import java.util.Set;
 
 import static net.minecraft.block.AbstractBlock.Settings.copy;

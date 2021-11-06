@@ -10,6 +10,7 @@ import net.minecraft.block.LadderBlock;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import work.lclpnet.mmoblocks.block.ext.IMMOBlock;
 import work.lclpnet.mmoblocks.util.Env;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;
 

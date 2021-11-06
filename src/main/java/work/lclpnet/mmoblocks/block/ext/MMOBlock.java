@@ -1,12 +1,12 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
-import net.minecraft.block.FenceBlock;
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 
-public class MMOFenceBlock extends FenceBlock implements IMMOBlock {
+public class MMOBlock extends Block implements IMMOBlock {
 
-    public MMOFenceBlock(Settings settings) {
+    public MMOBlock(Settings settings) {
         super(settings);
     }
 

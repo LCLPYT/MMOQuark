@@ -18,6 +18,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import work.lclpnet.mmoblocks.block.ext.IBlockColorProvider;
+import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 import work.lclpnet.mmoblocks.util.Env;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;
 

@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

@@ -22,6 +22,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

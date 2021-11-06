@@ -2,7 +2,6 @@ package work.lclpnet.mmoblocks.util;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import work.lclpnet.mmoblocks.block.MMOBlock;
 
 public class States {
 

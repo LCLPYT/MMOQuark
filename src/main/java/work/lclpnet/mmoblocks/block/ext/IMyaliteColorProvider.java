@@ -1,7 +1,4 @@
-package work.lclpnet.mmoblocks.block;
-
-import java.awt.Color;
-import java.util.stream.IntStream;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
@@ -13,6 +10,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.noise.OctaveSimplexNoiseSampler;
 import net.minecraft.world.gen.ChunkRandom;
+
+import java.awt.*;
+import java.util.stream.IntStream;
 
 public interface IMyaliteColorProvider extends IBlockColorProvider {
 

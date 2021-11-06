@@ -1,6 +1,7 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.minecraft.block.*;
+import work.lclpnet.mmoblocks.block.VerticalSlabBlock;
 
 public interface IBlockOverride {
 

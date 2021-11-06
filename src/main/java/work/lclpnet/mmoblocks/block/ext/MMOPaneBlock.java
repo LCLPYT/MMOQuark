@@ -1,15 +1,15 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.PaneBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import work.lclpnet.mmoblocks.util.States;
 
-public class MMOStairsBlock extends StairsBlock implements IMMOBlock {
+public class MMOPaneBlock extends PaneBlock implements IMMOBlock {
 
-    protected MMOStairsBlock(Block parent) {
-        super(parent.getDefaultState(), States.copyState(parent));
+    protected MMOPaneBlock(Block parent) {
+        super(States.copyState(parent));
     }
 
     @Override

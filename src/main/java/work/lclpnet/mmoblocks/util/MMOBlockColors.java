@@ -2,8 +2,8 @@ package work.lclpnet.mmoblocks.util;
 
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
-import work.lclpnet.mmoblocks.block.IBlockColorProvider;
-import work.lclpnet.mmoblocks.block.IItemColorProvider;
+import work.lclpnet.mmoblocks.block.ext.IBlockColorProvider;
+import work.lclpnet.mmoblocks.block.ext.IItemColorProvider;
 
 import java.util.ArrayList;
 import java.util.List;

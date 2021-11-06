@@ -23,6 +23,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
+import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 import work.lclpnet.mmoblocks.util.Env;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;
 import work.lclpnet.mmoblocks.util.States;

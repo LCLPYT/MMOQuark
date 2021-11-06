@@ -9,6 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
+import work.lclpnet.mmoblocks.block.ext.*;
 import work.lclpnet.mmoblocks.util.Env;
 import work.lclpnet.mmoblocks.util.MMOBlockColors;
 

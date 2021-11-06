@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -10,12 +10,12 @@ import net.minecraft.item.ItemConvertible;
 import java.util.function.BiConsumer;
 
 @Environment(EnvType.CLIENT)
-public class ColoredVerticalSlabBlock extends VerticalSlabBlock implements IBlockColorProvider {
+public class ColoredMMOSlabBlock extends MMOSlabBlock implements IBlockColorProvider {
 
     private final BiConsumer<BlockColors, Block> blockColorRegistrar;
     private final BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar;
 
-    protected ColoredVerticalSlabBlock(Block parent, BiConsumer<BlockColors, Block> blockColorRegistrar, BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar) {
+    public ColoredMMOSlabBlock(Block parent, BiConsumer<BlockColors, Block> blockColorRegistrar, BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar) {
         super(parent);
         this.blockColorRegistrar = blockColorRegistrar;
         this.itemColorRegistrar = itemColorRegistrar;

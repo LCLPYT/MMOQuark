@@ -2,15 +2,14 @@ package work.lclpnet.mmoblocks.block;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.color.item.ItemColors;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.WallBlock;
+import work.lclpnet.mmoblocks.block.ext.*;
 import work.lclpnet.mmoblocks.util.Env;
 
-public class MyaliteBlock extends MMOBlock implements IMyaliteColorProvider, IBlockOverride{
+public class MyaliteBlock extends MMOBlock implements IMyaliteColorProvider, IBlockOverride {
 
 
     public MyaliteBlock(Settings settings) {

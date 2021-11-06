@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

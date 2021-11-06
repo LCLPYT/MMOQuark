@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
+import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 
 import java.util.Random;
 

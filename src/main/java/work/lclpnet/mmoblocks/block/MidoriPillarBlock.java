@@ -1,6 +1,8 @@
 package work.lclpnet.mmoblocks.block;
 
-public class MidoriPillarBlock extends MMOPillarBlock{
+import work.lclpnet.mmoblocks.block.ext.MMOPillarBlock;
+
+public class MidoriPillarBlock extends MMOPillarBlock {
     public MidoriPillarBlock(Settings settings) {
         super(settings);
     }

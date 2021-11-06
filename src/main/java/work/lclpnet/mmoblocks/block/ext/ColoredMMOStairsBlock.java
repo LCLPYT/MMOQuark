@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.block.ext;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -15,7 +15,7 @@ public class ColoredMMOStairsBlock extends MMOStairsBlock implements IBlockColor
     private final BiConsumer<BlockColors, Block> blockColorRegistrar;
     private final BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar;
 
-    protected ColoredMMOStairsBlock(Block parent, BiConsumer<BlockColors, Block> blockColorRegistrar, BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar) {
+    public ColoredMMOStairsBlock(Block parent, BiConsumer<BlockColors, Block> blockColorRegistrar, BiConsumer<ItemColors, ItemConvertible> itemColorRegistrar) {
         super(parent);
         this.blockColorRegistrar = blockColorRegistrar;
         this.itemColorRegistrar = itemColorRegistrar;
