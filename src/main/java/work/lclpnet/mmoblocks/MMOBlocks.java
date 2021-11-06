@@ -158,6 +158,7 @@ public class MMOBlocks implements ModInitializer {
 				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
 				.sounds(BlockSoundGroup.STONE));
+
 		new MMOBlockRegistrar(ELDER_PRISMARINE)
 				.withSlab().withVerticalSlab().withStairs().withWall()
 				.register("elder_prismarine");
@@ -182,6 +183,9 @@ public class MMOBlocks implements ModInitializer {
 				.strength(5F, 10F)
 				.sounds(BlockSoundGroup.STONE))
 				.register("charcoal_block");
+
+		new MMOBlockRegistrar(new BambooMatBlock())
+				.register("bamboo_mat");
 
 		// modules
 		MODULES.forEach(IModule::register);
