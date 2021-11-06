@@ -32,7 +32,9 @@ public class MMOBlocks implements ModInitializer {
 			new VariantLaddersModule(),
 			new WoodPostsModule(),
 			new BurntVinesModule(),
-			new CompressedBlocksModule()
+			new CompressedBlocksModule(),
+			new DuskboundBlocksModule(),
+			new TallowAndCandlesModule()
 	);
 
 	@Override
@@ -97,8 +99,9 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone_bricks");
 
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK))
-				.withSlab().withStairs().register("thatch");
+		new MMOBlockRegistrar(new ThatchBlock())
+				.withSlab().withStairs().withVerticalSlab()
+				.register("thatch");
 
 		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
 				.withStairs().withSlab().withVerticalSlab().register("midori_block");
