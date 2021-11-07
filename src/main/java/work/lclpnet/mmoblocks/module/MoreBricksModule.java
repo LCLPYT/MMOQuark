@@ -1,10 +1,13 @@
 package work.lclpnet.mmoblocks.module;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
-
-import static net.minecraft.block.AbstractBlock.Settings.copy;
+import work.lclpnet.mmoblocks.mixin.common.AbstractBlockAccessor;
 
 public class MoreBricksModule implements IModule {
 
@@ -19,10 +22,20 @@ public class MoreBricksModule implements IModule {
         bricks("soul_sandstone", Blocks.SANDSTONE);
         bricks("twisted_blackstone", Blocks.POLISHED_BLACKSTONE_BRICKS);
         bricks("weeping_blackstone", Blocks.BLACKSTONE);
+
+        new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK)
+                .strength(1.5F, 10F)
+                .emissiveLighting((s, r, p) -> true))
+                .register("magma_bricks");
     }
 
     private void bricks(String name, Block parent) {
-        new MMOBlockRegistrar(copy(parent))
+        Material parentMaterial = ((AbstractBlockAccessor) parent).getMaterial();
+
+        new MMOBlockRegistrar(FabricBlockSettings.copyOf(parent)
+                .strength(2F, 6F)
+                .requiresTool()
+                .breakByTool(parentMaterial == Material.SNOW_BLOCK ? FabricToolTags.SHOVELS : FabricToolTags.PICKAXES))
                 .withSlab().withStairs().withWall().withVerticalSlab()
                 .register(name + "_bricks");
     }

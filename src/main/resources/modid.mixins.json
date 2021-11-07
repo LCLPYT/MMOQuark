@@ -12,6 +12,7 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "common.AbstractBlockAccessor",
     "common.MixinAxeItem",
     "common.MixinLanternBlock"
   ]

@@ -36,7 +36,11 @@ public class MMOBlocks implements ModInitializer {
 			new DuskboundBlocksModule(),
 			new TallowAndCandlesModule(),
 			new SoulSandstoneModule(),
-			new RopeModule()
+			new RopeModule(),
+			new QuiltedWoolModule(),
+			new PaperDecorModule(),
+			new NetherBrickFenceModule(),
+			new MoreStoneVariantsModule()
 	);
 
 	@Override
@@ -53,9 +57,9 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register("marble");
 
-		new MMOBlockRegistrar(copy(Blocks.STONE))
-				.withSlab().withStairs().withWall().withVerticalSlab()
-				.register("marble_bricks");
+//		new MMOBlockRegistrar(copy(Blocks.STONE))
+//				.withSlab().withStairs().withWall().withVerticalSlab()
+//				.register("marble_bricks");
 
 		new MMOBlockRegistrar(copy(Blocks.STONE))
 				.withSlab().withStairs().withVerticalSlab()
@@ -116,18 +120,6 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
 				.withStairs().withSlab().withVerticalSlab().register("polished_myalite");
-
-		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.withStairs().withSlab().withWall().withVerticalSlab().register("myalite_bricks");
-
-		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.register("chiseled_myalite_bricks");
-
-		new MMOBlockRegistrar(new MyalitePillarBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.register("myalite_pillar");
-
-		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.register("myalite_pavement");
 
 		new MMOBlockRegistrar(new GlowceliumBlock())
 				.register("glowcelium");
