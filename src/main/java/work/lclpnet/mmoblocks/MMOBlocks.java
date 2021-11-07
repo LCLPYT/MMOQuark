@@ -26,6 +26,8 @@ public class MMOBlocks implements ModInitializer {
 			new VanillaVerticalSlabsModule(),
 			new CaveCrystalsModule(),
 			new FramedGlassModule(),
+			new PermafrostModule(),
+			new NewStoneTypesModule(),
 			new MoreBricksModule(),
 			new WoodExtraModule(),
 			new TreesModule(),
@@ -41,7 +43,8 @@ public class MMOBlocks implements ModInitializer {
 			new PaperDecorModule(),
 			new NetherBrickFenceModule(),
 			new MoreStoneVariantsModule(),
-			new MorePottedPlantsModule()
+			new MorePottedPlantsModule(),
+			new MidoriModule()
 	);
 
 	@Override
@@ -54,18 +57,6 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().withVerticalSlab()
 				.register("rusty_iron_plate");
 
-		new MMOBlockRegistrar(copy(Blocks.STONE))
-				.withSlab().withStairs().withWall().withVerticalSlab()
-				.register("marble");
-
-//		new MMOBlockRegistrar(copy(Blocks.STONE))
-//				.withSlab().withStairs().withWall().withVerticalSlab()
-//				.register("marble_bricks");
-
-		new MMOBlockRegistrar(copy(Blocks.STONE))
-				.withSlab().withStairs().withVerticalSlab()
-				.register("polished_marble");
-
 		new MMOBlockRegistrar(copy(Blocks.STONE_BRICKS))
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register("cobblestone_bricks");
@@ -73,14 +64,6 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(copy(Blocks.STONE_BRICKS))
 				.withSlab().withWall().withStairs().withVerticalSlab()
 				.register("mossy_cobblestone_bricks");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withSlab().withStairs().withWall().withVerticalSlab()
-				.register("permafrost");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withSlab().withWall().withStairs().withVerticalSlab()
-				.register("permafrost_bricks");
 
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY)
 				.requiresTool()
@@ -103,18 +86,6 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(new ThatchBlock())
 				.withSlab().withStairs().withVerticalSlab()
 				.register("thatch");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withStairs().withSlab().withVerticalSlab().register("midori_block");
-
-		new MMOBlockRegistrar(new MidoriPillarBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.register("midori_pillar");
-
-		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.withStairs().withSlab().withWall().withVerticalSlab().register("myalite");
-
-		new MMOBlockRegistrar(new MyaliteBlock(AbstractBlock.Settings.copy(Blocks.STONE)))
-				.withStairs().withSlab().withVerticalSlab().register("polished_myalite");
 
 		new MMOBlockRegistrar(new GlowceliumBlock())
 				.register("glowcelium");

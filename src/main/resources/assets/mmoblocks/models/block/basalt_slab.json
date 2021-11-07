@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoblocks:block/basalt",
+        "top": "mmoblocks:block/basalt",
+        "side": "mmoblocks:block/basalt"
+    }
+}
