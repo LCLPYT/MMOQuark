@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.mixin.common;
+package work.lclpnet.mmoblocks.asm.mixin.common;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LanternBlock;

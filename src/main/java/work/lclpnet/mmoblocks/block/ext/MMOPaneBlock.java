@@ -1,15 +1,22 @@
 package work.lclpnet.mmoblocks.block.ext;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.PaneBlock;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import work.lclpnet.mmoblocks.util.States;
+import work.lclpnet.mmoblocks.util.Env;
+import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 public class MMOPaneBlock extends PaneBlock implements IMMOBlock {
 
-    protected MMOPaneBlock(Block parent) {
-        super(States.copyState(parent));
+    public MMOPaneBlock(Settings settings, boolean registerRenderLayer) {
+        super(settings);
+
+        if (registerRenderLayer && Env.isClient()) registerRenderLayer();
+    }
+
+    protected void registerRenderLayer() {
+        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override

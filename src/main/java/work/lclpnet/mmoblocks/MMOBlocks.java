@@ -48,7 +48,9 @@ public class MMOBlocks implements ModInitializer {
 			new MorePottedPlantsModule(),
 			new MidoriModule(),
 			new HedgesModule(),
-			new VariantChestsModule()
+			new VariantChestsModule(),
+			new GrateModule(),
+			new GoldBarsModule()
 	);
 
 	@Override

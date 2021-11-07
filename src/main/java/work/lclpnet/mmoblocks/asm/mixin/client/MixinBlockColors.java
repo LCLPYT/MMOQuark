@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.mixin.client;
+package work.lclpnet.mmoblocks.asm.mixin.client;
 
 import net.minecraft.client.color.block.BlockColors;
 import org.spongepowered.asm.mixin.Mixin;

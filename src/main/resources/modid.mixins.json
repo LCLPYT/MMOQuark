@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "work.lclpnet.mmoblocks.mixin",
+  "package": "work.lclpnet.mmoblocks.asm.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.MixinBlockColors",
@@ -14,6 +14,7 @@
   "mixins": [
     "common.AbstractBlockAccessor",
     "common.MixinAxeItem",
+    "common.MixinEntityShapeContext",
     "common.MixinLanternBlock"
   ]
 }

@@ -2,6 +2,7 @@ package work.lclpnet.mmoblocks.block.ext;
 
 import net.minecraft.block.*;
 import work.lclpnet.mmoblocks.block.VerticalSlabBlock;
+import work.lclpnet.mmoblocks.util.States;
 
 public interface IBlockOverride {
 
@@ -22,6 +23,6 @@ public interface IBlockOverride {
     }
 
     default PaneBlock providePane(Block baseBlock) {
-        return new MMOPaneBlock(baseBlock);
+        return new MMOPaneBlock(States.copyState(baseBlock), true);
     }
 }

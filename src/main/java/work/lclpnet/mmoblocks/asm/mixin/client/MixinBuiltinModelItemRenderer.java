@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.mixin.client;
+package work.lclpnet.mmoblocks.asm.mixin.client;
 
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;

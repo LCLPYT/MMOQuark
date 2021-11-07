@@ -6,8 +6,8 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import work.lclpnet.mmoblocks.asm.mixin.common.AbstractBlockAccessor;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
-import work.lclpnet.mmoblocks.mixin.common.AbstractBlockAccessor;
 
 public class MoreBricksModule implements IModule {
 
