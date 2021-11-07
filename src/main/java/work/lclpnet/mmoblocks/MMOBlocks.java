@@ -34,7 +34,8 @@ public class MMOBlocks implements ModInitializer {
 			new BurntVinesModule(),
 			new CompressedBlocksModule(),
 			new DuskboundBlocksModule(),
-			new TallowAndCandlesModule()
+			new TallowAndCandlesModule(),
+			new SoulSandstoneModule()
 	);
 
 	@Override
@@ -156,6 +157,9 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(new BambooMatBlock())
 				.register("bamboo_mat");
+
+		new MMOBlockRegistrar(new SturdyStoneBlock())
+				.register("sturdy_stone");
 
 		// modules
 		MODULES.forEach(IModule::register);
