@@ -35,7 +35,8 @@ public class MMOBlocks implements ModInitializer {
 			new CompressedBlocksModule(),
 			new DuskboundBlocksModule(),
 			new TallowAndCandlesModule(),
-			new SoulSandstoneModule()
+			new SoulSandstoneModule(),
+			new RopeModule()
 	);
 
 	@Override
