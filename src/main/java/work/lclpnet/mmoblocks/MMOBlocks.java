@@ -8,6 +8,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.*;
@@ -29,7 +30,7 @@ public class MMOBlocks implements ModInitializer {
 			new PermafrostModule(),
 			new NewStoneTypesModule(),
 			new MoreBricksModule(),
-			new WoodExtraModule(),
+			new VariantBookshelvesModule(),
 			new TreesModule(),
 			new VariantLaddersModule(),
 			new WoodPostsModule(),
@@ -44,7 +45,9 @@ public class MMOBlocks implements ModInitializer {
 			new NetherBrickFenceModule(),
 			new MoreStoneVariantsModule(),
 			new MorePottedPlantsModule(),
-			new MidoriModule()
+			new MidoriModule(),
+			new HedgesModule(),
+			new VariantChestsModule()
 	);
 
 	@Override
@@ -119,6 +122,10 @@ public class MMOBlocks implements ModInitializer {
 
 		new MMOBlockRegistrar(new SturdyStoneBlock())
 				.register("sturdy_stone");
+
+		new MMOBlockRegistrar(new MMOBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_LAMP)
+				.luminance(b -> 15)))
+				.register("lit_lamp", ItemGroup.DECORATIONS);
 
 		// modules
 		MODULES.forEach(IModule::register);

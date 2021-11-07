@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.TexturedRenderLayers;
 import work.lclpnet.mmoblocks.blockentity.MMOItemBlockEntities;
 import work.lclpnet.mmoblocks.module.IClientModule;
-import work.lclpnet.mmoblocks.module.WoodExtraModule;
+import work.lclpnet.mmoblocks.module.VariantChestsModule;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 import java.util.Set;
@@ -14,7 +14,7 @@ import java.util.Set;
 public class MMOBlocksClient implements ClientModInitializer {
 
     public static final Set<IClientModule> CLIENT_MODULES = ImmutableSet.of(
-            new WoodExtraModule()
+            new VariantChestsModule()
     );
 
     @Override

@@ -18,7 +18,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 import work.lclpnet.mmoblocks.block.ext.IBlockColorProvider;
 import work.lclpnet.mmoblocks.block.ext.MMOFenceBlock;
-import work.lclpnet.mmoblocks.module.WoodExtraModule;
+import work.lclpnet.mmoblocks.module.HedgesModule;
 import work.lclpnet.mmoblocks.util.Env;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
@@ -51,7 +51,7 @@ public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
 	
 	@Override
 	public boolean canConnect(BlockState state, boolean isSideSolid, Direction direction) {
-		return state.getBlock().isIn(WoodExtraModule.hedgesTag);
+		return state.getBlock().isIn(HedgesModule.hedgesTag);
 	}
 
 	@Override

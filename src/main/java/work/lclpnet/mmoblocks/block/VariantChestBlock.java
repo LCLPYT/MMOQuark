@@ -18,12 +18,12 @@ import work.lclpnet.mmoblocks.blockentity.MMOItemBlockEntities;
 import work.lclpnet.mmoblocks.blockentity.VariantChestBlockEntity;
 import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;
 import work.lclpnet.mmoblocks.item.MMOBlockEntityItem;
-import work.lclpnet.mmoblocks.module.WoodExtraModule;
+import work.lclpnet.mmoblocks.module.VariantChestsModule;
 import work.lclpnet.mmoblocks.util.Env;
 
 import java.util.function.Supplier;
 
-public class VariantChestBlock extends ChestBlock implements BlockEntityProvider, WoodExtraModule.IChestTextureProvider, IMMOBlock {
+public class VariantChestBlock extends ChestBlock implements BlockEntityProvider, VariantChestsModule.IChestTextureProvider, IMMOBlock {
 
     protected String path;
 

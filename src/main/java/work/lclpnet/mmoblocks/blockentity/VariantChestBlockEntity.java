@@ -2,7 +2,7 @@ package work.lclpnet.mmoblocks.blockentity;
 
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ChestBlockEntity;
-import work.lclpnet.mmoblocks.module.WoodExtraModule;
+import work.lclpnet.mmoblocks.module.VariantChestsModule;
 
 public class VariantChestBlockEntity extends ChestBlockEntity {
 
@@ -11,6 +11,6 @@ public class VariantChestBlockEntity extends ChestBlockEntity {
     }
 
     public VariantChestBlockEntity() {
-        super(WoodExtraModule.VARIANT_CHEST_ENTITY);
+        super(VariantChestsModule.VARIANT_CHEST_ENTITY);
     }
 }

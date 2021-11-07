@@ -13,7 +13,7 @@ import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.MMOBlocks;
-import work.lclpnet.mmoblocks.module.WoodExtraModule;
+import work.lclpnet.mmoblocks.module.VariantChestsModule;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,8 +52,8 @@ public class VariantChestBlockEntityRenderer<T extends ChestBlockEntity> extends
     public static void accept(SpriteAtlasTexture atlasTexture, ClientSpriteRegistryCallback.Registry registry, Block chest) {
         Identifier atlas = atlasTexture.getId();
 
-        if(chest instanceof WoodExtraModule.IChestTextureProvider) {
-            WoodExtraModule.IChestTextureProvider prov = (WoodExtraModule.IChestTextureProvider) chest;
+        if(chest instanceof VariantChestsModule.IChestTextureProvider) {
+            VariantChestsModule.IChestTextureProvider prov = (VariantChestsModule.IChestTextureProvider) chest;
 
             String path = prov.getChestTexturePath();
             if(!prov.isTrap()) add(registry, atlas, chest, path, "normal", "left", "right");

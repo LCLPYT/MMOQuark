@@ -1,11 +1,11 @@
 package work.lclpnet.mmoblocks.blockentity;
 
-import work.lclpnet.mmoblocks.module.WoodExtraModule;
+import work.lclpnet.mmoblocks.module.VariantChestsModule;
 
 public class VariantTrappedChestBlockEntity extends VariantChestBlockEntity {
 
     public VariantTrappedChestBlockEntity() {
-        super(WoodExtraModule.VARIANT_TRAPPED_CHEST_ENTITY);
+        super(VariantChestsModule.VARIANT_TRAPPED_CHEST_ENTITY);
     }
 
     @Override
