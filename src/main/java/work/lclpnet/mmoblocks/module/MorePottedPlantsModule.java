@@ -60,7 +60,7 @@ public class MorePottedPlantsModule implements IModule {
         tintedBlocks.forEach((potted, parent) -> MMOBlockColors.registerBlockColorProvider(new IBlockColorProvider() {
             @Override
             public void registerBlockColor(BlockColors colors) {
-                colors.registerColorProvider((state, world, pos, tintIndex) -> colors.getColor(parent.getDefaultState(), world, pos, tintIndex));
+                colors.registerColorProvider((state, world, pos, tintIndex) -> colors.getColor(parent.getDefaultState(), world, pos, tintIndex), potted);
             }
 
             @Override
