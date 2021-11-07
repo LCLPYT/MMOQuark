@@ -19,29 +19,29 @@ public class MorePottedPlantsModule implements IModule {
 
     @Override
     public void register() {
-        add(Blocks.BEETROOTS, "beetroot");
-        add(Blocks.SWEET_BERRY_BUSH, "berries");
-        add(Blocks.CARROTS, "carrot");
-        add(Blocks.CHORUS_FLOWER, "chorus");
-        add(Blocks.COCOA, "cocoa_bean");
-        Block grass = add(Blocks.GRASS, "grass");
-        add(Blocks.PEONY, "peony");
-        Block largeFern = add(Blocks.LARGE_FERN, "large_fern");
-        add(Blocks.LILAC, "lilac");
-        add(Blocks.MELON_STEM, "melon");
-        add(Blocks.NETHER_SPROUTS, "nether_sprouts");
-        add(Blocks.NETHER_WART, "nether_wart");
-        add(Blocks.POTATOES, "potato");
-        add(Blocks.PUMPKIN_STEM, "pumpkin");
-        add(Blocks.ROSE_BUSH, "rose");
-        add(Blocks.SEA_PICKLE, "sea_pickle", p -> p.luminance(b -> 3));
-        Block sugarCane = add(Blocks.SUGAR_CANE, "sugar_cane");
-        add(Blocks.SUNFLOWER, "sunflower");
-        Block tallGrass = add(Blocks.TALL_GRASS, "tall_grass");
-        add(Blocks.TWISTING_VINES, "twisting_vines");
-        Block vine = add(Blocks.VINE, "vine");
-        add(Blocks.WEEPING_VINES, "weeping_vines");
-        add(Blocks.WHEAT, "wheat");
+        addPottedPlant(Blocks.BEETROOTS, "beetroot");
+        addPottedPlant(Blocks.SWEET_BERRY_BUSH, "berries");
+        addPottedPlant(Blocks.CARROTS, "carrot");
+        addPottedPlant(Blocks.CHORUS_FLOWER, "chorus");
+        addPottedPlant(Blocks.COCOA, "cocoa_bean");
+        Block grass = addPottedPlant(Blocks.GRASS, "grass");
+        addPottedPlant(Blocks.PEONY, "peony");
+        Block largeFern = addPottedPlant(Blocks.LARGE_FERN, "large_fern");
+        addPottedPlant(Blocks.LILAC, "lilac");
+        addPottedPlant(Blocks.MELON_STEM, "melon");
+        addPottedPlant(Blocks.NETHER_SPROUTS, "nether_sprouts");
+        addPottedPlant(Blocks.NETHER_WART, "nether_wart");
+        addPottedPlant(Blocks.POTATOES, "potato");
+        addPottedPlant(Blocks.PUMPKIN_STEM, "pumpkin");
+        addPottedPlant(Blocks.ROSE_BUSH, "rose");
+        addPottedPlant(Blocks.SEA_PICKLE, "sea_pickle", p -> p.luminance(b -> 3));
+        Block sugarCane = addPottedPlant(Blocks.SUGAR_CANE, "sugar_cane");
+        addPottedPlant(Blocks.SUNFLOWER, "sunflower");
+        Block tallGrass = addPottedPlant(Blocks.TALL_GRASS, "tall_grass");
+        addPottedPlant(Blocks.TWISTING_VINES, "twisting_vines");
+        Block vine = addPottedPlant(Blocks.VINE, "vine");
+        addPottedPlant(Blocks.WEEPING_VINES, "weeping_vines");
+        addPottedPlant(Blocks.WHEAT, "wheat");
 
         if (Env.isClient()) {
             final Map<Block, Block> tintedBlocks = new HashMap<>();
@@ -68,11 +68,11 @@ public class MorePottedPlantsModule implements IModule {
         }));
     }
 
-    private FlowerPotBlock add(Block block, String name) {
-        return add(block, name, Function.identity());
+    static FlowerPotBlock addPottedPlant(Block block, String name) {
+        return addPottedPlant(block, name, Function.identity());
     }
 
-    private FlowerPotBlock add(Block block, String name, Function<AbstractBlock.Settings, AbstractBlock.Settings> transformer) {
+    static FlowerPotBlock addPottedPlant(Block block, String name, Function<AbstractBlock.Settings, AbstractBlock.Settings> transformer) {
         AbstractBlock.Settings settings = transformer.apply(AbstractBlock.Settings.of(Material.SUPPORTED)
                 .breakInstantly()
                 .nonOpaque());

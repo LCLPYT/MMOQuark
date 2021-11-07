@@ -25,6 +25,9 @@ public class HedgesModule implements IModule {
         addHedge(Blocks.ACACIA_FENCE, Blocks.ACACIA_LEAVES);
         addHedge(Blocks.DARK_OAK_FENCE, Blocks.DARK_OAK_LEAVES);
 
+        // BlossomTreesModule must be loaded before this module
+        BlossomTreesModule.trees.forEach(tree -> addHedge(Blocks.SPRUCE_FENCE, tree.leaf.getBlock()));
+
         hedgesTag = TagRegistry.block(MMOBlocks.identifier("hedges"));
     }
 

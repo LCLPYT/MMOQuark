@@ -32,7 +32,6 @@ public class MMOBlocks implements ModInitializer {
 			new MoreBricksModule(),
 			new CobblestoneBricksModule(),
 			new VariantBookshelvesModule(),
-			new TreesModule(),
 			new VariantLaddersModule(),
 			new WoodPostsModule(),
 			new BurntVinesModule(),
@@ -47,10 +46,12 @@ public class MMOBlocks implements ModInitializer {
 			new MoreStoneVariantsModule(),
 			new MorePottedPlantsModule(),
 			new MidoriModule(),
-			new HedgesModule(),
 			new VariantChestsModule(),
 			new GrateModule(),
-			new GoldBarsModule()
+			new GoldBarsModule(),
+			new BlossomTreesModule(),
+			/* depends on BlossomTrees */ new LeafCarpetModule(),
+		    /* depends on BlossomTrees */ new HedgesModule()
 	);
 
 	@Override
