@@ -63,7 +63,7 @@ public class MMOBlockRegistrar {
 
         final FabricItemSettings blockItemSettings = new FabricItemSettings().group(group);
         BlockItem item = block instanceof IMMOBlock ? ((IMMOBlock) block).provideBlockItem(blockItemSettings) : new BlockItem(block, blockItemSettings);
-        registerBlockItem(blockId, item);
+        if (item != null) registerBlockItem(blockId, item);
 
         if (slab || verticalSlab) {
             SlabBlock slabBlock = block instanceof IBlockOverride ? ((IBlockOverride) block).provideSlab(block) : new MMOSlabBlock(block);

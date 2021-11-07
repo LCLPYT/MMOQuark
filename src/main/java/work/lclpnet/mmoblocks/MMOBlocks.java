@@ -40,7 +40,8 @@ public class MMOBlocks implements ModInitializer {
 			new QuiltedWoolModule(),
 			new PaperDecorModule(),
 			new NetherBrickFenceModule(),
-			new MoreStoneVariantsModule()
+			new MoreStoneVariantsModule(),
+			new MorePottedPlantsModule()
 	);
 
 	@Override
@@ -88,12 +89,6 @@ public class MMOBlocks implements ModInitializer {
 				.sounds(BlockSoundGroup.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register("cobbedstone");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK)
-				.strength(1.5F, 10F)
-				.emissiveLighting((s, r, p) -> true))
-				.withSlab().withStairs().withWall().withVerticalSlab()
-				.register("magma_bricks");
 
 		new MMOBlockRegistrar(new TurfBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)))
 				.withSlab().withStairs().withVerticalSlab()

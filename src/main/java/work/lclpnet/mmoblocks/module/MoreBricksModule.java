@@ -26,6 +26,7 @@ public class MoreBricksModule implements IModule {
         new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.MAGMA_BLOCK)
                 .strength(1.5F, 10F)
                 .emissiveLighting((s, r, p) -> true))
+                .withWall().withSlab().withVerticalSlab().withStairs()
                 .register("magma_bricks");
     }
 
