@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mmoblocks:block/vanilla_basalt_bricks",
+        "top": "mmoblocks:block/vanilla_basalt_bricks",
+        "side": "mmoblocks:block/vanilla_basalt_bricks"
+    }
+}

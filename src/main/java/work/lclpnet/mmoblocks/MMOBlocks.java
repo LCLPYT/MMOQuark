@@ -30,6 +30,7 @@ public class MMOBlocks implements ModInitializer {
 			new PermafrostModule(),
 			new NewStoneTypesModule(),
 			new MoreBricksModule(),
+			new CobblestoneBricksModule(),
 			new VariantBookshelvesModule(),
 			new TreesModule(),
 			new VariantLaddersModule(),
@@ -59,14 +60,6 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
 				.withSlab().withStairs().withVerticalSlab()
 				.register("rusty_iron_plate");
-
-		new MMOBlockRegistrar(copy(Blocks.STONE_BRICKS))
-				.withSlab().withStairs().withWall().withVerticalSlab()
-				.register("cobblestone_bricks");
-
-		new MMOBlockRegistrar(copy(Blocks.STONE_BRICKS))
-				.withSlab().withWall().withStairs().withVerticalSlab()
-				.register("mossy_cobblestone_bricks");
 
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY)
 				.requiresTool()
