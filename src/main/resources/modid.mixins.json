@@ -12,6 +12,7 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "client.MixinClientPlayNetworkHandler",
     "common.AbstractBlockAccessor",
     "common.MixinAxeItem",
     "common.MixinEntityShapeContext",

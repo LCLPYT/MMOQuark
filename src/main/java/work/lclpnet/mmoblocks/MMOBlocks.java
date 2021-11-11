@@ -51,7 +51,8 @@ public class MMOBlocks implements ModInitializer {
 			new GoldBarsModule(),
 			new BlossomTreesModule(),
 			/* depends on BlossomTrees */ new LeafCarpetModule(),
-		    /* depends on BlossomTrees */ new HedgesModule()
+		    /* depends on BlossomTrees */ new HedgesModule(),
+			new StoolsModule()
 	);
 
 	@Override

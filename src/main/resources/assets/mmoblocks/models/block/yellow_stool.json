@@ -1,0 +1,6 @@
+{
+  "parent": "mmoblocks:block/stool",
+  "textures": {
+    "main": "mmoblocks:block/yellow_stool"
+  }
+}

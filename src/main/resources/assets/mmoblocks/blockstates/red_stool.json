@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "big=true": { "model": "mmoblocks:block/red_big_stool" },
+        "big=false": { "model": "mmoblocks:block/red_stool" }
+    }
+}
