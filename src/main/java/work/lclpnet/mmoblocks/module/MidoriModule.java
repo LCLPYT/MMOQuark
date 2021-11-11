@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.ext.MMOPillarBlock;
@@ -15,7 +14,7 @@ public class MidoriModule implements IModule {
 
     @Override
     public void register() {
-        new MMOItemRegistrar(Item::new)
+        new MMOItemRegistrar()
                 .register("cactus_paste", ItemGroup.MATERIALS);
 
         AbstractBlock.Settings settings = FabricBlockSettings.of(Material.STONE, MaterialColor.LIME)

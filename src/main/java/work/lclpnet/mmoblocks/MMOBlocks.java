@@ -52,7 +52,9 @@ public class MMOBlocks implements ModInitializer {
 			new BlossomTreesModule(),
 			/* depends on BlossomTrees */ new LeafCarpetModule(),
 		    /* depends on BlossomTrees */ new HedgesModule(),
-			new StoolsModule()
+			new StoolsModule(),
+			new BiotiteModule(),
+			new GlowshroomModule()
 	);
 
 	@Override
@@ -77,34 +79,39 @@ public class MMOBlocks implements ModInitializer {
 				.withSlab().withStairs().withVerticalSlab()
 				.register("turf");
 
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone");
-
-		new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.STONE))
-				.withStairs().withSlab().withWall().withVerticalSlab().register("brimstone_bricks");
-
-		new MMOBlockRegistrar(new ThatchBlock())
-				.withSlab().withStairs().withVerticalSlab()
-				.register("thatch");
-
-		new MMOBlockRegistrar(new GlowceliumBlock())
-				.register("glowcelium");
-
-		final MMOBlock ELDER_PRISMARINE = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.ORANGE)
+		MMOBlock brimstone = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.RED)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
 				.sounds(BlockSoundGroup.STONE));
 
-		new MMOBlockRegistrar(ELDER_PRISMARINE)
+		new MMOBlockRegistrar(brimstone)
+				.withStairs().withSlab().withWall().withVerticalSlab()
+				.register("brimstone");
+
+		new MMOBlockRegistrar(FabricBlockSettings.copyOf(brimstone))
+				.withStairs().withSlab().withWall().withVerticalSlab()
+				.register("brimstone_bricks");
+
+		new MMOBlockRegistrar(new ThatchBlock())
+				.withSlab().withStairs().withVerticalSlab()
+				.register("thatch");
+
+		final MMOBlock elderPrismarine = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.ORANGE)
+				.requiresTool()
+				.breakByTool(FabricToolTags.PICKAXES)
+				.strength(1.5F, 10F)
+				.sounds(BlockSoundGroup.STONE));
+
+		new MMOBlockRegistrar(elderPrismarine)
 				.withSlab().withVerticalSlab().withStairs().withWall()
 				.register("elder_prismarine");
 
-		new MMOBlockRegistrar(FabricBlockSettings.copy(ELDER_PRISMARINE))
+		new MMOBlockRegistrar(FabricBlockSettings.copy(elderPrismarine))
 				.withSlab().withVerticalSlab().withStairs()
 				.register("elder_prismarine_bricks");
 
-		new MMOBlockRegistrar(FabricBlockSettings.copy(ELDER_PRISMARINE))
+		new MMOBlockRegistrar(FabricBlockSettings.copy(elderPrismarine))
 				.withSlab().withVerticalSlab().withStairs()
 				.register("dark_elder_prismarine");
 
