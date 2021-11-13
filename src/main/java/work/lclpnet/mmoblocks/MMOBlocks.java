@@ -56,7 +56,8 @@ public class MMOBlocks implements ModInitializer {
 			new BiotiteModule(),
 			new GlowshroomModule(),
 			new RootModule(),
-			new ChorusVegetationModule()
+			new ChorusVegetationModule(),
+			new SpeleothemsModule()
 	);
 
 	@Override
