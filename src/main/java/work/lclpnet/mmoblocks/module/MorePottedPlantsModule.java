@@ -79,10 +79,6 @@ public class MorePottedPlantsModule implements IModule {
 
         MMOFlowerPotBlock potted = new MMOFlowerPotBlock(block, settings);
 
-//        Identifier key = Registry.BLOCK.getId(block);
-//        String path = key.getPath();
-//        if (path.equals("air") && key.getNamespace().equals("minecraft")) throw new IllegalStateException("Could not find registry item"); // default value, if block does not exist in registry
-
         new MMOBlockRegistrar(potted)
                 .register(String.format("potted_%s", name));
 

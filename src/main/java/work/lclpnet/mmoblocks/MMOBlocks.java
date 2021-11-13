@@ -54,7 +54,9 @@ public class MMOBlocks implements ModInitializer {
 		    /* depends on BlossomTrees */ new HedgesModule(),
 			new StoolsModule(),
 			new BiotiteModule(),
-			new GlowshroomModule()
+			new GlowshroomModule(),
+			new RootModule(),
+			new ChorusVegetationModule()
 	);
 
 	@Override
