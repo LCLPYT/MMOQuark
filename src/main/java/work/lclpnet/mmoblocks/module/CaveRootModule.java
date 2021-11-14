@@ -7,7 +7,7 @@ import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.RootBlock;
 import work.lclpnet.mmoblocks.item.MMOItemRegistrar;
 
-public class RootModule implements IModule {
+public class CaveRootModule implements IModule {
 
     @Override
     public void register() {

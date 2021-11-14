@@ -56,7 +56,7 @@ public class MMOBlocks implements ModInitializer {
 			new StoolsModule(),
 			new BiotiteModule(),
 			new GlowshroomModule(),
-			new RootModule(),
+			new CaveRootModule(),
 			new ChorusVegetationModule(),
 			new SpeleothemsModule(),
 			new StonelingsModule(),
@@ -136,6 +136,13 @@ public class MMOBlocks implements ModInitializer {
 		new MMOBlockRegistrar(new MMOBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_LAMP)
 				.luminance(b -> 15)))
 				.register("lit_lamp", ItemGroup.DECORATIONS);
+
+		new MMOBlockRegistrar(new ObsidianPressurePlateBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+				.requiresTool()
+				.breakByTool(FabricToolTags.PICKAXES)
+				.noCollision()
+				.strength(2F, 1200F)))
+				.register("obsidian_pressure_plate", ItemGroup.REDSTONE);
 
 		// modules
 		MODULES.forEach(IModule::register);
