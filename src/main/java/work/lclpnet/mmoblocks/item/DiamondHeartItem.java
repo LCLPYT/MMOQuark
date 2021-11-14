@@ -52,8 +52,7 @@ public class DiamondHeartItem extends Item {
                         world.syncWorldEvent(2001, pos, Block.getRawIdFromState(stateAt));
 
                         StonelingEntity stoneling = new StonelingEntity(StonelingsModule.stonelingType, world);
-                        stoneling.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
-                        stoneling.updatePosition(stoneling.getX(), stoneling.getY(), stoneling.getZ()); // required, so that the stoneling does not immediately suffocate (why did this work in forge?)
+                        stoneling.updatePosition(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
                         stoneling.setPlayerMade(true);
                         stoneling.yaw = player.yaw + 180F;
                         stoneling.initialize((ServerWorldAccess) world, world.getLocalDifficulty(pos), SpawnReason.STRUCTURE, variant, null);
