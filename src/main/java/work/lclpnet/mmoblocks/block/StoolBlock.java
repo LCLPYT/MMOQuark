@@ -86,7 +86,7 @@ public class StoolBlock extends MMOBlock implements Waterloggable {
 
         if (!world.isClient) {
             StoolEntity entity = new StoolEntity(StoolsModule.stoolEntity, world);
-            entity.setPos(pos.getX() + 0.5, pos.getY() + 0.6, pos.getZ() + 0.5);
+            entity.updatePosition(pos.getX() + 0.5, pos.getY() + 0.6, pos.getZ() + 0.5);
 
             world.spawnEntity(entity);
             player.startRiding(entity);

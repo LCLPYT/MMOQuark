@@ -70,7 +70,7 @@ public class ChorusVegetationBlock extends MMOBlock implements Fertilizable {
 
             if(target != null && world.random.nextDouble() < 0.01) {
                 EndermiteEntity mite = new EndermiteEntity(EntityType.ENDERMITE, world);
-                mite.setPos(target.getX(), target.getY(), target.getZ());
+                mite.updatePosition(target.getX(), target.getY(), target.getZ());
                 world.spawnEntity(mite);
             }
         }
