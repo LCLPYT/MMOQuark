@@ -3,8 +3,10 @@ package work.lclpnet.mmoblocks.item;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
@@ -41,5 +43,10 @@ public class MMOItemRegistrar {
     @Environment(EnvType.CLIENT)
     private void registerItemColor(IItemColorProvider provider) {
         MMOBlockColors.registerItemColorProvider(provider);
+    }
+
+    public static void registerSpawnEgg(EntityType<?> type, String entityName, int primaryColor, int secondaryColor) {
+        new MMOItemRegistrar(settings -> new SpawnEggItem(type, primaryColor, secondaryColor, settings))
+                .register(String.format("%s_spawn_egg", entityName), ItemGroup.MISC);
     }
 }

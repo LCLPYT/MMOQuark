@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.*;
 import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 import work.lclpnet.mmoblocks.module.*;
+import work.lclpnet.mmoblocks.sound.MMOSounds;
 
 import java.util.Set;
 
@@ -57,7 +58,8 @@ public class MMOBlocks implements ModInitializer {
 			new GlowshroomModule(),
 			new RootModule(),
 			new ChorusVegetationModule(),
-			new SpeleothemsModule()
+			new SpeleothemsModule(),
+			new StonelingsModule()
 	);
 
 	@Override
@@ -136,6 +138,8 @@ public class MMOBlocks implements ModInitializer {
 
 		// modules
 		MODULES.forEach(IModule::register);
+
+		MMOSounds.init();
 	}
 
 	public static Identifier identifier(String path) {

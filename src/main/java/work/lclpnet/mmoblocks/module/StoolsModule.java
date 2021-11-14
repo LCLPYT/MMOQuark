@@ -12,7 +12,7 @@ import work.lclpnet.mmoblocks.MMOBlocks;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.StoolBlock;
 import work.lclpnet.mmoblocks.entity.StoolEntity;
-import work.lclpnet.mmoblocks.entity.render.StoolEntityRenderer;
+import work.lclpnet.mmoblocks.entity.render.StoolRenderer;
 
 public class StoolsModule implements IModule, IClientModule {
 
@@ -38,6 +38,6 @@ public class StoolsModule implements IModule, IClientModule {
 
     @Override
     public void registerClient() {
-        EntityRendererRegistry.INSTANCE.register(stoolEntity, (manager, context) -> new StoolEntityRenderer(manager));
+        EntityRendererRegistry.INSTANCE.register(stoolEntity, (manager, context) -> new StoolRenderer(manager));
     }
 }

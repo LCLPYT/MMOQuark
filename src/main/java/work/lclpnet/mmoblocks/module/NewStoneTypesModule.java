@@ -1,5 +1,6 @@
 package work.lclpnet.mmoblocks.module;
 
+import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
@@ -10,11 +11,14 @@ import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.MyaliteBlock;
 import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 
+import java.util.Map;
 import java.util.function.Function;
 
 public class NewStoneTypesModule implements IModule {
 
     public static Block marbleBlock, limestoneBlock, jasperBlock, slateBlock, basaltBlock, myaliteBlock;
+
+    public static Map<Block, Block> polishedBlocks = Maps.newHashMap();
 
     @Override
     public void register() {
@@ -38,6 +42,7 @@ public class NewStoneTypesModule implements IModule {
 
         Block normal = constr.apply(settings);
         Block polished = constr.apply(settings);
+        polishedBlocks.put(normal, polished);
 
         new MMOBlockRegistrar(normal)
                 .withSlab().withVerticalSlab().withWall().withStairs()

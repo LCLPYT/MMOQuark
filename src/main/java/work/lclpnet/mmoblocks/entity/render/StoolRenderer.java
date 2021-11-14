@@ -6,9 +6,9 @@ import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.entity.StoolEntity;
 
-public class StoolEntityRenderer extends EntityRenderer<StoolEntity> {
+public class StoolRenderer extends EntityRenderer<StoolEntity> {
 
-    public StoolEntityRenderer(EntityRenderDispatcher dispatcher) {
+    public StoolRenderer(EntityRenderDispatcher dispatcher) {
         super(dispatcher);
     }
 

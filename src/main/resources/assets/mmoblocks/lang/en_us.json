@@ -347,5 +347,7 @@
   "block.mmoblocks.midori_pillar": "Midori Pillar",
   "block.mmoblocks.midori_block_stairs": "Midori Stairs",
   "block.mmoblocks.midori_block_slab": "Midori Slab",
-  "block.mmoblocks.midori_block_vertical_slab": "Midori Vertical Slab"
+  "block.mmoblocks.midori_block_vertical_slab": "Midori Vertical Slab",
+
+  "entity.mmoblocks.stoneling": "Stoneling"
 }
