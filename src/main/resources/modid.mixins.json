@@ -14,7 +14,9 @@
   "mixins": [
     "client.MixinClientPlayNetworkHandler",
     "common.AbstractBlockAccessor",
+    "common.AbstractButtonBlockAccessor",
     "common.GoalSelectorAccessor",
+    "common.MixinAbstractButtonBlock",
     "common.MixinAxeItem",
     "common.MixinEntityShapeContext",
     "common.MixinLanternBlock"
