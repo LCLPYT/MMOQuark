@@ -145,6 +145,9 @@ public class MMOBlocks implements ModInitializer {
 				.strength(2F, 1200F)))
 				.register("obsidian_pressure_plate", ItemGroup.REDSTONE);
 
+		new MMOBlockRegistrar(new IronRodBlock())
+				.register("iron_rod", ItemGroup.DECORATIONS);
+
 		// modules
 		MODULES.forEach(IModule::register);
 
