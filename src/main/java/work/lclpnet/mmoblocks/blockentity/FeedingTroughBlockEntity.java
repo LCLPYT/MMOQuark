@@ -21,7 +21,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import work.lclpnet.mmoblocks.block.FeedingTroughBlock;
-import work.lclpnet.mmoblocks.block.FeedingTroughModule;
+import work.lclpnet.mmoblocks.module.FeedingTroughModule;
 
 import java.util.List;
 import java.util.Random;

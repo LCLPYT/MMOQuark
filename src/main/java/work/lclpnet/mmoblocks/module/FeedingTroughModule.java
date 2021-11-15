@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.block;
+package work.lclpnet.mmoblocks.module;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -8,8 +8,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
+import work.lclpnet.mmoblocks.block.FeedingTroughBlock;
+import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.blockentity.FeedingTroughBlockEntity;
-import work.lclpnet.mmoblocks.module.IModule;
 
 public class FeedingTroughModule implements IModule {
 
