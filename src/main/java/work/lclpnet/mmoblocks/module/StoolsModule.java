@@ -17,6 +17,7 @@ import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.StoolBlock;
+import work.lclpnet.mmoblocks.entity.MMOClientEntities;
 import work.lclpnet.mmoblocks.entity.StoolEntity;
 import work.lclpnet.mmoblocks.entity.render.StoolRenderer;
 
@@ -54,5 +55,6 @@ public class StoolsModule implements IModule, IClientModule {
     @Override
     public void registerClient() {
         EntityRendererRegistry.INSTANCE.register(stoolEntity, (manager, context) -> new StoolRenderer(manager));
+        MMOClientEntities.registerNonLiving(stoolEntity, StoolEntity::new);
     }
 }

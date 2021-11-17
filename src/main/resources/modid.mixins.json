@@ -16,6 +16,7 @@
     "common.AbstractBlockAccessor",
     "common.AbstractButtonBlockAccessor",
     "common.GoalSelectorAccessor",
+    "common.LivingEntityAccessor",
     "common.MixinAbstractButtonBlock",
     "common.MixinAxeItem",
     "common.MixinEntityShapeContext",

@@ -28,6 +28,10 @@ dependencies {
 	implementation 'com.google.code.findbugs:jsr305:3.0.0'
 }
 
+loom {
+	accessWidener = file("src/main/resources/mmoblocks.accesswidener")
+}
+
 processResources {
 	inputs.property "version", project.version
 

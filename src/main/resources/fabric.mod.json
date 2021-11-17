@@ -35,5 +35,6 @@
     "fabric": "*",
     "minecraft": "1.16.x"
   },
-  "suggests": {}
+  "suggests": {},
+  "accessWidener": "mmoblocks.accesswidener"
 }
