@@ -20,6 +20,7 @@
     "common.MixinAbstractButtonBlock",
     "common.MixinAxeItem",
     "common.MixinEntityShapeContext",
-    "common.MixinLanternBlock"
+    "common.MixinLanternBlock",
+    "common.MixinServerWorld"
   ]
 }

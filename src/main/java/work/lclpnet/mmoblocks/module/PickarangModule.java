@@ -26,11 +26,10 @@ public class PickarangModule implements IModule, IClientModule {
 
     @Override
     public void register() {
-        EntityType.EntityFactory<PickarangEntity> factory = PickarangEntity::new;
         pickarangType = Registry.register(
                 Registry.ENTITY_TYPE,
                 MMOBlocks.identifier("pickarang"),
-                FabricEntityTypeBuilder.create(SpawnGroup.MISC, factory)
+                FabricEntityTypeBuilder.create(SpawnGroup.MISC, (EntityType.EntityFactory<PickarangEntity>) PickarangEntity::new)
                         .dimensions(EntityDimensions.fixed(6 / 16F, 0.5F))
                         .trackRangeChunks(3)
                         .trackedUpdateRate(Integer.MAX_VALUE)

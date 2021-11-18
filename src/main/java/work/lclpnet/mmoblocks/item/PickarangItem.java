@@ -45,7 +45,7 @@ public class PickarangItem extends Item {
 
     @Override
     public boolean isEffectiveOn(BlockState state) {
-        return true; // TODO maybe nerf
+        return true;
     }
 
     @Override

@@ -1,6 +1,10 @@
 package work.lclpnet.mmoblocks.util;
 
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.math.Direction;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 public class MiscUtil {
 
@@ -32,4 +36,8 @@ public class MiscUtil {
             Direction.WEST,
             Direction.EAST
     };
+
+    public static Ingredient mergeIngredients(Collection<Ingredient> parts) {
+        return Ingredient.ofEntries(parts.stream().flatMap(i -> Arrays.stream(i.entries)));
+    }
 }

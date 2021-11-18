@@ -2,3 +2,8 @@ accessWidener v1 named
 
 # ProjectileEntity
 extendable method net/minecraft/entity/projectile/ProjectileEntity <init> (Lnet/minecraft/entity/EntityType;Lnet/minecraft/world/World;)V
+
+# Ingredient
+accessible class net/minecraft/recipe/Ingredient$Entry
+accessible method net/minecraft/recipe/Ingredient ofEntries (Ljava/util/stream/Stream;)Lnet/minecraft/recipe/Ingredient;
+accessible field net/minecraft/recipe/Ingredient entries [Lnet/minecraft/recipe/Ingredient$Entry;

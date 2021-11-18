@@ -16,7 +16,8 @@ public class MMOBlocksClient implements ClientModInitializer {
             new VariantChestsModule(),
             new StoolsModule(),
             new StonelingsModule(),
-            new PickarangModule()
+            new PickarangModule(),
+            new CrabsModule()
     );
 
     @Override
