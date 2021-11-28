@@ -39,6 +39,7 @@ public class StoolsModule implements IModule, IClientModule {
                         .dimensions(EntityDimensions.fixed(6 / 16F, 0.5F))
                         .trackRangeChunks(3)
                         .trackedUpdateRate(Integer.MAX_VALUE)
+                        .forceTrackedVelocityUpdates(false)
                         .build()
         );
 

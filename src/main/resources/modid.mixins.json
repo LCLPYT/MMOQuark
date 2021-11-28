@@ -4,6 +4,7 @@
   "package": "work.lclpnet.mmoblocks.asm.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "client.EntityRenderDispatcherAccessor",
     "client.MixinBlockColors",
     "client.MixinBuiltinModelItemRenderer",
     "client.MixinClientPlayNetworkHandler",
