@@ -64,7 +64,8 @@ public class MMOBlocks implements ModInitializer {
 			new FeedingTroughModule(),
 			new EnderWatcherModule(),
 			new PickarangModule(),
-			new CrabsModule()
+			new CrabsModule(),
+			new PipesModule()
 	);
 
 	@Override

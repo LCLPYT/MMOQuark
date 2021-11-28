@@ -6,13 +6,14 @@
   "client": [
     "client.MixinBlockColors",
     "client.MixinBuiltinModelItemRenderer",
-    "client.MixinItemColors"
+    "client.MixinClientPlayNetworkHandler",
+    "client.MixinItemColors",
+    "client.MixinModelLoader"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
-    "client.MixinClientPlayNetworkHandler",
     "common.AbstractBlockAccessor",
     "common.AbstractButtonBlockAccessor",
     "common.GoalSelectorAccessor",
