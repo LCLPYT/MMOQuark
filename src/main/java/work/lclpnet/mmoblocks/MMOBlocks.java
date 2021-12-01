@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.block.*;
 import work.lclpnet.mmoblocks.block.ext.MMOBlock;
 import work.lclpnet.mmoblocks.module.*;
+import work.lclpnet.mmoblocks.networking.MCNetworking;
 import work.lclpnet.mmoblocks.sound.MMOSounds;
 
 import java.util.Set;
@@ -71,6 +72,9 @@ public class MMOBlocks implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		MCNetworking.registerPackets();
+		MCNetworking.registerServerPacketHandlers();
+
 		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
 				.withSlab().withStairs().withVerticalSlab()
 				.register("iron_plate");

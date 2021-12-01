@@ -12,14 +12,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Packet;
-import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import work.lclpnet.mmoblocks.module.ItemFramesModule;
+import work.lclpnet.mmoblocks.networking.MCNetworking;
 
-public class GlassItemFrameEntity extends ItemFrameEntity {
+public class GlassItemFrameEntity extends ItemFrameEntity implements AdditionalSpawnData {
 
     public static final TrackedData<Boolean> IS_SHINY = DataTracker.registerData(GlassItemFrameEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
@@ -87,7 +88,19 @@ public class GlassItemFrameEntity extends ItemFrameEntity {
     }
 
     @Override
+    public void writeSpawnData(PacketByteBuf buffer) {
+        buffer.writeBlockPos(this.attachmentPos);
+        buffer.writeVarInt(this.facing.getId());
+    }
+
+    @Override
+    public void readSpawnData(PacketByteBuf buffer) {
+        this.attachmentPos = buffer.readBlockPos();
+        this.setFacing(Direction.byId(buffer.readVarInt()));
+    }
+
+    @Override
     public Packet<?> createSpawnPacket() {
-        return new EntitySpawnS2CPacket(this);
+       return MCNetworking.createMMOSpawnPacket(this);
     }
 }

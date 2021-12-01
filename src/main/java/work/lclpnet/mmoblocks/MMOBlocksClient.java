@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.TexturedRenderLayers;
 import work.lclpnet.mmoblocks.blockentity.MMOItemBlockEntities;
 import work.lclpnet.mmoblocks.module.*;
+import work.lclpnet.mmoblocks.networking.MCNetworking;
 import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 import java.util.Set;
@@ -25,6 +26,7 @@ public class MMOBlocksClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         MMORenderLayers.init();
+        MCNetworking.registerClientPacketHandlers();
 
         CLIENT_MODULES.forEach(IClientModule::registerClient);
 

@@ -2,8 +2,6 @@ package work.lclpnet.mmoblocks.asm.mixin.client;
 
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,21 +21,7 @@ public class MixinClientPlayNetworkHandler {
             at = @At("TAIL")
     )
     public void onEntitySpawn(EntitySpawnS2CPacket packet, CallbackInfo ci) {
-        double x = packet.getX();
-        double y = packet.getY();
-        double z = packet.getZ();
-        EntityType<?> type = packet.getEntityTypeId();
-        Entity entity = MMOClientEntities.createEntity(type, this.world);
-        if (entity == null) return;
-
-        int i = packet.getId();
-        entity.updateTrackedPosition(x, y, z);
-        entity.refreshPositionAfterTeleport(x, y, z);
-        entity.pitch = (float)(packet.getPitch() * 360) / 256.0F;
-        entity.yaw = (float)(packet.getYaw() * 360) / 256.0F;
-        entity.setEntityId(i);
-        entity.setUuid(packet.getUuid());
-        this.world.addEntity(i, entity);
+        MMOClientEntities.spawnEntity(packet, this.world, null);
     }
 
 }
