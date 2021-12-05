@@ -16,7 +16,7 @@ public class FrogsModule implements IModule {
                         .hunger(2)
                         .saturationModifier(0.3F)
                         .build())))
-                .register("frog_leg", ItemGroup.DECORATIONS);
+                .register("frog_leg", ItemGroup.FOOD);
 
         new MMOItemRegistrar(settings -> new Item(settings
                 .food(new FoodComponent.Builder()
@@ -24,7 +24,7 @@ public class FrogsModule implements IModule {
                         .hunger(4)
                         .saturationModifier(1.25F)
                         .build())))
-                .register("cooked_frog_leg", ItemGroup.DECORATIONS);
+                .register("cooked_frog_leg", ItemGroup.FOOD);
 
         new MMOItemRegistrar(settings -> new Item(settings
                 .food(new FoodComponent.Builder()
@@ -32,6 +32,6 @@ public class FrogsModule implements IModule {
                         .hunger(4)
                         .saturationModifier(2.5F)
                         .build())))
-                .register("golden_frog_leg", ItemGroup.DECORATIONS);
+                .register("golden_frog_leg", ItemGroup.FOOD);
     }
 }
