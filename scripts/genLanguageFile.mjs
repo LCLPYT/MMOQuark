@@ -47,7 +47,7 @@ async function processFiles(sourceFile, providerFile, targetFile, search = null,
 
             output.write(`${preSpace}"${key}":${midSpace}"${rel.replace(/"/g, '\\"')}"${suffix}\n`);
         } else {
-            // console.warn(`No mapping found for "${key}"`);
+            console.warn(`No mapping found for "${key}"`);
         }
     }
 }
