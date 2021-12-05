@@ -31,6 +31,8 @@ public class MMOClientEntities {
     }
 
     public static void spawnEntity(EntitySpawnS2CPacket packet, ClientWorld world, @Nullable Consumer<Entity> transformer) {
+        if (world == null) throw new IllegalStateException("World must not be null");
+
         double x = packet.getX();
         double y = packet.getY();
         double z = packet.getZ();
