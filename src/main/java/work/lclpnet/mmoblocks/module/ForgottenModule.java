@@ -4,7 +4,7 @@ import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmoblocks.item.ForgottenHatItem;
 import work.lclpnet.mmoblocks.item.MMOItemRegistrar;
 
-public class ForgottenModule implements IModule, IClientModule {
+public class ForgottenModule implements IModule {
 
     @Override
     public void register() {

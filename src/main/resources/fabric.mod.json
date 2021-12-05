@@ -6,15 +6,15 @@
   "name": "MMO Blocks",
   "description": "Adds additional blocks to LCLPMMO.",
   "authors": [
-    "MisoMC",
+    "DerBerliner",
     "LCLP"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/LCLPYT/MMOBlocks",
+    "sources": "https://github.com/LCLPYT/MMOBlocks"
   },
 
-  "license": "CC0-1.0",
+  "license": "CC BY-NC-SA 3.0 DE",
   "icon": "assets/mmoblocks/icon.png",
 
   "environment": "*",
