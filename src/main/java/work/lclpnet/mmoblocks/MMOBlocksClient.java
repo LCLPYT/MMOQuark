@@ -20,7 +20,8 @@ public class MMOBlocksClient implements ClientModInitializer {
             new PickarangModule(),
             new CrabsModule(),
             new PipesModule(),
-            new ItemFramesModule()
+            new ItemFramesModule(),
+            new ForgottenModule()
     );
 
     @Override

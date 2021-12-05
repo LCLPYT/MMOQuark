@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.EntityRenderDispatcherAccessor",
+    "client.MixinArmorFeatureRenderer",
     "client.MixinBlockColors",
     "client.MixinBuiltinModelItemRenderer",
     "client.MixinClientPlayNetworkHandler",

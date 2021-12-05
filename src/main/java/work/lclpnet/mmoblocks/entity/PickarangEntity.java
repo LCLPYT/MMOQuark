@@ -201,7 +201,6 @@ public class PickarangEntity extends ProjectileEntity {
                         owner.getAttributes().addTemporaryModifiers(modifiers);
 
                         LivingEntityAccessor accessor = (LivingEntityAccessor) owner;
-                        int ticksSinceLastSwing = accessor.getLastAttackedTicks();
                         accessor.setLastAttackedTicks((int) (1.0 / owner.getAttributeValue(EntityAttributes.GENERIC_ATTACK_SPEED) * 20.0) + 1);
 
                         float prevHealth = hit instanceof LivingEntity ? ((LivingEntity) hit).getHealth() : 0;

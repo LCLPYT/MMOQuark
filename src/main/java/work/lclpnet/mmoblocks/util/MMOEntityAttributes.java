@@ -10,5 +10,4 @@ public class MMOEntityAttributes {
     public static <T extends LivingEntity> void registerDefaultAttributes(EntityType<T> entityType, DefaultAttributeContainer.Builder builder) {
         DefaultAttributeRegistryAccessor.getRegistry().put(entityType, builder.build());
     }
-
 }
