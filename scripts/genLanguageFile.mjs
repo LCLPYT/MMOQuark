@@ -12,17 +12,14 @@ function normPath(absPath) {
     return rel.split(path.sep).filter(x => x.length > 0).join(path.sep);
 }
 
-if (process.argv.length < 5) {
-    console.error(`Usage: ${normPath(process.argv0)} ${normPath(process.argv[1])} <sourceFile> <providerFile> <targetFile>`);
-    process.exit(1);
-}
+async function processFiles(sourceFile, providerFile, targetFile, search = null, repl = null) {
+    let refContent = await fs.promises.readFile(providerFile, 'utf8');
+    if (search && repl) {
+        const regex = new RegExp(search, 'g');
+        refContent = refContent.replace(regex, repl);
+    }
 
-(async () => {
-    const [sourceFile, providerFile, targetFile] = process.argv.slice(2, 5).map(x => path.resolve(x));
-
-    console.log(`Generating '${normPath(targetFile)}' from '${normPath(providerFile)}' according to '${normPath(sourceFile)}'...`)
-
-    const refMap = JSON.parse(await fs.promises.readFile(providerFile));
+    const refMap = JSON.parse(refContent);
     const output = fs.createWriteStream(targetFile, 'utf8');
 
     // to keep formatting in the files, iterate lines
@@ -50,9 +47,23 @@ if (process.argv.length < 5) {
 
             output.write(`${preSpace}"${key}":${midSpace}"${rel.replace(/"/g, '\\"')}"${suffix}\n`);
         } else {
-            console.warn(`No mapping found for "${key}"`);
+            // console.warn(`No mapping found for "${key}"`);
         }
     }
+}
 
-    console.log('Done.')
-})();
+// Start
+if (process.argv.length < 5) {
+    console.error(`Usage: ${normPath(process.argv0)} ${normPath(process.argv[1])} <sourceFile> <providerFile> <targetFile> [search regex] [replace]`);
+    process.exit(1);
+}
+
+const argv = process.argv.slice(2);
+const [sourceFile, providerFile, targetFile] = argv.slice(0, 3).map(x => path.resolve(x));
+const find = argv.length >= 4 ? argv[3] : null;
+const repl = argv.length >= 5 ? argv[4] : null;
+
+console.log(`Generating '${normPath(targetFile)}' from '${normPath(providerFile)}' according to '${normPath(sourceFile)}'...`)
+processFiles(sourceFile, providerFile, targetFile, find, repl)
+    .then(() => console.log('Done.'))
+    .catch(err => console.error('Error while generating language file:', err));
