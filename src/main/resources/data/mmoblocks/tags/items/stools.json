@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mmoblocks:black_stool",
+	"mmoblocks:blue_stool",
+	"mmoblocks:brown_stool",
+	"mmoblocks:cyan_stool",
+	"mmoblocks:gray_stool",
+	"mmoblocks:green_stool",
+	"mmoblocks:light_blue_stool",
+	"mmoblocks:light_gray_stool",
+	"mmoblocks:lime_stool",
+	"mmoblocks:magenta_stool",
+	"mmoblocks:orange_stool",
+	"mmoblocks:pink_stool",
+	"mmoblocks:purple_stool",
+	"mmoblocks:red_stool",
+	"mmoblocks:white_stool",
+	"mmoblocks:yellow_stool"
+  ]
+}

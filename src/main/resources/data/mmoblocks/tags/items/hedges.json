@@ -5,6 +5,12 @@
     "mmoblocks:spruce_hedge",
     "mmoblocks:jungle_hedge",
     "mmoblocks:acacia_hedge",
-    "mmoblocks:dark_oak_hedge"
+    "mmoblocks:dark_oak_hedge",
+    "mmoblocks:blue_blossom_hedge",
+    "mmoblocks:lavender_blossom_hedge",
+    "mmoblocks:orange_blossom_hedge",
+    "mmoblocks:pink_blossom_hedge",
+    "mmoblocks:yellow_blossom_hedge",
+    "mmoblocks:red_blossom_hedge"
   ]
 }
