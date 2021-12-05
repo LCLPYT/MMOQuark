@@ -8,14 +8,14 @@ import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 
 public class GlowshroomModule implements IModule {
 
-    public static Block glowcelium, glowshroom_block, glowshroom_stem;
+    public static Block glowcelium, glowshroom, glowshroom_block, glowshroom_stem;
 
     @Override
     public void register() {
         new MMOBlockRegistrar(glowcelium = new GlowceliumBlock())
                 .register("glowcelium");
 
-        new MMOBlockRegistrar(new GlowshroomPlantBlock())
+        new MMOBlockRegistrar(glowshroom = new GlowshroomPlantBlock())
                 .register("glowshroom");
 
         new MMOBlockRegistrar(glowshroom_block = new GlowshroomBlock())
@@ -23,5 +23,7 @@ public class GlowshroomModule implements IModule {
 
         new MMOBlockRegistrar(glowshroom_stem = new GlowshroomBlock())
                 .register("glowshroom_stem");
+
+        MorePottedPlantsModule.addPottedPlant(glowshroom, "glowshroom", s -> s.luminance(b -> 14));
     }
 }

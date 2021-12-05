@@ -13,6 +13,7 @@ public class CobblestoneBricksModule implements IModule {
         addBricks("cobblestone_bricks", Blocks.MOSSY_COBBLESTONE);
         addBricks("mossy_cobblestone_bricks", Blocks.MOSSY_COBBLESTONE);
 
+        addBricks("blackstone_bricks", Blocks.BLACKSTONE);
         addBricks("dirt_bricks", Blocks.DIRT);
         addBricks("netherrack_bricks", Blocks.NETHERRACK);
         addBricks("vanilla_basalt_bricks", Blocks.BASALT);
