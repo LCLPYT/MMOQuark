@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.entity.render.layer;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -13,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import work.lclpnet.mmoblocks.entity.StonelingEntity;
 import work.lclpnet.mmoblocks.entity.render.model.StonelingModel;
 
+@Environment(EnvType.CLIENT)
 public class StonelingItemLayer extends FeatureRenderer<StonelingEntity, StonelingModel> {
 
     public StonelingItemLayer(FeatureRendererContext<StonelingEntity, StonelingModel> context) {

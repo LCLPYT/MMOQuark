@@ -56,6 +56,7 @@ public class ForgottenHatItem extends ArmorItem implements ICustomArmorModel {
         return slot == this.slot ? attributes : super.getAttributeModifiers(slot);
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     @SuppressWarnings("unchecked")
     public <A extends BipedEntityModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlot armorSlot, A _default) {
@@ -64,6 +65,7 @@ public class ForgottenHatItem extends ArmorItem implements ICustomArmorModel {
         return (A) model;
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         return TEXTURE;

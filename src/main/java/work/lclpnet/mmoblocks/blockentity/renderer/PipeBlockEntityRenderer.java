@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.blockentity.renderer;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.TexturedRenderLayers;
@@ -7,7 +9,6 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.BlockRenderManager;
 import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
-import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.BakedModelManager;
 import net.minecraft.client.util.ModelIdentifier;
@@ -17,6 +18,7 @@ import net.minecraft.util.math.Direction;
 import work.lclpnet.mmoblocks.MMOBlocks;
 import work.lclpnet.mmoblocks.blockentity.PipeBlockEntity;
 
+@Environment(EnvType.CLIENT)
 public class PipeBlockEntityRenderer extends BlockEntityRenderer<PipeBlockEntity> {
 
     private static final ModelIdentifier LOCATION_MODEL = new ModelIdentifier(MMOBlocks.identifier("pipe_flare"), "inventory");
@@ -29,7 +31,6 @@ public class PipeBlockEntityRenderer extends BlockEntityRenderer<PipeBlockEntity
     public void render(PipeBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         matrices.push();
         matrices.translate(0.5, 0.5, 0.5);
-        ItemRenderer render = MinecraftClient.getInstance().getItemRenderer();
 
         BlockRenderManager blockRenderManager = MinecraftClient.getInstance().getBlockRenderManager();
         BakedModelManager modelManager = blockRenderManager.getModels().getModelManager();

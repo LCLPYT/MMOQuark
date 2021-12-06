@@ -1,6 +1,8 @@
 package work.lclpnet.mmoblocks.module;
 
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -54,6 +56,7 @@ public class PickarangModule implements IModule, IClientModule {
         return settings;
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public void registerClient() {
         MMOClientEntities.registerNonLiving(pickarangType, (type, world) -> new PickarangEntity(pickarangType, world));

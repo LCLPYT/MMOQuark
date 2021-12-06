@@ -4,6 +4,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
+import work.lclpnet.mmoblocks.asm.mixin.common.SoundEventAccessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class MMOSounds {
 
     public static void init() {
         if (sounds == null) throw new IllegalStateException("Sounds are already initialized");
-        sounds.forEach(sound -> Registry.register(Registry.SOUND_EVENT, sound.getId(), sound));
+        sounds.forEach(sound -> Registry.register(Registry.SOUND_EVENT, ((SoundEventAccessor) sound).getId(), sound));
         sounds = null;
     }
 }

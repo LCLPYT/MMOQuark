@@ -1,6 +1,8 @@
 package work.lclpnet.mmoblocks.entity.render.model;
 
 import com.google.common.collect.ImmutableSet;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
@@ -11,6 +13,7 @@ import work.lclpnet.mmoblocks.entity.CrabEntity;
 
 import java.util.Set;
 
+@Environment(EnvType.CLIENT)
 public class CrabModel extends EntityModel<CrabEntity> {
 
     private float wiggleX = 0;

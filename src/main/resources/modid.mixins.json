@@ -24,6 +24,7 @@
     "common.MixinAxeItem",
     "common.MixinEntityShapeContext",
     "common.MixinLanternBlock",
-    "common.MixinServerWorld"
+    "common.MixinServerWorld",
+    "common.SoundEventAccessor"
   ]
 }

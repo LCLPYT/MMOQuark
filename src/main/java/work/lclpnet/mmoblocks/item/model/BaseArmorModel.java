@@ -1,10 +1,13 @@
 package work.lclpnet.mmoblocks.item.model;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 
+@Environment(EnvType.CLIENT)
 public class BaseArmorModel extends BipedEntityModel<LivingEntity> {
 
     protected final EquipmentSlot slot;

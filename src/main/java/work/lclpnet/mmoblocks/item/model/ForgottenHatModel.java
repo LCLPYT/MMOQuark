@@ -1,8 +1,11 @@
 package work.lclpnet.mmoblocks.item.model;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.entity.EquipmentSlot;
 
+@Environment(EnvType.CLIENT)
 public class ForgottenHatModel extends BaseArmorModel {
 
     public ForgottenHatModel() {

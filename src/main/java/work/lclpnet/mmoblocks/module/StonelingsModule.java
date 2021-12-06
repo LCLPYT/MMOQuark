@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.module;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -37,6 +39,7 @@ public class StonelingsModule implements IModule, IClientModule {
         MMOItemRegistrar.registerSpawnEgg(stonelingType, "stoneling", 0xA1A1A1, 0x505050);
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public void registerClient() {
         EntityRendererRegistry.INSTANCE.register(stonelingType, (manager, context) -> new StonelingRenderer(manager));

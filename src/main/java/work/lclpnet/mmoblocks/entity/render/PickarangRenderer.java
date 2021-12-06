@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.entity.render;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -11,6 +13,7 @@ import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmoblocks.entity.PickarangEntity;
 
+@Environment(EnvType.CLIENT)
 public class PickarangRenderer extends EntityRenderer<PickarangEntity> {
 
     public PickarangRenderer(EntityRenderDispatcher dispatcher) {

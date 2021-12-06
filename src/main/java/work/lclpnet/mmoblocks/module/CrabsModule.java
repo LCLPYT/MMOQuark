@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.module;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.tag.TagRegistry;
@@ -47,8 +49,6 @@ public class CrabsModule implements IModule, IClientModule {
 
         crabSpawnableTag = TagRegistry.block(MMOBlocks.identifier("crab_spawnable"));
 
-
-
         crabType = Registry.register(
                 Registry.ENTITY_TYPE,
                 MMOBlocks.identifier("crab"),
@@ -63,6 +63,7 @@ public class CrabsModule implements IModule, IClientModule {
         MMOItemRegistrar.registerSpawnEgg(crabType, "crab", 0x893c22, 0x916548);
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public void registerClient() {
         EntityRendererRegistry.INSTANCE.register(crabType, (manager, context) -> new CrabRenderer(manager));

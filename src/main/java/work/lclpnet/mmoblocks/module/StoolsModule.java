@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.module;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -53,6 +55,7 @@ public class StoolsModule implements IModule, IClientModule {
         });
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public void registerClient() {
         EntityRendererRegistry.INSTANCE.register(stoolEntity, (manager, context) -> new StoolRenderer(manager));

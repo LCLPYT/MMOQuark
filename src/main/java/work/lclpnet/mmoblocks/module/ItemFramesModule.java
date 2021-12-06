@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.module;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.client.MinecraftClient;
@@ -48,6 +50,7 @@ public class ItemFramesModule implements IModule, IClientModule{
     }
 
     @Override
+    @Environment(EnvType.CLIENT)
     public void registerClient() {
         MMOSpecialModels.addSpecialModel(new ModelIdentifier(MMOBlocks.identifier("glass_frame"), "inventory"));
         EntityRendererRegistry.INSTANCE.register(glassFrameEntity, (manager, context) -> new GlassItemFrameRenderer(manager, MinecraftClient.getInstance().getItemRenderer()));

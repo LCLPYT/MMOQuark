@@ -1,6 +1,8 @@
 package work.lclpnet.mmoblocks.entity.render;
 
 import com.mojang.datafixers.util.Pair;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SignBlock;
 import net.minecraft.block.entity.BannerBlockEntity;
@@ -41,6 +43,7 @@ import work.lclpnet.mmoblocks.entity.GlassItemFrameEntity;
 import java.util.Arrays;
 import java.util.List;
 
+@Environment(EnvType.CLIENT)
 public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity> {
 
     private static final ModelIdentifier LOCATION_MODEL = new ModelIdentifier(MMOBlocks.identifier("glass_frame"), "inventory");

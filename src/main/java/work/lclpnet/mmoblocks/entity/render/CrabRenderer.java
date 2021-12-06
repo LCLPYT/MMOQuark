@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.entity.render;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
@@ -7,6 +9,7 @@ import work.lclpnet.mmoblocks.MMOBlocks;
 import work.lclpnet.mmoblocks.entity.CrabEntity;
 import work.lclpnet.mmoblocks.entity.render.model.CrabModel;
 
+@Environment(EnvType.CLIENT)
 public class CrabRenderer extends MobEntityRenderer<CrabEntity, CrabModel> {
 
     private static final Identifier[] TEXTURES = new Identifier[] {

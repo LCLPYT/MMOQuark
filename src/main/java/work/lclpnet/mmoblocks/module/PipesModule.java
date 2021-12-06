@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.module;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.util.ModelIdentifier;
@@ -26,6 +28,7 @@ public class PipesModule implements IModule, IClientModule {
                 BlockEntityType.Builder.create(PipeBlockEntity::new, pipeBlock).build(null));
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public void registerClient() {
         MMOSpecialModels.addSpecialModel(new ModelIdentifier(MMOBlocks.identifier("pipe_flare"), "inventory"));
