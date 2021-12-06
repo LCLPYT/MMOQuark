@@ -1,22 +1,41 @@
+import java.util.stream.Collectors
+
 plugins {
 	id 'fabric-loom' version '0.6-SNAPSHOT'
 	id 'maven-publish'
+	id 'org.ajoberstar.grgit' version '3.1.1'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+def getVersion() {
+	try {
+		ProcessBuilder builder = new ProcessBuilder("git", "describe", "--tags", "--abbrev=0")
+		println "Executing '" + builder.command().stream().collect(Collectors.joining(" ")) + "' ..."
+		Process process = builder.start()
+		StringBuilder out = new StringBuilder(), err = new StringBuilder()
+		process.consumeProcessOutput(out, err)
+		int exitCode = process.waitFor()
+		if (exitCode != 0) {
+			System.err.println err.toString()
+			throw new IOException("Git error, make sure you have at least one tag")
+		} else println out.toString()
+		println "Git process exited with code " + exitCode
+
+		String version = out.toString().trim().split("\\r?\\n")[0]
+		if (!version.matches('^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[a-z0-9]+)?$')) throw new IllegalStateException("Latest tag '${version}' does not match the required versioning scheme")
+
+		return version
+	} catch (Exception ex) {
+		IllegalStateException wrapper = new IllegalStateException("Could not determine version")
+		wrapper.addSuppressed(ex)
+		throw wrapper
+	}
+}
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = getVersion()
 group = project.maven_group
-
-repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
-}
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -25,7 +44,7 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	implementation 'com.google.code.findbugs:jsr305:3.0.0'
+	implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
 
 loom {
@@ -41,10 +60,6 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	// ensure that the encoding is set to UTF-8, no matter what the system default is
-	// this fixes some edge cases with special characters not displaying correctly
-	// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
-	// If Javadoc is generated, this must be specified in that task too.
 	it.options.encoding = "UTF-8"
 
 	// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too
@@ -57,9 +72,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task if it is present
 	withSourcesJar()
 }
 
@@ -73,7 +86,6 @@ jar {
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
 			artifact(remapJar) {
 				builtBy remapJar
 			}
@@ -83,11 +95,11 @@ publishing {
 		}
 	}
 
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
+
 	}
+}
+
+repositories {
+	mavenCentral()
 }
