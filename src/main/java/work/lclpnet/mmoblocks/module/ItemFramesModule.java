@@ -5,7 +5,10 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.util.ModelIdentifier;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -53,7 +56,13 @@ public class ItemFramesModule implements IModule, IClientModule{
     @Environment(EnvType.CLIENT)
     public void registerClient() {
         MMOSpecialModels.addSpecialModel(new ModelIdentifier(MMOBlocks.identifier("glass_frame"), "inventory"));
-        EntityRendererRegistry.INSTANCE.register(glassFrameEntity, (manager, context) -> new GlassItemFrameRenderer(manager, MinecraftClient.getInstance().getItemRenderer()));
+        // Leave this an anonymous class, as the KnotClassLoader does not strip the generated lambda method
+        EntityRendererRegistry.INSTANCE.register(glassFrameEntity, new EntityRendererRegistry.Factory() {
+            @Override
+            public EntityRenderer<? extends Entity> create(EntityRenderDispatcher manager, EntityRendererRegistry.Context context) {
+                return new GlassItemFrameRenderer(manager, MinecraftClient.getInstance().getItemRenderer());
+            }
+        });
         MMOClientEntities.registerNonLiving(glassFrameEntity, (type, world) -> new GlassItemFrameEntity(glassFrameEntity, world));
     }
 }

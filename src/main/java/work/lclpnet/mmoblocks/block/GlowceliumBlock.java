@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -22,6 +23,7 @@ public class GlowceliumBlock extends MMOBlock {
                 .ticksRandomly()
                 .strength(0.5F, 0.5F)
                 .luminance(b -> 7)
+                .sounds(BlockSoundGroup.GRASS)
                 .breakByTool(FabricToolTags.SHOVELS));
     }
 

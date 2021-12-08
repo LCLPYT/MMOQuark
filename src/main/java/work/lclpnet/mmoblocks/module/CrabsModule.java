@@ -6,6 +6,9 @@ import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -66,6 +69,12 @@ public class CrabsModule implements IModule, IClientModule {
     @Environment(EnvType.CLIENT)
     @Override
     public void registerClient() {
-        EntityRendererRegistry.INSTANCE.register(crabType, (manager, context) -> new CrabRenderer(manager));
+        // Leave this an anonymous class, as the KnotClassLoader does not strip the generated lambda method
+        EntityRendererRegistry.INSTANCE.register(crabType, new EntityRendererRegistry.Factory() {
+            @Override
+            public EntityRenderer<? extends Entity> create(EntityRenderDispatcher manager, EntityRendererRegistry.Context context) {
+                return new CrabRenderer(manager);
+            }
+        });
     }
 }

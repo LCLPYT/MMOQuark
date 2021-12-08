@@ -6,6 +6,9 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -60,7 +63,13 @@ public class PickarangModule implements IModule, IClientModule {
     @Override
     public void registerClient() {
         MMOClientEntities.registerNonLiving(pickarangType, (type, world) -> new PickarangEntity(pickarangType, world));
-        EntityRendererRegistry.INSTANCE.register(pickarangType, (manager, context) -> new PickarangRenderer(manager));
+        // Leave this an anonymous class, as the KnotClassLoader does not strip the generated lambda method
+        EntityRendererRegistry.INSTANCE.register(pickarangType, new EntityRendererRegistry.Factory() {
+            @Override
+            public EntityRenderer<? extends Entity> create(EntityRenderDispatcher manager, EntityRendererRegistry.Context context) {
+                return new PickarangRenderer(manager);
+            }
+        });
     }
 
     public static void setActivePickarang(PickarangEntity pickarang) {
