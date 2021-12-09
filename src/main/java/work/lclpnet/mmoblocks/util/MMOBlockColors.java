@@ -1,5 +1,7 @@
 package work.lclpnet.mmoblocks.util;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
 import work.lclpnet.mmoblocks.block.ext.IBlockColorProvider;
@@ -8,6 +10,7 @@ import work.lclpnet.mmoblocks.block.ext.IItemColorProvider;
 import java.util.ArrayList;
 import java.util.List;
 
+@Environment(EnvType.CLIENT)
 public class MMOBlockColors {
 
     public static final List<IBlockColorProvider> blockColorProviders = new ArrayList<>();

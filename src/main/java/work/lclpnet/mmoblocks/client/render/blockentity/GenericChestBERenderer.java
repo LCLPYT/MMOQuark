@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.blockentity.renderer;
+package work.lclpnet.mmoblocks.client.render.blockentity;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;

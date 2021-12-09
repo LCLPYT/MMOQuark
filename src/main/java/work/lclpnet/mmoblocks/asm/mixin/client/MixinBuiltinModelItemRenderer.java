@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import work.lclpnet.mmoblocks.item.MMOBlockEntityItem;
+import work.lclpnet.mmoblocks.client.MMOBlockEntityItem;
 
 @Mixin(BuiltinModelItemRenderer.class)
 public class MixinBuiltinModelItemRenderer {

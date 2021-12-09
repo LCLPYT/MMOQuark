@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.entity.render;
+package work.lclpnet.mmoblocks.client.render.entity;
 
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.EnvType;
@@ -89,7 +89,7 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
         if (itemstack.isEmpty()) {
             matrices.push();
             matrices.translate(-0.5D, -0.5D, -0.5D);
-            blockRenderManager.getModelRenderer().render(matrices.peek(), vertexConsumers.getBuffer(TexturedRenderLayers.getEntityCutout()), (BlockState)null, modelManager.getModel(LOCATION_MODEL), 1.0F, 1.0F, 1.0F, light, OverlayTexture.DEFAULT_UV);
+            blockRenderManager.getModelRenderer().render(matrices.peek(), vertexConsumers.getBuffer(TexturedRenderLayers.getEntityCutout()), null, modelManager.getModel(LOCATION_MODEL), 1.0F, 1.0F, 1.0F, light, OverlayTexture.DEFAULT_UV);
             matrices.pop();
         } else {
             renderItemStack(entity, matrices, vertexConsumers, light, itemstack);

@@ -1,11 +1,10 @@
-package work.lclpnet.mmoblocks.item;
+package work.lclpnet.mmoblocks.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.item.BlockItem;
-import work.lclpnet.mmoblocks.util.Env;
 
 import javax.annotation.Nullable;
 import java.util.function.Consumer;

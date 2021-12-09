@@ -3,9 +3,9 @@ package work.lclpnet.mmoblocks.client.module;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import work.lclpnet.mmoblocks.entity.MMOClientEntities;
+import work.lclpnet.mmoblocks.client.MMOClientEntities;
+import work.lclpnet.mmoblocks.client.render.entity.PickarangRenderer;
 import work.lclpnet.mmoblocks.entity.PickarangEntity;
-import work.lclpnet.mmoblocks.entity.render.PickarangRenderer;
 import work.lclpnet.mmoblocks.module.IClientModule;
 import work.lclpnet.mmoblocks.module.PickarangModule;
 

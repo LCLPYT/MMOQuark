@@ -5,7 +5,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
 import net.minecraft.client.util.ModelIdentifier;
 import work.lclpnet.mmoblocks.MMOBlocks;
-import work.lclpnet.mmoblocks.blockentity.renderer.PipeBlockEntityRenderer;
+import work.lclpnet.mmoblocks.client.render.blockentity.PipeBlockEntityRenderer;
 import work.lclpnet.mmoblocks.module.IClientModule;
 import work.lclpnet.mmoblocks.module.PipesModule;
 import work.lclpnet.mmoblocks.util.MMOSpecialModels;

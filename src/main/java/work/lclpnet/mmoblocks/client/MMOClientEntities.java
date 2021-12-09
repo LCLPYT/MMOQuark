@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.entity;
+package work.lclpnet.mmoblocks.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

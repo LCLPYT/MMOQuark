@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.block.Block;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import work.lclpnet.mmoblocks.blockentity.VariantChestBlockEntity;
-import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;
+import work.lclpnet.mmoblocks.client.render.blockentity.VariantChestBlockEntityRenderer;
 import work.lclpnet.mmoblocks.module.IClientModule;
 import work.lclpnet.mmoblocks.module.VariantChestsModule;
 

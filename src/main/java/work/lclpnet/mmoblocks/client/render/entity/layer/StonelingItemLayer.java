@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.entity.render.layer;
+package work.lclpnet.mmoblocks.client.render.entity.layer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,8 +12,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
+import work.lclpnet.mmoblocks.client.render.entity.model.StonelingModel;
 import work.lclpnet.mmoblocks.entity.StonelingEntity;
-import work.lclpnet.mmoblocks.entity.render.model.StonelingModel;
 
 @Environment(EnvType.CLIENT)
 public class StonelingItemLayer extends FeatureRenderer<StonelingEntity, StonelingModel> {

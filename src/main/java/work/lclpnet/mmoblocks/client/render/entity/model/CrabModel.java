@@ -1,4 +1,4 @@
-package work.lclpnet.mmoblocks.entity.render.model;
+package work.lclpnet.mmoblocks.client.render.entity.model;
 
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.EnvType;

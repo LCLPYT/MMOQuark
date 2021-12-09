@@ -15,9 +15,9 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.BlockView;
 import work.lclpnet.mmoblocks.block.ext.IMMOBlock;
 import work.lclpnet.mmoblocks.blockentity.VariantChestBlockEntity;
-import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;
+import work.lclpnet.mmoblocks.client.MMOBlockEntityItem;
 import work.lclpnet.mmoblocks.client.module.VariantChestsClientModule;
-import work.lclpnet.mmoblocks.item.MMOBlockEntityItem;
+import work.lclpnet.mmoblocks.client.render.blockentity.VariantChestBlockEntityRenderer;
 import work.lclpnet.mmoblocks.util.Env;
 
 import java.util.function.Supplier;

@@ -17,18 +17,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import work.lclpnet.mmoblocks.MMOBlocks;
-import work.lclpnet.mmoblocks.item.model.ForgottenHatModel;
+import work.lclpnet.mmoblocks.client.render.item.ICustomArmorModel;
+import work.lclpnet.mmoblocks.client.render.item.model.ForgottenHatModel;
 
 import java.util.UUID;
 
 public class ForgottenHatItem extends ArmorItem implements ICustomArmorModel {
 
+    @Environment(EnvType.CLIENT)
     private static final Identifier TEXTURE = MMOBlocks.identifier("textures/misc/forgotten_hat_worn.png");
-
-    private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
-
     @Environment(EnvType.CLIENT)
     private ForgottenHatModel model;
+
+    private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
 
     public ForgottenHatItem(Settings settings) {
         super(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, settings

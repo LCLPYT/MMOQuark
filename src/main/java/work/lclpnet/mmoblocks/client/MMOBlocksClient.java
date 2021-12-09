@@ -2,6 +2,8 @@ package work.lclpnet.mmoblocks.client;
 
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.TexturedRenderLayers;
 import work.lclpnet.mmoblocks.client.module.*;
@@ -11,6 +13,7 @@ import work.lclpnet.mmoblocks.util.MMORenderLayers;
 
 import java.util.Set;
 
+@Environment(EnvType.CLIENT)
 public class MMOBlocksClient implements ClientModInitializer {
 
     public static final Set<IClientModule> CLIENT_MODULES = ImmutableSet.of(
@@ -20,7 +23,8 @@ public class MMOBlocksClient implements ClientModInitializer {
             new PickarangClientModule(),
             new CrabsClientModule(),
             new PipesClientModule(),
-            new ItemFramesClientModule()
+            new ItemFramesClientModule(),
+            new MorePottedPlantsClientModule()
     );
 
     @Override

@@ -14,9 +14,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BlockView;
-import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;
+import work.lclpnet.mmoblocks.client.MMOBlockEntityItem;
 import work.lclpnet.mmoblocks.client.module.VariantChestsClientModule;
-import work.lclpnet.mmoblocks.item.MMOBlockEntityItem;
+import work.lclpnet.mmoblocks.client.render.blockentity.VariantChestBlockEntityRenderer;
 
 import java.util.function.Supplier;
 
