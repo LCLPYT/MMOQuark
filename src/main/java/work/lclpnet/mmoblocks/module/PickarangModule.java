@@ -1,7 +1,6 @@
 package work.lclpnet.mmoblocks.module;
 
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -33,22 +32,20 @@ public class PickarangModule implements IModule {
                         .build()
         );
 
-        new MMOItemRegistrar(settings -> new PickarangItem(settingsFor(800, false), false))
+        new MMOItemRegistrar(settings -> new PickarangItem(settingsFor(settings, 800, false), false))
                 .register("pickarang", ItemGroup.COMBAT);
 
-        new MMOItemRegistrar(settings -> new PickarangItem(settingsFor(1040, true), true))
+        new MMOItemRegistrar(settings -> new PickarangItem(settingsFor(settings, 1040, true), true))
                 .register("flamerang", ItemGroup.COMBAT);
     }
 
-    private static Item.Settings settingsFor(int durability, boolean netherite) {
-        Item.Settings settings = new FabricItemSettings()
-                .maxCount(1)
-                .group(ItemGroup.TOOLS);
+    private static Item.Settings settingsFor(Item.Settings ref, int durability, boolean netherite) {
+        ref.maxCount(1);
 
-        if (durability > 0) settings.maxDamage(durability);
-        if(netherite) settings.fireproof();
+        if (durability > 0) ref.maxDamage(durability);
+        if (netherite) ref.fireproof();
 
-        return settings;
+        return ref;
     }
 
     public static void setActivePickarang(PickarangEntity pickarang) {
