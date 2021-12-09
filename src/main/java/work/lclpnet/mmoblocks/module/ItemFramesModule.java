@@ -1,14 +1,6 @@
 package work.lclpnet.mmoblocks.module;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.client.util.ModelIdentifier;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -17,13 +9,10 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.MMOBlocks;
 import work.lclpnet.mmoblocks.entity.GlassItemFrameEntity;
-import work.lclpnet.mmoblocks.entity.MMOClientEntities;
-import work.lclpnet.mmoblocks.entity.render.GlassItemFrameRenderer;
 import work.lclpnet.mmoblocks.item.MMOItemFrameItem;
 import work.lclpnet.mmoblocks.item.MMOItemRegistrar;
-import work.lclpnet.mmoblocks.util.MMOSpecialModels;
 
-public class ItemFramesModule implements IModule, IClientModule{
+public class ItemFramesModule implements IModule {
 
     public static EntityType<GlassItemFrameEntity> glassFrameEntity;
 
@@ -50,19 +39,5 @@ public class ItemFramesModule implements IModule, IClientModule{
             e.getDataTracker().set(GlassItemFrameEntity.IS_SHINY, true);
             return e;
         })).register("glowing_glass_item_frame", ItemGroup.DECORATIONS);
-    }
-
-    @Override
-    @Environment(EnvType.CLIENT)
-    public void registerClient() {
-        MMOSpecialModels.addSpecialModel(new ModelIdentifier(MMOBlocks.identifier("glass_frame"), "inventory"));
-        // Leave this an anonymous class, as the KnotClassLoader does not strip the generated lambda method
-        EntityRendererRegistry.INSTANCE.register(glassFrameEntity, new EntityRendererRegistry.Factory() {
-            @Override
-            public EntityRenderer<? extends Entity> create(EntityRenderDispatcher manager, EntityRendererRegistry.Context context) {
-                return new GlassItemFrameRenderer(manager, MinecraftClient.getInstance().getItemRenderer());
-            }
-        });
-        MMOClientEntities.registerNonLiving(glassFrameEntity, (type, world) -> new GlassItemFrameEntity(glassFrameEntity, world));
     }
 }

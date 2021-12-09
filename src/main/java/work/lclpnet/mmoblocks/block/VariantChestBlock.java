@@ -14,23 +14,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.BlockView;
 import work.lclpnet.mmoblocks.block.ext.IMMOBlock;
-import work.lclpnet.mmoblocks.blockentity.MMOItemBlockEntities;
 import work.lclpnet.mmoblocks.blockentity.VariantChestBlockEntity;
 import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;
+import work.lclpnet.mmoblocks.client.module.VariantChestsClientModule;
 import work.lclpnet.mmoblocks.item.MMOBlockEntityItem;
-import work.lclpnet.mmoblocks.module.VariantChestsModule;
 import work.lclpnet.mmoblocks.util.Env;
 
 import java.util.function.Supplier;
 
-public class VariantChestBlock extends ChestBlock implements BlockEntityProvider, VariantChestsModule.IChestTextureProvider, IMMOBlock {
+public class VariantChestBlock extends ChestBlock implements BlockEntityProvider, IMMOBlock {
 
-    protected String path;
-
-    public VariantChestBlock(Settings settings, String type, Supplier<BlockEntityType<? extends ChestBlockEntity>> supplier) {
+    public VariantChestBlock(Settings settings, Supplier<BlockEntityType<? extends ChestBlockEntity>> supplier) {
         super(settings, supplier);
-
-        this.path = type;
     }
 
     @Override
@@ -44,22 +39,12 @@ public class VariantChestBlock extends ChestBlock implements BlockEntityProvider
     }
 
     @Override
-    public String getChestTexturePath() {
-        return String.format("model/chest/%s/", path);
-    }
-
-    @Override
-    public boolean isTrap() {
-        return false;
-    }
-
-    @Override
     public BlockItem provideBlockItem(Item.Settings settings) {
         return Env.isClient() ? getClientBlockItem(settings) : new BlockItem(this, settings);
     }
 
     @Environment(EnvType.CLIENT)
     public BlockItem getClientBlockItem(Item.Settings settings) {
-        return new MMOBlockEntityItem(this, settings, () -> MMOItemBlockEntities.variantChest, x -> VariantChestBlockEntityRenderer.invBlock = x);
+        return new MMOBlockEntityItem(this, settings, () -> VariantChestsClientModule.variantChest, x -> VariantChestBlockEntityRenderer.invBlock = x);
     }
 }

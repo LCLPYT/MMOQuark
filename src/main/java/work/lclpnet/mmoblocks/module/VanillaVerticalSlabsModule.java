@@ -2,10 +2,9 @@ package work.lclpnet.mmoblocks.module;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.VerticalSlabBlock;
+import work.lclpnet.mmoblocks.util.MiscUtil;
 
 public class VanillaVerticalSlabsModule implements IModule {
 
@@ -25,9 +24,8 @@ public class VanillaVerticalSlabsModule implements IModule {
                 Blocks.SMOOTH_STONE_SLAB, Blocks.SPRUCE_SLAB, Blocks.STONE_SLAB, Blocks.STONE_BRICK_SLAB, Blocks.BLACKSTONE_SLAB, Blocks.POLISHED_BLACKSTONE_SLAB,
                 Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.CRIMSON_SLAB, Blocks.WARPED_SLAB
         ).forEach(b -> {
-            Identifier key = Registry.BLOCK.getId(b);
-            String path = key.getPath();
-            if (path.equals("air") && key.getNamespace().equals("minecraft")) return; // default value, if block does not exist in registry
+            String path = MiscUtil.getRegistryPath(b);
+            if (path == null) return;
 
             new MMOBlockRegistrar(new VerticalSlabBlock(b))
                     .register(path.replace("_slab", "_vertical_slab"));

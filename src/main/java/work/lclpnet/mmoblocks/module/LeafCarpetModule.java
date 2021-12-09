@@ -3,10 +3,9 @@ package work.lclpnet.mmoblocks.module;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmoblocks.block.LeafCarpetBlock;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
+import work.lclpnet.mmoblocks.util.MiscUtil;
 
 public class LeafCarpetModule implements IModule {
 
@@ -20,9 +19,8 @@ public class LeafCarpetModule implements IModule {
     }
 
     private void addLeafCarpet(Block baseBlock) {
-        Identifier key = Registry.BLOCK.getId(baseBlock);
-        String fencePath = key.getPath();
-        if (fencePath.equals("air") && key.getNamespace().equals("minecraft")) return; // default value, if block does not exist in registry
+        String fencePath = MiscUtil.getRegistryPath(baseBlock);
+        if (fencePath == null) return;
 
         new MMOBlockRegistrar(new LeafCarpetBlock(baseBlock))
                 .register(fencePath.replaceAll("_leaves", "_leaf_carpet"));

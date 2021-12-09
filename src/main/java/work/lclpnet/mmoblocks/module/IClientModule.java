@@ -5,11 +5,10 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 
+@Environment(EnvType.CLIENT)
 public interface IClientModule {
 
-    @Environment(EnvType.CLIENT)
-    default void registerClient() {}
+    void registerClient();
 
-    @Environment(EnvType.CLIENT)
     default void registerSprites(SpriteAtlasTexture atlasTexture, ClientSpriteRegistryCallback.Registry registry) {}
 }

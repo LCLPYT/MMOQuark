@@ -14,26 +14,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BlockView;
-import work.lclpnet.mmoblocks.blockentity.MMOItemBlockEntities;
 import work.lclpnet.mmoblocks.blockentity.renderer.VariantChestBlockEntityRenderer;
+import work.lclpnet.mmoblocks.client.module.VariantChestsClientModule;
 import work.lclpnet.mmoblocks.item.MMOBlockEntityItem;
 
 import java.util.function.Supplier;
 
 public class VariantTrappedChestBlock extends VariantChestBlock {
 
-    public VariantTrappedChestBlock(Settings settings, String type, Supplier<BlockEntityType<? extends ChestBlockEntity>> supplier) {
-        super(settings, type, supplier);
-    }
-
-    @Override
-    public boolean isTrap() {
-        return true;
+    public VariantTrappedChestBlock(Settings settings, Supplier<BlockEntityType<? extends ChestBlockEntity>> supplier) {
+        super(settings, supplier);
     }
 
     @Environment(EnvType.CLIENT)
     public BlockItem getClientBlockItem(Item.Settings settings) {
-        return new MMOBlockEntityItem(this, settings, () -> MMOItemBlockEntities.variantChest, x -> VariantChestBlockEntityRenderer.invBlock = x);
+        return new MMOBlockEntityItem(this, settings, () -> VariantChestsClientModule.variantChest, x -> VariantChestBlockEntityRenderer.invBlock = x);
     }
 
     @Override

@@ -23,7 +23,7 @@
       "work.lclpnet.mmoblocks.MMOBlocks"
     ],
     "client": [
-      "work.lclpnet.mmoblocks.MMOBlocksClient"
+      "work.lclpnet.mmoblocks.client.MMOBlocksClient"
     ]
   },
   "mixins": [

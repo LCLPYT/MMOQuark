@@ -5,12 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LanternBlock;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.WorldView;
 import work.lclpnet.mmoblocks.block.MMOBlockRegistrar;
 import work.lclpnet.mmoblocks.block.WoodPostBlock;
+import work.lclpnet.mmoblocks.util.MiscUtil;
 
 public class WoodPostsModule implements IModule {
 
@@ -24,9 +23,8 @@ public class WoodPostsModule implements IModule {
     }
 
     private void registerPosts(Block b, boolean nether) {
-        Identifier key = Registry.BLOCK.getId(b);
-        String path = key.getPath();
-        if (path.equals("air") && key.getNamespace().equals("minecraft")) return; // default value, if block does not exist in registry
+        String path = MiscUtil.getRegistryPath(b);
+        if (path == null) return;
 
         String postPath = path.replace("_fence", "_post");
 
