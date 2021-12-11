@@ -114,7 +114,7 @@ publishing {
 
 			pom {
 				name = 'MMOQuark'
-				description = 'A Minecraft modding library for creating modifications with Fabric.'
+				description = 'A lightweight Fabric port of the famous Quark Minecraft modification.'
 			}
 		}
 	}

@@ -4,6 +4,8 @@
 build/
 out/
 classes/
+repo/
+private.properties
 
 # eclipse
 
