@@ -1,7 +1,7 @@
 import java.util.stream.Collectors
 
 plugins {
-	id 'fabric-loom' version '0.6-SNAPSHOT'
+	id 'fabric-loom'
 	id 'maven-publish'
 }
 
