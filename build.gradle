@@ -8,7 +8,8 @@ plugins {
 def getVersion() {
 	try {
 		ProcessBuilder builder = new ProcessBuilder("git", "describe", "--tags", "--abbrev=0")
-		println "Executing '" + builder.command().stream().collect(Collectors.joining(" ")) + "' ..."
+		builder.directory(project.projectDir)
+		println "Executing '" + builder.command().stream().collect(Collectors.joining(" ")) + "' in '" + builder.directory().getAbsolutePath() + "' ..."
 		Process process = builder.start()
 		StringBuilder out = new StringBuilder(), err = new StringBuilder()
 		process.consumeProcessOutput(out, err)
