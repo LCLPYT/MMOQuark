@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_side",
+    "textures": {
+        "edge": "mmoquark:block/red_crystal",
+        "pane": "mmoquark:block/red_crystal"
+    }
+}

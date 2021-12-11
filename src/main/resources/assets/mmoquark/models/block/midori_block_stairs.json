@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "mmoquark:block/midori_block",
+        "top": "mmoquark:block/midori_block",
+        "side": "mmoquark:block/midori_block"
+    }
+}

@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "block/jungle_planks",
-        "side": "mmoblocks:block/jungle_bookshelf"
-    }
-}

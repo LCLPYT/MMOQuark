@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "big=true": { "model": "mmoquark:block/pink_big_stool" },
+        "big=false": { "model": "mmoquark:block/pink_stool" }
+    }
+}

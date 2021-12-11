@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "mmoblocks:block/limestone",
-        "top": "mmoblocks:block/limestone",
-        "side": "mmoblocks:block/limestone"
-    }
-}

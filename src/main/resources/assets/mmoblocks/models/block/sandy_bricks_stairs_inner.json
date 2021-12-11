@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/sandy_bricks",
-        "top": "mmoblocks:block/sandy_bricks",
-        "side": "mmoblocks:block/sandy_bricks"
-    }
-}

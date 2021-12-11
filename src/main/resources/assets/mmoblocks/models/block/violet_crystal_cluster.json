@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "mmoblocks:block/violet_crystal_cluster"
-  }
-}

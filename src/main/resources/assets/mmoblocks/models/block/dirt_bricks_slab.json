@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "mmoblocks:block/dirt_bricks",
-        "top": "mmoblocks:block/dirt_bricks",
-        "side": "mmoblocks:block/dirt_bricks"
-    }
-}

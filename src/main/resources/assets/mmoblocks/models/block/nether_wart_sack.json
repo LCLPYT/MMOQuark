@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "top": "mmoblocks:block/nether_wart_sack_top",
-        "bottom": "mmoblocks:block/nether_wart_sack_bottom",
-        "side": "mmoblocks:block/nether_wart_sack"
-    }
-}

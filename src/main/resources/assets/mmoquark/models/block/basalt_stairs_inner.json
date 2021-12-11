@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mmoquark:block/basalt",
+        "top": "mmoquark:block/basalt",
+        "side": "mmoquark:block/basalt"
+    }
+}

@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"": [
+			{ "model": "mmoquark:block/chorus_weed0" },
+			{ "model": "mmoquark:block/chorus_weed1" },
+			{ "model": "mmoquark:block/chorus_weed2" }
+		]
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoquark:dark_prismarine_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dark_prismarine_slab",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoquark:block/diorite_pillar_top",
+        "side": "mmoquark:block/diorite_pillar"
+    }
+}

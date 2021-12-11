@@ -1,8 +1,0 @@
-{
-    "parent": "mmoblocks:block/slab_tinted",
-    "textures": {
-        "bottom": "mmoblocks:block/polished_myalite",
-        "top": "mmoblocks:block/polished_myalite",
-        "side": "mmoblocks:block/polished_myalite"
-    }
-}

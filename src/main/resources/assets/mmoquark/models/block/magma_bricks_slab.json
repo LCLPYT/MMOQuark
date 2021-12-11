@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoquark:block/magma_bricks",
+        "top": "mmoquark:block/magma_bricks",
+        "side": "mmoquark:block/magma_bricks"
+    }
+}

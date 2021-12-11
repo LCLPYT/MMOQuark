@@ -1,6 +1,0 @@
-{
-    "parent": "block/template_wall_side",
-    "textures": {
-        "wall": "mmoblocks:block/soul_sandstone_bricks"
-    }
-}

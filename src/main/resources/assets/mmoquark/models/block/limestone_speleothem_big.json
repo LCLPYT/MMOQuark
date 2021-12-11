@@ -1,0 +1,6 @@
+{
+  "parent": "mmoquark:block/speleothem_big",
+  "textures": {
+    "block": "mmoquark:block/limestone"
+  }
+}

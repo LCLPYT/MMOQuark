@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/soul_sandstone_bottom",
-        "top": "mmoblocks:block/soul_sandstone_top",
-        "side": "mmoblocks:block/soul_sandstone"
-    }
-}

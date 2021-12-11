@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/diorite_bricks_slab" },
-        "type=top": { "model": "mmoblocks:block/diorite_bricks_slab_top" },
-        "type=double": { "model": "mmoblocks:block/diorite_bricks" }
-    }
-}

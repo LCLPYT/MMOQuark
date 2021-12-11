@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoblocks:block/biotite_pillar" },
-        "axis=z":   { "model": "mmoblocks:block/biotite_pillar", "x": 90 },
-        "axis=x":   { "model": "mmoblocks:block/biotite_pillar", "x": 90, "y": 90 }
-    }
-}

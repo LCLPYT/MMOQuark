@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "#W#",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:warped_planks"
+    }
+  },
+  "result": {
+    "item": "mmoquark:warped_ladder",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "type": "mmoquark:flag",
+      "flag": "variant_ladders"
+    }
+  ]
+}

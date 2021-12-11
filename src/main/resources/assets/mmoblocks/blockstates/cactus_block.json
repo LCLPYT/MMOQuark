@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoblocks:block/cactus_block" },
-        "axis=z":   { "model": "mmoblocks:block/cactus_block", "x": 90 },
-        "axis=x":   { "model": "mmoblocks:block/cactus_block", "x": 90, "y": 90 }
-    }
-}

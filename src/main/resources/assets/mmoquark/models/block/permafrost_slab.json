@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoquark:block/permafrost",
+        "top": "mmoquark:block/permafrost",
+        "side": "mmoquark:block/permafrost"
+    }
+}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/red_sandstone_bricks",
-        "top": "mmoblocks:block/red_sandstone_bricks",
-        "side": "mmoblocks:block/red_sandstone_bricks"
-    }
-}

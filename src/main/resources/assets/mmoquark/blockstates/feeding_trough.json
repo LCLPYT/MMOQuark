@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"full=false": { "model": "mmoquark:block/trough_empty" },
+		"full=true": { "model": "mmoquark:block/trough_full" }
+	}
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "mmoquark:block/chorus_weed1"
+    }
+}

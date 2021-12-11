@@ -1,0 +1,6 @@
+{
+  "parent": "mmoquark:block/stool",
+  "textures": {
+    "main": "mmoquark:block/lime_stool"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mmoquark:block/big_stool",
+  "textures": {
+    "main": "mmoquark:block/yellow_stool"
+  }
+}

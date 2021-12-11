@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_post",
+    "textures": {
+        "edge": "mmoquark:block/orange_crystal",
+        "pane": "mmoquark:block/orange_crystal"
+    }
+}

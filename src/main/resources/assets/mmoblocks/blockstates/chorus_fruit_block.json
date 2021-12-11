@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoblocks:block/chorus_fruit_block" },
-        "axis=z":   { "model": "mmoblocks:block/chorus_fruit_block", "x": 90 },
-        "axis=x":   { "model": "mmoblocks:block/chorus_fruit_block", "x": 90, "y": 90 }
-    }
-}

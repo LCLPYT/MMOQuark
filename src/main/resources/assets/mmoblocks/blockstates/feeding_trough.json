@@ -1,6 +1,0 @@
-{
-	"variants": {
-		"full=false": { "model": "mmoblocks:block/trough_empty" },
-		"full=true": { "model": "mmoblocks:block/trough_full" }
-	}
-}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoquark:weeping_blackstone_bricks_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "mmoquark:weeping_blackstone_bricks_slab",
+    "count": 1
+  }
+}

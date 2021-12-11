@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "mmoblocks:block/biotite_pillar_top",
-        "side": "mmoblocks:block/biotite_pillar"
-    }
-}

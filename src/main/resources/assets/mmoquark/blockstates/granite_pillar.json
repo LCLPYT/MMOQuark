@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mmoquark:block/granite_pillar" },
+        "axis=z":   { "model": "mmoquark:block/granite_pillar", "x": 90 },
+        "axis=x":   { "model": "mmoquark:block/granite_pillar", "x": 90, "y": 90 }
+    }
+}

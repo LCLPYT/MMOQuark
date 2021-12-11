@@ -1,8 +1,0 @@
-{
-    "parent": "mmoblocks:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoblocks:block/dark_elder_prismarine",
-        "top": "mmoblocks:block/dark_elder_prismarine",
-        "side": "mmoblocks:block/dark_elder_prismarine"
-    }
-}

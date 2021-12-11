@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "mmoquark:block/polished_slate_slab" },
+        "type=top": { "model": "mmoquark:block/polished_slate_slab_top" },
+        "type=double": { "model": "mmoquark:block/polished_slate" }
+    }
+}

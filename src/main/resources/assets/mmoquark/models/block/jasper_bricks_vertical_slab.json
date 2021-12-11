@@ -1,0 +1,8 @@
+{
+    "parent": "mmoquark:block/vertical_slab",
+    "textures": {
+        "bottom": "mmoquark:block/jasper_bricks",
+        "top": "mmoquark:block/jasper_bricks",
+        "side": "mmoquark:block/jasper_bricks"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mmoquark:block/hedge_extend",
+  "textures": {
+    "leaf": "minecraft:block/acacia_leaves"
+  }
+}

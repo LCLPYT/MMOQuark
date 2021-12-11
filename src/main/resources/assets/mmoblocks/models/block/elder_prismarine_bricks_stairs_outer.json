@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/elder_prismarine_bricks",
-        "top": "mmoblocks:block/elder_prismarine_bricks",
-        "side": "mmoblocks:block/elder_prismarine_bricks"
-    }
-}

@@ -1,0 +1,8 @@
+{
+    "parent": "mmoquark:block/slab_top_tinted",
+    "textures": {
+        "bottom": "mmoquark:block/polished_myalite",
+        "top": "mmoquark:block/polished_myalite",
+        "side": "mmoquark:block/polished_myalite"
+    }
+}

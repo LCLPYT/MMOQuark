@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/smooth_biotite_slab" },
-        "type=top": { "model": "mmoblocks:block/smooth_biotite_slab_top" },
-        "type=double": { "model": "mmoblocks:block/smooth_biotite" }
-    }
-}

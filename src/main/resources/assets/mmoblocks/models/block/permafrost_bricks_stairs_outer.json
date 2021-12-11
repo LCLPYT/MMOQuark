@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/permafrost_bricks",
-        "top": "mmoblocks:block/permafrost_bricks",
-        "side": "mmoblocks:block/permafrost_bricks"
-    }
-}

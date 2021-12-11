@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mmoquark:block/limestone_pillar" },
+        "axis=z":   { "model": "mmoquark:block/limestone_pillar", "x": 90 },
+        "axis=x":   { "model": "mmoquark:block/limestone_pillar", "x": 90, "y": 90 }
+    }
+}

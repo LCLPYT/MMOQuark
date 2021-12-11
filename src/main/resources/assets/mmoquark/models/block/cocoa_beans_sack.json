@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "mmoquark:block/cocoa_beans_sack_top",
+        "bottom": "mmoquark:block/cocoa_beans_sack_bottom",
+        "side": "mmoquark:block/cocoa_beans_sack"
+    }
+}

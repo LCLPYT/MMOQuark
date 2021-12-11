@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "mmoquark:oak_chest",
+    "mmoquark:spruce_chest",
+    "mmoquark:birch_chest",
+    "mmoquark:jungle_chest",
+    "mmoquark:acacia_chest",
+    "mmoquark:dark_oak_chest",
+    "mmoquark:warped_chest",
+    "mmoquark:crimson_chest",
+    "mmoquark:oak_trapped_chest",
+    "mmoquark:spruce_trapped_chest",
+    "mmoquark:birch_trapped_chest",
+    "mmoquark:jungle_trapped_chest",
+    "mmoquark:acacia_trapped_chest",
+    "mmoquark:dark_oak_trapped_chest",
+    "mmoquark:warped_trapped_chest",
+    "mmoquark:crimson_trapped_chest",
+    "mmoquark:nether_brick_chest",
+    "mmoquark:purpur_chest",
+    "mmoquark:prismarine_chest",
+    "mmoquark:mushroom_chest"
+  ]
+}

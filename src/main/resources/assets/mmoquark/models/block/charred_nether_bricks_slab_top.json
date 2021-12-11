@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "mmoquark:block/charred_nether_bricks",
+        "top": "mmoquark:block/charred_nether_bricks",
+        "side": "mmoquark:block/charred_nether_bricks"
+    }
+}

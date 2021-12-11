@@ -1,6 +1,0 @@
-{
-  "parent": "mmoblocks:block/speleothem_big",
-  "textures": {
-    "block": "mmoblocks:block/limestone"
-  }
-}

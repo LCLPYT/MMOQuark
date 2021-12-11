@@ -1,7 +1,0 @@
-{
-  "parent": "mmoblocks:block/hedge_post",
-  "textures": {
-    "log": "minecraft:block/acacia_log",
-    "leaf": "minecraft:block/acacia_leaves"
-  }
-}

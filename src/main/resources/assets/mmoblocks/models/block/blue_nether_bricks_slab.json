@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "mmoblocks:block/blue_nether_bricks",
-        "top": "mmoblocks:block/blue_nether_bricks",
-        "side": "mmoblocks:block/blue_nether_bricks"
-    }
-}

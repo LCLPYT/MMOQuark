@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/biotite_block_slab" },
-        "type=top": { "model": "mmoblocks:block/biotite_block_slab_top" },
-        "type=double": { "model": "mmoblocks:block/biotite_block" }
-    }
-}

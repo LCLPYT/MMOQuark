@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"watched=false": { "model": "mmoquark:block/ender_watcher" },
+		"watched=true": { "model": "mmoquark:block/ender_watcher_on" }
+	}
+}

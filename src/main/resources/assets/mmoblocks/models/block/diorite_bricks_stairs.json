@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/diorite_bricks",
-        "top": "mmoblocks:block/diorite_bricks",
-        "side": "mmoblocks:block/diorite_bricks"
-    }
-}

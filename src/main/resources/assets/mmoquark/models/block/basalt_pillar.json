@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mmoquark:block/basalt_pillar_top",
+        "side": "mmoquark:block/basalt_pillar"
+    }
+}

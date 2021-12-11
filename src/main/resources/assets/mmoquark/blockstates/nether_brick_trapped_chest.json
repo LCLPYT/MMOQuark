@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "mmoquark:block/nether_brick_chest" }
+    }
+}

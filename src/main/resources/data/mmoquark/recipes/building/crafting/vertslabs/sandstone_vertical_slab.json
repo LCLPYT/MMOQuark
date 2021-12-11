@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sandstone_slab"
+    }
+  },
+  "result": {
+    "item": "mmoquark:sandstone_vertical_slab",
+    "count": 3
+  }
+}

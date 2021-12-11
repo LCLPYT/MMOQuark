@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "mmoquark:block/red_crystal_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "mmoquark:block/red_crystal_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mmoquark:block/red_crystal_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "mmoquark:block/red_crystal_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "mmoquark:block/red_crystal_cluster"
+    },
+    "facing=west": {
+      "model": "mmoquark:block/red_crystal_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

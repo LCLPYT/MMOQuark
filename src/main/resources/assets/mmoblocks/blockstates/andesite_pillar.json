@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoblocks:block/andesite_pillar" },
-        "axis=z":   { "model": "mmoblocks:block/andesite_pillar", "x": 90 },
-        "axis=x":   { "model": "mmoblocks:block/andesite_pillar", "x": 90, "y": 90 }
-    }
-}

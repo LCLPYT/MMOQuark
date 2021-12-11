@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "mmoblocks:block/twisted_blackstone_bricks",
-        "top": "mmoblocks:block/twisted_blackstone_bricks",
-        "side": "mmoblocks:block/twisted_blackstone_bricks"
-    }
-}

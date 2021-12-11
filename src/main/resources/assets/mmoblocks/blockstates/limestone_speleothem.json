@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "size=small": { "model": "mmoblocks:block/limestone_speleothem_small" },
-        "size=medium": { "model": "mmoblocks:block/limestone_speleothem_medium" },
-        "size=big": { "model": "mmoblocks:block/limestone_speleothem_big" }
-    }
-}

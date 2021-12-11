@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "mmoquark:framed_glass"
+    },
+    {
+      "item": "minecraft:light_blue_dye"
+    }
+  ],
+  "result": {
+    "item": "mmoquark:light_blue_framed_glass",
+    "count": 8
+  }
+}

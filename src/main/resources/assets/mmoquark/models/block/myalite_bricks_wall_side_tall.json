@@ -1,0 +1,6 @@
+{
+    "parent": "mmoquark:block/wall_side_tall_tinted",
+    "textures": {
+        "wall": "mmoquark:block/myalite_bricks"
+    }
+}

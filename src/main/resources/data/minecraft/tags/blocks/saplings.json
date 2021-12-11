@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "mmoblocks:blue_blossom_sapling",
-    "mmoblocks:lavender_blossom_sapling",
-    "mmoblocks:orange_blossom_sapling",
-    "mmoblocks:pink_blossom_sapling",
-    "mmoblocks:yellow_blossom_sapling",
-    "mmoblocks:red_blossom_sapling"
+    "mmoquark:blue_blossom_sapling",
+    "mmoquark:lavender_blossom_sapling",
+    "mmoquark:orange_blossom_sapling",
+    "mmoquark:pink_blossom_sapling",
+    "mmoquark:yellow_blossom_sapling",
+    "mmoquark:red_blossom_sapling"
   ]
 }

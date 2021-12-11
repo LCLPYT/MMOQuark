@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_planks"
+    },
+    "X": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "mmoquark:spruce_bookshelf",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "mmoquark:flag",
+      "flag": "variant_bookshelves"
+    }
+  ]
+} 

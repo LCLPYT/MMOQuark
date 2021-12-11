@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "nether_brick_chest",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:nether_bricks"
+    }
+  },
+  "result": {
+    "item": "mmoquark:nether_brick_chest",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "mmoquark:flag",
+      "flag": "variant_chests"
+    }
+  ]
+} 

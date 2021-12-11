@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mmoquark:block/marble_bricks",
+        "top": "mmoquark:block/marble_bricks",
+        "side": "mmoquark:block/marble_bricks"
+    }
+}

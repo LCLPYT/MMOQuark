@@ -1,8 +1,0 @@
-{
-    "parent": "mmoblocks:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoblocks:block/soul_sandstone",
-        "top": "mmoblocks:block/soul_sandstone",
-        "side": "mmoblocks:block/soul_sandstone"
-    }
-}

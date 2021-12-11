@@ -1,7 +1,0 @@
-{
-    "parent": "block/template_glass_pane_post",
-    "textures": {
-        "edge": "mmoblocks:block/framed_glass_pane_top",
-        "pane": "mmoblocks:block/white_framed_glass"
-    }
-}

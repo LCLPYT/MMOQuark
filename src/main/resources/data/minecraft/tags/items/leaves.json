@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "mmoblocks:blue_blossom_leaves",
-    "mmoblocks:lavender_blossom_leaves",
-    "mmoblocks:orange_blossom_leaves",
-    "mmoblocks:pink_blossom_leaves",
-    "mmoblocks:yellow_blossom_leaves",
-    "mmoblocks:red_blossom_leaves"
+    "mmoquark:blue_blossom_leaves",
+    "mmoquark:lavender_blossom_leaves",
+    "mmoquark:orange_blossom_leaves",
+    "mmoquark:pink_blossom_leaves",
+    "mmoquark:yellow_blossom_leaves",
+    "mmoquark:red_blossom_leaves"
   ]
 }

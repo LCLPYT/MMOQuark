@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "top": "mmoblocks:block/beetroot_crate_top",
-        "bottom": "mmoblocks:block/beetroot_crate_bottom",
-        "side": "mmoblocks:block/beetroot_crate"
-    }
-}

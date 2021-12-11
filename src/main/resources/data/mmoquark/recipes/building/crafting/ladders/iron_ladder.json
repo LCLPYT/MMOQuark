@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "N N",
+    "NIN",
+    "N N"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "mmoquark:iron_ladder",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "mmoquark:flag",
+      "flag": "iron_ladder"
+    }
+  ]
+}

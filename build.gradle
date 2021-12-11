@@ -47,7 +47,7 @@ dependencies {
 }
 
 loom {
-	accessWidener = file("src/main/resources/mmoblocks.accesswidener")
+	accessWidener = file("src/main/resources/mmoquark.accesswidener")
 }
 
 processResources {

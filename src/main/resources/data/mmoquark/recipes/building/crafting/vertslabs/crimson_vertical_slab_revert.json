@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoquark:crimson_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:crimson_slab",
+    "count": 1
+  }
+}

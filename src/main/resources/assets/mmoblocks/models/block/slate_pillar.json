@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "mmoblocks:block/slate_pillar_top",
-        "side": "mmoblocks:block/slate_pillar"
-    }
-}

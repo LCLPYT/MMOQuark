@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "size=small": { "model": "mmoblocks:block/granite_speleothem_small" },
-        "size=medium": { "model": "mmoblocks:block/granite_speleothem_medium" },
-        "size=big": { "model": "mmoblocks:block/granite_speleothem_big" }
-    }
-}

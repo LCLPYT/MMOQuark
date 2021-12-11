@@ -1,0 +1,8 @@
+{
+    "parent": "mmoquark:block/ladder_but_not_the_vanilla_one_so_resourcepacks_dont_override_it",
+    "textures": {
+        "particle": "mmoquark:block/iron_ladder",
+        "texture": "mmoquark:block/iron_ladder"
+    }
+}
+

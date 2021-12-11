@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mmoquark:block/brimstone",
+        "top": "mmoquark:block/brimstone",
+        "side": "mmoquark:block/brimstone"
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F",
+    "F",
+    "F"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:acacia_wood"
+    }
+  },
+  "result": {
+    "item": "mmoquark:acacia_post",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "type": "mmoquark:flag",
+      "flag": "wooden_posts"
+    }
+  ]
+}

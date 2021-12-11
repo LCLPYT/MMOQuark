@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "mmoblocks",
+  "id": "mmoquark",
   "version": "${version}",
 
   "name": "MMO Blocks",
@@ -15,19 +15,19 @@
   },
 
   "license": "CC BY-NC-SA 3.0 DE",
-  "icon": "assets/mmoblocks/icon.png",
+  "icon": "assets/mmoquark/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "work.lclpnet.mmoblocks.MMOBlocks"
+      "work.lclpnet.mmoquark.MMOQuark"
     ],
     "client": [
-      "work.lclpnet.mmoblocks.client.MMOBlocksClient"
+      "work.lclpnet.mmoquark.client.MMOQuarkClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "mmoquark.mixins.json"
   ],
 
   "depends": {
@@ -36,5 +36,5 @@
     "minecraft": "1.16.x"
   },
   "suggests": {},
-  "accessWidener": "mmoblocks.accesswidener"
+  "accessWidener": "mmoquark.accesswidener"
 }

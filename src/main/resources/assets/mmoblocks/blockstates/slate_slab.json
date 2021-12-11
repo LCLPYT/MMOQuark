@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/slate_slab" },
-        "type=top": { "model": "mmoblocks:block/slate_slab_top" },
-        "type=double": { "model": "mmoblocks:block/slate" }
-    }
-}

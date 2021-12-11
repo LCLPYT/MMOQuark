@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "mmoquark:red_crystal",
+    "mmoquark:orange_crystal",
+    "mmoquark:yellow_crystal",
+    "mmoquark:green_crystal",
+    "mmoquark:blue_crystal",
+    "mmoquark:indigo_crystal",
+    "mmoquark:violet_crystal",
+    "mmoquark:white_crystal",
+    "mmoquark:black_crystal"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mmoquark:block/hedge_extend",
+  "textures": {
+    "leaf": "mmoquark:block/lavender_blossom_leaves"
+  }
+}

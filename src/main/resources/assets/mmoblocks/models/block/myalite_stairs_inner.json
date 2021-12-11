@@ -1,8 +1,0 @@
-{
-    "parent": "mmoblocks:block/inner_stairs_tinted",
-    "textures": {
-        "bottom": "mmoblocks:block/myalite",
-        "top": "mmoblocks:block/myalite",
-        "side": "mmoblocks:block/myalite"
-    }
-}

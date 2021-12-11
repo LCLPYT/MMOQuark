@@ -19,7 +19,7 @@ please refer to this project's LICENSE file.
 
 ## Download and installation
 
-- locate your release on the [downloads page](https://github.com/LCLPYT/MMOBlocks/releases) and download the jar file (e.g. `mmoblocks-1.0.0.jar`).
+- locate your release on the [downloads page](https://github.com/LCLPYT/MMOBlocks/releases) and download the jar file (e.g. `mmoquark-1.0.0.jar`).
 - install [Fabric](https://fabricmc.net/)
 - this project requires [FabricAPI](https://www.curseforge.com/minecraft/mc-mods/fabric-api), so download it as well, if you haven't already
 - put MMOBlocks and FabricAPI inside your `/mods` directory

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mmoquark:black_candle",
+	"mmoquark:blue_candle",
+	"mmoquark:brown_candle",
+	"mmoquark:cyan_candle",
+	"mmoquark:gray_candle",
+	"mmoquark:green_candle",
+	"mmoquark:light_blue_candle",
+	"mmoquark:light_gray_candle",
+	"mmoquark:lime_candle",
+	"mmoquark:magenta_candle",
+	"mmoquark:orange_candle",
+	"mmoquark:pink_candle",
+	"mmoquark:purple_candle",
+	"mmoquark:red_candle",
+	"mmoquark:white_candle",
+	"mmoquark:yellow_candle"
+  ]
+}

@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/blue_nether_bricks_slab" },
-        "type=top": { "model": "mmoblocks:block/blue_nether_bricks_slab_top" },
-        "type=double": { "model": "mmoblocks:block/blue_nether_bricks" }
-    }
-}

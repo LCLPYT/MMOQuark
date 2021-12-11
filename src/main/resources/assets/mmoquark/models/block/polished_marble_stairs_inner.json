@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mmoquark:block/polished_marble",
+        "top": "mmoquark:block/polished_marble",
+        "side": "mmoquark:block/polished_marble"
+    }
+}

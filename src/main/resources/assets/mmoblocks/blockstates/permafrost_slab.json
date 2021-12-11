@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/permafrost_slab" },
-        "type=top": { "model": "mmoblocks:block/permafrost_slab_top" },
-        "type=double": { "model": "mmoblocks:block/permafrost" }
-    }
-}

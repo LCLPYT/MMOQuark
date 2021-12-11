@@ -1,8 +1,0 @@
-{
-    "parent": "mmoblocks:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoblocks:block/marble_bricks",
-        "top": "mmoblocks:block/marble_bricks",
-        "side": "mmoblocks:block/marble_bricks"
-    }
-}

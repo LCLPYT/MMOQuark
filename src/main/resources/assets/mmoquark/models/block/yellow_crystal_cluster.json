@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mmoquark:block/yellow_crystal_cluster"
+  }
+}

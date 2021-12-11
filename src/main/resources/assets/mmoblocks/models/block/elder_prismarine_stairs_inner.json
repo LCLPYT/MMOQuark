@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/elder_prismarine",
-        "top": "mmoblocks:block/elder_prismarine",
-        "side": "mmoblocks:block/elder_prismarine"
-    }
-}

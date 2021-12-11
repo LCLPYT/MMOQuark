@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/mossy_cobblestone_bricks",
-        "top": "mmoblocks:block/mossy_cobblestone_bricks",
-        "side": "mmoblocks:block/mossy_cobblestone_bricks"
-    }
-}

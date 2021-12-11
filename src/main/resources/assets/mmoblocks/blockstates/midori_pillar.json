@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoblocks:block/midori_pillar" },
-        "axis=z":   { "model": "mmoblocks:block/midori_pillar", "x": 90 },
-        "axis=x":   { "model": "mmoblocks:block/midori_pillar", "x": 90, "y": 90 }
-    }
-}

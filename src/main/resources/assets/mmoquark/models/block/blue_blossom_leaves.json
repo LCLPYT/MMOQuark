@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "mmoquark:block/blue_blossom_leaves"
+    }
+}

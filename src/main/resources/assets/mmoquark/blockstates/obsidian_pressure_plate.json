@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "powered=false": { "model": "mmoquark:block/obsidian_pressure_plate" },
+    "powered=true": { "model": "mmoquark:block/obsidian_pressure_plate_down" }
+  }
+}

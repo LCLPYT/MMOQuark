@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "mmoquark:block/andesite_speleothem_small" },
+        "size=medium": { "model": "mmoquark:block/andesite_speleothem_medium" },
+        "size=big": { "model": "mmoquark:block/andesite_speleothem_big" }
+    }
+}

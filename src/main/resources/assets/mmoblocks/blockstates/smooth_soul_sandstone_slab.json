@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoblocks:block/smooth_soul_sandstone_slab" },
-        "type=top": { "model": "mmoblocks:block/smooth_soul_sandstone_slab_top" },
-        "type=double": { "model": "mmoblocks:block/smooth_soul_sandstone" }
-    }
-}

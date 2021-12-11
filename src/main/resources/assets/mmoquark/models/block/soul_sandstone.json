@@ -1,0 +1,9 @@
+{
+	"parent": "block/cube_bottom_top",
+	"textures": {
+		"bottom": "mmoquark:block/soul_sandstone_bottom",
+        "top": "mmoquark:block/soul_sandstone_top",
+        "side": "mmoquark:block/soul_sandstone"
+	}
+}
+

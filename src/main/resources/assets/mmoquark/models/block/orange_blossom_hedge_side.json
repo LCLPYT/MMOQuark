@@ -1,0 +1,6 @@
+{
+  "parent": "mmoquark:block/hedge_side",
+  "textures": {
+    "leaf": "mmoquark:block/orange_blossom_leaves"
+  }
+}

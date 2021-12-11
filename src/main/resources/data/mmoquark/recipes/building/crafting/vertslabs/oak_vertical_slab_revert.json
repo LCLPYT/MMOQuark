@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mmoquark:oak_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oak_slab",
+    "count": 1
+  }
+}

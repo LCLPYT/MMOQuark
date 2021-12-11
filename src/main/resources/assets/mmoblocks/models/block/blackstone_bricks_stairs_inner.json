@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/blackstone_bricks",
-        "top": "mmoblocks:block/blackstone_bricks",
-        "side": "mmoblocks:block/blackstone_bricks"
-    }
-}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "mmoquark:block/stone_speleothem_small" },
+        "size=medium": { "model": "mmoquark:block/stone_speleothem_medium" },
+        "size=big": { "model": "mmoquark:block/stone_speleothem_big" }
+    }
+}

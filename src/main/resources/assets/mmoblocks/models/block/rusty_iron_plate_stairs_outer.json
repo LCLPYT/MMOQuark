@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "mmoblocks:block/rusty_iron_plate",
-        "top": "mmoblocks:block/rusty_iron_plate",
-        "side": "mmoblocks:block/rusty_iron_plate"
-    }
-}

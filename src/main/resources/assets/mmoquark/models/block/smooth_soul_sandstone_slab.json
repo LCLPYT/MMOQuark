@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoquark:block/soul_sandstone_top",
+        "top": "mmoquark:block/soul_sandstone_top",
+        "side": "mmoquark:block/soul_sandstone_top"
+    }
+}

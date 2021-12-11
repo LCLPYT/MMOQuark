@@ -1,6 +1,0 @@
-{
-	"parent": "mmoblocks:block/cube_all_tinted",
-	"textures": {
-		"all": "mmoblocks:block/myalite_bricks"
-	}
-}

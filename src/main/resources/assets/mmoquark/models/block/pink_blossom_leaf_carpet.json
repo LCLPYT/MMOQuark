@@ -1,0 +1,6 @@
+{   
+    "parent": "mmoquark:block/leaf_carpet",
+    "textures": {
+        "all": "mmoquark:block/pink_blossom_leaves"
+    }
+}

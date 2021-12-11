@@ -1,6 +1,0 @@
-{
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "mmoblocks:block/light_gray_framed_glass"
-	}
-}

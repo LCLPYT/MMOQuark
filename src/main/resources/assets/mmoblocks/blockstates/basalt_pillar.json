@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoblocks:block/basalt_pillar" },
-        "axis=z":   { "model": "mmoblocks:block/basalt_pillar", "x": 90 },
-        "axis=x":   { "model": "mmoblocks:block/basalt_pillar", "x": 90, "y": 90 }
-    }
-}

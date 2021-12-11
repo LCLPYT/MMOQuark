@@ -1,0 +1,22 @@
+{
+  "pools": [
+    {
+      "name": "mmoquark:stoneling",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "mmoquark:diamond_heart",
+          "conditions": [
+            {
+              "condition": "random_chance_with_looting",
+              "chance": 0.2,
+              "looting_multiplier": 0.033
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

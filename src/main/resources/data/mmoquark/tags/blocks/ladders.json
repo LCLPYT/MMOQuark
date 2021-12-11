@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:ladder",
+	"mmoquark:spruce_ladder",
+	"mmoquark:birch_ladder",
+	"mmoquark:jungle_ladder",
+	"mmoquark:acacia_ladder",
+	"mmoquark:dark_oak_ladder",
+	"mmoquark:warped_ladder",
+	"mmoquark:crimson_ladder",
+	"mmoquark:iron_ladder"
+  ]
+}

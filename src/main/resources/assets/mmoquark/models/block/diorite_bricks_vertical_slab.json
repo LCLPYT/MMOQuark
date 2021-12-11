@@ -1,0 +1,8 @@
+{
+    "parent": "mmoquark:block/vertical_slab",
+    "textures": {
+        "bottom": "mmoquark:block/diorite_bricks",
+        "top": "mmoquark:block/diorite_bricks",
+        "side": "mmoquark:block/diorite_bricks"
+    }
+}

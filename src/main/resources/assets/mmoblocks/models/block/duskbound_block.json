@@ -1,6 +1,0 @@
-{
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "mmoblocks:block/duskbound_block"
-	}
-}

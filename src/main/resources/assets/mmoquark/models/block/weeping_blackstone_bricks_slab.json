@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mmoquark:block/weeping_blackstone_bricks",
+        "top": "mmoquark:block/weeping_blackstone_bricks",
+        "side": "mmoquark:block/weeping_blackstone_bricks"
+    }
+}
