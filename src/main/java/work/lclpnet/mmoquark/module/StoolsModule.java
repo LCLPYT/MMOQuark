@@ -13,8 +13,8 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.block.StoolBlock;
 import work.lclpnet.mmoquark.entity.StoolEntity;
 
@@ -26,7 +26,7 @@ public class StoolsModule implements IModule {
     public void register() {
         for (DyeColor dye : DyeColor.values()) {
             new MMOBlockRegistrar(new StoolBlock(dye))
-                    .register(String.format("%s_stool", dye.getName()), ItemGroup.DECORATIONS);
+                    .register(MMOQuark.identifier(String.format("%s_stool", dye.getName())), ItemGroup.DECORATIONS);
         }
 
         stoolEntity = Registry.register(

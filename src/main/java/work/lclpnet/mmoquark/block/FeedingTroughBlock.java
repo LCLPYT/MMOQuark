@@ -24,7 +24,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 import work.lclpnet.mmoquark.blockentity.FeedingTroughBlockEntity;
 
 public class FeedingTroughBlock extends MMOBlock implements BlockEntityProvider {

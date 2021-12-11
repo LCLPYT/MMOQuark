@@ -3,7 +3,8 @@ package work.lclpnet.mmoquark.module;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.SpeleothemBlock;
 
 public class SpeleothemsModule implements IModule {
@@ -25,6 +26,6 @@ public class SpeleothemsModule implements IModule {
 
     private void make(String name, Block parent, boolean nether) {
         new MMOBlockRegistrar(new SpeleothemBlock(parent, nether))
-                .register(String.format("%s_speleothem", name), ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier(String.format("%s_speleothem", name)), ItemGroup.DECORATIONS);
     }
 }

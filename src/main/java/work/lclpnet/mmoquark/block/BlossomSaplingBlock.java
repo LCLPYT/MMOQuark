@@ -18,9 +18,9 @@ import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoquark.block.ext.IMMOBlock;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
+import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 
 import java.util.OptionalInt;
 import java.util.Random;

@@ -11,10 +11,10 @@ import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 import work.lclpnet.mmoquark.block.*;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
 import work.lclpnet.mmoquark.module.*;
-import work.lclpnet.mmoquark.networking.MCNetworking;
 import work.lclpnet.mmoquark.sound.MMOSounds;
 
 import java.util.Set;
@@ -74,16 +74,13 @@ public class MMOQuark implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		MCNetworking.registerPackets();
-		MCNetworking.registerServerPacketHandlers();
+		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
+				.withSlab().withStairs().withVerticalSlab()
+				.register(MMOQuark.identifier("iron_plate"));
 
 		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
 				.withSlab().withStairs().withVerticalSlab()
-				.register("iron_plate");
-
-		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
-				.withSlab().withStairs().withVerticalSlab()
-				.register("rusty_iron_plate");
+				.register(MMOQuark.identifier("rusty_iron_plate"));
 
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY)
 				.requiresTool()
@@ -91,11 +88,11 @@ public class MMOQuark implements ModInitializer {
 				.strength(1.5F, 10F)
 				.sounds(BlockSoundGroup.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
-				.register("cobbedstone");
+				.register(MMOQuark.identifier("cobbedstone"));
 
 		new MMOBlockRegistrar(new TurfBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)))
 				.withSlab().withStairs().withVerticalSlab()
-				.register("turf");
+				.register(MMOQuark.identifier("turf"));
 
 		MMOBlock brimstone = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.RED)
 				.requiresTool()
@@ -105,15 +102,15 @@ public class MMOQuark implements ModInitializer {
 
 		new MMOBlockRegistrar(brimstone)
 				.withStairs().withSlab().withWall().withVerticalSlab()
-				.register("brimstone");
+				.register(MMOQuark.identifier("brimstone"));
 
 		new MMOBlockRegistrar(FabricBlockSettings.copyOf(brimstone))
 				.withStairs().withSlab().withWall().withVerticalSlab()
-				.register("brimstone_bricks");
+				.register(MMOQuark.identifier("brimstone_bricks"));
 
 		new MMOBlockRegistrar(new ThatchBlock())
 				.withSlab().withStairs().withVerticalSlab()
-				.register("thatch");
+				.register(MMOQuark.identifier("thatch"));
 
 		final MMOBlock elderPrismarine = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.ORANGE)
 				.requiresTool()
@@ -123,41 +120,41 @@ public class MMOQuark implements ModInitializer {
 
 		new MMOBlockRegistrar(elderPrismarine)
 				.withSlab().withVerticalSlab().withStairs().withWall()
-				.register("elder_prismarine");
+				.register(MMOQuark.identifier("elder_prismarine"));
 
 		new MMOBlockRegistrar(FabricBlockSettings.copy(elderPrismarine))
 				.withSlab().withVerticalSlab().withStairs()
-				.register("elder_prismarine_bricks");
+				.register(MMOQuark.identifier("elder_prismarine_bricks"));
 
 		new MMOBlockRegistrar(FabricBlockSettings.copy(elderPrismarine))
 				.withSlab().withVerticalSlab().withStairs()
-				.register("dark_elder_prismarine");
+				.register(MMOQuark.identifier("dark_elder_prismarine"));
 
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.GLASS, MaterialColor.ORANGE)
 				.strength(0.3F, 0.3F)
 				.luminance(b -> 15) // lightValue
 				.sounds(BlockSoundGroup.GLASS))
-				.register("elder_sea_lantern");
+				.register(MMOQuark.identifier("elder_sea_lantern"));
 
 		new MMOBlockRegistrar(new BambooMatBlock())
-				.register("bamboo_mat");
+				.register(MMOQuark.identifier("bamboo_mat"));
 
 		new MMOBlockRegistrar(new SturdyStoneBlock())
-				.register("sturdy_stone");
+				.register(MMOQuark.identifier("sturdy_stone"));
 
 		new MMOBlockRegistrar(new MMOBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_LAMP)
 				.luminance(b -> 15)))
-				.register("lit_lamp", ItemGroup.DECORATIONS);
+				.register(MMOQuark.identifier("lit_lamp"), ItemGroup.DECORATIONS);
 
 		new MMOBlockRegistrar(new ObsidianPressurePlateBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)
 				.noCollision()
 				.strength(2F, 1200F)))
-				.register("obsidian_pressure_plate", ItemGroup.REDSTONE);
+				.register(MMOQuark.identifier("obsidian_pressure_plate"), ItemGroup.REDSTONE);
 
 		new MMOBlockRegistrar(new IronRodBlock())
-				.register("iron_rod", ItemGroup.DECORATIONS);
+				.register(MMOQuark.identifier("iron_rod"), ItemGroup.DECORATIONS);
 
 		// modules
 		MODULES.forEach(IModule::register);

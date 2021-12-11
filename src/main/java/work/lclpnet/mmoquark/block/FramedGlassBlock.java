@@ -3,9 +3,9 @@ package work.lclpnet.mmoquark.block;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.RenderLayer;
-import work.lclpnet.mmoquark.block.ext.MMOGlassBlock;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
+import work.lclpnet.mmocontent.block.ext.MMOGlassBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 
 public class FramedGlassBlock extends MMOGlassBlock {
 

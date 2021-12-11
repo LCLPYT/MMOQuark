@@ -3,9 +3,10 @@ package work.lclpnet.mmoquark.module;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.util.RegistryUtil;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.LeafCarpetBlock;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.util.MiscUtil;
 
 public class LeafCarpetModule implements IModule {
 
@@ -19,10 +20,10 @@ public class LeafCarpetModule implements IModule {
     }
 
     private void addLeafCarpet(Block baseBlock) {
-        String fencePath = MiscUtil.getRegistryPath(baseBlock);
+        String fencePath = RegistryUtil.getRegistryPath(baseBlock);
         if (fencePath == null) return;
 
         new MMOBlockRegistrar(new LeafCarpetBlock(baseBlock))
-                .register(fencePath.replaceAll("_leaves", "_leaf_carpet"));
+                .register(MMOQuark.identifier(fencePath.replaceAll("_leaves", "_leaf_carpet")));
     }
 }

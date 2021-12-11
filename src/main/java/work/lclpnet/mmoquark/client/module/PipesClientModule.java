@@ -4,11 +4,11 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
 import net.minecraft.client.util.ModelIdentifier;
+import work.lclpnet.mmocontent.client.render.MMOSpecialModels;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.client.render.blockentity.PipeBlockEntityRenderer;
 import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.PipesModule;
-import work.lclpnet.mmoquark.util.MMOSpecialModels;
 
 @Environment(EnvType.CLIENT)
 public class PipesClientModule implements IClientModule {

@@ -2,7 +2,8 @@ package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class DuskboundBlocksModule implements IModule {
 
@@ -12,10 +13,10 @@ public class DuskboundBlocksModule implements IModule {
                 .withSlab()
                 .withStairs()
                 .withVerticalSlab()
-                .register("duskbound_block");
+                .register(MMOQuark.identifier("duskbound_block"));
 
         new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.PURPUR_BLOCK)
                 .luminance(b -> 15))
-                .register("duskbound_lantern");
+                .register(MMOQuark.identifier("duskbound_lantern"));
     }
 }

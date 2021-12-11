@@ -10,9 +10,9 @@ import net.minecraft.block.LadderBlock;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import work.lclpnet.mmoquark.block.ext.IMMOBlock;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
+import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 
 public class VariantLadderBlock extends LadderBlock implements IMMOBlock {
 

@@ -23,10 +23,10 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
-import work.lclpnet.mmoquark.util.States;
+import work.lclpnet.mmocontent.block.BlockStatesUtil;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 
 public class CaveCrystalClusterBlock extends MMOBlock {
 
@@ -34,7 +34,7 @@ public class CaveCrystalClusterBlock extends MMOBlock {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     public CaveCrystalClusterBlock(CaveCrystalBlock base) {
-        super(States.copyState(base));
+        super(BlockStatesUtil.copyState(base));
 
         setDefaultState(getDefaultState().with(FACING, Direction.DOWN).with(WATERLOGGED, false));
         if (Env.isClient()) registerRenderLayer();

@@ -6,7 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.sound.BlockSoundGroup;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 
 public class SturdyStoneBlock extends MMOBlock {
 

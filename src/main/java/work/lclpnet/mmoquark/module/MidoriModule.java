@@ -6,16 +6,17 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.block.ext.MMOPillarBlock;
-import work.lclpnet.mmoquark.item.MMOItemRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOPillarBlock;
+import work.lclpnet.mmocontent.item.MMOItemRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class MidoriModule implements IModule {
 
     @Override
     public void register() {
         new MMOItemRegistrar()
-                .register("cactus_paste", ItemGroup.MATERIALS);
+                .register(MMOQuark.identifier("cactus_paste"), ItemGroup.MATERIALS);
 
         AbstractBlock.Settings settings = FabricBlockSettings.of(Material.STONE, MaterialColor.LIME)
                 .requiresTool()
@@ -24,9 +25,9 @@ public class MidoriModule implements IModule {
 
         new MMOBlockRegistrar(settings)
                 .withSlab().withVerticalSlab().withStairs()
-                .register("midori_block");
+                .register(MMOQuark.identifier("midori_block"));
 
         new MMOBlockRegistrar(new MMOPillarBlock(settings))
-                .register("midori_pillar");
+                .register(MMOQuark.identifier("midori_pillar"));
     }
 }

@@ -5,26 +5,19 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.EntityRenderDispatcherAccessor",
-    "client.MixinArmorFeatureRenderer",
-    "client.MixinBlockColors",
-    "client.MixinBuiltinModelItemRenderer",
-    "client.MixinClientPlayNetworkHandler",
-    "client.MixinItemColors",
-    "client.MixinModelLoader"
+    "client.MixinArmorFeatureRenderer"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
     "common.AbstractBlockAccessor",
-    "common.AbstractButtonBlockAccessor",
     "common.GoalSelectorAccessor",
     "common.LivingEntityAccessor",
     "common.MixinAbstractButtonBlock",
     "common.MixinAxeItem",
     "common.MixinEntityShapeContext",
     "common.MixinLanternBlock",
-    "common.MixinServerWorld",
-    "common.SoundEventAccessor"
+    "common.MixinServerWorld"
   ]
 }

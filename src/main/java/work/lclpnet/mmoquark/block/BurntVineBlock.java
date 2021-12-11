@@ -6,8 +6,8 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import work.lclpnet.mmoquark.block.ext.IBlockColorProvider;
-import work.lclpnet.mmoquark.block.ext.MMOVineBlock;
+import work.lclpnet.mmocontent.block.ext.IBlockColorProvider;
+import work.lclpnet.mmocontent.block.ext.MMOVineBlock;
 
 public class BurntVineBlock extends MMOVineBlock implements IBlockColorProvider {
 

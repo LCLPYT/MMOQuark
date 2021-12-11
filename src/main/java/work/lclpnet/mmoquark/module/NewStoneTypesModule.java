@@ -7,9 +7,10 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.MyaliteBlock;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
 
 import java.util.Map;
 import java.util.function.Function;
@@ -46,10 +47,10 @@ public class NewStoneTypesModule implements IModule {
 
         new MMOBlockRegistrar(normal)
                 .withSlab().withVerticalSlab().withWall().withStairs()
-                .register(name);
+                .register(MMOQuark.identifier(name));
         new MMOBlockRegistrar(polished)
                 .withSlab().withVerticalSlab().withStairs()
-                .register(String.format("polished_%s", name));
+                .register(MMOQuark.identifier(String.format("polished_%s", name)));
 
         return normal;
     }

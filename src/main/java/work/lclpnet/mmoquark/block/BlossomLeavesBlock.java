@@ -16,9 +16,9 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import work.lclpnet.mmoquark.block.ext.IMMOBlock;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
+import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 
 import java.util.Random;
 

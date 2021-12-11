@@ -10,7 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import work.lclpnet.mmoquark.block.ext.MMOPressurePlateBlock;
+import work.lclpnet.mmocontent.block.ext.MMOPressurePlateBlock;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package work.lclpnet.mmoquark.block.ext;
+package work.lclpnet.mmoquark.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
@@ -10,6 +10,7 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.noise.OctaveSimplexNoiseSampler;
 import net.minecraft.world.gen.ChunkRandom;
+import work.lclpnet.mmocontent.block.ext.IBlockColorProvider;
 
 import java.awt.*;
 import java.util.stream.IntStream;

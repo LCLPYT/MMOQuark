@@ -20,7 +20,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -30,15 +30,11 @@ public class CandleBlock extends MMOBlock implements Waterloggable {
     private static final VoxelShape SHAPE = Block.createCuboidShape(6F, 0F, 6F, 10F, 8F, 10F);
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    private final DyeColor color;
-
     public CandleBlock(DyeColor color) {
         super(Settings.of(Material.SUPPORTED, color.getMaterialColor())
                 .strength(0.2F, 0.2F)
                 .luminance(b -> b.get(WATERLOGGED) ? 0 : 14)
                 .sounds(BlockSoundGroup.WOOL));
-
-        this.color = color;
 
         setDefaultState(getDefaultState().with(WATERLOGGED, false));
     }

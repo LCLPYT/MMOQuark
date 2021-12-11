@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 
 public class ThatchBlock extends MMOBlock {
 

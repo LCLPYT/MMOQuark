@@ -16,8 +16,9 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.BurntVineBlock;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 
 import java.util.Map;
 
@@ -28,7 +29,7 @@ public class BurntVinesModule implements IModule {
     @Override
     public void register() {
         new MMOBlockRegistrar(burnt_vine = new BurntVineBlock())
-                .register("burnt_vine", ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier("burnt_vine"), ItemGroup.DECORATIONS);
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             ItemStack stack = player.getStackInHand(hand);

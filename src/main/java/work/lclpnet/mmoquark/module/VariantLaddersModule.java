@@ -5,7 +5,8 @@ import net.minecraft.block.Material;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.VariantLadderBlock;
 import work.lclpnet.mmoquark.util.MiscUtil;
 
@@ -25,11 +26,11 @@ public class VariantLaddersModule implements IModule {
                 .resistance(0.8F)
                 .sounds(SOUND_GROUP)
                 .nonOpaque())
-        ).register("iron_ladder", ItemGroup.DECORATIONS);
+        ).register(MMOQuark.identifier("iron_ladder"), ItemGroup.DECORATIONS);
     }
 
     private void addLadder(String woodType) {
         new MMOBlockRegistrar(new VariantLadderBlock())
-                .register(woodType + "_ladder", ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier(String.format("%s_ladder", woodType)), ItemGroup.DECORATIONS);
     }
 }

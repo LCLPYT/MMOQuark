@@ -1,9 +1,10 @@
 package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.MaterialColor;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.CaveCrystalBlock;
 import work.lclpnet.mmoquark.block.CaveCrystalClusterBlock;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 
 public class CaveCrystalsModule implements IModule {
 
@@ -25,9 +26,9 @@ public class CaveCrystalsModule implements IModule {
         String crystalName = name + "_crystal";
         new MMOBlockRegistrar(crystal)
                 .withPane()
-                .register(crystalName);
+                .register(MMOQuark.identifier(crystalName));
 
         new MMOBlockRegistrar(new CaveCrystalClusterBlock(crystal))
-                .register(crystalName + "_cluster");
+                .register(MMOQuark.identifier(crystalName + "_cluster"));
     }
 }

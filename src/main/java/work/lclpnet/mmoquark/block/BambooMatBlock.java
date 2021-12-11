@@ -13,7 +13,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 
 public class BambooMatBlock extends MMOBlock {
 

@@ -13,12 +13,12 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.BlockView;
-import work.lclpnet.mmoquark.block.ext.IMMOBlock;
+import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmocontent.client.item.MMOBlockEntityItem;
+import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.blockentity.VariantChestBlockEntity;
-import work.lclpnet.mmoquark.client.MMOBlockEntityItem;
 import work.lclpnet.mmoquark.client.module.VariantChestsClientModule;
 import work.lclpnet.mmoquark.client.render.blockentity.VariantChestBlockEntityRenderer;
-import work.lclpnet.mmoquark.util.Env;
 
 import java.util.function.Supplier;
 

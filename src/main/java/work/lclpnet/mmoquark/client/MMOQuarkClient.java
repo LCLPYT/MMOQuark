@@ -8,8 +8,6 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.TexturedRenderLayers;
 import work.lclpnet.mmoquark.client.module.*;
 import work.lclpnet.mmoquark.module.IClientModule;
-import work.lclpnet.mmoquark.networking.MCNetworking;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
 
 import java.util.Set;
 
@@ -29,9 +27,6 @@ public class MMOQuarkClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        MMORenderLayers.init();
-        MCNetworking.registerClientPacketHandlers();
-
         CLIENT_MODULES.forEach(IClientModule::registerClient);
 
         ClientSpriteRegistryCallback.event(TexturedRenderLayers.CHEST_ATLAS_TEXTURE)

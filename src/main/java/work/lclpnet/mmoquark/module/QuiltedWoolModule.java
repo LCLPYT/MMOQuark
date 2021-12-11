@@ -4,7 +4,8 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class QuiltedWoolModule implements IModule {
 
@@ -14,7 +15,7 @@ public class QuiltedWoolModule implements IModule {
             new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, dye.getMaterialColor())
                     .strength(0.8F, 0.8F)
                     .sounds(BlockSoundGroup.WOOL))
-                    .register(String.format("%s_quilted_wool", dye.getName()));
+                    .register(MMOQuark.identifier(String.format("%s_quilted_wool", dye.getName())));
         }
     }
 }

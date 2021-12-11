@@ -31,11 +31,27 @@ def getVersion() {
 	}
 }
 
+Properties privateProps = new Properties()
+File privatePropsFile = new File(project.projectDir, "private.properties")
+if (privatePropsFile.exists()) {
+	privatePropsFile.withInputStream {
+		privateProps.load(it)
+	}
+}
+
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
 version = getVersion()
 group = project.maven_group
+
+repositories {
+	mavenCentral()
+
+	maven {
+		url "https://repo.lclpnet.work/repository/internal"
+	}
+}
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -43,6 +59,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "work.lclpnet.mods:mmocontent:${project.mmocontent_version}"
 
 	implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
@@ -86,20 +103,33 @@ jar {
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
+			artifactId = project.archives_base_name
+
 			artifact(remapJar) {
 				builtBy remapJar
 			}
 			artifact(sourcesJar) {
 				builtBy remapSourcesJar
 			}
+
+			pom {
+				name = 'MMOQuark'
+				description = 'A Minecraft modding library for creating modifications with Fabric.'
+			}
 		}
 	}
 
 	repositories {
-
+		maven {
+			if (privateProps.containsKey('mavenPassword') && privateProps.containsKey('mavenHost') && privateProps.containsKey('mavenUser')) {
+				credentials {
+					username privateProps.getProperty('mavenUser');
+					password privateProps.getProperty('mavenPassword');
+				}
+				url privateProps.getProperty('mavenHost');
+			} else {
+				url "file:///${project.projectDir}/repo"
+			}
+		}
 	}
-}
-
-repositories {
-	mavenCentral()
 }

@@ -5,11 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tag.Tag;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.util.RegistryUtil;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.BlossomLeavesBlock;
 import work.lclpnet.mmoquark.block.HedgeBlock;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.util.MiscUtil;
 
 public class HedgesModule implements IModule {
 
@@ -33,17 +33,18 @@ public class HedgesModule implements IModule {
     private void addHedge(Block fence, Block leaves) {
         String path;
         if (leaves instanceof BlossomLeavesBlock) {
-            String leavesPath = MiscUtil.getRegistryPath(leaves);
+            String leavesPath = RegistryUtil.getRegistryPath(leaves);
             if (leavesPath == null) return;
 
             path = leavesPath.replaceAll("_blossom_leaves", "_blossom_hedge");
         } else {
-            String fencePath = MiscUtil.getRegistryPath(fence);
+            String fencePath = RegistryUtil.getRegistryPath(fence);
             if (fencePath == null) return;
 
             path = fencePath.replaceAll("_fence", "_hedge");
         }
 
-        new MMOBlockRegistrar(new HedgeBlock(fence, leaves)).register(path, ItemGroup.DECORATIONS);
+        new MMOBlockRegistrar(new HedgeBlock(fence, leaves))
+                .register(MMOQuark.identifier(path), ItemGroup.DECORATIONS);
     }
 }

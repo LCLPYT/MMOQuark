@@ -6,8 +6,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.block.VariantChestBlock;
 import work.lclpnet.mmoquark.block.VariantTrappedChestBlock;
 import work.lclpnet.mmoquark.blockentity.VariantChestBlockEntity;
@@ -54,7 +54,7 @@ public class VariantChestsModule implements IModule {
         VARIANT_CHESTS.add(variantChest);
 
         new MMOBlockRegistrar(variantChest)
-                .register(blockType + "_chest", ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier(String.format("%s_chest", blockType)), ItemGroup.DECORATIONS);
     }
 
     private void addTrappedChest(String blockType, Block parent) {
@@ -62,6 +62,6 @@ public class VariantChestsModule implements IModule {
         VARIANT_CHESTS.add(variantTrappedChest);
 
         new MMOBlockRegistrar(variantTrappedChest)
-                .register(blockType + "_trapped_chest", ItemGroup.REDSTONE);
+                .register(MMOQuark.identifier(String.format("%s_trapped_chest", blockType)), ItemGroup.REDSTONE);
     }
 }

@@ -6,8 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
-import work.lclpnet.mmoquark.block.ext.*;
-import work.lclpnet.mmoquark.util.Env;
+import work.lclpnet.mmocontent.block.ext.*;
+import work.lclpnet.mmocontent.util.Env;
 
 public class MyaliteBlock extends MMOBlock implements IMyaliteColorProvider, IBlockOverride {
 
@@ -52,12 +52,12 @@ public class MyaliteBlock extends MMOBlock implements IMyaliteColorProvider, IBl
     }
 
     @Override
-    public VerticalSlabBlock provideVerticalSlab(SlabBlock baseBlock) {
+    public MMOVerticalSlabBlock provideVerticalSlab(SlabBlock baseBlock) {
         return Env.isClient() ? provideVerticalSlabClient(baseBlock) : IBlockOverride.super.provideVerticalSlab(baseBlock);
     }
 
     @Environment(EnvType.CLIENT)
-    protected VerticalSlabBlock provideVerticalSlabClient(Block baseBlock) {
+    protected MMOVerticalSlabBlock provideVerticalSlabClient(Block baseBlock) {
         return new ColoredVerticalSlabBlock(baseBlock, IMyaliteColorProvider::registerBlockColor, IMyaliteColorProvider::registerItemColor);
     }
 }

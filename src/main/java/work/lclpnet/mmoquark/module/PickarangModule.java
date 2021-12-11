@@ -8,9 +8,9 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
+import work.lclpnet.mmocontent.item.MMOItemRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.entity.PickarangEntity;
-import work.lclpnet.mmoquark.item.MMOItemRegistrar;
 import work.lclpnet.mmoquark.item.PickarangItem;
 
 public class PickarangModule implements IModule {
@@ -33,10 +33,10 @@ public class PickarangModule implements IModule {
         );
 
         new MMOItemRegistrar(settings -> new PickarangItem(settingsFor(settings, 800, false), false))
-                .register("pickarang", ItemGroup.COMBAT);
+                .register(MMOQuark.identifier("pickarang"), ItemGroup.COMBAT);
 
         new MMOItemRegistrar(settings -> new PickarangItem(settingsFor(settings, 1040, true), true))
-                .register("flamerang", ItemGroup.COMBAT);
+                .register(MMOQuark.identifier("flamerang"), ItemGroup.COMBAT);
     }
 
     private static Item.Settings settingsFor(Item.Settings ref, int durability, boolean netherite) {

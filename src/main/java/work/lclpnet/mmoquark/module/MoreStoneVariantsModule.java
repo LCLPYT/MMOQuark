@@ -5,11 +5,12 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOPillarBlock;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.MyaliteBlock;
 import work.lclpnet.mmoquark.block.MyalitePillarBlock;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
-import work.lclpnet.mmoquark.block.ext.MMOPillarBlock;
 
 import java.util.function.Function;
 
@@ -43,15 +44,15 @@ public class MoreStoneVariantsModule implements IModule {
         MMOBlock bricks = constr.apply(settings);
         new MMOBlockRegistrar(bricks)
                 .withStairs().withSlab().withVerticalSlab().withWall()
-                .register(String.format("%s_bricks", name));
+                .register(MMOQuark.identifier(String.format("%s_bricks", name)));
 
         new MMOBlockRegistrar(constr.apply(settings))
-                .register(String.format("chiseled_%s_bricks", name));
+                .register(MMOQuark.identifier(String.format("chiseled_%s_bricks", name)));
 
         new MMOBlockRegistrar(constr.apply(settings))
-                .register(String.format("%s_pavement", name));
+                .register(MMOQuark.identifier(String.format("%s_pavement", name)));
 
         new MMOBlockRegistrar(pillarConstr.apply(settings))
-                .register(String.format("%s_pillar", name));
+                .register(MMOQuark.identifier(String.format("%s_pillar", name)));
     }
 }

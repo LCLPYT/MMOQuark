@@ -9,9 +9,10 @@ import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
-import work.lclpnet.mmoquark.block.ext.MMOPillarBlock;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOPillarBlock;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class CompressedBlocksModule implements IModule {
 
@@ -22,7 +23,7 @@ public class CompressedBlocksModule implements IModule {
                 .breakByTool(FabricToolTags.PICKAXES)
                 .strength(0.5F, 10F)
                 .sounds(BlockSoundGroup.STONE))
-                .register("charcoal_block");
+                .register(MMOQuark.identifier("charcoal_block"));
 
         pillar("sugar_cane", MaterialColor.LIME);
         pillar("bamboo", MaterialColor.YELLOW);
@@ -45,22 +46,22 @@ public class CompressedBlocksModule implements IModule {
                 .strength(0.3F, 0.3F)
                 .sounds(BlockSoundGroup.GLASS)
                 .luminance(b -> 15))
-                .register("blaze_lantern");
+                .register(MMOQuark.identifier("blaze_lantern"));
 
         new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, DyeColor.ORANGE)
                 .strength(0.4F, 0.4F)
                 .sounds(BlockSoundGroup.WOOL))
-                .register("bonded_leather");
+                .register(MMOQuark.identifier("bonded_leather"));
 
         new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, DyeColor.WHITE)
                 .strength(0.4F, 0.4F)
                 .sounds(BlockSoundGroup.WOOL))
-                .register("bonded_rabbit_hide");
+                .register(MMOQuark.identifier("bonded_rabbit_hide"));
 
         new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, DyeColor.BLACK)
                 .strength(1F, 1F)
                 .sounds(BlockSoundGroup.WOOL))
-                .register("bonded_ravager_hide");
+                .register(MMOQuark.identifier("bonded_ravager_hide"));
     }
 
     private void pillar(String name, MaterialColor color) {
@@ -68,7 +69,7 @@ public class CompressedBlocksModule implements IModule {
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOD));
 
-        new MMOBlockRegistrar(block).register(name + "_block");
+        new MMOBlockRegistrar(block).register(MMOQuark.identifier(String.format("%s_block", name)));
     }
 
     private void crate(String name, MaterialColor color) {
@@ -76,7 +77,7 @@ public class CompressedBlocksModule implements IModule {
                 .strength(1.5F, 1.5F)
                 .sounds(BlockSoundGroup.WOOD));
 
-        new MMOBlockRegistrar(block).register(name + "_crate", ItemGroup.DECORATIONS);
+        new MMOBlockRegistrar(block).register(MMOQuark.identifier(String.format("%s_crate", name)), ItemGroup.DECORATIONS);
     }
 
     private void sack(String name, MaterialColor color) {
@@ -84,6 +85,6 @@ public class CompressedBlocksModule implements IModule {
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOL));
 
-        new MMOBlockRegistrar(block).register(name + "_sack", ItemGroup.DECORATIONS);
+        new MMOBlockRegistrar(block).register(MMOQuark.identifier(String.format("%s_sack", name)), ItemGroup.DECORATIONS);
     }
 }

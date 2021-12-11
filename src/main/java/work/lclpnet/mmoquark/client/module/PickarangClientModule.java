@@ -3,7 +3,7 @@ package work.lclpnet.mmoquark.client.module;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import work.lclpnet.mmoquark.client.MMOClientEntities;
+import work.lclpnet.mmocontent.client.entity.MMOClientEntities;
 import work.lclpnet.mmoquark.client.render.entity.PickarangRenderer;
 import work.lclpnet.mmoquark.entity.PickarangEntity;
 import work.lclpnet.mmoquark.module.IClientModule;

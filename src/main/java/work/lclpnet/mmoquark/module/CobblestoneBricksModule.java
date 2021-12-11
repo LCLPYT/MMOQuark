@@ -3,7 +3,8 @@ package work.lclpnet.mmoquark.module;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class CobblestoneBricksModule implements IModule {
 
@@ -21,6 +22,6 @@ public class CobblestoneBricksModule implements IModule {
     private void addBricks(String name, Block block) {
         new MMOBlockRegistrar(AbstractBlock.Settings.copy(block))
                 .withSlab().withWall().withStairs().withVerticalSlab()
-                .register(name);
+                .register(MMOQuark.identifier(name));
     }
 }

@@ -6,8 +6,9 @@ import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.block.ext.MMOFenceGateBlock;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOFenceGateBlock;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class NetherBrickFenceModule implements IModule {
 
@@ -18,6 +19,6 @@ public class NetherBrickFenceModule implements IModule {
                 .breakByTool(FabricToolTags.PICKAXES)
                 .sounds(BlockSoundGroup.NETHER_BRICKS)
                 .strength(2.0F, 6.0F)))
-                .register("nether_brick_fence_gate", ItemGroup.REDSTONE);
+                .register(MMOQuark.identifier("nether_brick_fence_gate"), ItemGroup.REDSTONE);
     }
 }

@@ -1,8 +1,9 @@
 package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.*;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.block.ext.MMOFlowerPotBlock;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOFlowerPotBlock;
+import work.lclpnet.mmoquark.MMOQuark;
 
 import java.util.function.Function;
 
@@ -49,7 +50,7 @@ public class MorePottedPlantsModule implements IModule {
         MMOFlowerPotBlock potted = new MMOFlowerPotBlock(block, settings);
 
         new MMOBlockRegistrar(potted)
-                .register(String.format("potted_%s", name));
+                .register(MMOQuark.identifier(String.format("potted_%s", name)));
 
         return potted;
     }

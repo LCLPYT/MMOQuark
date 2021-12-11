@@ -11,10 +11,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.registry.Registry;
+import work.lclpnet.mmocontent.entity.MMOEntityAttributes;
+import work.lclpnet.mmocontent.item.MMOItemRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.entity.CrabEntity;
-import work.lclpnet.mmoquark.item.MMOItemRegistrar;
-import work.lclpnet.mmoquark.util.MMOEntityAttributes;
 
 public class CrabsModule implements IModule {
 
@@ -30,7 +30,7 @@ public class CrabsModule implements IModule {
                         .hunger(1)
                         .saturationModifier(0.3F)
                         .build())
-        )).register("crab_leg", ItemGroup.FOOD);
+        )).register(MMOQuark.identifier("crab_leg"), ItemGroup.FOOD);
 
         new MMOItemRegistrar(settings -> new Item(settings
                 .food(new FoodComponent.Builder()
@@ -38,10 +38,10 @@ public class CrabsModule implements IModule {
                         .hunger(8)
                         .saturationModifier(0.8F)
                         .build())
-        )).register("cooked_crab_leg", ItemGroup.FOOD);
+        )).register(MMOQuark.identifier("cooked_crab_leg"), ItemGroup.FOOD);
 
         new MMOItemRegistrar()
-                .register("crab_shell", ItemGroup.BREWING);
+                .register(MMOQuark.identifier("crab_shell"), ItemGroup.BREWING);
 
         crabSpawnableTag = TagRegistry.block(MMOQuark.identifier("crab_spawnable"));
 
@@ -56,6 +56,6 @@ public class CrabsModule implements IModule {
 
         MMOEntityAttributes.registerDefaultAttributes(crabType, CrabEntity.createMobAttributes());
 
-        MMOItemRegistrar.registerSpawnEgg(crabType, "crab", 0x893c22, 0x916548);
+        MMOItemRegistrar.registerSpawnEgg(crabType, "crab", 0x893c22, 0x916548, MMOQuark::identifier);
     }
 }

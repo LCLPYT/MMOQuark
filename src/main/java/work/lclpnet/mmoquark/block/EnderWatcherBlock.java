@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
 import work.lclpnet.mmoquark.blockentity.EnderWatcherBlockEntity;
 
 public class EnderWatcherBlock extends MMOBlock implements BlockEntityProvider {

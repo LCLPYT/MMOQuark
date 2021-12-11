@@ -2,9 +2,10 @@ package work.lclpnet.mmoquark.module;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Blocks;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.block.VerticalSlabBlock;
-import work.lclpnet.mmoquark.util.MiscUtil;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOVerticalSlabBlock;
+import work.lclpnet.mmocontent.util.RegistryUtil;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class VanillaVerticalSlabsModule implements IModule {
 
@@ -24,11 +25,11 @@ public class VanillaVerticalSlabsModule implements IModule {
                 Blocks.SMOOTH_STONE_SLAB, Blocks.SPRUCE_SLAB, Blocks.STONE_SLAB, Blocks.STONE_BRICK_SLAB, Blocks.BLACKSTONE_SLAB, Blocks.POLISHED_BLACKSTONE_SLAB,
                 Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.CRIMSON_SLAB, Blocks.WARPED_SLAB
         ).forEach(b -> {
-            String path = MiscUtil.getRegistryPath(b);
+            String path = RegistryUtil.getRegistryPath(b);
             if (path == null) return;
 
-            new MMOBlockRegistrar(new VerticalSlabBlock(b))
-                    .register(path.replace("_slab", "_vertical_slab"));
+            new MMOBlockRegistrar(new MMOVerticalSlabBlock(b))
+                    .register(MMOQuark.identifier(path.replace("_slab", "_vertical_slab")));
         });
     }
 }

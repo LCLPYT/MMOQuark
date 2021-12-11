@@ -17,8 +17,9 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import work.lclpnet.mmocontent.entity.AdditionalSpawnData;
+import work.lclpnet.mmocontent.networking.MMONetworking;
 import work.lclpnet.mmoquark.module.ItemFramesModule;
-import work.lclpnet.mmoquark.networking.MCNetworking;
 
 public class GlassItemFrameEntity extends ItemFrameEntity implements AdditionalSpawnData {
 
@@ -101,6 +102,6 @@ public class GlassItemFrameEntity extends ItemFrameEntity implements AdditionalS
 
     @Override
     public Packet<?> createSpawnPacket() {
-       return MCNetworking.createMMOSpawnPacket(this);
+       return MMONetworking.createMMOSpawnPacket(this);
     }
 }

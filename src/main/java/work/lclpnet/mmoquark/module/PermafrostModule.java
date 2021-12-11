@@ -5,8 +5,9 @@ import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.sound.BlockSoundGroup;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
-import work.lclpnet.mmoquark.block.ext.MMOBlock;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOBlock;
+import work.lclpnet.mmoquark.MMOQuark;
 
 public class PermafrostModule implements IModule {
 
@@ -20,10 +21,10 @@ public class PermafrostModule implements IModule {
 
         new MMOBlockRegistrar(permafrost)
                 .withSlab().withVerticalSlab().withStairs().withWall()
-                .register("permafrost");
+                .register(MMOQuark.identifier("permafrost"));
 
         new MMOBlockRegistrar(FabricBlockSettings.copyOf(permafrost))
                 .withSlab().withVerticalSlab().withStairs().withWall()
-                .register("permafrost_bricks");
+                .register(MMOQuark.identifier("permafrost_bricks"));
     }
 }

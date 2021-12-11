@@ -6,8 +6,9 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.asm.mixin.common.AbstractBlockAccessor;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 
 public class MoreBricksModule implements IModule {
 
@@ -27,7 +28,7 @@ public class MoreBricksModule implements IModule {
                 .strength(1.5F, 10F)
                 .emissiveLighting((s, r, p) -> true))
                 .withWall().withSlab().withVerticalSlab().withStairs()
-                .register("magma_bricks");
+                .register(MMOQuark.identifier("magma_bricks"));
     }
 
     private void bricks(String name, Block parent) {
@@ -38,6 +39,6 @@ public class MoreBricksModule implements IModule {
                 .requiresTool()
                 .breakByTool(parentMaterial == Material.SNOW_BLOCK ? FabricToolTags.SHOVELS : FabricToolTags.PICKAXES))
                 .withSlab().withStairs().withWall().withVerticalSlab()
-                .register(name + "_bricks");
+                .register(MMOQuark.identifier(String.format("%s_bricks", name)));
     }
 }

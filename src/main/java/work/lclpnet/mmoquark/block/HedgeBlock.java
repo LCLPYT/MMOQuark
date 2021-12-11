@@ -16,11 +16,11 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
-import work.lclpnet.mmoquark.block.ext.IBlockColorProvider;
-import work.lclpnet.mmoquark.block.ext.MMOFenceBlock;
+import work.lclpnet.mmocontent.block.ext.IBlockColorProvider;
+import work.lclpnet.mmocontent.block.ext.MMOFenceBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.module.HedgesModule;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
 
 public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
 

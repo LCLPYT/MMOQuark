@@ -8,8 +8,8 @@ import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import work.lclpnet.mmoquark.block.ext.*;
-import work.lclpnet.mmoquark.util.Env;
+import work.lclpnet.mmocontent.block.ext.*;
+import work.lclpnet.mmocontent.util.Env;
 
 public class TurfBlock extends MMOBlock implements IBlockColorProvider, IBlockOverride {
 
@@ -58,12 +58,12 @@ public class TurfBlock extends MMOBlock implements IBlockColorProvider, IBlockOv
     }
 
     @Override
-    public VerticalSlabBlock provideVerticalSlab(SlabBlock baseBlock) {
+    public MMOVerticalSlabBlock provideVerticalSlab(SlabBlock baseBlock) {
         return Env.isClient() ? provideVerticalSlabClient(baseBlock) : IBlockOverride.super.provideVerticalSlab(baseBlock);
     }
 
     @Environment(EnvType.CLIENT)
-    protected VerticalSlabBlock provideVerticalSlabClient(Block baseBlock) {
+    protected MMOVerticalSlabBlock provideVerticalSlabClient(Block baseBlock) {
         return new ColoredVerticalSlabBlock(baseBlock, TurfBlock::registerBlockColor, TurfBlock::registerItemColor);
     }
 }

@@ -12,9 +12,9 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import work.lclpnet.mmocontent.util.RegistryUtil;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.VariantTrappedChestBlock;
-import work.lclpnet.mmoquark.util.MiscUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,7 +53,7 @@ public class VariantChestBlockEntityRenderer<T extends ChestBlockEntity> extends
     public static void accept(SpriteAtlasTexture atlasTexture, ClientSpriteRegistryCallback.Registry registry, Block chest) {
         Identifier atlas = atlasTexture.getId();
 
-        String regPath = MiscUtil.getRegistryPath(chest);
+        String regPath = RegistryUtil.getRegistryPath(chest);
         if (regPath == null) throw new IllegalStateException("Chest not registered yet");
 
         boolean trapped = chest instanceof VariantTrappedChestBlock;

@@ -11,11 +11,11 @@ import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
+import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.asm.mixin.common.AbstractBlockAccessor;
-import work.lclpnet.mmoquark.block.ext.IMMOBlock;
 import work.lclpnet.mmoquark.module.GlowshroomModule;
-import work.lclpnet.mmoquark.util.Env;
-import work.lclpnet.mmoquark.util.MMORenderLayers;
 
 import java.util.Random;
 

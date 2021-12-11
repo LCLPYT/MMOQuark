@@ -1,10 +1,11 @@
 package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.Block;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.GlowceliumBlock;
 import work.lclpnet.mmoquark.block.GlowshroomBlock;
 import work.lclpnet.mmoquark.block.GlowshroomPlantBlock;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 
 public class GlowshroomModule implements IModule {
 
@@ -13,16 +14,16 @@ public class GlowshroomModule implements IModule {
     @Override
     public void register() {
         new MMOBlockRegistrar(glowcelium = new GlowceliumBlock())
-                .register("glowcelium");
+                .register(MMOQuark.identifier("glowcelium"));
 
         new MMOBlockRegistrar(glowshroom = new GlowshroomPlantBlock())
-                .register("glowshroom");
+                .register(MMOQuark.identifier("glowshroom"));
 
         new MMOBlockRegistrar(glowshroom_block = new GlowshroomBlock())
-                .register("glowshroom_block");
+                .register(MMOQuark.identifier("glowshroom_block"));
 
         new MMOBlockRegistrar(glowshroom_stem = new GlowshroomBlock())
-                .register("glowshroom_stem");
+                .register(MMOQuark.identifier("glowshroom_stem"));
 
         MorePottedPlantsModule.addPottedPlant(glowshroom, "glowshroom", s -> s.luminance(b -> 14));
     }

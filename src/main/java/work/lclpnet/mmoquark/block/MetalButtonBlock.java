@@ -4,7 +4,7 @@ import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import work.lclpnet.mmoquark.block.ext.MMOButtonBlock;
+import work.lclpnet.mmocontent.block.ext.MMOButtonBlock;
 
 public class MetalButtonBlock extends MMOButtonBlock {
 

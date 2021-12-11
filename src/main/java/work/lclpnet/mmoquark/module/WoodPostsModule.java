@@ -7,9 +7,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.LanternBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.util.RegistryUtil;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.WoodPostBlock;
-import work.lclpnet.mmoquark.util.MiscUtil;
 
 public class WoodPostsModule implements IModule {
 
@@ -23,18 +24,18 @@ public class WoodPostsModule implements IModule {
     }
 
     private void registerPosts(Block b, boolean nether) {
-        String path = MiscUtil.getRegistryPath(b);
+        String path = RegistryUtil.getRegistryPath(b);
         if (path == null) return;
 
         String postPath = path.replace("_fence", "_post");
 
         WoodPostBlock post = new WoodPostBlock(b, nether);
         new MMOBlockRegistrar(post)
-                .register(postPath);
+                .register(MMOQuark.identifier(postPath));
 
         post.strippedBlock = new WoodPostBlock(b, nether);
         new MMOBlockRegistrar(post.strippedBlock)
-                .register("stripped_".concat(postPath));
+                .register(MMOQuark.identifier("stripped_".concat(postPath)));
     }
 
     public static boolean canLanternConnect(BlockState state, WorldView worldIn, BlockPos pos, boolean prev) {

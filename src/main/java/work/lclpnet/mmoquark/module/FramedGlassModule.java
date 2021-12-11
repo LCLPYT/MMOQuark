@@ -6,8 +6,9 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
+import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.FramedGlassBlock;
-import work.lclpnet.mmoquark.block.MMOBlockRegistrar;
 
 public class FramedGlassModule implements IModule {
 
@@ -20,11 +21,11 @@ public class FramedGlassModule implements IModule {
 
         new MMOBlockRegistrar(new FramedGlassBlock(props, false))
                 .withPane()
-                .register("framed_glass");
+                .register(MMOQuark.identifier("framed_glass"));
 
         for (DyeColor color : DyeColor.values())
             new MMOBlockRegistrar(new FramedGlassBlock(props, true))
                     .withPane()
-                    .register(color.getName() + "_framed_glass");
+                    .register(MMOQuark.identifier(String.format("%s_framed_glass", color.getName())));
     }
 }

@@ -3,8 +3,8 @@ package work.lclpnet.mmoquark.sound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import work.lclpnet.mmocontent.asm.mixin.common.SoundEventAccessor;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.asm.mixin.common.SoundEventAccessor;
 
 import java.util.ArrayList;
 import java.util.List;
