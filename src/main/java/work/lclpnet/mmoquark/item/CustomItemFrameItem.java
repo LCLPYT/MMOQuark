@@ -13,11 +13,11 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import work.lclpnet.mmoquark.util.TriFunction;
 
-public class MMOItemFrameItem extends Item {
+public class CustomItemFrameItem extends Item {
 
     private final TriFunction<? extends AbstractDecorationEntity, World, BlockPos, Direction> entityProvider;
 
-    public MMOItemFrameItem(Settings settings, TriFunction<? extends AbstractDecorationEntity, World, BlockPos, Direction> entityProvider) {
+    public CustomItemFrameItem(Settings settings, TriFunction<? extends AbstractDecorationEntity, World, BlockPos, Direction> entityProvider) {
         super(settings);
         this.entityProvider = entityProvider;
     }

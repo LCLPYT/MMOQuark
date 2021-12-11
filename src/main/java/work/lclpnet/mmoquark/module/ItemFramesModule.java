@@ -10,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmocontent.item.MMOItemRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.entity.GlassItemFrameEntity;
-import work.lclpnet.mmoquark.item.MMOItemFrameItem;
+import work.lclpnet.mmoquark.item.CustomItemFrameItem;
 
 public class ItemFramesModule implements IModule {
 
@@ -31,10 +31,10 @@ public class ItemFramesModule implements IModule {
                         .build()
         );
 
-        new MMOItemRegistrar(settings -> glassFrame = new MMOItemFrameItem(settings, GlassItemFrameEntity::new))
+        new MMOItemRegistrar(settings -> glassFrame = new CustomItemFrameItem(settings, GlassItemFrameEntity::new))
                 .register(MMOQuark.identifier("glass_item_frame"), ItemGroup.DECORATIONS);
 
-        new MMOItemRegistrar(settings -> glowingGlassFrame = new MMOItemFrameItem(settings, (w, p, d) -> {
+        new MMOItemRegistrar(settings -> glowingGlassFrame = new CustomItemFrameItem(settings, (w, p, d) -> {
             GlassItemFrameEntity e = new GlassItemFrameEntity(w, p, d);
             e.getDataTracker().set(GlassItemFrameEntity.IS_SHINY, true);
             return e;

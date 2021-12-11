@@ -1,8 +1,10 @@
 package work.lclpnet.mmoquark.module;
 
-import net.minecraft.block.*;
-import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
-import work.lclpnet.mmocontent.block.ext.MMOFlowerPotBlock;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerPotBlock;
+import work.lclpnet.mmocontent.block.MMOPottedPlantUtil;
 import work.lclpnet.mmoquark.MMOQuark;
 
 import java.util.function.Function;
@@ -38,20 +40,13 @@ public class MorePottedPlantsModule implements IModule {
         addPottedPlant(Blocks.WHEAT, "wheat");
     }
 
+    /* Comfort methods */
+
     static FlowerPotBlock addPottedPlant(Block block, String name) {
-        return addPottedPlant(block, name, Function.identity());
+        return MMOPottedPlantUtil.addPottedPlant(block, name, Function.identity(), MMOQuark::identifier);
     }
 
     static FlowerPotBlock addPottedPlant(Block block, String name, Function<AbstractBlock.Settings, AbstractBlock.Settings> transformer) {
-        AbstractBlock.Settings settings = transformer.apply(AbstractBlock.Settings.of(Material.SUPPORTED)
-                .breakInstantly()
-                .nonOpaque());
-
-        MMOFlowerPotBlock potted = new MMOFlowerPotBlock(block, settings);
-
-        new MMOBlockRegistrar(potted)
-                .register(MMOQuark.identifier(String.format("potted_%s", name)));
-
-        return potted;
+        return MMOPottedPlantUtil.addPottedPlant(block, name, transformer, MMOQuark::identifier);
     }
 }

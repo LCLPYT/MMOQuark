@@ -16,8 +16,8 @@ import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import work.lclpnet.mmocontent.client.render.item.ICustomArmorModel;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.client.render.item.ICustomArmorModel;
 import work.lclpnet.mmoquark.client.render.item.model.ForgottenHatModel;
 
 import java.util.UUID;
