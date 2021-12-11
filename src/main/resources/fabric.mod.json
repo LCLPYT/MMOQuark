@@ -3,15 +3,15 @@
   "id": "mmoquark",
   "version": "${version}",
 
-  "name": "MMO Blocks",
-  "description": "Adds additional blocks to LCLPMMO.",
+  "name": "MMOQuark",
+  "description": "Lightweight, world compat Quark port.",
   "authors": [
     "DerBerliner",
     "LCLP"
   ],
   "contact": {
-    "homepage": "https://github.com/LCLPYT/MMOBlocks",
-    "sources": "https://github.com/LCLPYT/MMOBlocks"
+    "homepage": "https://github.com/LCLPYT/MMOQuark",
+    "sources": "https://github.com/LCLPYT/MMOQuark"
   },
 
   "license": "CC BY-NC-SA 3.0 DE",
