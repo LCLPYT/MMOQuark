@@ -14,6 +14,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+    - name: 'Extract data from tag: version, message, body'
+      run: |
+        git fetch --tags --force # Retrieve annotated tags. Needed for git describe, if tag is not on current commit
+        echo ::set-output name=subject::$(git for-each-ref $GITHUB_REF --format='%(contents:subject)')
     - name: Set up JDK 8
       uses: actions/setup-java@v2
       with:
