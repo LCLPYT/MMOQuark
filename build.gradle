@@ -22,6 +22,10 @@ def getVersion() {
 		// First, fetch all tags, to ensure all the tags are found
 		execProcess("git", "fetch", "--tags", "--force")
 
+		println execProcess("git", "tag", "--list")
+
+		println execProcess("git", "--no-pager", "log", "--max-count=10")
+
 		// now actually get latest tag with git describe
 		def (exitCode, out, err) = execProcess("git", "describe", "--tags", "--abbrev=0")
 
