@@ -94,7 +94,7 @@ java {
 }
 
 jar {
-	from("LICENSE") {
+	from("LICENSE.md") {
 		rename { "${it}_${project.archivesBaseName}"}
 	}
 }
@@ -121,12 +121,20 @@ publishing {
 
 	repositories {
 		maven {
-			if (privateProps.containsKey('mavenPassword') && privateProps.containsKey('mavenHost') && privateProps.containsKey('mavenUser')) {
+			def env = System.getenv()
+			if (Arrays.stream("DEPLOY_URL", "DEPLOY_USER", "DEPLOY_PASSWORD").allMatch(env.&containsKey)) {
 				credentials {
-					username privateProps.getProperty('mavenUser');
-					password privateProps.getProperty('mavenPassword');
+					username env.get("DEPLOY_USER")
+					password env.get("DEPLOY_PASSWORD")
 				}
-				url privateProps.getProperty('mavenHost');
+				url env.get("DEPLOY_URL")
+			}
+			else if (Arrays.stream("mavenHost", "mavenUser", "mavenPassword").allMatch(privateProps.&containsKey)) {
+				credentials {
+					username privateProps.getProperty('mavenUser')
+					password privateProps.getProperty('mavenPassword')
+				}
+				url privateProps.getProperty('mavenHost')
 			} else {
 				url "file:///${project.projectDir}/repo"
 			}
