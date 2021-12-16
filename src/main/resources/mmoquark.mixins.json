@@ -4,7 +4,7 @@
   "package": "work.lclpnet.mmoquark.asm.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "client.EntityRenderDispatcherAccessor",
+    "client.EntityRenderDispatcherAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
