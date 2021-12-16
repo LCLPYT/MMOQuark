@@ -1,4 +1,6 @@
 # MMOContent - Quark Module
+[![Gradle Publish](https://github.com/LCLPYT/MMOQuark/actions/workflows/gradle-publish.yml/badge.svg)](https://github.com/LCLPYT/MMOQuark/actions/workflows/gradle-publish.yml)
+
 A lightweight Fabric port of the famous [Quark](https://github.com/VazkiiMods/Quark) Minecraft modification, that aims to provide compatibility for porting worlds created in Quark's official MinecraftForge version.
 
 ## What this mod aims to be
