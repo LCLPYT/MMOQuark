@@ -8,7 +8,6 @@ import net.minecraft.block.Block;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import work.lclpnet.mmoquark.blockentity.VariantChestBlockEntity;
 import work.lclpnet.mmoquark.client.render.blockentity.VariantChestBlockEntityRenderer;
-import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.VariantChestsModule;
 
 import java.util.function.Consumer;

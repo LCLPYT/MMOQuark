@@ -8,7 +8,6 @@ import work.lclpnet.mmocontent.client.render.MMOSpecialModels;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.client.render.entity.GlassItemFrameRenderer;
 import work.lclpnet.mmoquark.entity.GlassItemFrameEntity;
-import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.ItemFramesModule;
 
 public class ItemFramesClientModule implements IClientModule {

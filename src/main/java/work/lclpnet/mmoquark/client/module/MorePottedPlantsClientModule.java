@@ -7,7 +7,6 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
 import work.lclpnet.mmocontent.block.ext.IBlockColorProvider;
 import work.lclpnet.mmocontent.client.render.block.MMOBlockColors;
-import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.MorePottedPlantsModule;
 
 public class MorePottedPlantsClientModule implements IClientModule {

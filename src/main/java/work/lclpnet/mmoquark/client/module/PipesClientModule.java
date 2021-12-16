@@ -7,7 +7,6 @@ import net.minecraft.client.util.ModelIdentifier;
 import work.lclpnet.mmocontent.client.render.MMOSpecialModels;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.client.render.blockentity.PipeBlockEntityRenderer;
-import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.PipesModule;
 
 @Environment(EnvType.CLIENT)

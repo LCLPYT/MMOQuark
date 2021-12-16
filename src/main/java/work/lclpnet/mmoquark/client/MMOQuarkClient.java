@@ -7,7 +7,6 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.TexturedRenderLayers;
 import work.lclpnet.mmoquark.client.module.*;
-import work.lclpnet.mmoquark.module.IClientModule;
 
 import java.util.Set;
 

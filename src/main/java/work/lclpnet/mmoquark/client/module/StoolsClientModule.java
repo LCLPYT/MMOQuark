@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import work.lclpnet.mmocontent.client.entity.MMOClientEntities;
 import work.lclpnet.mmoquark.client.render.entity.StoolRenderer;
 import work.lclpnet.mmoquark.entity.StoolEntity;
-import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.StoolsModule;
 
 @Environment(EnvType.CLIENT)

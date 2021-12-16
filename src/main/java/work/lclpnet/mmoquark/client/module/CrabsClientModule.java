@@ -5,7 +5,6 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import work.lclpnet.mmoquark.client.render.entity.CrabRenderer;
 import work.lclpnet.mmoquark.module.CrabsModule;
-import work.lclpnet.mmoquark.module.IClientModule;
 
 @Environment(EnvType.CLIENT)
 public class CrabsClientModule implements IClientModule {

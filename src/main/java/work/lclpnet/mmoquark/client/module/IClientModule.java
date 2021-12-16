@@ -1,4 +1,4 @@
-package work.lclpnet.mmoquark.module;
+package work.lclpnet.mmoquark.client.module;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

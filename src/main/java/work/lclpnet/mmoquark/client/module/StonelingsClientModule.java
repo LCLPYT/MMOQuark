@@ -4,7 +4,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import work.lclpnet.mmoquark.client.render.entity.StonelingRenderer;
-import work.lclpnet.mmoquark.module.IClientModule;
 import work.lclpnet.mmoquark.module.StonelingsModule;
 
 @Environment(EnvType.CLIENT)
