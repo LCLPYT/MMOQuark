@@ -5,56 +5,7 @@ plugins {
 	id 'maven-publish'
 }
 
-Tuple3<Integer, String, String> execProcess(String... args) {
-	ProcessBuilder builder = new ProcessBuilder(args)
-	builder.directory(project.projectDir)
-	println "Executing '" + builder.command().stream().collect(Collectors.joining(" ")) + "' in '" + builder.directory().getAbsolutePath() + "' ..."
-	Process process = builder.start()
-	StringBuilder stdout = new StringBuilder(), stderr = new StringBuilder()
-	process.consumeProcessOutput(stdout, stderr)
-	int exitCode = process.waitFor()
-	println "Process exited with code " + exitCode
-	return new Tuple3<>(exitCode, stdout.toString(), stderr.toString())
-}
-
-def getVersion() {
-	try {
-		String version
-		if (System.getenv().containsKey("CI_VERSION")) version = System.getenv().get("CI_VERSION")
-		else {
-			// First, fetch all tags, to ensure all the tags are found
-			execProcess("git", "fetch", "--tags", "--force")
-
-			// now actually get latest tag with git describe
-			def (exitCode, out, err) = execProcess("git", "describe", "--tags", "--abbrev=0")
-
-			// log outputs
-			println out
-			if (!err.isEmpty()) System.err.println err
-
-			// throw on error
-			if (exitCode != 0) throw new IOException("Git error, make sure you have at least one tag")
-
-			version = out.toString().trim().split("\\r?\\n")[0]
-		}
-
-		if (!version.matches('^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[a-z0-9]+)?$')) throw new IllegalStateException("Latest tag '${version}' does not match the required versioning scheme")
-
-		return version
-	} catch (Exception ex) {
-		IllegalStateException wrapper = new IllegalStateException("Could not determine version")
-		wrapper.addSuppressed(ex)
-		throw wrapper
-	}
-}
-
-Properties privateProps = new Properties()
-File privatePropsFile = new File(project.projectDir, "private.properties")
-if (privatePropsFile.exists()) {
-	privatePropsFile.withInputStream {
-		privateProps.load(it)
-	}
-}
+def privateProps = loadPrivateProps()
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
@@ -157,4 +108,59 @@ publishing {
 			}
 		}
 	}
+}
+
+// helper functions
+def getVersion() {
+	try {
+		String version
+		if (System.getenv().containsKey("CI_VERSION")) version = System.getenv().get("CI_VERSION")
+		else {
+			// First, fetch all tags, to ensure all the tags are found
+			execProcess("git", "fetch", "--tags", "--force")
+
+			// now actually get latest tag with git describe
+			def (exitCode, out, err) = execProcess("git", "describe", "--tags", "--abbrev=0")
+
+			// log outputs
+			println out
+			if (!err.isEmpty()) System.err.println err
+
+			// throw on error
+			if (exitCode != 0) throw new IOException("Git error, make sure you have at least one tag")
+
+			version = out.toString().trim().split("\\r?\\n")[0]
+		}
+
+		if (!version.matches('^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[a-z0-9]+)?$')) throw new IllegalStateException("Latest tag '${version}' does not match the required versioning scheme")
+
+		return version
+	} catch (Exception ex) {
+		IllegalStateException wrapper = new IllegalStateException("Could not determine version")
+		wrapper.addSuppressed(ex)
+		throw wrapper
+	}
+}
+
+Tuple3<Integer, String, String> execProcess(String... args) {
+	ProcessBuilder builder = new ProcessBuilder(args)
+	builder.directory(project.projectDir)
+	println "Executing '" + builder.command().stream().collect(Collectors.joining(" ")) + "' in '" + builder.directory().getAbsolutePath() + "' ..."
+	Process process = builder.start()
+	StringBuilder stdout = new StringBuilder(), stderr = new StringBuilder()
+	process.consumeProcessOutput(stdout, stderr)
+	int exitCode = process.waitFor()
+	println "Process exited with code " + exitCode
+	return new Tuple3<>(exitCode, stdout.toString(), stderr.toString())
+}
+
+Properties loadPrivateProps() {
+	Properties privateProps = new Properties()
+	File privatePropsFile = new File(project.projectDir, "private.properties")
+	if (privatePropsFile.exists()) {
+		privatePropsFile.withInputStream {
+			privateProps.load(it)
+		}
+	}
+	return privateProps
 }
