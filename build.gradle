@@ -19,24 +19,25 @@ Tuple3<Integer, String, String> execProcess(String... args) {
 
 def getVersion() {
 	try {
-		// First, fetch all tags, to ensure all the tags are found
-		execProcess("git", "fetch", "--tags", "--force")
+		String version
+		if (System.getenv().containsKey("CI_VERSION")) version = System.getenv().get("CI_VERSION")
+		else {
+			// First, fetch all tags, to ensure all the tags are found
+			execProcess("git", "fetch", "--tags", "--force")
 
-		println execProcess("git", "tag", "--list")
+			// now actually get latest tag with git describe
+			def (exitCode, out, err) = execProcess("git", "describe", "--tags", "--abbrev=0")
 
-		println execProcess("git", "--no-pager", "log", "--max-count=10")
+			// log outputs
+			println out
+			if (!err.isEmpty()) System.err.println err
 
-		// now actually get latest tag with git describe
-		def (exitCode, out, err) = execProcess("git", "describe", "--tags", "--abbrev=0")
+			// throw on error
+			if (exitCode != 0) throw new IOException("Git error, make sure you have at least one tag")
 
-		// log outputs
-		println out
-		if (!err.isEmpty()) System.err.println err
+			version = out.toString().trim().split("\\r?\\n")[0]
+		}
 
-		// throw on error
-		if (exitCode != 0) throw new IOException("Git error, make sure you have at least one tag")
-
-		String version = out.toString().trim().split("\\r?\\n")[0]
 		if (!version.matches('^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[a-z0-9]+)?$')) throw new IllegalStateException("Latest tag '${version}' does not match the required versioning scheme")
 
 		return version
