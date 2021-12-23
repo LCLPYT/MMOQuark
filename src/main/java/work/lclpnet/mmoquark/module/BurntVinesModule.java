@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.VineBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -17,19 +18,22 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.block.ext.MMOVineBlock;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.block.BurntVineBlock;
 
 import java.util.Map;
 
 public class BurntVinesModule implements IModule {
 
     public static Block burnt_vine;
+    public static BlockItem burnt_vine_item;
 
     @Override
     public void register() {
-        new MMOBlockRegistrar(burnt_vine = new BurntVineBlock())
+        MMOBlockRegistrar.Result result = new MMOBlockRegistrar(burnt_vine = new MMOVineBlock())
                 .register(MMOQuark.identifier("burnt_vine"), ItemGroup.DECORATIONS);
+
+        burnt_vine_item = result.item;
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             ItemStack stack = player.getStackInHand(hand);

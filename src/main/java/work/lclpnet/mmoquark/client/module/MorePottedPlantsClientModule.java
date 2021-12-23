@@ -1,12 +1,11 @@
 package work.lclpnet.mmoquark.client.module;
 
 import com.google.common.collect.ImmutableMap;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.color.item.ItemColors;
-import work.lclpnet.mmocontent.block.ext.IBlockColorProvider;
-import work.lclpnet.mmocontent.client.render.block.MMOBlockColors;
 import work.lclpnet.mmoquark.module.MorePottedPlantsModule;
 
 public class MorePottedPlantsClientModule implements IClientModule {
@@ -23,15 +22,9 @@ public class MorePottedPlantsClientModule implements IClientModule {
     }
 
     public static void registerTintedPottedPlant(Block potted, Block parent) {
-        MMOBlockColors.registerBlockColorProvider(new IBlockColorProvider() {
-            @Override
-            public void registerBlockColor(BlockColors colors) {
-                colors.registerColorProvider((state, world, pos, tintIndex) -> colors.getColor(parent.getDefaultState(), world, pos, tintIndex), potted);
-            }
-
-            @Override
-            public void registerItemColor(ItemColors colors) {
-            }
-        });
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
+            BlockColors colors = MinecraftClient.getInstance().getBlockColors();
+            return colors.getColor(parent.getDefaultState(), world, pos, tintIndex);
+        }, potted);
     }
 }

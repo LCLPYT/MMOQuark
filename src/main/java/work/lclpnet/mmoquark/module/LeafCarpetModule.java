@@ -3,12 +3,19 @@ package work.lclpnet.mmoquark.module;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.util.RegistryUtil;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.LeafCarpetBlock;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LeafCarpetModule implements IModule {
+
+    public static List<LeafCarpetBlock> leafCarpetBlocks = new ArrayList<>();
+    public static List<BlockItem> leafCarpetItems = new ArrayList<>();
 
     @Override
     public void register() {
@@ -23,7 +30,11 @@ public class LeafCarpetModule implements IModule {
         String fencePath = RegistryUtil.getRegistryPath(baseBlock);
         if (fencePath == null) return;
 
-        new MMOBlockRegistrar(new LeafCarpetBlock(baseBlock))
+        LeafCarpetBlock leafCarpetBlock = new LeafCarpetBlock(baseBlock);
+        MMOBlockRegistrar.Result result = new MMOBlockRegistrar(leafCarpetBlock)
                 .register(MMOQuark.identifier(fencePath.replaceAll("_leaves", "_leaf_carpet")));
+
+        leafCarpetBlocks.add(leafCarpetBlock);
+        leafCarpetItems.add(result.item);
     }
 }

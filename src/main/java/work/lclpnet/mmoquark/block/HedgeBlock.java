@@ -5,26 +5,22 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
-import work.lclpnet.mmocontent.block.ext.IBlockColorProvider;
 import work.lclpnet.mmocontent.block.ext.MMOFenceBlock;
 import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
 import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.module.HedgesModule;
 
-public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
+public class HedgeBlock extends MMOFenceBlock {
 
-	final Block leaf;
+	public final Block leaf;
 
 	public static final BooleanProperty EXTEND = BooleanProperty.of("extend");
 
@@ -70,17 +66,5 @@ public class HedgeBlock extends MMOFenceBlock implements IBlockColorProvider {
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		super.appendProperties(builder);
 		builder.add(EXTEND);
-	}
-
-	@Override
-	public void registerBlockColor(BlockColors colors) {
-		final BlockState leafState = leaf.getDefaultState();
-		colors.registerColorProvider((state, world, pos, tintIndex) -> colors.getColor(leafState, world, pos, tintIndex), this);
-	}
-
-	@Override
-	public void registerItemColor(ItemColors colors) {
-		final ItemStack leafStack = new ItemStack(leaf);
-		colors.register((stack, tintIndex) -> colors.getColorMultiplier(leafStack, tintIndex), this);
 	}
 }

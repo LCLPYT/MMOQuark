@@ -69,7 +69,8 @@ public class MMOQuark implements ModInitializer {
 			new PipesModule(),
 			new ItemFramesModule(),
 			new FrogsModule(),
-			new ForgottenModule()
+			new ForgottenModule(),
+			new TurfModule()
 	);
 
 	@Override
@@ -89,10 +90,6 @@ public class MMOQuark implements ModInitializer {
 				.sounds(BlockSoundGroup.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register(MMOQuark.identifier("cobbedstone"));
-
-		new MMOBlockRegistrar(new TurfBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)))
-				.withSlab().withStairs().withVerticalSlab()
-				.register(MMOQuark.identifier("turf"));
 
 		MMOBlock brimstone = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.RED)
 				.requiresTool()
