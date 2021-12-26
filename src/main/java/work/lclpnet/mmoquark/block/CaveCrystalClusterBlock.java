@@ -1,11 +1,8 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -25,8 +22,6 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.BlockStatesUtil;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 public class CaveCrystalClusterBlock extends MMOBlock {
 
@@ -37,12 +32,6 @@ public class CaveCrystalClusterBlock extends MMOBlock {
         super(BlockStatesUtil.copyState(base));
 
         setDefaultState(getDefaultState().with(FACING, Direction.DOWN).with(WATERLOGGED, false));
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    private void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override

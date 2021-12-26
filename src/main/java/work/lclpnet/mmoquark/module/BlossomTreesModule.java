@@ -1,5 +1,7 @@
 package work.lclpnet.mmoquark.module;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
@@ -12,7 +14,10 @@ import java.util.List;
 
 public class BlossomTreesModule implements IModule {
 
-    public static List<BlossomSaplingBlock.BlossomSaplingGenerator> trees = new ArrayList<>();
+    public static final List<Block> blossomLeaveBlocks = new ArrayList<>(),
+            blossomSaplingBlocks = new ArrayList<>(),
+            flowerPotBlocks = new ArrayList<>();
+    public static final List<BlossomSaplingBlock.BlossomSaplingGenerator> trees = new ArrayList<>();
 
     @Override
     public void register() {
@@ -29,6 +34,8 @@ public class BlossomTreesModule implements IModule {
         new MMOBlockRegistrar(leaves)
                 .register(MMOQuark.identifier(String.format("%s_blossom_leaves", colorName)), ItemGroup.DECORATIONS);
 
+        blossomLeaveBlocks.add(leaves);
+
         BlossomSaplingBlock.BlossomSaplingGenerator tree = new BlossomSaplingBlock.BlossomSaplingGenerator(leaves);
 
         BlossomSaplingBlock sapling = new BlossomSaplingBlock(tree);
@@ -36,7 +43,11 @@ public class BlossomTreesModule implements IModule {
         new MMOBlockRegistrar(sapling)
                 .register(MMOQuark.identifier(saplingId), ItemGroup.DECORATIONS);
 
-        MorePottedPlantsModule.addPottedPlant(sapling, saplingId);
+        blossomSaplingBlocks.add(sapling);
+
+        FlowerPotBlock flowerPotBlock = MorePottedPlantsModule.addPottedPlant(sapling, saplingId);
+        flowerPotBlocks.add(flowerPotBlock);
+
         trees.add(tree);
     }
 }

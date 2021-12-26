@@ -1,10 +1,7 @@
 package work.lclpnet.mmoquark.block;
 
 import it.unimi.dsi.fastutil.floats.Float2ObjectArrayMap;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.ItemEntity;
@@ -23,8 +20,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.asm.type.IEntityShapeContext;
 
 public class GrateBlock extends MMOBlock implements Waterloggable {
@@ -41,13 +36,6 @@ public class GrateBlock extends MMOBlock implements Waterloggable {
                 .nonOpaque());
 
         setDefaultState(getDefaultState().with(WATERLOGGED, false));
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     private static VoxelShape createNewBox(double stepHeight) {

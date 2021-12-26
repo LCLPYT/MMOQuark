@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -10,10 +11,13 @@ import work.lclpnet.mmoquark.block.RootBlock;
 
 public class CaveRootModule implements IModule {
 
+    public static RootBlock root;
+    public static FlowerPotBlock pottedRoots;
+
     @Override
     public void register() {
-        RootBlock root;
-        new MMOBlockRegistrar(root = new RootBlock())
+        root = new RootBlock();
+        new MMOBlockRegistrar(root)
                 .register(MMOQuark.identifier("root"), ItemGroup.DECORATIONS);
 
         new MMOItemRegistrar(settings -> new Item(settings
@@ -23,6 +27,6 @@ public class CaveRootModule implements IModule {
                         .build())
         )).register(MMOQuark.identifier("root_item"), ItemGroup.FOOD);
 
-        MorePottedPlantsModule.addPottedPlant(root, "cave_root");
+        pottedRoots = MorePottedPlantsModule.addPottedPlant(root, "cave_root");
     }
 }

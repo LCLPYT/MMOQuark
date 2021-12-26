@@ -1,9 +1,6 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -23,8 +20,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 public class RopeBlock extends MMOBlock {
 
@@ -32,13 +27,6 @@ public class RopeBlock extends MMOBlock {
 
     public RopeBlock(Settings settings) {
         super(settings);
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override

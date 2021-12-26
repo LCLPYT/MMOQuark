@@ -11,10 +11,11 @@ import work.lclpnet.mmoquark.blockentity.PipeBlockEntity;
 public class PipesModule implements IModule {
 
     public static BlockEntityType<PipeBlockEntity> blockEntityType;
+    public static PipeBlock pipeBlock;
 
     @Override
     public void register() {
-        PipeBlock pipeBlock = new PipeBlock();
+        pipeBlock = new PipeBlock();
         new MMOBlockRegistrar(pipeBlock)
                 .register(MMOQuark.identifier("pipe"), ItemGroup.DECORATIONS);
 

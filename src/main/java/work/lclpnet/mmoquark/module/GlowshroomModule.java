@@ -10,7 +10,7 @@ import work.lclpnet.mmoquark.block.GlowshroomPlantBlock;
 
 public class GlowshroomModule implements IModule {
 
-    public static Block glowcelium, glowshroom, glowshroom_block, glowshroom_stem;
+    public static Block glowcelium, glowshroom, glowshroom_block, glowshroom_stem, potted_glowshroom;
 
     @Override
     public void register() {
@@ -26,6 +26,6 @@ public class GlowshroomModule implements IModule {
         new MMOBlockRegistrar(glowshroom_stem = new GlowshroomBlock())
                 .register(MMOQuark.identifier("glowshroom_stem"));
 
-        MorePottedPlantsModule.addPottedPlant(glowshroom, "glowshroom", s -> s.luminance(b -> 14));
+        potted_glowshroom = MorePottedPlantsModule.addPottedPlant(glowshroom, "glowshroom", s -> s.luminance(b -> 14));
     }
 }

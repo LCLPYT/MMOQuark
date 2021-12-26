@@ -1,9 +1,6 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
@@ -12,8 +9,6 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 import java.util.Random;
 
@@ -26,13 +21,6 @@ public class IronRodBlock extends EndRodBlock implements IMMOBlock {
                 .strength(5F, 10F)
                 .sounds(BlockSoundGroup.METAL)
                 .nonOpaque());
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override

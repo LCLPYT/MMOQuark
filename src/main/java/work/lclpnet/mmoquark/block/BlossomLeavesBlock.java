@@ -1,14 +1,11 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.particle.BlockStateParticleEffect;
@@ -17,8 +14,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 import java.util.Random;
 
@@ -34,13 +29,6 @@ public class BlossomLeavesBlock extends LeavesBlock implements IMMOBlock {
                 .allowsSpawning((s, r, p, t) -> false)
                 .suffocates((s, r, p) -> false)
                 .blockVision((s, r, p) -> false));
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    private void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutoutMipped());
     }
 
     @Override

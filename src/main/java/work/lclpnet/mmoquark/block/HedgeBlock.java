@@ -1,11 +1,8 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
@@ -14,8 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 import work.lclpnet.mmocontent.block.ext.MMOFenceBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.module.HedgesModule;
 
 public class HedgeBlock extends MMOFenceBlock {
@@ -30,14 +25,8 @@ public class HedgeBlock extends MMOFenceBlock {
 		this.leaf = leaf;
 
 		setDefaultState(getDefaultState().with(EXTEND, false));
-		if (Env.isClient()) registerRenderLayer();
 	}
 
-	@Environment(EnvType.CLIENT)
-	private void registerRenderLayer() {
-		MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
-	}
-	
 	@Override
 	public boolean canConnect(BlockState state, boolean isSideSolid, Direction direction) {
 		return state.getBlock().isIn(HedgesModule.hedgesTag);

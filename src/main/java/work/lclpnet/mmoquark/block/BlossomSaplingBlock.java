@@ -5,7 +5,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.world.Heightmap;
@@ -19,8 +18,6 @@ import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 import java.util.OptionalInt;
 import java.util.Random;
@@ -29,12 +26,6 @@ public class BlossomSaplingBlock extends SaplingBlock implements IMMOBlock {
 
     public BlossomSaplingBlock(BlossomSaplingGenerator generator) {
         super(generator, Settings.copy(Blocks.OAK_SAPLING));
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override

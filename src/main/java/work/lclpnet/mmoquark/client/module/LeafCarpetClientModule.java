@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
 import work.lclpnet.mmocontent.client.util.ClientCommon;
 import work.lclpnet.mmoquark.block.LeafCarpetBlock;
 import work.lclpnet.mmoquark.module.LeafCarpetModule;
@@ -26,5 +28,8 @@ public class LeafCarpetClientModule implements IClientModule {
 
             return colors.getColorMultiplier(leafCarpetBlock.getBaseStack(), tintIndex);
         }, LeafCarpetModule.leafCarpetItems.toArray(new BlockItem[0]));
+
+        LeafCarpetModule.leafCarpetBlocks
+                .forEach(leafCarpetBlock -> MMORenderLayers.setBlockRenderType(leafCarpetBlock, RenderLayer.getCutout()));
     }
 }

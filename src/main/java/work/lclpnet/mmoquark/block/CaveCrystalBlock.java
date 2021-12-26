@@ -1,13 +1,10 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
@@ -15,8 +12,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.MMOGlassBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 import java.util.Random;
 
@@ -39,13 +34,6 @@ public class CaveCrystalBlock extends MMOGlassBlock {
         float b = (color & 0xff) / 255f;
         colorComponents = new float[]{r, g, b};
         colorVector = new Vec3d(r, g, b);
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    private void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getTranslucent());
     }
 
     @Override

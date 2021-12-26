@@ -11,7 +11,7 @@ public class GoldBarsModule implements IModule {
 
     @Override
     public void register() {
-        new MMOBlockRegistrar(new MMOPaneBlock(AbstractBlock.Settings.copy(Blocks.IRON_BARS), true))
+        new MMOBlockRegistrar(new MMOPaneBlock(AbstractBlock.Settings.copy(Blocks.IRON_BARS)))
                 .register(MMOQuark.identifier("gold_bars"), ItemGroup.DECORATIONS);
     }
 }

@@ -7,9 +7,12 @@ import work.lclpnet.mmoquark.block.GrateBlock;
 
 public class GrateModule implements IModule {
 
+    public static GrateBlock grateBlock;
+
     @Override
     public void register() {
-        new MMOBlockRegistrar(new GrateBlock())
+        grateBlock = new GrateBlock();
+        new MMOBlockRegistrar(grateBlock)
                 .register(MMOQuark.identifier("grate"), ItemGroup.DECORATIONS);
     }
 }

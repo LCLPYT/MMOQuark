@@ -6,8 +6,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
 import work.lclpnet.mmocontent.client.util.ClientCommon;
 import work.lclpnet.mmoquark.module.BurntVinesModule;
 
@@ -26,5 +28,7 @@ public class BurntVinesClientModule implements IClientModule {
             ItemColors colors = ClientCommon.getItemColors();
             return colors.getColorMultiplier(vine, tintIndex);
         }, BurntVinesModule.burnt_vine_item);
+
+        MMORenderLayers.setBlockRenderType(BurntVinesModule.burnt_vine, RenderLayer.getCutout());
     }
 }

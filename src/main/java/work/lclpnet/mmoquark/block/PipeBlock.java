@@ -1,10 +1,7 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -26,8 +23,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.blockentity.PipeBlockEntity;
 
 import java.util.HashSet;
@@ -73,13 +68,6 @@ public class PipeBlock extends MMOBlock implements Waterloggable, BlockEntityPro
                 .with(NORTH, false).with(SOUTH, false)
                 .with(WEST, false).with(EAST, false)
                 .with(WATERLOGGED, false));
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override

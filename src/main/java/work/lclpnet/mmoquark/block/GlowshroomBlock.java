@@ -3,7 +3,6 @@ package work.lclpnet.mmoquark.block;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.particle.ParticleTypes;
@@ -12,8 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 import work.lclpnet.mmoquark.asm.mixin.common.AbstractBlockAccessor;
 import work.lclpnet.mmoquark.module.GlowshroomModule;
 
@@ -26,13 +23,6 @@ public class GlowshroomBlock extends MushroomBlock implements IMMOBlock {
                 .luminance(b -> 14)
                 .ticksRandomly()
                 .nonOpaque());
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getTranslucent());
     }
 
     @Override

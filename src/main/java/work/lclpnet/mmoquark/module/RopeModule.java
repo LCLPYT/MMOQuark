@@ -11,11 +11,15 @@ import work.lclpnet.mmoquark.block.RopeBlock;
 
 public class RopeModule implements IModule {
 
+    public static RopeBlock ropeBlock;
+
     @Override
     public void register() {
-        new MMOBlockRegistrar(new RopeBlock(AbstractBlock.Settings.of(Material.WOOL, MaterialColor.BROWN)
+        ropeBlock = new RopeBlock(AbstractBlock.Settings.of(Material.WOOL, MaterialColor.BROWN)
                 .strength(0.5F, 0.5F)
-                .sounds(BlockSoundGroup.WOOL)))
+                .sounds(BlockSoundGroup.WOOL));
+
+        new MMOBlockRegistrar(ropeBlock)
                 .register(MMOQuark.identifier("rope"), ItemGroup.DECORATIONS);
     }
 }

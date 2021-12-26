@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.render.RenderLayer;
+import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
 import work.lclpnet.mmoquark.module.MorePottedPlantsModule;
 
 public class MorePottedPlantsClientModule implements IClientModule {
@@ -19,6 +21,9 @@ public class MorePottedPlantsClientModule implements IClientModule {
                 MorePottedPlantsModule.tallGrass, Blocks.TALL_GRASS,
                 MorePottedPlantsModule.vine, Blocks.VINE
         ).forEach(MorePottedPlantsClientModule::registerTintedPottedPlant);
+
+        MorePottedPlantsModule.pottedPlants
+                .forEach(block -> MMORenderLayers.setBlockRenderType(block, RenderLayer.getCutout()));
     }
 
     public static void registerTintedPottedPlant(Block potted, Block parent) {

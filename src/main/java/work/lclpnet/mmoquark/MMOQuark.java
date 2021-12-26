@@ -13,7 +13,10 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmoquark.block.*;
+import work.lclpnet.mmoquark.block.BambooMatBlock;
+import work.lclpnet.mmoquark.block.ObsidianPressurePlateBlock;
+import work.lclpnet.mmoquark.block.SturdyStoneBlock;
+import work.lclpnet.mmoquark.block.ThatchBlock;
 import work.lclpnet.mmoquark.module.*;
 import work.lclpnet.mmoquark.sound.MMOSounds;
 
@@ -70,7 +73,8 @@ public class MMOQuark implements ModInitializer {
 			new ItemFramesModule(),
 			new FrogsModule(),
 			new ForgottenModule(),
-			new TurfModule()
+			new TurfModule(),
+			new IronRodModule()
 	);
 
 	@Override
@@ -149,9 +153,6 @@ public class MMOQuark implements ModInitializer {
 				.noCollision()
 				.strength(2F, 1200F)))
 				.register(MMOQuark.identifier("obsidian_pressure_plate"), ItemGroup.REDSTONE);
-
-		new MMOBlockRegistrar(new IronRodBlock())
-				.register(MMOQuark.identifier("iron_rod"), ItemGroup.DECORATIONS);
 
 		// modules
 		MODULES.forEach(IModule::register);

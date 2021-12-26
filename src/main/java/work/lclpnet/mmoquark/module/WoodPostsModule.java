@@ -13,7 +13,12 @@ import work.lclpnet.mmocontent.util.RegistryUtil;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.WoodPostBlock;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WoodPostsModule implements IModule {
+
+    public static final List<WoodPostBlock> woodPosts = new ArrayList<>();
 
     @Override
     public void register() {
@@ -32,7 +37,9 @@ public class WoodPostsModule implements IModule {
 
         WoodPostBlock post = new WoodPostBlock(b, nether);
         new MMOBlockRegistrar(post)
-                .register(MMOQuark.identifier(postPath));
+                .register(MMOQuark.identifier(postPath), ItemGroup.DECORATIONS);
+
+        woodPosts.add(post);
 
         post.strippedBlock = new WoodPostBlock(b, nether);
         new MMOBlockRegistrar(post.strippedBlock)

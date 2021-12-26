@@ -26,7 +26,19 @@ public class MMOQuarkClient implements ClientModInitializer {
             new HedgesClientModule(),
             new LeafCarpetClientModule(),
             new MyaliteClientModule(),
-            new TurfClientModule()
+            new TurfClientModule(),
+            new BlossomTreesClientModule(),
+            new CaveCrystalClientModule(),
+            new ChorusVegetationClientBlock(),
+            new FramedGlassClientModule(),
+            new GlowshroomClientModule(),
+            new GrateClientModule(),
+            new IronRodClientModule(),
+            new PipeClientModule(),
+            new RopeClientModule(),
+            new VariantLadderClientModule(),
+            new WoodPostsClientModule(),
+            new CaveRootClientModule()
     );
 
     @Override

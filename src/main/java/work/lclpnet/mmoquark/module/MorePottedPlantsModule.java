@@ -7,11 +7,15 @@ import net.minecraft.block.FlowerPotBlock;
 import work.lclpnet.mmocontent.block.MMOPottedPlantUtil;
 import work.lclpnet.mmoquark.MMOQuark;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 public class MorePottedPlantsModule implements IModule {
 
     public static Block grass, largeFern, sugarCane, tallGrass, vine;
+
+    public static final List<Block> pottedPlants = new ArrayList<>();
 
     @Override
     public void register() {
@@ -43,10 +47,12 @@ public class MorePottedPlantsModule implements IModule {
     /* Comfort methods */
 
     static FlowerPotBlock addPottedPlant(Block block, String name) {
-        return MMOPottedPlantUtil.addPottedPlant(block, name, Function.identity(), MMOQuark::identifier);
+        return addPottedPlant(block, name, Function.identity());
     }
 
     static FlowerPotBlock addPottedPlant(Block block, String name, Function<AbstractBlock.Settings, AbstractBlock.Settings> transformer) {
-        return MMOPottedPlantUtil.addPottedPlant(block, name, transformer, MMOQuark::identifier);
+        FlowerPotBlock pottedPlant = MMOPottedPlantUtil.addPottedPlant(block, name, transformer, MMOQuark::identifier);
+        pottedPlants.add(pottedPlant);
+        return pottedPlant;
     }
 }
