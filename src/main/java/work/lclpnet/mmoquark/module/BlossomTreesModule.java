@@ -34,7 +34,7 @@ public class BlossomTreesModule implements IModule {
         BlossomSaplingBlock sapling = new BlossomSaplingBlock(tree);
         String saplingId = String.format("%s_blossom_sapling", colorName);
         new MMOBlockRegistrar(sapling)
-                .register(MMOQuark.identifier(saplingId));
+                .register(MMOQuark.identifier(saplingId), ItemGroup.DECORATIONS);
 
         MorePottedPlantsModule.addPottedPlant(sapling, saplingId);
         trees.add(tree);

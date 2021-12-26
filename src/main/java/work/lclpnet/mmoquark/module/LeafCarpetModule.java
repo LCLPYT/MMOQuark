@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.util.RegistryUtil;
 import work.lclpnet.mmoquark.MMOQuark;
@@ -32,7 +33,8 @@ public class LeafCarpetModule implements IModule {
 
         LeafCarpetBlock leafCarpetBlock = new LeafCarpetBlock(baseBlock);
         MMOBlockRegistrar.Result result = new MMOBlockRegistrar(leafCarpetBlock)
-                .register(MMOQuark.identifier(fencePath.replaceAll("_leaves", "_leaf_carpet")));
+                .register(MMOQuark.identifier(fencePath.replaceAll("_leaves", "_leaf_carpet")),
+                        ItemGroup.DECORATIONS);
 
         leafCarpetBlocks.add(leafCarpetBlock);
         leafCarpetItems.add(result.item);

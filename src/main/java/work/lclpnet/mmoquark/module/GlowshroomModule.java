@@ -1,6 +1,7 @@
 package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.GlowceliumBlock;
@@ -17,7 +18,7 @@ public class GlowshroomModule implements IModule {
                 .register(MMOQuark.identifier("glowcelium"));
 
         new MMOBlockRegistrar(glowshroom = new GlowshroomPlantBlock())
-                .register(MMOQuark.identifier("glowshroom"));
+                .register(MMOQuark.identifier("glowshroom"), ItemGroup.DECORATIONS);
 
         new MMOBlockRegistrar(glowshroom_block = new GlowshroomBlock())
                 .register(MMOQuark.identifier("glowshroom_block"));

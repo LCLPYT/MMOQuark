@@ -134,7 +134,7 @@ public class MMOQuark implements ModInitializer {
 				.register(MMOQuark.identifier("elder_sea_lantern"));
 
 		new MMOBlockRegistrar(new BambooMatBlock())
-				.register(MMOQuark.identifier("bamboo_mat"));
+				.register(MMOQuark.identifier("bamboo_mat"), ItemGroup.DECORATIONS);
 
 		new MMOBlockRegistrar(new SturdyStoneBlock())
 				.register(MMOQuark.identifier("sturdy_stone"));

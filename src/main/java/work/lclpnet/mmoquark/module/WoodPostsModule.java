@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LanternBlock;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
@@ -35,7 +36,7 @@ public class WoodPostsModule implements IModule {
 
         post.strippedBlock = new WoodPostBlock(b, nether);
         new MMOBlockRegistrar(post.strippedBlock)
-                .register(MMOQuark.identifier("stripped_".concat(postPath)));
+                .register(MMOQuark.identifier("stripped_".concat(postPath)), ItemGroup.DECORATIONS);
     }
 
     public static boolean canLanternConnect(BlockState state, WorldView worldIn, BlockPos pos, boolean prev) {
