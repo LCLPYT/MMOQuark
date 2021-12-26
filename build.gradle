@@ -33,7 +33,7 @@ dependencies {
 }
 
 loom {
-	accessWidener = file("src/main/resources/mmoquark.accesswidener")
+	accessWidenerPath = file("src/main/resources/mmoquark.accesswidener")
 }
 
 processResources {
