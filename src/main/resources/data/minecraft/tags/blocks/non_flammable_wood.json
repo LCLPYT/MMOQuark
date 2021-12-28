@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "mmoquark:warped_chest",
-	"mmoquark:crimson_chest",
-	"mmoquark:warped_ladder",
-	"mmoquark:crimson_ladder",
-	"mmoquark:warped_post",
-	"mmoquark:crimson_post",
-	"mmoquark:warped_bookshelf",
-	"mmoquark:crimson_bookshelf"
+    "quark:warped_chest",
+	"quark:crimson_chest",
+	"quark:warped_ladder",
+	"quark:crimson_ladder",
+	"quark:warped_post",
+	"quark:crimson_post",
+	"quark:warped_bookshelf",
+	"quark:crimson_bookshelf"
   ]
 }

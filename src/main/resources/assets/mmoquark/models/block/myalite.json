@@ -1,6 +1,0 @@
-{
-	"parent": "mmoquark:block/cube_all_tinted",
-	"textures": {
-		"all": "mmoquark:block/myalite"
-	}
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "mmoquark:block/sandstone_bricks",
-        "top": "mmoquark:block/sandstone_bricks",
-        "side": "mmoquark:block/sandstone_bricks"
-    }
-}

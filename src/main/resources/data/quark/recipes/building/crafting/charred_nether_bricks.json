@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_bricks"
+    }, 
+    {
+      "item": "minecraft:nether_bricks"
+    }, 
+    {
+      "item": "minecraft:nether_bricks"
+    }, 
+    {
+      "item": "minecraft:fire_charge"
+    }
+  ],
+  "result": {
+    "item": "quark:charred_nether_bricks",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "quark:flag",
+      "flag": "charred_nether_bricks"
+    }
+  ]
+}

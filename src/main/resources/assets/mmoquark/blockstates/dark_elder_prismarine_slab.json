@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoquark:block/dark_elder_prismarine_slab" },
-        "type=top": { "model": "mmoquark:block/dark_elder_prismarine_slab_top" },
-        "type=double": { "model": "mmoquark:block/dark_elder_prismarine" }
-    }
-}

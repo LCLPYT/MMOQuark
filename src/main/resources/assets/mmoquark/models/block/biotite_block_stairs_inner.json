@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "mmoquark:block/biotite_block",
-        "top": "mmoquark:block/biotite_block",
-        "side": "mmoquark:block/biotite_block"
-    }
-}

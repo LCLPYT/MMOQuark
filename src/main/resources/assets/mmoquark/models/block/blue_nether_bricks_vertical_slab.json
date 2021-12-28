@@ -1,8 +1,0 @@
-{
-    "parent": "mmoquark:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoquark:block/blue_nether_bricks",
-        "top": "mmoquark:block/blue_nether_bricks",
-        "side": "mmoquark:block/blue_nether_bricks"
-    }
-}

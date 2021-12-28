@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "type=bottom": [
+			{ "model": "quark:block/turf_slab" },
+			{ "model": "quark:block/turf_slab", "y": 90 },
+			{ "model": "quark:block/turf_slab", "y": 180 },
+			{ "model": "quark:block/turf_slab", "y": 270 }
+		],
+		"type=top": [
+			{ "model": "quark:block/turf_slab_top" },
+			{ "model": "quark:block/turf_slab_top", "y": 90 },
+			{ "model": "quark:block/turf_slab_top", "y": 180 },
+			{ "model": "quark:block/turf_slab_top", "y": 270 }
+		],
+        "type=double": [
+			{ "model": "quark:block/turf" },
+			{ "model": "quark:block/turf", "y": 90 },
+			{ "model": "quark:block/turf", "y": 180 },
+			{ "model": "quark:block/turf", "y": 270 }
+		]
+    }
+}

@@ -54,7 +54,7 @@ public class FeedingTroughBlockEntity extends LootableContainerBlockEntity imple
 
     @Override
     protected Text getContainerName() {
-        return new TranslatableText("mmoquark.container.feeding_trough");
+        return new TranslatableText("quark.container.feeding_trough");
     }
 
     @Override

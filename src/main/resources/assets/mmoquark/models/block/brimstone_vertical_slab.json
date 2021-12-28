@@ -1,8 +1,0 @@
-{
-    "parent": "mmoquark:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoquark:block/brimstone",
-        "top": "mmoquark:block/brimstone",
-        "side": "mmoquark:block/brimstone"
-    }
-}

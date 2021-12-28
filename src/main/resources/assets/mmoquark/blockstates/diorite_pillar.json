@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoquark:block/diorite_pillar" },
-        "axis=z":   { "model": "mmoquark:block/diorite_pillar", "x": 90 },
-        "axis=x":   { "model": "mmoquark:block/diorite_pillar", "x": 90, "y": 90 }
-    }
-}

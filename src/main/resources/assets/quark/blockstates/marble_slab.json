@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "quark:block/marble_slab" },
+        "type=top": { "model": "quark:block/marble_slab_top" },
+        "type=double": { "model": "quark:block/marble" }
+    }
+}

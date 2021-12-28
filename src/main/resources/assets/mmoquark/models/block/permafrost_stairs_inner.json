@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "mmoquark:block/permafrost",
-        "top": "mmoquark:block/permafrost",
-        "side": "mmoquark:block/permafrost"
-    }
-}

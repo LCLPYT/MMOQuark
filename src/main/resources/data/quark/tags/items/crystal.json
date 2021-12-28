@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "quark:red_crystal",
+    "quark:orange_crystal",
+    "quark:yellow_crystal",
+    "quark:green_crystal",
+    "quark:blue_crystal",
+    "quark:indigo_crystal",
+    "quark:violet_crystal",
+    "quark:white_crystal",
+    "quark:black_crystal"
+  ]
+}

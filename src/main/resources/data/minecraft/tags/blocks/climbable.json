@@ -1,15 +1,15 @@
 {
 	"replace": false,
 	"values": [
-		"mmoquark:acacia_ladder",
-		"mmoquark:birch_ladder",
-		"mmoquark:dark_oak_ladder",
-		"mmoquark:jungle_ladder",
-		"mmoquark:spruce_ladder",
-		"mmoquark:crimson_ladder",
-		"mmoquark:warped_ladder",
-		"mmoquark:iron_ladder",
-		"mmoquark:rope",
-		"mmoquark:burnt_vine"
+		"quark:acacia_ladder",
+		"quark:birch_ladder",
+		"quark:dark_oak_ladder",
+		"quark:jungle_ladder",
+		"quark:spruce_ladder",
+		"quark:crimson_ladder",
+		"quark:warped_ladder",
+		"quark:iron_ladder",
+		"quark:rope",
+		"quark:burnt_vine"
 	]
 }

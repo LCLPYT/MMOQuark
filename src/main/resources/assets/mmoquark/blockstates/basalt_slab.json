@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoquark:block/basalt_slab" },
-        "type=top": { "model": "mmoquark:block/basalt_slab_top" },
-        "type=double": { "model": "mmoquark:block/basalt" }
-    }
-}

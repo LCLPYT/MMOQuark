@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "quark:block/dark_elder_prismarine_slab" },
+        "type=top": { "model": "quark:block/dark_elder_prismarine_slab_top" },
+        "type=double": { "model": "quark:block/dark_elder_prismarine" }
+    }
+}

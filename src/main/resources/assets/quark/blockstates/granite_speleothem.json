@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "quark:block/granite_speleothem_small" },
+        "size=medium": { "model": "quark:block/granite_speleothem_medium" },
+        "size=big": { "model": "quark:block/granite_speleothem_big" }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "quark:block/cobbedstone",
+        "top": "quark:block/cobbedstone",
+        "side": "quark:block/cobbedstone"
+    }
+}

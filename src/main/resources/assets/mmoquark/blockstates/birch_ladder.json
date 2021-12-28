@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "mmoquark:block/birch_ladder" },
-        "facing=east":  { "model": "mmoquark:block/birch_ladder", "y": 90 },
-        "facing=south": { "model": "mmoquark:block/birch_ladder", "y": 180 },
-        "facing=west":  { "model": "mmoquark:block/birch_ladder", "y": 270 }
-    }
-}

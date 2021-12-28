@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoquark:block/myalite_pillar" },
-        "axis=z":   { "model": "mmoquark:block/myalite_pillar", "x": 90 },
-        "axis=x":   { "model": "mmoquark:block/myalite_pillar", "x": 90, "y": 90 }
-    }
-}

@@ -1,0 +1,6 @@
+{
+	"parent": "quark:block/cube_all_tinted",
+	"textures": {
+		"all": "block/grass_block_top"
+	}
+}

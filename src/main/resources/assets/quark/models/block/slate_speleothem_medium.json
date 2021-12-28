@@ -1,0 +1,6 @@
+{
+  "parent": "quark:block/speleothem_medium",
+  "textures": {
+    "block": "quark:block/slate"
+  }
+}

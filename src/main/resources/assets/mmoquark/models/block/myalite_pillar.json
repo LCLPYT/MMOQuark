@@ -1,7 +1,0 @@
-{
-    "parent": "mmoquark:block/cube_column_tinted",
-    "textures": {
-        "end": "mmoquark:block/myalite_pillar_top",
-        "side": "mmoquark:block/myalite_pillar"
-    }
-}

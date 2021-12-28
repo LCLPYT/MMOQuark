@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoquark:block/jasper_slab" },
-        "type=top": { "model": "mmoquark:block/jasper_slab_top" },
-        "type=double": { "model": "mmoquark:block/jasper" }
-    }
-}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "quark:block/cobbedstone_slab" },
+        "type=top": { "model": "quark:block/cobbedstone_slab_top" },
+        "type=double": { "model": "quark:block/cobbedstone" }
+    }
+}

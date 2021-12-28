@@ -1,8 +1,0 @@
-{
-    "parent": "mmoquark:block/outer_stairs_tinted",
-    "textures": {
-        "bottom": "mmoquark:block/myalite",
-        "top": "mmoquark:block/myalite",
-        "side": "mmoquark:block/myalite"
-    }
-}

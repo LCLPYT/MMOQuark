@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "mmoquark:blue_blossom_leaves",
-    "mmoquark:lavender_blossom_leaves",
-    "mmoquark:orange_blossom_leaves",
-    "mmoquark:pink_blossom_leaves",
-    "mmoquark:yellow_blossom_leaves",
-    "mmoquark:red_blossom_leaves"
+    "quark:blue_blossom_leaves",
+    "quark:lavender_blossom_leaves",
+    "quark:orange_blossom_leaves",
+    "quark:pink_blossom_leaves",
+    "quark:yellow_blossom_leaves",
+    "quark:red_blossom_leaves"
   ]
 }

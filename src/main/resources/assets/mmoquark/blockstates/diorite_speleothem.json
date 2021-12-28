@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "size=small": { "model": "mmoquark:block/diorite_speleothem_small" },
-        "size=medium": { "model": "mmoquark:block/diorite_speleothem_medium" },
-        "size=big": { "model": "mmoquark:block/diorite_speleothem_big" }
-    }
-}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "quark:block/charred_nether_bricks",
+        "top": "quark:block/charred_nether_bricks",
+        "side": "quark:block/charred_nether_bricks"
+    }
+}

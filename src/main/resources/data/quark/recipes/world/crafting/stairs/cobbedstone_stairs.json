@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "quark:cobbedstone"
+    }
+  },
+  "result": {
+    "item": "quark:cobbedstone_stairs",
+    "count": 4
+  }
+} 

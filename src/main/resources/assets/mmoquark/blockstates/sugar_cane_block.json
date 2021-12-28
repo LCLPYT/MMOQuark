@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "mmoquark:block/sugar_cane_block" },
-        "axis=z":   { "model": "mmoquark:block/sugar_cane_block", "x": 90 },
-        "axis=x":   { "model": "mmoquark:block/sugar_cane_block", "x": 90, "y": 90 }
-    }
-}

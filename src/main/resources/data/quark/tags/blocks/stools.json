@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "quark:black_stool",
+	"quark:blue_stool",
+	"quark:brown_stool",
+	"quark:cyan_stool",
+	"quark:gray_stool",
+	"quark:green_stool",
+	"quark:light_blue_stool",
+	"quark:light_gray_stool",
+	"quark:lime_stool",
+	"quark:magenta_stool",
+	"quark:orange_stool",
+	"quark:pink_stool",
+	"quark:purple_stool",
+	"quark:red_stool",
+	"quark:white_stool",
+	"quark:yellow_stool"
+  ]
+}

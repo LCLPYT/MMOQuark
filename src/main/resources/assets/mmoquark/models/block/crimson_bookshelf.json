@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "block/crimson_planks",
-        "side": "mmoquark:block/crimson_bookshelf"
-    }
-}

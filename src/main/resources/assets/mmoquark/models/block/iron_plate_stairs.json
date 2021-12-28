@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoquark:block/iron_plate",
-        "top": "mmoquark:block/iron_plate",
-        "side": "mmoquark:block/iron_plate"
-    }
-}

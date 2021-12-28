@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "mmoquark:block/red_crystal_cluster"
-  }
-}

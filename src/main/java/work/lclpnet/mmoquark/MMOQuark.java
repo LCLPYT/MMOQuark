@@ -26,7 +26,7 @@ import static net.minecraft.block.AbstractBlock.Settings.copy;
 
 public class MMOQuark implements ModInitializer {
 
-	public static final String MOD_ID = "mmoquark";
+	public static final String MOD_ID = "quark";
 
 	public static final Set<IModule> MODULES = ImmutableSet.of(
 			new VanillaVerticalSlabsModule(),

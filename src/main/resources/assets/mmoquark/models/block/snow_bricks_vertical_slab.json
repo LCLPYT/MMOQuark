@@ -1,8 +1,0 @@
-{
-    "parent": "mmoquark:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoquark:block/snow_bricks",
-        "top": "mmoquark:block/snow_bricks",
-        "side": "mmoquark:block/snow_bricks"
-    }
-}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "quark:block/snow_bricks",
+        "top": "quark:block/snow_bricks",
+        "side": "quark:block/snow_bricks"
+    }
+}

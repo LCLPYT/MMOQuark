@@ -1,6 +1,0 @@
-{
-    "parent": "mmoquark:block/wall_inventory_tinted",
-    "textures": {
-        "wall": "mmoquark:block/myalite"
-    }
-}

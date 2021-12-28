@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "quark:block/stone_speleothem_small" },
+        "size=medium": { "model": "quark:block/stone_speleothem_medium" },
+        "size=big": { "model": "quark:block/stone_speleothem_big" }
+    }
+}

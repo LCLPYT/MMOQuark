@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "quark:black_quilted_wool",
+	"quark:blue_quilted_wool",
+	"quark:brown_quilted_wool",
+	"quark:cyan_quilted_wool",
+	"quark:gray_quilted_wool",
+	"quark:green_quilted_wool",
+	"quark:light_blue_quilted_wool",
+	"quark:light_gray_quilted_wool",
+	"quark:lime_quilted_wool",
+	"quark:magenta_quilted_wool",
+	"quark:orange_quilted_wool",
+	"quark:pink_quilted_wool",
+	"quark:purple_quilted_wool",
+	"quark:red_quilted_wool",
+	"quark:white_quilted_wool",
+	"quark:yellow_quilted_wool"
+  ]
+}

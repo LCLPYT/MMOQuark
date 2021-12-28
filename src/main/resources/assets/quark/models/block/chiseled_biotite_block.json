@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "quark:block/chiseled_biotite_block_top",
+        "side": "quark:block/chiseled_biotite_block"
+    }
+}

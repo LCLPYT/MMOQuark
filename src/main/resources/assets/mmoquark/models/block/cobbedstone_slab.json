@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "mmoquark:block/cobbedstone",
-        "top": "mmoquark:block/cobbedstone",
-        "side": "mmoquark:block/cobbedstone"
-    }
-}

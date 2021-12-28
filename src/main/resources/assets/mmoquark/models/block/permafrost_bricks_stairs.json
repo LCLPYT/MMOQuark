@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoquark:block/permafrost_bricks",
-        "top": "mmoquark:block/permafrost_bricks",
-        "side": "mmoquark:block/permafrost_bricks"
-    }
-}

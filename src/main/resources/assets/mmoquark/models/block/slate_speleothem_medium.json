@@ -1,6 +1,0 @@
-{
-  "parent": "mmoquark:block/speleothem_medium",
-  "textures": {
-    "block": "mmoquark:block/slate"
-  }
-}

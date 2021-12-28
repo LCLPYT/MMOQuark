@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "quark:block/vanilla_basalt_bricks"
+	}
+}

@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "mmoquark:gold_button",
-    "mmoquark:iron_button"
+    "quark:gold_button",
+    "quark:iron_button"
   ]
 }

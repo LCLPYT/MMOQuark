@@ -1,6 +1,0 @@
-{
-    "parent": "block/flower_pot_cross",
-    "textures": {
-        "plant": "mmoquark:block/orange_blossom_sapling"
-    }
-}

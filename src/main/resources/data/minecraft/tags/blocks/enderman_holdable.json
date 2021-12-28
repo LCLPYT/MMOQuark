@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "mmoquark:glowcelium",
-    "mmoquark:glowshroom"
+    "quark:glowcelium",
+    "quark:glowshroom"
   ]
 }

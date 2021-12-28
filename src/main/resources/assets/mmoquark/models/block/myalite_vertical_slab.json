@@ -1,8 +1,0 @@
-{
-    "parent": "mmoquark:block/vertical_slab_tinted",
-    "textures": {
-        "bottom": "mmoquark:block/myalite",
-        "top": "mmoquark:block/myalite",
-        "side": "mmoquark:block/myalite"
-    }
-}

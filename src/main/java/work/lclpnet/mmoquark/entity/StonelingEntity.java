@@ -42,6 +42,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
 import org.jetbrains.annotations.Nullable;
+import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.asm.mixin.common.GoalSelectorAccessor;
 import work.lclpnet.mmoquark.entity.ai.ActWaryGoal;
 import work.lclpnet.mmoquark.entity.ai.FavorBlockGoal;
@@ -53,7 +54,7 @@ import java.util.Set;
 
 public class StonelingEntity extends PathAwareEntity {
 
-    public static final Identifier CARRY_LOOT_TABLE = new Identifier("mmoquark", "entities/stoneling_carry");
+    public static final Identifier CARRY_LOOT_TABLE = MMOQuark.identifier("entities/stoneling_carry");
 
     private static final TrackedData<ItemStack> CARRYING_ITEM = DataTracker.registerData(StonelingEntity.class, TrackedDataHandlerRegistry.ITEM_STACK);
     private static final TrackedData<Byte> VARIANT = DataTracker.registerData(StonelingEntity.class, TrackedDataHandlerRegistry.BYTE);

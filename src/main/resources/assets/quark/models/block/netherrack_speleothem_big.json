@@ -1,0 +1,6 @@
+{
+  "parent": "quark:block/speleothem_big",
+  "textures": {
+    "block": "block/netherrack"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "quark:cobbedstone_vertical_slab"
+    }
+  ],
+  "result": {
+    "item": "quark:cobbedstone_slab",
+    "count": 1
+  }
+} 

@@ -1,6 +1,0 @@
-{
-  "parent": "mmoquark:block/candle",
-  "textures": {
-    "candle": "mmoquark:block/light_gray_candle"
-  }
-}

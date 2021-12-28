@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "quark:rusty_iron_plate"
+    }
+  },
+  "result": {
+    "item": "quark:rusty_iron_plate_slab",
+    "count": 6
+  }
+} 

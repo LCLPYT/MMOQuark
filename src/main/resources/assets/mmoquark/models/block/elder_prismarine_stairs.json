@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoquark:block/elder_prismarine",
-        "top": "mmoquark:block/elder_prismarine",
-        "side": "mmoquark:block/elder_prismarine"
-    }
-}

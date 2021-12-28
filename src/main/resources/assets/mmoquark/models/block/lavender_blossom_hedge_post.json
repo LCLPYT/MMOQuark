@@ -1,7 +1,0 @@
-{
-  "parent": "mmoquark:block/hedge_post",
-  "textures": {
-    "log": "minecraft:block/spruce_log",
-    "leaf": "mmoquark:block/lavender_blossom_leaves"
-  }
-}

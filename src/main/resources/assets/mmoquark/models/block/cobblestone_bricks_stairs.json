@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoquark:block/cobblestone_bricks",
-        "top": "mmoquark:block/cobblestone_bricks",
-        "side": "mmoquark:block/cobblestone_bricks"
-    }
-}

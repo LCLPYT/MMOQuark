@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "size=small": { "model": "quark:block/jasper_speleothem_small" },
+        "size=medium": { "model": "quark:block/jasper_speleothem_medium" },
+        "size=big": { "model": "quark:block/jasper_speleothem_big" }
+    }
+}

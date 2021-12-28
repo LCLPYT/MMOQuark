@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "mmoquark:gold_button",
-    "mmoquark:gold_bars",
-    "mmoquark:golden_frog_leg",
-    "mmoquark:golden_apple_crate"
+    "quark:gold_button",
+    "quark:gold_bars",
+    "quark:golden_frog_leg",
+    "quark:golden_apple_crate"
   ]
 }

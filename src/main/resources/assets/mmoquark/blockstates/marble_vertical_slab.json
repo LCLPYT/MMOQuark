@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "type=north": { "model": "mmoquark:block/marble_vertical_slab", "y": 0, "uvlock": true },
-        "type=south": { "model": "mmoquark:block/marble_vertical_slab", "y": 180, "uvlock": true },
-        "type=east": { "model": "mmoquark:block/marble_vertical_slab", "y": 90, "uvlock": true },
-        "type=west": { "model": "mmoquark:block/marble_vertical_slab", "y": 270, "uvlock": true },
-        "type=double": { "model": "mmoquark:block/marble" }
-    }
-}

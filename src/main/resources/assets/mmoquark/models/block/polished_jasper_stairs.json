@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "mmoquark:block/polished_jasper",
-        "top": "mmoquark:block/polished_jasper",
-        "side": "mmoquark:block/polished_jasper"
-    }
-}

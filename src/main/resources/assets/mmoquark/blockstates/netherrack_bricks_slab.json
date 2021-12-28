@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoquark:block/netherrack_bricks_slab" },
-        "type=top": { "model": "mmoquark:block/netherrack_bricks_slab_top" },
-        "type=double": { "model": "mmoquark:block/netherrack_bricks" }
-    }
-}

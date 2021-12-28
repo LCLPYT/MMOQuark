@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "mmoquark",
+  "id": "quark",
   "version": "${version}",
 
   "name": "MMOQuark",
@@ -15,7 +15,7 @@
   },
 
   "license": "CC BY-NC-SA 3.0 DE",
-  "icon": "assets/mmoquark/icon.png",
+  "icon": "assets/quark/icon.png",
 
   "environment": "*",
   "entrypoints": {

@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "big=true": { "model": "mmoquark:block/blue_big_stool" },
-        "big=false": { "model": "mmoquark:block/blue_stool" }
-    }
-}

@@ -1,7 +1,0 @@
-{
-	"parent": "mmoquark:block/paper_lantern",
-	"textures": {
-		"particle": "mmoquark:block/paper_lantern_side_sakura",
-		"side": "mmoquark:block/paper_lantern_side_sakura"
-	}
-}

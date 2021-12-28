@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "mmoquark:block/slate",
-        "top": "mmoquark:block/slate",
-        "side": "mmoquark:block/slate"
-    }
-}

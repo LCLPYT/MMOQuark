@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoquark:block/polished_limestone_slab" },
-        "type=top": { "model": "mmoquark:block/polished_limestone_slab_top" },
-        "type=double": { "model": "mmoquark:block/polished_limestone" }
-    }
-}

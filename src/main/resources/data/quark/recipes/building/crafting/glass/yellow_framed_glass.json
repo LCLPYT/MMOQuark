@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "quark:framed_glass"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "result": {
+    "item": "quark:yellow_framed_glass",
+    "count": 8
+  }
+}

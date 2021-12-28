@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "quark:block/glowcelium_side",
+        "down": "minecraft:block/dirt",
+        "up": "quark:block/glowcelium_top",
+        "north": "quark:block/glowcelium_side",
+        "east": "quark:block/glowcelium_side",
+        "south": "quark:block/glowcelium_side",
+        "west": "quark:block/glowcelium_side"
+    }
+}

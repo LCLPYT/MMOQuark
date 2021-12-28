@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "mmoquark:block/smooth_biotite_slab" },
-        "type=top": { "model": "mmoquark:block/smooth_biotite_slab_top" },
-        "type=double": { "model": "mmoquark:block/smooth_biotite" }
-    }
-}

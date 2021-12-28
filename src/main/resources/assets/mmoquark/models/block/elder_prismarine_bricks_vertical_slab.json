@@ -1,8 +1,0 @@
-{
-    "parent": "mmoquark:block/vertical_slab",
-    "textures": {
-        "bottom": "mmoquark:block/elder_prismarine_bricks",
-        "top": "mmoquark:block/elder_prismarine_bricks",
-        "side": "mmoquark:block/elder_prismarine_bricks"
-    }
-}
