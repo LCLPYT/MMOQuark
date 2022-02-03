@@ -34,7 +34,7 @@
     "fabricloader": ">=0.12.12",
     "fabric": "*",
     "minecraft": "1.16.x",
-    "mmocontent": "1.3.x"
+    "mmocontent": "1.4.x"
   },
   "suggests": {},
   "accessWidener": "mmoquark.accesswidener"
