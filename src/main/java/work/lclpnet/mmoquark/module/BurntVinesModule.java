@@ -18,8 +18,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
-import work.lclpnet.mmocontent.block.ext.MMOVineBlock;
 import work.lclpnet.mmoquark.MMOQuark;
+import work.lclpnet.mmoquark.block.QVineBlock;
 
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public class BurntVinesModule implements IModule {
 
     @Override
     public void register() {
-        MMOBlockRegistrar.Result result = new MMOBlockRegistrar(burnt_vine = new MMOVineBlock())
+        MMOBlockRegistrar.Result result = new MMOBlockRegistrar(burnt_vine = new QVineBlock())
                 .register(MMOQuark.identifier("burnt_vine"), ItemGroup.DECORATIONS);
 
         burnt_vine_item = result.item;
