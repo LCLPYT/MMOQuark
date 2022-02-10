@@ -15,7 +15,7 @@ public class QuiltedWoolModule implements IModule {
             new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, dye.getMaterialColor())
                     .strength(0.8F, 0.8F)
                     .sounds(BlockSoundGroup.WOOL))
-                    .register(MMOQuark.identifier(String.format("%s_quilted_wool", dye.getName())));
+                    .register(MMOQuark.identifier("%s_quilted_wool", dye.getName()));
         }
     }
 }

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "quark:black_stained_planks",
+    "quark:brown_stained_planks",
+    "quark:cyan_stained_planks",
+    "quark:gray_stained_planks",
+    "quark:orange_stained_planks",
+    "quark:pink_stained_planks",
+    "quark:white_stained_planks"
+  ]
+}

@@ -39,7 +39,7 @@ public class VariantLaddersModule implements IModule {
     private void addLadder(String woodType) {
         VariantLadderBlock ladder = new VariantLadderBlock();
         new MMOBlockRegistrar(ladder)
-                .register(MMOQuark.identifier(String.format("%s_ladder", woodType)), ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier("%s_ladder", woodType), ItemGroup.DECORATIONS);
 
         variantLadders.add(ladder);
     }

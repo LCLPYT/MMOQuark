@@ -41,7 +41,7 @@ public class FramedGlassModule implements IModule {
             Block framedGlass = new MMOGlassBlock(props);
             result = new MMOBlockRegistrar(framedGlass)
                     .withPane()
-                    .register(MMOQuark.identifier(String.format("%s_framed_glass", color.getName())));
+                    .register(MMOQuark.identifier("%s_framed_glass", color.getName()));
 
             framedGlassBlocks.add(framedGlass);
             framedGlassPanes.add(Objects.requireNonNull(result.pane).block);

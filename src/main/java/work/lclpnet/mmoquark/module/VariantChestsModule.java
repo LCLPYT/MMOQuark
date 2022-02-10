@@ -54,7 +54,7 @@ public class VariantChestsModule implements IModule {
         VARIANT_CHESTS.add(variantChest);
 
         new MMOBlockRegistrar(variantChest)
-                .register(MMOQuark.identifier(String.format("%s_chest", blockType)), ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier("%s_chest", blockType), ItemGroup.DECORATIONS);
     }
 
     private void addTrappedChest(String blockType, Block parent) {
@@ -62,6 +62,6 @@ public class VariantChestsModule implements IModule {
         VARIANT_CHESTS.add(variantTrappedChest);
 
         new MMOBlockRegistrar(variantTrappedChest)
-                .register(MMOQuark.identifier(String.format("%s_trapped_chest", blockType)), ItemGroup.REDSTONE);
+                .register(MMOQuark.identifier("%s_trapped_chest", blockType), ItemGroup.REDSTONE);
     }
 }

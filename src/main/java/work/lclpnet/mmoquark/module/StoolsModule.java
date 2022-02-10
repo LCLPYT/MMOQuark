@@ -26,7 +26,7 @@ public class StoolsModule implements IModule {
     public void register() {
         for (DyeColor dye : DyeColor.values()) {
             new MMOBlockRegistrar(new StoolBlock(dye))
-                    .register(MMOQuark.identifier(String.format("%s_stool", dye.getName())), ItemGroup.DECORATIONS);
+                    .register(MMOQuark.identifier("%s_stool", dye.getName()), ItemGroup.DECORATIONS);
         }
 
         stoolEntity = Registry.register(

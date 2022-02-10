@@ -18,7 +18,7 @@ public class TallowAndCandlesModule implements IModule {
 
         for (DyeColor dye : DyeColor.values())
             new MMOBlockRegistrar(new CandleBlock(dye))
-                    .register(MMOQuark.identifier(String.format("%s_candle", dye.getName())), ItemGroup.DECORATIONS);
+                    .register(MMOQuark.identifier("%s_candle", dye.getName()), ItemGroup.DECORATIONS);
 
         new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.HONEYCOMB_BLOCK))
                 .register(MMOQuark.identifier("tallow_block"));

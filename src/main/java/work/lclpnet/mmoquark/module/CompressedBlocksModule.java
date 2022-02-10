@@ -69,7 +69,7 @@ public class CompressedBlocksModule implements IModule {
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOD));
 
-        new MMOBlockRegistrar(block).register(MMOQuark.identifier(String.format("%s_block", name)));
+        new MMOBlockRegistrar(block).register(MMOQuark.identifier("%s_block", name));
     }
 
     private void crate(String name, MaterialColor color) {
@@ -77,7 +77,7 @@ public class CompressedBlocksModule implements IModule {
                 .strength(1.5F, 1.5F)
                 .sounds(BlockSoundGroup.WOOD));
 
-        new MMOBlockRegistrar(block).register(MMOQuark.identifier(String.format("%s_crate", name)), ItemGroup.DECORATIONS);
+        new MMOBlockRegistrar(block).register(MMOQuark.identifier("%s_crate", name), ItemGroup.DECORATIONS);
     }
 
     private void sack(String name, MaterialColor color) {
@@ -85,6 +85,6 @@ public class CompressedBlocksModule implements IModule {
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOL));
 
-        new MMOBlockRegistrar(block).register(MMOQuark.identifier(String.format("%s_sack", name)), ItemGroup.DECORATIONS);
+        new MMOBlockRegistrar(block).register(MMOQuark.identifier("%s_sack", name), ItemGroup.DECORATIONS);
     }
 }

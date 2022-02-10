@@ -37,7 +37,7 @@ public enum StonelingVariant implements EntityData {
 	private final List<Block> blocks;
 
 	StonelingVariant(String variantPath, Block... blocks) {
-		this.texture = MMOQuark.identifier(String.format("textures/model/entity/stoneling/%s.png", variantPath));
+		this.texture = MMOQuark.identifier("textures/model/entity/stoneling/%s.png", variantPath);
 		this.blocks = Lists.newArrayList(blocks);
 	}
 

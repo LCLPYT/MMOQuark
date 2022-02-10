@@ -55,19 +55,19 @@ public class MoreStoneVariantsModule implements IModule {
         MMOBlock bricks = constr.apply(settings);
         MMOBlockRegistrar.Result bricksExtra = new MMOBlockRegistrar(bricks)
                 .withStairs().withSlab().withVerticalSlab().withWall()
-                .register(MMOQuark.identifier(String.format("%s_bricks", name)));
+                .register(MMOQuark.identifier("%s_bricks", name));
 
         MMOBlock chiseledBricks = constr.apply(settings);
         MMOBlockRegistrar.Result chiseledBricksExtra = new MMOBlockRegistrar(chiseledBricks)
-                .register(MMOQuark.identifier(String.format("chiseled_%s_bricks", name)));
+                .register(MMOQuark.identifier("chiseled_%s_bricks", name));
 
         MMOBlock pavement = constr.apply(settings);
         MMOBlockRegistrar.Result pavementExtra = new MMOBlockRegistrar(pavement)
-                .register(MMOQuark.identifier(String.format("%s_pavement", name)));
+                .register(MMOQuark.identifier("%s_pavement", name));
 
         MMOPillarBlock pillar = pillarConstr.apply(settings);
         MMOBlockRegistrar.Result pillarExtra = new MMOBlockRegistrar(pillar)
-                .register(MMOQuark.identifier(String.format("%s_pillar", name)));
+                .register(MMOQuark.identifier("%s_pillar", name));
 
         return new Result(
                 new VariantTuple(bricks, bricksExtra),

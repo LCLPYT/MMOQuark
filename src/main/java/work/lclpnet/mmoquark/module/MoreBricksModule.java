@@ -39,6 +39,6 @@ public class MoreBricksModule implements IModule {
                 .requiresTool()
                 .breakByTool(parentMaterial == Material.SNOW_BLOCK ? FabricToolTags.SHOVELS : FabricToolTags.PICKAXES))
                 .withSlab().withStairs().withWall().withVerticalSlab()
-                .register(MMOQuark.identifier(String.format("%s_bricks", name)));
+                .register(MMOQuark.identifier("%s_bricks", name));
     }
 }

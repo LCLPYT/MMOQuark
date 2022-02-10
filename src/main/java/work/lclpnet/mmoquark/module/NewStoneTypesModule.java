@@ -63,7 +63,7 @@ public class NewStoneTypesModule implements IModule {
 
         MMOBlockRegistrar.Result polishedRes = new MMOBlockRegistrar(polished)
                 .withSlab().withVerticalSlab().withStairs()
-                .register(MMOQuark.identifier(String.format("polished_%s", name)));
+                .register(MMOQuark.identifier("polished_%s", name));
 
         return new Result(
                 new VariantTuple(normal, normalRes),

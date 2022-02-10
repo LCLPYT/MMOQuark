@@ -74,7 +74,8 @@ public class MMOQuark implements ModInitializer {
 			new FrogsModule(),
 			new ForgottenModule(),
 			new TurfModule(),
-			new IronRodModule()
+			new IronRodModule(),
+			new StainedPlanksModule()
 	);
 
 	@Override
@@ -162,5 +163,9 @@ public class MMOQuark implements ModInitializer {
 
 	public static Identifier identifier(String path) {
 		return new Identifier(MOD_ID, path);
+	}
+
+	public static Identifier identifier(String path, Object... substitutes) {
+		return identifier(String.format(path, substitutes));
 	}
 }

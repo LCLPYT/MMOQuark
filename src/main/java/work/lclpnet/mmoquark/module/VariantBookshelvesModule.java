@@ -19,6 +19,6 @@ public class VariantBookshelvesModule implements IModule {
 
     private void addVariantStuff(String woodType) {
         new MMOBlockRegistrar(AbstractBlock.Settings.copy(Blocks.BOOKSHELF))
-                .register(MMOQuark.identifier(String.format("%s_bookshelf", woodType)), ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier("%s_bookshelf", woodType), ItemGroup.DECORATIONS);
     }
 }

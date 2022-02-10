@@ -26,6 +26,6 @@ public class SpeleothemsModule implements IModule {
 
     private void make(String name, Block parent, boolean nether) {
         new MMOBlockRegistrar(new SpeleothemBlock(parent, nether))
-                .register(MMOQuark.identifier(String.format("%s_speleothem", name)), ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier("%s_speleothem", name), ItemGroup.DECORATIONS);
     }
 }

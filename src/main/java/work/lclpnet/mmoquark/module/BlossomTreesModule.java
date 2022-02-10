@@ -32,7 +32,7 @@ public class BlossomTreesModule implements IModule {
     private void addBlossomTree(String colorName, MaterialColor color) {
         BlossomLeavesBlock leaves = new BlossomLeavesBlock(color);
         new MMOBlockRegistrar(leaves)
-                .register(MMOQuark.identifier(String.format("%s_blossom_leaves", colorName)), ItemGroup.DECORATIONS);
+                .register(MMOQuark.identifier("%s_blossom_leaves", colorName), ItemGroup.DECORATIONS);
 
         blossomLeaveBlocks.add(leaves);
 

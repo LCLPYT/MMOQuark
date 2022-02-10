@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "quark:block/gray_stained_planks_slab" },
+        "type=top": { "model": "quark:block/gray_stained_planks_slab_top" },
+        "type=double": { "model": "quark:block/gray_stained_planks" }
+    }
+}

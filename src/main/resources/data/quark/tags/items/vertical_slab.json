@@ -95,6 +95,13 @@
     "quark:smooth_soul_sandstone_vertical_slab",
     "quark:soul_sandstone_vertical_slab",
     "quark:thatch_vertical_slab",
-    "quark:weeping_blackstone_bricks_vertical_slab"
+    "quark:weeping_blackstone_bricks_vertical_slab",
+    "quark:black_stained_planks_vertical_slab",
+    "quark:brown_stained_planks_vertical_slab",
+    "quark:cyan_stained_planks_vertical_slab",
+    "quark:gray_stained_planks_vertical_slab",
+    "quark:orange_stained_planks_vertical_slab",
+    "quark:pink_stained_planks_vertical_slab",
+    "quark:white_stained_planks_vertical_slab"
   ]
 }
