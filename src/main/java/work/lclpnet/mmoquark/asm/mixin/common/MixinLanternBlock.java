@@ -19,6 +19,7 @@ public class MixinLanternBlock {
             cancellable = true
     )
     public void onCanPlaceAt(BlockState state, WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(WoodPostsModule.canLanternConnect(state, world, pos, cir.getReturnValue()));
+        if (WoodPostsModule.canLanternConnect(state, world, pos, cir.getReturnValue()))
+            cir.setReturnValue(true);
     }
 }
