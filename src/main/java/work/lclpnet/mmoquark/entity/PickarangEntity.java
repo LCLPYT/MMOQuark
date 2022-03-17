@@ -15,9 +15,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtHelper;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleTypes;
@@ -72,7 +72,7 @@ public class PickarangEntity extends ProjectileEntity {
     public PickarangEntity(World world, LivingEntity throwerIn) {
         super(PickarangModule.pickarangType, world);
         Vec3d pos = throwerIn.getPos();
-        this.updatePosition(pos.x, pos.y + throwerIn.getStandingEyeHeight(), pos.z);
+        this.setPosition(pos.x, pos.y + throwerIn.getStandingEyeHeight(), pos.z);
         ownerId = throwerIn.getUuid();
     }
 
@@ -101,22 +101,22 @@ public class PickarangEntity extends ProjectileEntity {
                 .add(this.random.nextGaussian() * 0.0075F * divergence, this.random.nextGaussian() * 0.0075F * divergence, this.random.nextGaussian() * 0.0075F * divergence)
                 .multiply(speed);
         this.setVelocity(vec3d);
-        float f = MathHelper.sqrt(squaredHorizontalLength(vec3d));
-        this.yaw = (float) (MathHelper.atan2(vec3d.x, vec3d.z) * (180F / (float) Math.PI));
-        this.pitch = (float) (MathHelper.atan2(vec3d.y, f) * (180F / (float) Math.PI));
-        this.prevYaw = this.yaw;
-        this.prevPitch = this.pitch;
+        float f = (float) vec3d.horizontalLength();
+        this.setYaw((float) (MathHelper.atan2(vec3d.x, vec3d.z) * (180F / (float) Math.PI)));
+        this.setPitch((float) (MathHelper.atan2(vec3d.y, f) * (180F / (float) Math.PI)));
+        this.prevYaw = this.getYaw();
+        this.prevPitch = this.getPitch();
     }
 
     @Override
     public void setVelocityClient(double x, double y, double z) {
        this.setVelocity(x, y, z);
         if (this.prevPitch == 0.0F && this.prevYaw == 0.0F) {
-            float f = MathHelper.sqrt(x * x + z * z);
-            this.yaw = (float) (MathHelper.atan2(x, z) * (180F / (float) Math.PI));
-            this.pitch = (float) (MathHelper.atan2(y, f) * (180F / (float) Math.PI));
-            this.prevYaw = this.yaw;
-            this.prevPitch = this.pitch;
+            float f = MathHelper.sqrt((float) (x * x + z * z));
+            this.setYaw((float) (MathHelper.atan2(x, z) * (180F / (float) Math.PI)));
+            this.setPitch((float) (MathHelper.atan2(y, f) * (180F / (float) Math.PI)));
+            this.prevYaw = this.getYaw();
+            this.prevPitch = this.getPitch();
         }
     }
 
@@ -168,7 +168,7 @@ public class PickarangEntity extends ProjectileEntity {
                         && entity.isAlive()
                         && (entity.collides() || entity instanceof PickarangEntity)
                         && entity != getThrower()
-                        && (entitiesHit == null || !entitiesHit.contains(entity.getEntityId())));
+                        && (entitiesHit == null || !entitiesHit.contains(entity.getId())));
     }
 
     @Override
@@ -254,7 +254,7 @@ public class PickarangEntity extends ProjectileEntity {
     public void addHit(Entity entity) {
         if (entitiesHit == null)
             entitiesHit = new IntOpenHashSet(5);
-        entitiesHit.add(entity.getEntityId());
+        entitiesHit.add(entity.getId());
         postHit();
     }
 
@@ -273,7 +273,7 @@ public class PickarangEntity extends ProjectileEntity {
     }
 
     @Override
-    public boolean canFly() {
+    public boolean isPushedByFluids() {
         return false;
     }
 
@@ -290,22 +290,22 @@ public class PickarangEntity extends ProjectileEntity {
             checkImpact();
 
         Vec3d ourMotion = this.getVelocity();
-        updatePosition(pos.x + ourMotion.x, pos.y + ourMotion.y, pos.z + ourMotion.z);
+        setPosition(pos.x + ourMotion.x, pos.y + ourMotion.y, pos.z + ourMotion.z);
 
-        float f = MathHelper.sqrt(squaredHorizontalLength(ourMotion));
-        this.yaw = (float) (MathHelper.atan2(ourMotion.x, ourMotion.z) * (180F / (float) Math.PI));
+        float f = (float) ourMotion.horizontalLength();
+        this.setYaw((float) (MathHelper.atan2(ourMotion.x, ourMotion.z) * (180F / (float) Math.PI)));
 
-        this.pitch = (float) (MathHelper.atan2(ourMotion.y, f) * (180F / (float) Math.PI));
-        while (this.pitch - this.prevPitch < -180.0F) this.prevPitch -= 360.0F;
+        this.setPitch((float) (MathHelper.atan2(ourMotion.y, f) * (180F / (float) Math.PI)));
+        while (this.getPitch() - this.prevPitch < -180.0F) this.prevPitch -= 360.0F;
 
-        while (this.pitch - this.prevPitch >= 180.0F) this.prevPitch += 360.0F;
+        while (this.getPitch() - this.prevPitch >= 180.0F) this.prevPitch += 360.0F;
 
-        while (this.yaw - this.prevYaw < -180.0F) this.prevYaw -= 360.0F;
+        while (this.getYaw() - this.prevYaw < -180.0F) this.prevYaw -= 360.0F;
 
-        while(this.yaw - this.prevYaw >= 180.0F) this.prevYaw += 360.0F;
+        while(this.getYaw() - this.prevYaw >= 180.0F) this.prevYaw += 360.0F;
 
-        this.pitch = MathHelper.lerp(0.2F, this.prevPitch, this.pitch);
-        this.yaw = MathHelper.lerp(0.2F, this.prevYaw, this.yaw);
+        this.setPitch(MathHelper.lerp(0.2F, this.prevPitch, this.getPitch()));
+        this.setYaw(MathHelper.lerp(0.2F, this.prevYaw, this.getYaw()));
         float drag;
         if (this.isTouchingWater()) {
             for (int i = 0; i < 4; ++i)
@@ -317,7 +317,7 @@ public class PickarangEntity extends ProjectileEntity {
         this.setVelocity(ourMotion.multiply(drag));
 
         pos = getPos();
-        this.updatePosition(pos.x, pos.y, pos.z);
+        this.setPosition(pos.x, pos.y, pos.z);
 
         if(!isAlive()) return;
 
@@ -341,10 +341,10 @@ public class PickarangEntity extends ProjectileEntity {
         if(owner == null || !owner.isAlive() || !(owner instanceof PlayerEntity)) {
             if(!world.isClient) {
                 while (isInsideWall())
-                    updatePosition(getX(), getY() + 1, getZ());
+                    setPosition(getX(), getY() + 1, getZ());
 
                 dropStack(stack, 0);
-                remove();
+                discard();
             }
 
             return;
@@ -372,8 +372,6 @@ public class PickarangEntity extends ProjectileEntity {
             for(ExperienceOrbEntity xpOrb : xp) {
                 if (xpOrb.hasVehicle()) continue;
                 xpOrb.startRiding(this);
-
-                xpOrb.pickupDelay = 2;
             }
 
             Vec3d ownerPos = owner.getPos().add(0, 1, 0);
@@ -382,13 +380,13 @@ public class PickarangEntity extends ProjectileEntity {
 
             if(motion.lengthSquared() < motionMag) {
                 PlayerEntity player = (PlayerEntity) owner;
-                ItemStack stackInSlot = player.inventory.getStack(slot);
+                ItemStack stackInSlot = player.getInventory().getStack(slot);
 
                 if(!world.isClient) {
                     playSound(MMOSounds.ENTITY_PICKARANG_PICKUP, 1, 1);
 
-                    if (!stack.isEmpty()) if (player.isAlive() && stackInSlot.isEmpty()) player.inventory.setStack(slot, stack);
-                    else if (!player.isAlive() || !player.inventory.insertStack(stack))
+                    if (!stack.isEmpty()) if (player.isAlive() && stackInSlot.isEmpty()) player.getInventory().setStack(slot, stack);
+                    else if (!player.isAlive() || !player.getInventory().insertStack(stack))
                         player.dropItem(stack, false);
 
                     if (player.isAlive()) {
@@ -411,7 +409,7 @@ public class PickarangEntity extends ProjectileEntity {
                         }
                     }
 
-                    remove();
+                    discard();
                 }
             } else {
                 setVelocity(motion.normalize().multiply(0.7 + eff * 0.325F));
@@ -428,7 +426,7 @@ public class PickarangEntity extends ProjectileEntity {
             // Player could not pick up everything
             ItemStack drop = itemEntity.getStack();
             player.dropItem(drop, false);
-            itemEntity.remove();
+            itemEntity.discard();
         }
     }
 
@@ -479,17 +477,17 @@ public class PickarangEntity extends ProjectileEntity {
     }
 
     @Override
-    protected void readCustomDataFromTag(CompoundTag tag) {
+    protected void readCustomDataFromNbt(NbtCompound tag) {
         dataTracker.set(RETURNING, tag.getBoolean(TAG_RETURNING));
         liveTime = tag.getInt(TAG_LIVE_TIME);
         blockHitCount = tag.getInt(TAG_BLOCKS_BROKEN);
         slot = tag.getInt(TAG_RETURN_SLOT);
 
-        if (tag.contains(TAG_ITEM_STACK)) setStack(ItemStack.fromTag(tag.getCompound(TAG_ITEM_STACK)));
+        if (tag.contains(TAG_ITEM_STACK)) setStack(ItemStack.fromNbt(tag.getCompound(TAG_ITEM_STACK)));
         else setStack(new ItemStack(PickarangModule.pickarang));
 
         if (tag.contains("owner", 10)) {
-            Tag owner = tag.get("owner");
+            NbtElement owner = tag.get("owner");
             if (owner != null) this.ownerId = NbtHelper.toUuid(owner);
         }
 
@@ -497,13 +495,13 @@ public class PickarangEntity extends ProjectileEntity {
     }
 
     @Override
-    protected void writeCustomDataToTag(CompoundTag tag) {
+    protected void writeCustomDataToNbt(NbtCompound tag) {
         tag.putBoolean(TAG_RETURNING, dataTracker.get(RETURNING));
         tag.putInt(TAG_LIVE_TIME, liveTime);
         tag.putInt(TAG_BLOCKS_BROKEN, blockHitCount);
         tag.putInt(TAG_RETURN_SLOT, slot);
 
-        tag.put(TAG_ITEM_STACK, getStack().toTag(new CompoundTag()));
+        tag.put(TAG_ITEM_STACK, getStack().writeNbt(new NbtCompound()));
         if (this.ownerId != null) tag.put("owner", NbtHelper.fromUuid(this.ownerId));
 
         tag.putBoolean(TAG_NETHERITE, netherite);

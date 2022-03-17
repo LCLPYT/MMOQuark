@@ -183,7 +183,7 @@ public class PipeBlock extends MMOBlock implements Waterloggable, BlockEntityPro
 
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockView world) {
-        return new PipeBlockEntity();
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new PipeBlockEntity(pos, state);
     }
 }

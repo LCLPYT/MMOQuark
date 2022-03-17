@@ -4,8 +4,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
@@ -18,29 +18,29 @@ public class CompressedBlocksModule implements IModule {
 
     @Override
     public void register() {
-        new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+        new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MapColor.BLACK)
                 .requiresTool()
                 .breakByTool(FabricToolTags.PICKAXES)
                 .strength(0.5F, 10F)
                 .sounds(BlockSoundGroup.STONE))
                 .register(MMOQuark.identifier("charcoal_block"));
 
-        pillar("sugar_cane", MaterialColor.LIME);
-        pillar("bamboo", MaterialColor.YELLOW);
-        pillar("cactus", MaterialColor.GREEN);
-        pillar("chorus_fruit", MaterialColor.PURPLE);
-        pillar("stick", MaterialColor.WOOD);
+        pillar("sugar_cane", MapColor.LIME);
+        pillar("bamboo", MapColor.YELLOW);
+        pillar("cactus", MapColor.GREEN);
+        pillar("chorus_fruit", MapColor.PURPLE);
+        pillar("stick", MapColor.OAK_TAN);
 
-        crate("golden_apple", MaterialColor.GOLD);
-        crate("apple", MaterialColor.RED);
-        crate("potato", MaterialColor.ORANGE);
-        crate("carrot", MaterialColor.ORANGE_TERRACOTTA);
-        crate("beetroot", MaterialColor.RED);
+        crate("golden_apple", MapColor.GOLD);
+        crate("apple", MapColor.RED);
+        crate("potato", MapColor.ORANGE);
+        crate("carrot", MapColor.TERRACOTTA_ORANGE);
+        crate("beetroot", MapColor.RED);
 
-        sack("cocoa_beans", MaterialColor.BROWN);
-        sack("nether_wart", MaterialColor.RED);
-        sack("gunpowder", MaterialColor.GRAY);
-        sack("berry", MaterialColor.RED);
+        sack("cocoa_beans", MapColor.BROWN);
+        sack("nether_wart", MapColor.RED);
+        sack("gunpowder", MapColor.GRAY);
+        sack("berry", MapColor.RED);
 
         new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.GLASS, DyeColor.YELLOW)
                 .strength(0.3F, 0.3F)
@@ -64,7 +64,7 @@ public class CompressedBlocksModule implements IModule {
                 .register(MMOQuark.identifier("bonded_ravager_hide"));
     }
 
-    private void pillar(String name, MaterialColor color) {
+    private void pillar(String name, MapColor color) {
         Block block = new MMOPillarBlock(AbstractBlock.Settings.of(Material.WOOD, color)
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOD));
@@ -72,7 +72,7 @@ public class CompressedBlocksModule implements IModule {
         new MMOBlockRegistrar(block).register(MMOQuark.identifier("%s_block", name));
     }
 
-    private void crate(String name, MaterialColor color) {
+    private void crate(String name, MapColor color) {
         Block block = new MMOBlock(AbstractBlock.Settings.of(Material.WOOD, color)
                 .strength(1.5F, 1.5F)
                 .sounds(BlockSoundGroup.WOOD));
@@ -80,7 +80,7 @@ public class CompressedBlocksModule implements IModule {
         new MMOBlockRegistrar(block).register(MMOQuark.identifier("%s_crate", name), ItemGroup.DECORATIONS);
     }
 
-    private void sack(String name, MaterialColor color) {
+    private void sack(String name, MapColor color) {
         Block block = new MMOBlock(AbstractBlock.Settings.of(Material.WOOD, color)
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOL));

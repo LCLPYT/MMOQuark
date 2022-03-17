@@ -20,7 +20,7 @@ public class EnderWatcherBlock extends MMOBlock implements BlockEntityProvider {
     public static final IntProperty POWER = Properties.POWER;
 
     public EnderWatcherBlock() {
-        super(Settings.of(Material.METAL, MaterialColor.GREEN)
+        super(Settings.of(Material.METAL, MapColor.GREEN)
                 .strength(3F, 10F)
                 .sounds(BlockSoundGroup.METAL));
 
@@ -44,7 +44,7 @@ public class EnderWatcherBlock extends MMOBlock implements BlockEntityProvider {
 
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockView world) {
-        return new EnderWatcherBlockEntity();
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new EnderWatcherBlockEntity(pos, state);
     }
 }

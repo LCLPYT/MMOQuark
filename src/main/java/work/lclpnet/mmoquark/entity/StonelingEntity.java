@@ -27,7 +27,7 @@ import net.minecraft.item.Items;
 import net.minecraft.loot.LootManager;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextTypes;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
@@ -107,15 +107,8 @@ public class StonelingEntity extends PathAwareEntity {
         if (touchingWater) stepHeight = 1F;
         else stepHeight = 0.6F;
 
-        if (!world.isClient && world.getDifficulty() == Difficulty.PEACEFUL && !isTame) {
-            remove();
-            for (Entity passenger : getPassengersDeep())
-                if (!(passenger instanceof PlayerEntity))
-                    passenger.remove();
-        }
-
         this.prevBodyYaw = this.prevYaw;
-        this.bodyYaw = this.yaw;
+        this.bodyYaw = this.getYaw();
     }
 
     @Override
@@ -130,7 +123,7 @@ public class StonelingEntity extends PathAwareEntity {
         if (!isAlive() && wasAlive)
             for (Entity passenger : getPassengersDeep())
                 if (!(passenger instanceof PlayerEntity))
-                    passenger.remove();
+                    passenger.discard();
     }
 
     @Override
@@ -186,7 +179,7 @@ public class StonelingEntity extends PathAwareEntity {
 
                     heal(1);
 
-                    if (!player.abilities.creativeMode) playerItem.decrement(1);
+                    if (!player.getAbilities().creativeMode) playerItem.decrement(1);
 
                     return ActionResult.SUCCESS;
                 }
@@ -210,7 +203,7 @@ public class StonelingEntity extends PathAwareEntity {
 
             playSound(MMOSounds.ENTITY_STONELING_PURR, 1F, 1F + world.random.nextFloat());
 
-            if (!player.abilities.creativeMode) playerItem.decrement(1);
+            if (!player.getAbilities().creativeMode) playerItem.decrement(1);
 
             if (world instanceof ServerWorld)
                 ((ServerWorld) world).spawnParticles(ParticleTypes.HEART, pos.x, pos.y + getHeight(), pos.z, 4, 0.1, 0.1, 0.1, 0.1);
@@ -223,7 +216,7 @@ public class StonelingEntity extends PathAwareEntity {
 
     @Nullable
     @Override
-    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable CompoundTag entityTag) {
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityTag) {
         byte variant;
         if (entityData instanceof StonelingVariant) variant = ((StonelingVariant) entityData).getIndex();
         else variant = (byte) world.getRandom().nextInt(StonelingVariant.values().length);
@@ -256,7 +249,7 @@ public class StonelingEntity extends PathAwareEntity {
 
     @Override
     public boolean canSpawn(WorldView world) {
-        return world.intersectsEntities(this, VoxelShapes.cuboid(getBoundingBox()));
+        return world.doesNotIntersectEntities(this, VoxelShapes.cuboid(getBoundingBox()));
     }
 
     @Override
@@ -265,7 +258,7 @@ public class StonelingEntity extends PathAwareEntity {
     }
 
     @Override
-    public boolean canFly() { // Forge: isPushedByWater
+    public boolean isPushedByFluids() { // Forge: isPushedByWater
         return true;
     }
 
@@ -275,10 +268,9 @@ public class StonelingEntity extends PathAwareEntity {
     }
 
     @Override
-    public boolean handleFallDamage(float fallDistance, float damageMultiplier) {
+    public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         return false;
     }
-
 
     @Override
     protected void applyDamage(DamageSource source, float amount) {
@@ -343,12 +335,12 @@ public class StonelingEntity extends PathAwareEntity {
     }
 
     @Override
-    public void readCustomDataFromTag(CompoundTag tag) {
-        super.readCustomDataFromTag(tag);
+    public void readCustomDataFromNbt(NbtCompound tag) {
+        super.readCustomDataFromNbt(tag);
 
         if(tag.contains(TAG_CARRYING_ITEM, 10)) {
-            CompoundTag itemCmp = tag.getCompound(TAG_CARRYING_ITEM);
-            ItemStack stack = ItemStack.fromTag(itemCmp);
+            NbtCompound itemCmp = tag.getCompound(TAG_CARRYING_ITEM);
+            ItemStack stack = ItemStack.fromNbt(itemCmp);
             dataTracker.set(CARRYING_ITEM, stack);
         }
 
@@ -358,11 +350,11 @@ public class StonelingEntity extends PathAwareEntity {
     }
 
     @Override
-    public void writeCustomDataToTag(CompoundTag tag) {
-        super.writeCustomDataToTag(tag);
+    public void writeCustomDataToNbt(NbtCompound tag) {
+        super.writeCustomDataToNbt(tag);
 
-        CompoundTag carryingItem = new CompoundTag();
-        getCarryingItem().toTag(carryingItem);
+        NbtCompound carryingItem = new NbtCompound();
+        getCarryingItem().writeNbt(carryingItem);
         tag.put(TAG_CARRYING_ITEM, carryingItem);
 
         tag.putByte(TAG_VARIANT, getVariant().getIndex());

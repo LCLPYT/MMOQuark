@@ -1,8 +1,8 @@
 package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
@@ -15,7 +15,7 @@ public class RopeModule implements IModule {
 
     @Override
     public void register() {
-        ropeBlock = new RopeBlock(AbstractBlock.Settings.of(Material.WOOL, MaterialColor.BROWN)
+        ropeBlock = new RopeBlock(AbstractBlock.Settings.of(Material.WOOL, MapColor.BROWN)
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.WOOL));
 

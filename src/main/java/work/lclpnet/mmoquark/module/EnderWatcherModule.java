@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.ItemGroup;
@@ -20,6 +21,6 @@ public class EnderWatcherModule implements IModule {
                 .register(MMOQuark.identifier("ender_watcher"), ItemGroup.REDSTONE);
 
         enderWatcherType = Registry.register(Registry.BLOCK_ENTITY_TYPE, MMOQuark.identifier("ender_watcher"),
-                BlockEntityType.Builder.create(EnderWatcherBlockEntity::new, enderWatcher).build(null));
+                FabricBlockEntityTypeBuilder.create(EnderWatcherBlockEntity::new, enderWatcher).build(null));
     }
 }

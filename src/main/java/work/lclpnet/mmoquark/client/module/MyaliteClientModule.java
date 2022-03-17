@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.client.module;
 
+import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
@@ -8,14 +9,13 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.noise.OctaveSimplexNoiseSampler;
-import net.minecraft.world.gen.ChunkRandom;
+import net.minecraft.world.gen.random.AtomicSimpleRandom;
 import work.lclpnet.mmoquark.module.MoreStoneVariantsModule;
 import work.lclpnet.mmoquark.module.NewStoneTypesModule;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class MyaliteClientModule implements IClientModule {
 
@@ -46,7 +46,7 @@ public class MyaliteClientModule implements IClientModule {
         }, items.toArray(new BlockItem[0]));
     }
 
-    public static final OctaveSimplexNoiseSampler NOISE = new OctaveSimplexNoiseSampler(new ChunkRandom(4543543), IntStream.rangeClosed(-4, 4));
+    public static final OctaveSimplexNoiseSampler NOISE = new OctaveSimplexNoiseSampler(new AtomicSimpleRandom(4543543), ImmutableList.of(-4, -3, -2, -1, 0, 1, 2, 3, 4));
 
     public static int getColor(BlockPos pos, float s, float b) {
         final double sp = 0.15;

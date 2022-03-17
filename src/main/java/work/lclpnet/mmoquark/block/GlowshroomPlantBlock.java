@@ -1,33 +1,31 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
-import net.minecraft.block.MushroomPlantBlock;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.Fertilizable;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmoquark.block.ext.QPlantBlock;
 import work.lclpnet.mmoquark.module.GlowshroomModule;
 
 import java.util.Random;
 
-public class GlowshroomPlantBlock extends MushroomPlantBlock implements IMMOBlock {
+public class GlowshroomPlantBlock extends QPlantBlock implements Fertilizable {
+
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 6.0D, 11.0D);
 
     public GlowshroomPlantBlock() {
-        super(FabricBlockSettings.of(Material.PLANT, MaterialColor.CYAN)
-                .noCollision()
-                .breakInstantly()
-                .sounds(BlockSoundGroup.GRASS)
-                .postProcess((s, r, p) -> true)
+        super(Settings.copy(Blocks.RED_MUSHROOM)
+                .ticksRandomly()
                 .luminance(b -> 14));
     }
 
@@ -71,13 +69,18 @@ public class GlowshroomPlantBlock extends MushroomPlantBlock implements IMMOBloc
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         super.randomDisplayTick(state, world, pos, random);
 
-        if(random.nextInt(20) == 0)
+        if (random.nextInt(12) == 0 && world.getBlockState(pos.up()).isAir())
             world.addParticle(ParticleTypes.END_ROD, pos.getX() + 0.2 + random.nextDouble() * 0.6, pos.getY() + 0.3, pos.getZ() + 0.2 + random.nextDouble() * 0.6, 0, 0, 0);
     }
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return super.canPlantOnTop(floor, world, pos);
+    }
+
+    @Override
+    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+        return true;
     }
 
     @Override

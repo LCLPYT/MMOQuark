@@ -2,7 +2,7 @@ package work.lclpnet.mmoquark.client.module;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import work.lclpnet.mmocontent.client.entity.MMOClientEntities;
 import work.lclpnet.mmoquark.client.render.entity.StoolRenderer;
 import work.lclpnet.mmoquark.entity.StoolEntity;
@@ -13,7 +13,7 @@ public class StoolsClientModule implements IClientModule {
 
     @Override
     public void registerClient() {
-        EntityRendererRegistry.INSTANCE.register(StoolsModule.stoolEntity, (manager, context) -> new StoolRenderer(manager));
+        EntityRendererRegistry.register(StoolsModule.stoolEntity, StoolRenderer::new);
         MMOClientEntities.registerNonLiving(StoolsModule.stoolEntity, StoolEntity::new);
     }
 }

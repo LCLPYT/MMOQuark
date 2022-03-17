@@ -6,7 +6,7 @@ import net.minecraft.block.entity.PistonBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MovementType;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.math.BlockPos;
@@ -63,7 +63,7 @@ public class StoolEntity extends Entity {
         }
 
         if(dead && !world.isClient) {
-            remove();
+            discard();
 
             if(state.getBlock() instanceof StoolBlock)
                 world.setBlockState(pos, state.with(StoolBlock.SAT_IN, false));
@@ -79,10 +79,10 @@ public class StoolEntity extends Entity {
     protected void initDataTracker() {}
 
     @Override
-    protected void readCustomDataFromTag(CompoundTag tag) {}
+    protected void readCustomDataFromNbt(NbtCompound tag) {}
 
     @Override
-    protected void writeCustomDataToTag(CompoundTag tag) {}
+    protected void writeCustomDataToNbt(NbtCompound tag) {}
 
     @Override
     public Packet<?> createSpawnPacket() {

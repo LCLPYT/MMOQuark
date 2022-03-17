@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -34,9 +35,9 @@ public class VariantChestsModule implements IModule {
         addChests(this::addTrappedChest);
 
         VARIANT_CHEST_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, MMOQuark.identifier("variant_chest"),
-                BlockEntityType.Builder.create(VariantChestBlockEntity::new, VARIANT_CHESTS.toArray(new Block[] {})).build(null));
+                FabricBlockEntityTypeBuilder.create(VariantChestBlockEntity::new, VARIANT_CHESTS.toArray(new Block[] {})).build(null));
         VARIANT_TRAPPED_CHEST_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, MMOQuark.identifier("variant_trapped_chest"),
-                BlockEntityType.Builder.create(VariantTrappedChestBlockEntity::new, VARIANT_TRAPPED_CHESTS.toArray(new Block[] {})).build(null));
+                FabricBlockEntityTypeBuilder.create(VariantTrappedChestBlockEntity::new, VARIANT_TRAPPED_CHESTS.toArray(new Block[] {})).build(null));
     }
 
     private void addChests(BiConsumer<String, Block> chestRegistrar) {

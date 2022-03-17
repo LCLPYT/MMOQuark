@@ -1,6 +1,5 @@
 package work.lclpnet.mmoquark.block;
 
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluids;
@@ -20,7 +19,7 @@ public class HedgeBlock extends MMOFenceBlock {
 	public static final BooleanProperty EXTEND = BooleanProperty.of("extend");
 
 	public HedgeBlock(Block fence, Block leaf) {
-		super(AbstractBlock.Settings.copy(fence));
+		super(Settings.copy(fence));
 
 		this.leaf = leaf;
 
@@ -29,7 +28,7 @@ public class HedgeBlock extends MMOFenceBlock {
 
 	@Override
 	public boolean canConnect(BlockState state, boolean isSideSolid, Direction direction) {
-		return state.getBlock().isIn(HedgesModule.hedgesTag);
+		return state.isIn(HedgesModule.hedgesTag);
 	}
 
 	@Override
@@ -45,7 +44,7 @@ public class HedgeBlock extends MMOFenceBlock {
 
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState stateIn, Direction facing, BlockState facingState, WorldAccess worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (stateIn.get(WATERLOGGED)) worldIn.getFluidTickScheduler().schedule(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+		if (stateIn.get(WATERLOGGED)) worldIn.createAndScheduleFluidTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 
 		if (facing == Direction.DOWN) return stateIn.with(EXTEND, facingState.getBlock() instanceof HedgeBlock);
 		else return super.getStateForNeighborUpdate(stateIn, facing, facingState, worldIn, currentPos, facingPos);

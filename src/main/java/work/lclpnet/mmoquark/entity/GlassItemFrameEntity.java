@@ -10,7 +10,7 @@ import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.tag.BlockTags;
@@ -57,7 +57,7 @@ public class GlassItemFrameEntity extends ItemFrameEntity implements AdditionalS
 
     public boolean isOnSign() {
         BlockState blockstate = world.getBlockState(getBehindPos());
-        return blockstate.getBlock().isIn(BlockTags.STANDING_SIGNS);
+        return blockstate.isIn(BlockTags.STANDING_SIGNS);
     }
 
     @Override
@@ -75,15 +75,15 @@ public class GlassItemFrameEntity extends ItemFrameEntity implements AdditionalS
     }
 
     @Override
-    public void writeCustomDataToTag(CompoundTag tag) {
-        super.writeCustomDataToTag(tag);
+    public void writeCustomDataToNbt(NbtCompound tag) {
+        super.writeCustomDataToNbt(tag);
 
         tag.putBoolean(TAG_SHINY, dataTracker.get(IS_SHINY));
     }
 
     @Override
-    public void readCustomDataFromTag(CompoundTag tag) {
-        super.readCustomDataFromTag(tag);
+    public void readCustomDataFromNbt(NbtCompound tag) {
+        super.readCustomDataFromNbt(tag);
 
         dataTracker.set(IS_SHINY, tag.getBoolean(TAG_SHINY));
     }

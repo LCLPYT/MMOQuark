@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -26,6 +27,6 @@ public class FeedingTroughModule implements IModule {
                 .register(MMOQuark.identifier("feeding_trough"), ItemGroup.DECORATIONS);
 
         tileEntityType = Registry.register(Registry.BLOCK_ENTITY_TYPE, MMOQuark.identifier("feeding_trough"),
-                BlockEntityType.Builder.create(FeedingTroughBlockEntity::new, feedingTrough).build(null));
+                FabricBlockEntityTypeBuilder.create(FeedingTroughBlockEntity::new, feedingTrough).build(null));
     }
 }

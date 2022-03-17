@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.block.QVineBlock;
+import work.lclpnet.mmoquark.block.ext.QVineBlock;
 
 import java.util.Map;
 

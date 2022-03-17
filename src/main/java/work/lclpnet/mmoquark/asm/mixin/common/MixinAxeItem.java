@@ -26,19 +26,19 @@ public class MixinAxeItem {
             method = "useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;",
             at = @At(
                     value = "INVOKE",
-                    target = "Ljava/util/Map;get(Ljava/lang/Object;)Ljava/lang/Object;"
+                    target = "Lnet/minecraft/item/AxeItem;getStrippedState(Lnet/minecraft/block/BlockState;)Ljava/util/Optional;"
             ),
             locals = LocalCapture.CAPTURE_FAILHARD,
             cancellable = true
     )
-    public void onStripe(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir, World world, BlockPos blockPos, BlockState blockState) {
+    public void onStripe(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir, World world,
+                         BlockPos blockPos, PlayerEntity playerEntity, BlockState blockState) {
         Block b = blockState.getBlock();
         if (!(b instanceof WoodPostBlock)) return;
 
         Block stripped = ((WoodPostBlock) b).strippedBlock;
         if (stripped == null) return;
 
-        PlayerEntity playerEntity = context.getPlayer();
         world.playSound(playerEntity, blockPos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
         if (!world.isClient) {
             world.setBlockState(blockPos, stripped.getDefaultState().with(PillarBlock.AXIS, blockState.get(PillarBlock.AXIS)), 11);

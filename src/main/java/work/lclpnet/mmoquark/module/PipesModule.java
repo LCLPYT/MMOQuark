@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
@@ -20,6 +21,6 @@ public class PipesModule implements IModule {
                 .register(MMOQuark.identifier("pipe"), ItemGroup.DECORATIONS);
 
         blockEntityType = Registry.register(Registry.BLOCK_ENTITY_TYPE, MMOQuark.identifier("pipe"),
-                BlockEntityType.Builder.create(PipeBlockEntity::new, pipeBlock).build(null));
+                FabricBlockEntityTypeBuilder.create(PipeBlockEntity::new, pipeBlock).build(null));
     }
 }

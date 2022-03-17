@@ -32,7 +32,7 @@ public class ChorusVegetationBlock extends MMOBlock implements Fertilizable {
     private final boolean simple;
 
     public ChorusVegetationBlock(boolean simple) {
-        super(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT)
+        super(Settings.of(Material.REPLACEABLE_PLANT)
                 .noCollision()
                 .breakInstantly()
                 .sounds(BlockSoundGroup.GRASS)
@@ -58,7 +58,7 @@ public class ChorusVegetationBlock extends MMOBlock implements Fertilizable {
 
             if(target != null && world.random.nextDouble() < 0.01) {
                 EndermiteEntity mite = new EndermiteEntity(EntityType.ENDERMITE, world);
-                mite.updatePosition(target.getX(), target.getY(), target.getZ());
+                mite.setPosition(target.getX(), target.getY(), target.getZ());
                 world.spawnEntity(mite);
             }
         }

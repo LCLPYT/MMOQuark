@@ -3,6 +3,7 @@ package work.lclpnet.mmoquark.block;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -81,9 +82,9 @@ public class SpeleothemBlock extends MMOBlock implements Waterloggable {
     }
 
     @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
-        if (world.getBlockState(pos).get(SIZE) == SpeleothemSize.SMALL) entity.handleFallDamage(distance, 1.5F);
-        else super.onLandedUpon(world, pos, entity, distance);
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float distance) {
+        if (world.getBlockState(pos).get(SIZE) == SpeleothemSize.SMALL) entity.handleFallDamage(distance, 1.5F, DamageSource.FALL);
+        else super.onLandedUpon(world, state, pos, entity, distance);
     }
 
     private int getBearing(WorldView world, BlockPos pos) {

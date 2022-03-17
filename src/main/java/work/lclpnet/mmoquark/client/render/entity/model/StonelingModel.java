@@ -2,7 +2,7 @@ package work.lclpnet.mmoquark.client.render.entity.model;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.model.ModelPart;
+import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
@@ -19,48 +19,57 @@ public class StonelingModel extends EntityModel<StonelingEntity> {
     private final ModelPart leg_right;
     private final ModelPart leg_left;
 
-    public StonelingModel() {
-        textureWidth = 32;
-        textureHeight = 32;
+    public StonelingModel(ModelPart root) {
+        body = root.getChild("body");
+        arm_right = root.getChild("arm_right");
+        arm_left = root.getChild("arm_left");
+        leg_right = root.getChild("leg_right");
+        leg_left = root.getChild("leg_left");
+    }
 
-        body = new ModelPart(this);
-        body.setPivot(0.0F, 14.0F, 0.0F);
+    // Made with Blockbench 4.1.5
+    public static TexturedModelData createBodyLayer() {
+        ModelData mesh = new ModelData();
+        ModelPartData root = mesh.getRoot();
 
-        ModelPart head = new ModelPart(this);
-        head.setPivot(0.0F, 0.0F, 0.0F);
-        body.addChild(head);
+        root.addChild("body", ModelPartBuilder.create()
+                        .uv(0, 0).cuboid(-4.0F, -9.0F, -3.0F, 8.0F, 9.0F, 7.0F, new Dilation(0.0F))
+                        .uv(36, 13).cuboid(-4.0F, -2.0F, -4.0F, 8.0F, 2.0F, 1.0F, new Dilation(0.0F))
+                        .uv(44, 7).cuboid(-4.0F, -9.0F, -5.0F, 8.0F, 4.0F, 2.0F, new Dilation(0.0F))
+                        .uv(23, 0).cuboid(-2.0F, -12.0F, -1.0F, 4.0F, 3.0F, 4.0F, new Dilation(0.0F))
+                        .uv(30, 7).cuboid(-2.0F, -9.0F, -6.0F, 4.0F, 3.0F, 3.0F, new Dilation(0.0F))
+                        .uv(25, 24).cuboid(-2.0F, -12.0F, -5.0F, 4.0F, 6.0F, 3.0F, new Dilation(0.0F))
+                        .uv(36, 17).cuboid(-2.0F, -11.0F, 3.0F, 4.0F, 5.0F, 3.0F, new Dilation(0.0F))
+                        .uv(0, 27).cuboid(-2.0F, -2.0F, -4.0F, 4.0F, 5.0F, 2.0F, new Dilation(0.0F)),
+                ModelTransform.pivot(0.0F, 21.0F, 0.0F));
 
-        head.addCuboid(null, -3.0F, -2.0F, -3.0F, 6, 8, 6, 0.0F, 0, 0);
-        head.addCuboid(null, -1.0F, -4.0F, -5.0F, 2, 4, 2, 0.0F, 8, 24);
-        head.addCuboid(null, -1.0F, 6.0F, -3.0F, 2, 2, 2, 0.0F, 16, 20);
-        head.addCuboid(null, -1.0F, -4.0F, 3.0F, 2, 4, 2, 0.0F, 0, 24);
-        head.addCuboid(null, -1.0F, -4.0F, -3.0F, 2, 2, 6, 0.0F, 16, 24);
-        head.addCuboid(null, -1.0F, -4.0F, -1.0F, 2, 2, 2, 0.0F, 24, 20);
-        head.addCuboid(null, -1.0F, 1.0F, -5.0F, 2, 2, 2, 0.0F, 18, 0);
-        head.addCuboid(null, -4.0F, -1.0F, -3.0F, 1, 2, 2, 0.0F, 0, 0);
-        head.addCuboid(null, 3.0F, -1.0F, -3.0F, 1, 2, 2, 0.0F, 0, 0);
+//        body.addChild("lychen", ModelPartBuilder.create()
+//                        .uv(10, 12).cuboid(0.0F, -4.0F, -2.0F, 0.0F, 4.0F, 4.0F, new Dilation(0.0F))
+//                        .uv(10, 16).cuboid(-2.0F, -4.0F, 0.0F, 4.0F, 4.0F, 0.0F, new Dilation(0.0F)),
+//                ModelTransform.of(3.0F, -9.0F, 3.0F, 0.0F, 0.7854F, 0.0F));
+//
+//        body.addChild("dripstone", ModelPartBuilder.create()
+//                        .uv(14, 16).cuboid(0.0F, -5.0F, -3.0F, 0.0F, 5.0F, 6.0F, new Dilation(0.0F))
+//                        .uv(14, 22).cuboid(-3.0F, -5.0F, 0.0F, 6.0F, 5.0F, 0.0F, new Dilation(0.0F)),
+//                ModelTransform.of(0.0F, -9.0F, 1.0F, 0.0F, 0.7854F, 0.0F));
 
-        arm_right = new ModelPart(this);
-        arm_right.setPivot(-3.0F, 2.0F, 0.0F);
-        setRotationAngle(arm_right, 3.1416F, 0.0F, 0.0F);
-        body.addChild(arm_right);
-        arm_right.addCuboid(null, -2.0F, 0.0F, -1.0F, 2, 8, 2, 0.0F, 0, 14);
+        root.addChild("leg_left", ModelPartBuilder.create()
+                        .uv(27, 13).cuboid(-1.5F, 1.0F, -1.5F, 3.0F, 4.0F, 3.0F, new Dilation(0.0F)),
+                ModelTransform.pivot(2.25F, 19.0F, 0.5F));
 
-        arm_left = new ModelPart(this);
-        arm_left.setPivot(3.0F, 2.0F, 0.0F);
-        setRotationAngle(arm_left, 3.1416F, 0.0F, 0.0F);
-        body.addChild(arm_left);
-        arm_left.addCuboid(null, 0.0F, 0.0F, -1.0F, 2, 8, 2, 0.0F, 8, 14);
+        root.addChild("leg_right", ModelPartBuilder.create()
+                        .uv(27, 13).mirrored().cuboid(-1.5F, 1.0F, -1.5F, 3.0F, 4.0F, 3.0F, new Dilation(0.0F)).mirrored(false),
+                ModelTransform.pivot(-2.25F, 19.0F, 0.5F));
 
-        leg_right = new ModelPart(this);
-        leg_right.setPivot(-2.0F, 4.0F, 0.0F);
-        body.addChild(leg_right);
-        leg_right.addCuboid(null, -1.0F, 2.0F, -1.0F, 2, 4, 2, 0.0F, 16, 14);
+        root.addChild("arm_right", ModelPartBuilder.create()
+                        .uv(0, 16).cuboid(-3.0F, 0.0F, -2.0F, 3.0F, 7.0F, 4.0F, new Dilation(0.0F)),
+                ModelTransform.pivot(-4.0F, 15.0F, 0.5F));
 
-        leg_left = new ModelPart(this);
-        leg_left.setPivot(1.0F, 4.0F, 0.0F);
-        body.addChild(leg_left);
-        leg_left.addCuboid(null, 0.0F, 2.0F, -1.0F, 2, 4, 2, 0.0F, 24, 14);
+        root.addChild("arm_left", ModelPartBuilder.create()
+                        .uv(0, 16).mirrored().cuboid(0.0F, 0.0F, -2.0F, 3.0F, 7.0F, 4.0F, new Dilation(0.0F)).mirrored(false),
+                ModelTransform.pivot(4.0F, 15.0F, 0.5F));
+
+        return TexturedModelData.of(mesh, 64, 64);
     }
 
     @Override
@@ -81,11 +90,9 @@ public class StonelingModel extends EntityModel<StonelingEntity> {
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
         body.render(matrices, vertices, light, overlay, red, green, blue, alpha);
-    }
-
-    public void setRotationAngle(ModelPart modelRenderer, float x, float y, float z) {
-        modelRenderer.pitch = x;
-        modelRenderer.yaw = y;
-        modelRenderer.roll = z;
+        arm_right.render(matrices, vertices, light, overlay, red, green, blue, alpha);
+        arm_left.render(matrices, vertices, light, overlay, red, green, blue, alpha);
+        leg_right.render(matrices, vertices, light, overlay, red, green, blue, alpha);
+        leg_left.render(matrices, vertices, light, overlay, red, green, blue, alpha);
     }
 }

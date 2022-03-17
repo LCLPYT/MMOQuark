@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SignBlock;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BannerPattern;
@@ -14,17 +15,16 @@ import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.BlockRenderManager;
 import net.minecraft.client.render.block.entity.BannerBlockEntityRenderer;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.client.render.entity.ItemFrameEntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.BakedModelManager;
 import net.minecraft.client.render.model.ModelLoader;
 import net.minecraft.client.render.model.json.ModelTransformation;
+import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.ModelIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.util.math.Vector3f;
-import net.minecraft.entity.EntityType;
 import net.minecraft.item.BannerItem;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
@@ -36,8 +36,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.asm.mixin.client.EntityRenderDispatcherAccessor;
 import work.lclpnet.mmoquark.entity.GlassItemFrameEntity;
 
 import java.util.Arrays;
@@ -49,23 +49,22 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
     private static final ModelIdentifier LOCATION_MODEL = new ModelIdentifier(MMOQuark.identifier("glass_frame"), "inventory");
     private static final List<Direction> SIGN_DIRECTIONS = Arrays.asList(Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST);
 
-    private static BannerBlockEntity banner = new BannerBlockEntity();
+    private static final BannerBlockEntity banner = new BannerBlockEntity(BlockPos.ORIGIN, Blocks.WHITE_BANNER.getDefaultState());
     private final ModelPart bannerModel;
-
     private final ItemRenderer itemRenderer;
-    private final ItemFrameEntityRenderer defaultRenderer;
 
-    public GlassItemFrameRenderer(EntityRenderDispatcher dispatcher, ItemRenderer itemRenderer) {
-        super(dispatcher);
-        bannerModel = BannerBlockEntityRenderer.createBanner();
-        this.itemRenderer = itemRenderer;
-        this.defaultRenderer = (ItemFrameEntityRenderer) ((EntityRenderDispatcherAccessor) dispatcher).getRenderers().get(EntityType.ITEM_FRAME);
+    public GlassItemFrameRenderer(EntityRendererFactory.Context context) {
+        super(context);
+
+        ModelPart part = context.getPart(EntityModelLayers.BANNER);
+        this.bannerModel = part.getChild("flag");
+
+        this.itemRenderer = MinecraftClient.getInstance().getItemRenderer();
     }
 
     @Override
     public Identifier getTexture(GlassItemFrameEntity entity) {
-//        return SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE;
-        return null;
+        return SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE;
     }
 
     @Override
@@ -77,8 +76,8 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
         Vec3d vec3d = this.getPositionOffset(entity, tickDelta);
         matrices.translate(-vec3d.getX(), -vec3d.getY(), -vec3d.getZ());
         matrices.translate((double) direction.getOffsetX() * 0.46875D, (double) direction.getOffsetY() * 0.46875D, (double) direction.getOffsetZ() * 0.46875D);
-        matrices.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(entity.pitch));
-        matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(180.0F - entity.yaw));
+        matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(entity.getPitch()));
+        matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180.0F - entity.getYaw()));
         BlockRenderManager blockRenderManager = MinecraftClient.getInstance().getBlockRenderManager();
         BakedModelManager modelManager = blockRenderManager.getModels().getModelManager();
 
@@ -126,7 +125,7 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
     protected void renderItemStack(GlassItemFrameEntity itemFrame, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, ItemStack stack) {
         if (!stack.isEmpty()) {
             matrices.push();
-            MapState mapState = FilledMapItem.getMapState(stack, itemFrame.world);
+            MapState mapState = FilledMapItem.getOrCreateMapState(stack, itemFrame.world);
 
             sign: if(itemFrame.isOnSign()) {
                 BlockPos back = itemFrame.getBehindPos();
@@ -146,19 +145,24 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
                 matrices.translate(0, 0.35, 0.8);
                 matrices.scale(0.4F, 0.4F, 0.4F);
                 matrices.translate(0, 0, 0.5);
-                matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(angle));
+                matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(angle));
                 matrices.translate(0, 0, -0.5);
                 matrices.translate(0, 0, -0.085);
             }
 
             int rotation = mapState != null ? itemFrame.getRotation() % 4 * 2 : itemFrame.getRotation();
-            matrices.multiply(Vector3f.POSITIVE_Z.getDegreesQuaternion((float) rotation * 360.0F / 8.0F));
+            matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion((float) rotation * 360.0F / 8.0F));
 
             if (mapState != null) {
-                matrices.multiply(Vector3f.POSITIVE_Z.getDegreesQuaternion(180.0F));
+                matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(180.0F));
                 matrices.scale(0.0078125F, 0.0078125F, 0.0078125F);
                 matrices.translate(-64.0F, -64.0F, 62.5F); // <- Use 62.5 instead of 64 to prevent z-fighting
-                MinecraftClient.getInstance().gameRenderer.getMapRenderer().draw(matrices, vertexConsumers, mapState, true, light);
+
+                Integer mapId = FilledMapItem.getMapId(stack);
+                if (mapId != null) {
+                    MinecraftClient.getInstance().gameRenderer.getMapRenderer()
+                            .draw(matrices, vertexConsumers, mapId, mapState, true, light);
+                }
             } else {
                 float s = 1.5F;
                 if (stack.getItem() instanceof BannerItem) {
@@ -168,7 +172,7 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
                     matrices.push();
                     matrices.translate(0.0001F, -0.5001F, 0.55F);
                     matrices.scale(0.799999F, 0.399999F, 0.5F);
-                    BannerBlockEntityRenderer.method_29999(matrices, vertexConsumers, light, OverlayTexture.DEFAULT_UV, bannerModel, ModelLoader.BANNER_BASE, true, patterns);
+                    BannerBlockEntityRenderer.renderCanvas(matrices, vertexConsumers, light, OverlayTexture.DEFAULT_UV, bannerModel, ModelLoader.BANNER_BASE, true, patterns);
                     matrices.pop();
                 } else {
                     if (stack.getItem() instanceof ShieldItem) {
@@ -179,7 +183,7 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
                     }
                     matrices.scale(s, s, s);
                     matrices.scale(0.5F, 0.5F, 0.5F);
-                    this.itemRenderer.renderItem(stack, ModelTransformation.Mode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers);
+                    this.itemRenderer.renderItem(stack, ModelTransformation.Mode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 0);
                 }
             }
 

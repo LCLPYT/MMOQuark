@@ -2,11 +2,10 @@ package work.lclpnet.mmoquark.client.module;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.block.Block;
 import net.minecraft.client.texture.SpriteAtlasTexture;
-import work.lclpnet.mmoquark.blockentity.VariantChestBlockEntity;
 import work.lclpnet.mmoquark.client.render.blockentity.VariantChestBlockEntityRenderer;
 import work.lclpnet.mmoquark.module.VariantChestsModule;
 
@@ -15,14 +14,10 @@ import java.util.function.Consumer;
 @Environment(EnvType.CLIENT)
 public class VariantChestsClientModule implements IClientModule {
 
-    public static VariantChestBlockEntity variantChest = null;
-
     @Override
     public void registerClient() {
-        variantChest = new VariantChestBlockEntity();
-
-        BlockEntityRendererRegistry.INSTANCE.register(VariantChestsModule.VARIANT_CHEST_ENTITY, VariantChestBlockEntityRenderer::new);
-        BlockEntityRendererRegistry.INSTANCE.register(VariantChestsModule.VARIANT_TRAPPED_CHEST_ENTITY, VariantChestBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(VariantChestsModule.VARIANT_CHEST_ENTITY, VariantChestBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(VariantChestsModule.VARIANT_TRAPPED_CHEST_ENTITY, VariantChestBlockEntityRenderer::new);
     }
 
     @Override

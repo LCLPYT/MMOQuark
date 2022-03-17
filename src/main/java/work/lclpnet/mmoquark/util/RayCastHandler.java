@@ -33,8 +33,8 @@ public class RayCastHandler {
 	
 	public static Pair<Vec3d, Vec3d> getEntityParams(Entity player) {
 		float scale = 1.0F;
-		float pitch = player.prevPitch + (player.pitch - player.prevPitch) * scale;
-		float yaw = player.prevYaw + (player.yaw - player.prevYaw) * scale;
+		float pitch = player.prevPitch + (player.getPitch() - player.prevPitch) * scale;
+		float yaw = player.prevYaw + (player.getYaw() - player.prevYaw) * scale;
 		Vec3d pos = player.getPos();
 		double posX = player.prevX + (pos.x - player.prevX) * scale;
 		double posY = player.prevY + (pos.y - player.prevY) * scale;

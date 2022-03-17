@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
@@ -72,9 +73,9 @@ public class FeedingTroughBlock extends MMOBlock implements BlockEntityProvider 
     }
 
     @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
-        if (world.getBlockState(pos).get(FULL)) entity.handleFallDamage(distance, 0.2F);
-        else super.onLandedUpon(world, pos, entity, distance);
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+        if (world.getBlockState(pos).get(FULL)) entity.handleFallDamage(fallDistance, 0.2F, DamageSource.FALL);
+        else super.onLandedUpon(world, state, pos, entity, fallDistance);
     }
 
     @Override
@@ -92,8 +93,8 @@ public class FeedingTroughBlock extends MMOBlock implements BlockEntityProvider 
 
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockView world) {
-        return new FeedingTroughBlockEntity();
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new FeedingTroughBlockEntity(pos, state);
     }
 
     @Override

@@ -38,7 +38,8 @@ public class MMOQuarkClient implements ClientModInitializer {
             new RopeClientModule(),
             new VariantLadderClientModule(),
             new WoodPostsClientModule(),
-            new CaveRootClientModule()
+            new CaveRootClientModule(),
+            new ForgottenClientModule()
     );
 
     @Override
@@ -47,6 +48,8 @@ public class MMOQuarkClient implements ClientModInitializer {
 
         ClientSpriteRegistryCallback.event(TexturedRenderLayers.CHEST_ATLAS_TEXTURE)
                 .register((atlasTexture, registry) -> CLIENT_MODULES.forEach(module -> module.registerSprites(atlasTexture, registry)));
+
+        QuarkWorldMigration.init();
     }
 
 }

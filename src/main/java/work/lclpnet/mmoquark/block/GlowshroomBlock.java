@@ -19,7 +19,7 @@ import java.util.Random;
 public class GlowshroomBlock extends MushroomBlock implements IMMOBlock {
 
     public GlowshroomBlock() {
-        super(AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM_BLOCK)
+        super(Settings.copy(Blocks.RED_MUSHROOM_BLOCK)
                 .luminance(b -> 14)
                 .ticksRandomly()
                 .nonOpaque());

@@ -9,9 +9,9 @@ import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.Vec3f;
 import work.lclpnet.mmoquark.client.render.entity.model.StonelingModel;
 import work.lclpnet.mmoquark.entity.StonelingEntity;
 
@@ -31,15 +31,15 @@ public class StonelingItemLayer extends FeatureRenderer<StonelingEntity, Stoneli
             matrices.push();
             matrices.translate(0F, 0.5F, 0F);
             if(!isBlock) {
-                matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(entity.getItemAngle() + 180));
-                matrices.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(90F));
+                matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(entity.getItemAngle() + 180));
+                matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(90F));
             } else {
-                matrices.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(180F));
+                matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(180F));
             }
 
             matrices.scale(0.725F, 0.725F, 0.725F);
             MinecraftClient mc = MinecraftClient.getInstance();
-            mc.getItemRenderer().renderItem(stack, ModelTransformation.Mode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers);
+            mc.getItemRenderer().renderItem(stack, ModelTransformation.Mode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 0);
             matrices.pop();
         }
     }

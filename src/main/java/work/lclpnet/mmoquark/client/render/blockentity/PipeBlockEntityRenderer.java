@@ -7,25 +7,20 @@ import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.BlockRenderManager;
-import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.BakedModelManager;
 import net.minecraft.client.util.ModelIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3f;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.blockentity.PipeBlockEntity;
 
 @Environment(EnvType.CLIENT)
-public class PipeBlockEntityRenderer extends BlockEntityRenderer<PipeBlockEntity> {
+public class PipeBlockEntityRenderer implements BlockEntityRenderer<PipeBlockEntity> {
 
     private static final ModelIdentifier LOCATION_MODEL = new ModelIdentifier(MMOQuark.identifier("pipe_flare"), "inventory");
-
-    public PipeBlockEntityRenderer(BlockEntityRenderDispatcher dispatcher) {
-        super(dispatcher);
-    }
 
     @Override
     public void render(PipeBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
@@ -45,21 +40,16 @@ public class PipeBlockEntityRenderer extends BlockEntityRenderer<PipeBlockEntity
         PipeBlockEntity.ConnectionType type = PipeBlockEntity.getConnectionTo(entity.getWorld(), entity.getPos(), dir);
         if (type.isFlared) {
             matrices.push();
-            switch(dir.getAxis()) {
-                case X:
-                    matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-dir.asRotation()));
-                    break;
-                case Z:
-                    matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(dir.asRotation()));
-                    break;
-                case Y:
-                    matrices.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(90F));
-                    if (dir == Direction.UP) matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(180F));
-                    break;
+            switch (dir.getAxis()) {
+                case X -> matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-dir.asRotation()));
+                case Z -> matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(dir.asRotation()));
+                case Y -> {
+                    matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(90F));
+                    if (dir == Direction.UP) matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180F));
+                }
             }
 
             matrices.translate(-0.5, -0.5, type.flareShift);
-
 
             blockRenderManager.getModelRenderer().render(matrices.peek(), vertexConsumers.getBuffer(TexturedRenderLayers.getEntityCutout()), null, model, 1.0F, 1.0F, 1.0F, light, OverlayTexture.DEFAULT_UV);
             matrices.pop();

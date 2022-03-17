@@ -12,7 +12,7 @@ public class QuiltedWoolModule implements IModule {
     @Override
     public void register() {
         for (DyeColor dye : DyeColor.values()) {
-            new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, dye.getMaterialColor())
+            new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.WOOL, dye.getMapColor())
                     .strength(0.8F, 0.8F)
                     .sounds(BlockSoundGroup.WOOL))
                     .register(MMOQuark.identifier("%s_quilted_wool", dye.getName()));

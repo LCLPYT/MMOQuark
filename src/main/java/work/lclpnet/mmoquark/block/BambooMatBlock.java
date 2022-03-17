@@ -2,8 +2,8 @@ package work.lclpnet.mmoquark.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
@@ -20,7 +20,7 @@ public class BambooMatBlock extends MMOBlock {
     public static final EnumProperty<Direction> FACING = Properties.HOPPER_FACING;
 
     public BambooMatBlock() {
-        super(Settings.of(Material.BAMBOO, MaterialColor.YELLOW)
+        super(Settings.of(Material.BAMBOO, MapColor.YELLOW)
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.BAMBOO));
 
@@ -34,7 +34,7 @@ public class BambooMatBlock extends MMOBlock {
         PlayerEntity player = ctx.getPlayer();
         if (player == null) throw new IllegalStateException("Player might not be null");
 
-        if(player.pitch > 70) dir = Direction.DOWN;
+        if(player.getPitch() > 70) dir = Direction.DOWN;
 
         if (dir != Direction.DOWN) {
             Direction opposite = dir.getOpposite();

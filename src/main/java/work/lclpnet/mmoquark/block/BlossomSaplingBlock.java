@@ -7,14 +7,13 @@ import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.world.Heightmap;
-import net.minecraft.world.gen.UniformIntDistribution;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
-import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
@@ -39,14 +38,13 @@ public class BlossomSaplingBlock extends SaplingBlock implements IMMOBlock {
         public final BlockState leaf;
 
         public BlossomSaplingGenerator(Block leafBlock) {
-            config = (new TreeFeatureConfig.Builder(
-                    new SimpleBlockStateProvider(Blocks.SPRUCE_LOG.getDefaultState()),
-                    new SimpleBlockStateProvider(leafBlock.getDefaultState()),
-                    new LargeOakFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(4), 4), // <- Copy of what Features.FANCY_OAK uses
+            config = new TreeFeatureConfig.Builder(
+                    BlockStateProvider.of(Blocks.SPRUCE_LOG.getDefaultState()),
                     new LargeOakTrunkPlacer(3, 11, 0),
-                    new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))))
+                    BlockStateProvider.of(leafBlock.getDefaultState()),
+                    new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4), // <- Copy of what Features.FANCY_OAK uses
+                    new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
                     .ignoreVines()
-                    .heightmap(Heightmap.Type.MOTION_BLOCKING)
                     .build();
 
             leaf = leafBlock.getDefaultState();
@@ -54,7 +52,7 @@ public class BlossomSaplingBlock extends SaplingBlock implements IMMOBlock {
 
         @Nullable
         @Override
-        protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+        protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bl) {
             return Feature.TREE.configure(config);
         }
     }

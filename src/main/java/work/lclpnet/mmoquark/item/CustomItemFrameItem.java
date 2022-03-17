@@ -6,7 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -35,8 +35,8 @@ public class CustomItemFrameItem extends Item {
             World world = context.getWorld();
             AbstractDecorationEntity frame = entityProvider.apply(world, placeLocation, facing);
 
-            CompoundTag tag = stack.getTag();
-            if (tag != null) EntityType.loadFromEntityTag(world, player, frame, tag);
+            NbtCompound tag = stack.getNbt();
+            if (tag != null) EntityType.loadFromEntityNbt(world, player, frame, tag);
 
             if (frame.canStayAttached()) {
                 if (!world.isClient) {
@@ -52,6 +52,7 @@ public class CustomItemFrameItem extends Item {
     }
 
     protected boolean canPlace(PlayerEntity player, Direction facing, ItemStack stack, BlockPos pos) {
-        return !World.isOutOfBuildLimitVertically(pos) && player.canPlaceOn(pos, facing, stack);
+
+        return !player.world.isOutOfHeightLimit(pos) && player.canPlaceOn(pos, facing, stack);
     }
 }

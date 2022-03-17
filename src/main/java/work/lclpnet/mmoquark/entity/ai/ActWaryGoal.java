@@ -81,7 +81,7 @@ public class ActWaryGoal extends WanderAroundFarGoal {
 
 
         List<PlayerEntity> playersAround = stoneling.world.getEntitiesByClass(PlayerEntity.class, stoneling.getBoundingBox().expand(range),
-                (player) -> player != null && !player.abilities.creativeMode && player.squaredDistanceTo(stoneling) < range * range);
+                (player) -> player != null && !player.getAbilities().creativeMode && player.squaredDistanceTo(stoneling) < range * range);
 
         if (playersAround.isEmpty())
             return false;

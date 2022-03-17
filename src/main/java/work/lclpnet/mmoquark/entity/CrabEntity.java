@@ -23,7 +23,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.ItemTags;
@@ -74,7 +74,7 @@ public class CrabEntity extends AnimalEntity {
 
     @Override
     public float getPathfindingFavor(BlockPos pos, WorldView world) {
-        return world.getBlockState(pos.down()).getBlock().isIn(CrabsModule.crabSpawnableTag) ? 10.0F : world.getBrightness(pos) - 0.5F;
+        return world.getBlockState(pos.down()).isIn(CrabsModule.crabSpawnableTag) ? 10.0F : world.getBrightness(pos) - 0.5F;
     }
 
     @Override
@@ -109,7 +109,7 @@ public class CrabEntity extends AnimalEntity {
         this.goalSelector.add(1, new EscapeDangerGoal(this, 1.25D));
         this.goalSelector.add(2, new RaveGoal(this));
         this.goalSelector.add(3, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(4, new TemptGoal(this, 1.2D, false, getTemptationItems()));
+        this.goalSelector.add(4, new TemptGoal(this, 1.2D, getTemptationItems(), false));
         this.goalSelector.add(5, new FollowParentGoal(this, 1.1D));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
@@ -163,7 +163,7 @@ public class CrabEntity extends AnimalEntity {
     }
 
     @Override
-    public boolean canFly() {
+    public boolean isPushedByFluids() {
         return false;
     }
 
@@ -268,8 +268,8 @@ public class CrabEntity extends AnimalEntity {
     }
 
     @Override
-    public void writeCustomDataToTag(CompoundTag tag) {
-        super.writeCustomDataToTag(tag);
+    public void writeCustomDataToNbt(NbtCompound tag) {
+        super.writeCustomDataToNbt(tag);
         tag.putFloat("EnemyCrabRating", getSizeModifier());
         tag.putInt("LightningCooldown", lightningCooldown);
         tag.putInt("Variant", dataTracker.get(VARIANT));
@@ -277,8 +277,8 @@ public class CrabEntity extends AnimalEntity {
     }
 
     @Override
-    public void readCustomDataFromTag(CompoundTag tag) {
-        super.readCustomDataFromTag(tag);
+    public void readCustomDataFromNbt(NbtCompound tag) {
+        super.readCustomDataFromNbt(tag);
 
         lightningCooldown = tag.getInt("LightningCooldown");
         noSpike = tag.getBoolean("NoSpike");

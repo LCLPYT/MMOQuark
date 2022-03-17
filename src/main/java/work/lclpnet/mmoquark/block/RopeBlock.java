@@ -64,7 +64,7 @@ public class RopeBlock extends MMOBlock {
 
                 if (stack.isEmpty())
                     player.setStackInHand(hand, bottleStack);
-                else if (!player.inventory.insertStack(bottleStack))
+                else if (!player.getInventory().insertStack(bottleStack))
                     player.dropItem(bottleStack, false);
 
 

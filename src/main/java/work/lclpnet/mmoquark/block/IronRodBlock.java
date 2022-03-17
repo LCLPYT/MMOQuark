@@ -12,12 +12,12 @@ import work.lclpnet.mmocontent.block.ext.IMMOBlock;
 
 import java.util.Random;
 
-public class IronRodBlock extends EndRodBlock implements IMMOBlock {
+public class IronRodBlock extends RodBlock implements IMMOBlock {
 
     public static final BooleanProperty CONNECTED = BooleanProperty.of("connected");
 
     public IronRodBlock() {
-        super(Settings.of(Material.METAL, MaterialColor.GRAY)
+        super(Settings.of(Material.METAL, MapColor.GRAY)
                 .strength(5F, 10F)
                 .sounds(BlockSoundGroup.METAL)
                 .nonOpaque());
@@ -25,8 +25,7 @@ public class IronRodBlock extends EndRodBlock implements IMMOBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        super.appendProperties(builder);
-        builder.add(CONNECTED);
+        builder.add(FACING, CONNECTED);
     }
 
     @Override

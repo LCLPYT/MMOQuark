@@ -54,7 +54,7 @@ public class StoolBlock extends MMOBlock implements Waterloggable {
     public static final BooleanProperty SAT_IN = BooleanProperty.of("sat_in");
 
     public StoolBlock(DyeColor color) {
-        super(Settings.of(Material.WOOL, color.getMaterialColor())
+        super(Settings.of(Material.WOOL, color.getMapColor())
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(0.2F, 0.2F)
                 .nonOpaque());
@@ -70,7 +70,7 @@ public class StoolBlock extends MMOBlock implements Waterloggable {
         BlockState state = world.getBlockState(pos);
         if (!state.get(BIG)) {
             world.setBlockState(pos, state.with(BIG, true));
-            world.getBlockTickScheduler().schedule(pos, this, 1);
+            world.createAndScheduleBlockTick(pos, this, 1);
         }
     }
 
@@ -86,7 +86,7 @@ public class StoolBlock extends MMOBlock implements Waterloggable {
 
         if (!world.isClient) {
             StoolEntity entity = new StoolEntity(StoolsModule.stoolEntity, world);
-            entity.updatePosition(pos.getX() + 0.5, pos.getY() + 0.6, pos.getZ() + 0.5);
+            entity.setPosition(pos.getX() + 0.5, pos.getY() + 0.6, pos.getZ() + 0.5);
 
             world.spawnEntity(entity);
             player.startRiding(entity);
@@ -98,8 +98,8 @@ public class StoolBlock extends MMOBlock implements Waterloggable {
     }
 
     @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
-        super.onLandedUpon(world, pos, entity, distance * 0.5F);
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float distance) {
+        super.onLandedUpon(world, state, pos, entity, distance * 0.5F);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class BurntVinesClientModule implements IClientModule {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             ItemStack vine = new ItemStack(Items.VINE);
             ItemColors colors = ClientCommon.getItemColors();
-            return colors.getColorMultiplier(vine, tintIndex);
+            return colors.getColor(vine, tintIndex);
         }, BurntVinesModule.burnt_vine_item);
 
         MMORenderLayers.setBlockRenderType(BurntVinesModule.burnt_vine, RenderLayer.getCutout());

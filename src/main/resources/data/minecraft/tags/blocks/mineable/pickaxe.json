@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "quark:red_crystal",
+    "quark:orange_crystal",
+    "quark:yellow_crystal",
+    "quark:green_crystal",
+    "quark:blue_crystal",
+    "quark:indigo_crystal",
+    "quark:violet_crystal",
+    "quark:white_crystal",
+    "quark:black_crystal",
+    "quark:soul_sandstone",
+    "quark:soul_sandstone_slab",
+    "quark:soul_sandstone_vertical_slab",
+    "quark:soul_sandstone_stairs",
+    "quark:soul_sandstone_wall",
+    "quark:chiseled_soul_sandstone",
+    "quark:cut_soul_sandstone",
+    "quark:cut_soul_sandstone_slab",
+    "quark:cut_soul_sandstone_vertical_slab",
+    "quark:smooth_soul_sandstone",
+    "quark:smooth_soul_sandstone_slab",
+    "quark:smooth_soul_sandstone_vertical_slab",
+    "quark:smooth_soul_sandstone_stairs"
+  ]
+}

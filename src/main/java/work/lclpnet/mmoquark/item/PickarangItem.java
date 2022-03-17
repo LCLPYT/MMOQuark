@@ -44,7 +44,7 @@ public class PickarangItem extends Item {
     }
 
     @Override
-    public boolean isEffectiveOn(BlockState state) {
+    public boolean isSuitableFor(BlockState state) {
         return true;
     }
 
@@ -63,14 +63,14 @@ public class PickarangItem extends Item {
         world.playSound(null, pos.x, pos.y, pos.z, MMOSounds.ENTITY_PICKARANG_THROW, SoundCategory.NEUTRAL, 0.5F + eff * 0.14F, 0.4F / (world.random.nextFloat() * 0.4F + 0.8F));
 
         if(!world.isClient)  {
-            int slot = hand == Hand.OFF_HAND ? user.inventory.size() - 1 : user.inventory.selectedSlot;
+            int slot = hand == Hand.OFF_HAND ? user.getInventory().size() - 1 : user.getInventory().selectedSlot;
             PickarangEntity entity = new PickarangEntity(world, user);
             entity.setThrowData(slot, itemstack, isNetherite);
-            entity.shoot(user, user.pitch, user.yaw, 0.0F, 1.5F + eff * 0.325F, 0F);
+            entity.shoot(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F + eff * 0.325F, 0F);
             world.spawnEntity(entity);
         }
 
-        if (!user.abilities.creativeMode) {
+        if (!user.getAbilities().creativeMode) {
             int cooldown = 10 - eff;
             if (cooldown > 0) user.getItemCooldownManager().set(this, cooldown);
         }

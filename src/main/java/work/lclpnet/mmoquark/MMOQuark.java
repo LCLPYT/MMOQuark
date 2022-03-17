@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -88,7 +88,7 @@ public class MMOQuark implements ModInitializer {
 				.withSlab().withStairs().withVerticalSlab()
 				.register(MMOQuark.identifier("rusty_iron_plate"));
 
-		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY)
+		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MapColor.GRAY)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
@@ -96,7 +96,7 @@ public class MMOQuark implements ModInitializer {
 				.withSlab().withStairs().withWall().withVerticalSlab()
 				.register(MMOQuark.identifier("cobbedstone"));
 
-		MMOBlock brimstone = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.RED)
+		MMOBlock brimstone = new MMOBlock(FabricBlockSettings.of(Material.STONE, MapColor.RED)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
@@ -114,7 +114,7 @@ public class MMOQuark implements ModInitializer {
 				.withSlab().withStairs().withVerticalSlab()
 				.register(MMOQuark.identifier("thatch"));
 
-		final MMOBlock elderPrismarine = new MMOBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.ORANGE)
+		final MMOBlock elderPrismarine = new MMOBlock(FabricBlockSettings.of(Material.STONE, MapColor.ORANGE)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
@@ -132,7 +132,7 @@ public class MMOQuark implements ModInitializer {
 				.withSlab().withVerticalSlab().withStairs()
 				.register(MMOQuark.identifier("dark_elder_prismarine"));
 
-		new MMOBlockRegistrar(FabricBlockSettings.of(Material.GLASS, MaterialColor.ORANGE)
+		new MMOBlockRegistrar(FabricBlockSettings.of(Material.GLASS, MapColor.ORANGE)
 				.strength(0.3F, 0.3F)
 				.luminance(b -> 15) // lightValue
 				.sounds(BlockSoundGroup.GLASS))
@@ -148,7 +148,7 @@ public class MMOQuark implements ModInitializer {
 				.luminance(b -> 15)))
 				.register(MMOQuark.identifier("lit_lamp"), ItemGroup.DECORATIONS);
 
-		new MMOBlockRegistrar(new ObsidianPressurePlateBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+		new MMOBlockRegistrar(new ObsidianPressurePlateBlock(FabricBlockSettings.of(Material.STONE, MapColor.BLACK)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)
 				.noCollision()

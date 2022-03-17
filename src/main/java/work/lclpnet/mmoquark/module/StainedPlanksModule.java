@@ -14,7 +14,7 @@ public class StainedPlanksModule implements IModule {
     @Override
     public void register() {
         ImmutableSet.of(DyeColor.WHITE, DyeColor.ORANGE, DyeColor.PINK, DyeColor.GRAY, DyeColor.CYAN, DyeColor.BROWN, DyeColor.BLACK)
-                .forEach(dyeColor -> new MMOBlockRegistrar(new MMOBlock(AbstractBlock.Settings.of(Material.WOOD, dyeColor.getMaterialColor())
+                .forEach(dyeColor -> new MMOBlockRegistrar(new MMOBlock(AbstractBlock.Settings.of(Material.WOOD, dyeColor.getMapColor())
                         .strength(2.0F, 3.0F)
                         .sounds(BlockSoundGroup.WOOD)))
                         .withSlab().withStairs().withVerticalSlab()

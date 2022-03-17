@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "work.lclpnet.mmoquark.asm.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "client": [
     "client.EntityRenderDispatcherAccessor"
   ],
@@ -14,7 +14,6 @@
     "common.GoalSelectorAccessor",
     "common.LivingEntityAccessor",
     "common.MixinAxeItem",
-    "common.MixinEntityShapeContext",
     "common.MixinLanternBlock",
     "common.MixinServerWorld"
   ]

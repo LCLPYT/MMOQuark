@@ -31,7 +31,7 @@ public class CandleBlock extends MMOBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     public CandleBlock(DyeColor color) {
-        super(Settings.of(Material.SUPPORTED, color.getMaterialColor())
+        super(Settings.of(Material.DECORATION, color.getMapColor())
                 .strength(0.2F, 0.2F)
                 .luminance(b -> b.get(WATERLOGGED) ? 0 : 14)
                 .sounds(BlockSoundGroup.WOOL));
@@ -61,7 +61,7 @@ public class CandleBlock extends MMOBlock implements Waterloggable {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         if (state.get(WATERLOGGED))
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
@@ -73,12 +73,12 @@ public class CandleBlock extends MMOBlock implements Waterloggable {
 
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
-        world.getBlockTickScheduler().schedule(pos, this, 2);
+        world.createAndScheduleBlockTick(pos, this, 2);
     }
 
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        world.getBlockTickScheduler().schedule(pos, this, 2);
+        world.createAndScheduleBlockTick(pos, this, 2);
     }
 
     @Override

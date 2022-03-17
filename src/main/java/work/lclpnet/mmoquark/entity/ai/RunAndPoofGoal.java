@@ -1,7 +1,7 @@
 package work.lclpnet.mmoquark.entity.ai;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.ai.TargetFinder;
+import net.minecraft.entity.ai.NoPenaltyTargeting;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.pathing.EntityNavigation;
 import net.minecraft.entity.ai.pathing.Path;
@@ -60,7 +60,7 @@ public class RunAndPoofGoal<T extends Entity> extends Goal {
         if (entities.isEmpty()) return false;
         else {
             this.closestLivingEntity = entities.get(0);
-            Vec3d target = TargetFinder.findTargetAwayFrom(this.entity, 16, 7, this.closestLivingEntity.getPos());
+            Vec3d target = NoPenaltyTargeting.findFrom(this.entity, 16, 7, this.closestLivingEntity.getPos());
 
             if (target != null && this.closestLivingEntity.squaredDistanceTo(target.x, target.y, target.z) < this.closestLivingEntity.squaredDistanceTo(this.entity)) {
                 return false;
@@ -109,8 +109,7 @@ public class RunAndPoofGoal<T extends Entity> extends Goal {
 
         World world = entity.world;
 
-        if (world instanceof ServerWorld) {
-            ServerWorld ws = (ServerWorld) world;
+        if (world instanceof ServerWorld ws) {
             Vec3d epos = entity.getPos();
 
             ws.spawnParticles(ParticleTypes.CLOUD, epos.x, epos.y, epos.z, 40, 0.5, 0.5, 0.5, 0.1);
@@ -118,9 +117,9 @@ public class RunAndPoofGoal<T extends Entity> extends Goal {
         }
         for (Entity passenger : entity.getPassengersDeep())
             if (!(passenger instanceof PlayerEntity))
-                passenger.remove();
+                passenger.discard();
 
-        entity.remove();
+        entity.discard();
     }
 
     @Override

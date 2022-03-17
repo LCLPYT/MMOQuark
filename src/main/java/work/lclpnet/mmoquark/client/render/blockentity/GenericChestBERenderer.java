@@ -10,77 +10,63 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.block.entity.LightmapCoordinatesRetriever;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 
 import java.util.Calendar;
 
-public abstract class GenericChestBERenderer<T extends BlockEntity & ChestAnimationProgress> extends BlockEntityRenderer<T> {
+public abstract class GenericChestBERenderer<T extends BlockEntity & ChestAnimationProgress> implements BlockEntityRenderer<T> {
 
-    private final ModelPart singleChestLid;
-    private final ModelPart singleChestBase;
-    private final ModelPart singleChestLatch;
-    private final ModelPart doubleChestRightLid;
-    private final ModelPart doubleChestRightBase;
-    private final ModelPart doubleChestRightLatch;
-    private final ModelPart doubleChestLeftLid;
-    private final ModelPart doubleChestLeftBase;
-    private final ModelPart doubleChestLeftLatch;
+    public final ModelPart lid;
+    public final ModelPart bottom;
+    public final ModelPart lock;
+    public final ModelPart doubleLeftLid;
+    public final ModelPart doubleLeftBottom;
+    public final ModelPart doubleLeftLock;
+    public final ModelPart doubleRightLid;
+    public final ModelPart doubleRightBottom;
+    public final ModelPart doubleRightLock;
     private final boolean christmas;
 
-    public GenericChestBERenderer(BlockEntityRenderDispatcher blockEntityRenderDispatcher) {
-        super(blockEntityRenderDispatcher);
+    public GenericChestBERenderer(BlockEntityRendererFactory.Context context) {
         Calendar calendar = Calendar.getInstance();
         this.christmas = calendar.get(Calendar.MONTH) + 1 == 12 && calendar.get(Calendar.DATE) >= 24 && calendar.get(Calendar.DATE) <= 26;
 
-        this.singleChestBase = new ModelPart(64, 64, 0, 19);
-        this.singleChestBase.addCuboid(1.0F, 0.0F, 1.0F, 14.0F, 10.0F, 14.0F, 0.0F);
-        this.singleChestLid = new ModelPart(64, 64, 0, 0);
-        this.singleChestLid.addCuboid(1.0F, 0.0F, 0.0F, 14.0F, 5.0F, 14.0F, 0.0F);
-        this.singleChestLid.pivotY = 9.0F;
-        this.singleChestLid.pivotZ = 1.0F;
-        this.singleChestLatch = new ModelPart(64, 64, 0, 0);
-        this.singleChestLatch.addCuboid(7.0F, -1.0F, 15.0F, 2.0F, 4.0F, 1.0F, 0.0F);
-        this.singleChestLatch.pivotY = 8.0F;
-        this.doubleChestRightBase = new ModelPart(64, 64, 0, 19);
-        this.doubleChestRightBase.addCuboid(1.0F, 0.0F, 1.0F, 15.0F, 10.0F, 14.0F, 0.0F);
-        this.doubleChestRightLid = new ModelPart(64, 64, 0, 0);
-        this.doubleChestRightLid.addCuboid(1.0F, 0.0F, 0.0F, 15.0F, 5.0F, 14.0F, 0.0F);
-        this.doubleChestRightLid.pivotY = 9.0F;
-        this.doubleChestRightLid.pivotZ = 1.0F;
-        this.doubleChestRightLatch = new ModelPart(64, 64, 0, 0);
-        this.doubleChestRightLatch.addCuboid(15.0F, -1.0F, 15.0F, 1.0F, 4.0F, 1.0F, 0.0F);
-        this.doubleChestRightLatch.pivotY = 8.0F;
-        this.doubleChestLeftBase = new ModelPart(64, 64, 0, 19);
-        this.doubleChestLeftBase.addCuboid(0.0F, 0.0F, 1.0F, 15.0F, 10.0F, 14.0F, 0.0F);
-        this.doubleChestLeftLid = new ModelPart(64, 64, 0, 0);
-        this.doubleChestLeftLid.addCuboid(0.0F, 0.0F, 0.0F, 15.0F, 5.0F, 14.0F, 0.0F);
-        this.doubleChestLeftLid.pivotY = 9.0F;
-        this.doubleChestLeftLid.pivotZ = 1.0F;
-        this.doubleChestLeftLatch = new ModelPart(64, 64, 0, 0);
-        this.doubleChestLeftLatch.addCuboid(0.0F, -1.0F, 15.0F, 1.0F, 4.0F, 1.0F, 0.0F);
-        this.doubleChestLeftLatch.pivotY = 8.0F;
+
+        ModelPart part = context.getLayerModelPart(EntityModelLayers.CHEST);
+        this.bottom = part.getChild("bottom");
+        this.lid = part.getChild("lid");
+        this.lock = part.getChild("lock");
+        ModelPart dLeft = context.getLayerModelPart(EntityModelLayers.DOUBLE_CHEST_LEFT);
+        this.doubleLeftBottom = dLeft.getChild("bottom");
+        this.doubleLeftLid = dLeft.getChild("lid");
+        this.doubleLeftLock = dLeft.getChild("lock");
+        ModelPart dRight = context.getLayerModelPart(EntityModelLayers.DOUBLE_CHEST_RIGHT);
+        this.doubleRightBottom = dRight.getChild("bottom");
+        this.doubleRightLid = dRight.getChild("lid");
+        this.doubleRightLock = dRight.getChild("lock");
     }
 
+    @Override
     public void render(T entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         World world = entity.getWorld();
         boolean bl = world != null;
         BlockState blockState = bl ? entity.getCachedState() : Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
         ChestType chestType = blockState.contains(ChestBlock.CHEST_TYPE) ? blockState.get(ChestBlock.CHEST_TYPE) : ChestType.SINGLE;
         Block block = blockState.getBlock();
-        if (block instanceof AbstractChestBlock) {
-            AbstractChestBlock<?> abstractChestBlock = (AbstractChestBlock<?>) block;
+        if (block instanceof AbstractChestBlock<?> abstractChestBlock) {
             boolean bl2 = chestType != ChestType.SINGLE;
             matrices.push();
             float f = blockState.get(ChestBlock.FACING).asRotation();
             matrices.translate(0.5D, 0.5D, 0.5D);
-            matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-f));
+            matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-f));
             matrices.translate(-0.5D, -0.5D, -0.5D);
             DoubleBlockProperties.PropertySource<? extends ChestBlockEntity> propertySource2;
             if (bl) {
@@ -97,12 +83,12 @@ public abstract class GenericChestBERenderer<T extends BlockEntity & ChestAnimat
             VertexConsumer vertexConsumer = spriteIdentifier.getVertexConsumer(vertexConsumers, RenderLayer::getEntityCutout);
             if (bl2) {
                 if (chestType == ChestType.LEFT) {
-                    this.render(matrices, vertexConsumer, this.doubleChestLeftLid, this.doubleChestLeftLatch, this.doubleChestLeftBase, g, i, overlay);
+                    this.render(matrices, vertexConsumer, this.doubleLeftLid, this.doubleLeftLock, this.doubleLeftBottom, g, i, overlay);
                 } else {
-                    this.render(matrices, vertexConsumer, this.doubleChestRightLid, this.doubleChestRightLatch, this.doubleChestRightBase, g, i, overlay);
+                    this.render(matrices, vertexConsumer, this.doubleRightLid, this.doubleRightLock, this.doubleRightBottom, g, i, overlay);
                 }
             } else {
-                this.render(matrices, vertexConsumer, this.singleChestLid, this.singleChestLatch, this.singleChestBase, g, i, overlay);
+                this.render(matrices, vertexConsumer, this.lid, this.lock, this.bottom, g, i, overlay);
             }
 
             matrices.pop();

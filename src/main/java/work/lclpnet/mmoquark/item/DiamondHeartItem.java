@@ -52,15 +52,17 @@ public class DiamondHeartItem extends Item {
                         world.syncWorldEvent(2001, pos, Block.getRawIdFromState(stateAt));
 
                         StonelingEntity stoneling = new StonelingEntity(StonelingsModule.stonelingType, world);
-                        stoneling.updatePosition(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+                        stoneling.setPosition(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
                         stoneling.setPlayerMade(true);
-                        stoneling.yaw = player.yaw + 180F;
+                        stoneling.setYaw(player.getYaw() + 180F);
                         stoneling.initialize((ServerWorldAccess) world, world.getLocalDifficulty(pos), SpawnReason.STRUCTURE, variant, null);
                         world.spawnEntity(stoneling);
 
-                        if (player instanceof ServerPlayerEntity) Criteria.SUMMONED_ENTITY.trigger((ServerPlayerEntity) player, stoneling);
+                        if (player instanceof ServerPlayerEntity)
+                            Criteria.SUMMONED_ENTITY.trigger((ServerPlayerEntity) player, stoneling);
 
-                        if (!player.abilities.creativeMode) stack.decrement(1);
+                        if (!player.getAbilities().creativeMode)
+                            stack.decrement(1);
                     }
 
                     return ActionResult.SUCCESS;

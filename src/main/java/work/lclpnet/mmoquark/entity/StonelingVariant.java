@@ -28,10 +28,11 @@ public enum StonelingVariant implements EntityData {
 	DIORITE("diorite", Blocks.DIORITE, Blocks.POLISHED_DIORITE),
 	GRANITE("granite", Blocks.GRANITE, Blocks.POLISHED_GRANITE),
 	LIMESTONE("limestone", limestoneBlock, polishedBlocks.get(limestoneBlock)),
-	BASALT("basalt", basaltBlock, polishedBlocks.get(basaltBlock)),
-	MARBLE("marble", marbleBlock, polishedBlocks.get(marbleBlock)),
-	SLATE("slate", slateBlock, polishedBlocks.get(slateBlock)),
-	JASPER("jasper", jasperBlock, polishedBlocks.get(jasperBlock));
+	CALCITE("calcite", Blocks.CALCITE),
+	JASPER("jasper", jasperBlock, polishedBlocks.get(jasperBlock)),
+	DEEPSLATE("deepslate", Blocks.DEEPSLATE, Blocks.POLISHED_DEEPSLATE),
+	TUFF("tuff", Blocks.TUFF, polishedBlocks.get(Blocks.TUFF)),
+	DRIPSTONE("dripstone", Blocks.DRIPSTONE_BLOCK, polishedBlocks.get(Blocks.DRIPSTONE_BLOCK));
 
 	private final Identifier texture;
 	private final List<Block> blocks;

@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -18,7 +20,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import work.lclpnet.mmocontent.client.render.item.ICustomArmorModel;
 import work.lclpnet.mmoquark.MMOQuark;
-import work.lclpnet.mmoquark.client.render.item.model.ForgottenHatModel;
+import work.lclpnet.mmoquark.client.module.ForgottenClientModule;
+import work.lclpnet.mmoquark.client.render.item.model.QArmorModel;
 
 import java.util.UUID;
 
@@ -27,7 +30,7 @@ public class ForgottenHatItem extends ArmorItem implements ICustomArmorModel {
     @Environment(EnvType.CLIENT)
     private static final Identifier TEXTURE = MMOQuark.identifier("textures/misc/forgotten_hat_worn.png");
     @Environment(EnvType.CLIENT)
-    private ForgottenHatModel model;
+    private QArmorModel model;
 
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
 
@@ -61,7 +64,10 @@ public class ForgottenHatItem extends ArmorItem implements ICustomArmorModel {
     @Override
     @SuppressWarnings("unchecked")
     public <A extends BipedEntityModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlot armorSlot, A _default) {
-        if (model == null) model = new ForgottenHatModel();
+        if (model == null) {
+            final ModelPart modelPart = MinecraftClient.getInstance().getEntityModelLoader().getModelPart(ForgottenClientModule.HAT_LAYER);
+            model = new QArmorModel(modelPart, armorSlot);
+        }
 
         return (A) model;
     }

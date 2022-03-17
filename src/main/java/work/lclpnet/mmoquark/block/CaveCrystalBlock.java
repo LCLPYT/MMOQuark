@@ -1,15 +1,15 @@
 package work.lclpnet.mmoquark.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.MMOGlassBlock;
 
@@ -17,22 +17,21 @@ import java.util.Random;
 
 public class CaveCrystalBlock extends MMOGlassBlock {
 
-    public final float[] colorComponents;
+    public final Vec3f colorComponent;
     public final Vec3d colorVector;
 
-    public CaveCrystalBlock(MaterialColor materialColor, int color) {
-        super(FabricBlockSettings.of(Material.GLASS, materialColor)
+    public CaveCrystalBlock(MapColor mapColor, int color) {
+        super(FabricBlockSettings.of(Material.GLASS, mapColor)
                 .strength(0.3F, 0F)
                 .sounds(BlockSoundGroup.GLASS)
                 .luminance(b -> 11)
-                .breakByTool(FabricToolTags.PICKAXES, 0)
                 .requiresTool()
                 .nonOpaque());
 
         float r = ((color >> 16) & 0xff) / 255f;
         float g = ((color >> 8) & 0xff) / 255f;
         float b = (color & 0xff) / 255f;
-        colorComponents = new float[]{r, g, b};
+        colorComponent = new Vec3f(r, g, b);
         colorVector = new Vec3d(r, g, b);
     }
 
@@ -58,7 +57,7 @@ public class CaveCrystalBlock extends MMOGlassBlock {
                 world.addParticle(ParticleTypes.END_ROD, x, y, z, ox / ol, oy / ol, oz / ol);
             }
 
-            world.addParticle(new DustParticleEffect(colorComponents[0], colorComponents[1], colorComponents[2], size), x, y, z, 0, 0, 0);
+            world.addParticle(new DustParticleEffect(colorComponent, size), x, y, z, 0, 0, 0);
         }
     }
 }

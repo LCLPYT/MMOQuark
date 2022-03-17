@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "quark:block/slate",
-        "top": "quark:block/slate",
-        "side": "quark:block/slate"
-    }
-}

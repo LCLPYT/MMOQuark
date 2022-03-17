@@ -12,6 +12,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import work.lclpnet.mmoquark.block.ext.QVineBlock;
 import work.lclpnet.mmoquark.util.MiscUtil;
 
 import java.util.Random;

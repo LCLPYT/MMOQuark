@@ -2,7 +2,7 @@ package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.block.MaterialColor;
+import net.minecraft.block.MapColor;
 import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmoquark.MMOQuark;
@@ -21,15 +21,15 @@ public class BlossomTreesModule implements IModule {
 
     @Override
     public void register() {
-        addBlossomTree("blue", MaterialColor.LIGHT_BLUE);
-        addBlossomTree("lavender", MaterialColor.PINK);
-        addBlossomTree("orange", MaterialColor.ORANGE_TERRACOTTA);
-        addBlossomTree("pink", MaterialColor.PINK);
-        addBlossomTree("yellow", MaterialColor.YELLOW);
-        addBlossomTree("red", MaterialColor.RED);
+        addBlossomTree("blue", MapColor.LIGHT_BLUE);
+        addBlossomTree("lavender", MapColor.PINK);
+        addBlossomTree("orange", MapColor.TERRACOTTA_ORANGE);
+        addBlossomTree("pink", MapColor.PINK);
+        addBlossomTree("yellow", MapColor.YELLOW);
+        addBlossomTree("red", MapColor.RED);
     }
 
-    private void addBlossomTree(String colorName, MaterialColor color) {
+    private void addBlossomTree(String colorName, MapColor color) {
         BlossomLeavesBlock leaves = new BlossomLeavesBlock(color);
         new MMOBlockRegistrar(leaves)
                 .register(MMOQuark.identifier("%s_blossom_leaves", colorName), ItemGroup.DECORATIONS);

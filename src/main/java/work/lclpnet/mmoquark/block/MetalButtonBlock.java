@@ -11,7 +11,7 @@ public class MetalButtonBlock extends MMOButtonBlock {
     private final int speed;
 
     public MetalButtonBlock(int speed) {
-        super(false, Settings.of(Material.SUPPORTED)
+        super(false, Settings.of(Material.DECORATION)
                 .noCollision()
                 .strength(0.5F, 0.5F)
                 .sounds(BlockSoundGroup.METAL));

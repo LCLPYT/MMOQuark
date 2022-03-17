@@ -26,7 +26,7 @@ public class LeafCarpetClientModule implements IClientModule {
             LeafCarpetBlock leafCarpetBlock = (LeafCarpetBlock) ((BlockItem) stack.getItem()).getBlock();
             ItemColors colors = ClientCommon.getItemColors();
 
-            return colors.getColorMultiplier(leafCarpetBlock.getBaseStack(), tintIndex);
+            return colors.getColor(leafCarpetBlock.getBaseStack(), tintIndex);
         }, LeafCarpetModule.leafCarpetItems.toArray(new BlockItem[0]));
 
         LeafCarpetModule.leafCarpetBlocks

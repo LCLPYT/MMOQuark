@@ -2,8 +2,8 @@ package work.lclpnet.mmoquark.module;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
@@ -18,14 +18,14 @@ public class BiotiteModule implements IModule {
         new MMOItemRegistrar()
                 .register(MMOQuark.identifier("biotite"), ItemGroup.MATERIALS);
 
-        new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MaterialColor.SAND)
+        new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MapColor.PALE_YELLOW)
                 .requiresTool()
                 .breakByTool(FabricToolTags.PICKAXES)
                 .strength(3.2F, 15F)
                 .sounds(BlockSoundGroup.STONE))
                 .register(MMOQuark.identifier("biotite_ore"));
 
-        FabricBlockSettings settings = FabricBlockSettings.of(Material.STONE, MaterialColor.BLACK)
+        FabricBlockSettings settings = FabricBlockSettings.of(Material.STONE, MapColor.BLACK)
                 .requiresTool()
                 .breakByTool(FabricToolTags.PICKAXES)
                 .strength(0.8F, 0.8F);

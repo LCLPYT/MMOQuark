@@ -1,13 +1,15 @@
 package work.lclpnet.mmoquark.blockentity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.util.math.BlockPos;
 import work.lclpnet.mmoquark.module.EnderWatcherModule;
 
 // Note: Tickable is currently disabled, because the logic performance is horrible
 public class EnderWatcherBlockEntity extends BlockEntity /*implements Tickable*/ {
 
-    public EnderWatcherBlockEntity() {
-        super(EnderWatcherModule.enderWatcherType);
+    public EnderWatcherBlockEntity(BlockPos blockPos, BlockState blockState) {
+        super(EnderWatcherModule.enderWatcherType, blockPos, blockState);
     }
 
     /*@Override // do something for performance before enable, e.g. angle check or something like that

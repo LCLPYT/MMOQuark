@@ -20,7 +20,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmoquark.asm.type.IEntityShapeContext;
 
 public class GrateBlock extends MMOBlock implements Waterloggable {
 
@@ -58,7 +57,7 @@ public class GrateBlock extends MMOBlock implements Waterloggable {
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        Entity entity = context instanceof IEntityShapeContext ? ((IEntityShapeContext) context).getEntity() : null;
+        Entity entity = context instanceof EntityShapeContext ? ((EntityShapeContext) context).getEntity() : null;
 
         if (entity != null) {
             if (entity instanceof ItemEntity || entity instanceof ExperienceOrbEntity) return VoxelShapes.empty();

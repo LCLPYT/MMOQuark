@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.enums.ChestType;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
@@ -26,8 +26,8 @@ public class VariantChestBlockEntityRenderer<T extends ChestBlockEntity> extends
 
     public static Block invBlock = null;
 
-    public VariantChestBlockEntityRenderer(BlockEntityRenderDispatcher disp) {
-        super(disp);
+    public VariantChestBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
+        super(context);
     }
 
     @Override
@@ -38,11 +38,11 @@ public class VariantChestBlockEntityRenderer<T extends ChestBlockEntity> extends
         ChestTextureBatch batch = chestTextures.get(block);
         if(batch == null) return null;
 
-        switch(type) {
-            case LEFT: return batch.left;
-            case RIGHT: return batch.right;
-            default: return batch.normal;
-        }
+        return switch (type) {
+            case LEFT -> batch.left;
+            case RIGHT -> batch.right;
+            default -> batch.normal;
+        };
     }
 
     @Override

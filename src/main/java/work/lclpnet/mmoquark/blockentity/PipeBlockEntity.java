@@ -1,5 +1,6 @@
 package work.lclpnet.mmoquark.blockentity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.inventory.Inventory;
@@ -10,8 +11,8 @@ import work.lclpnet.mmoquark.module.PipesModule;
 
 public class PipeBlockEntity extends BlockEntity {
 
-    public PipeBlockEntity() {
-        super(PipesModule.blockEntityType);
+    public PipeBlockEntity(BlockPos blockPos, BlockState blockState) {
+        super(PipesModule.blockEntityType, blockPos, blockState);
     }
 
     public static ConnectionType getConnectionTo(BlockView world, BlockPos pos, Direction face) {

@@ -3,8 +3,8 @@ package work.lclpnet.mmoquark.block;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
@@ -20,7 +20,7 @@ public class PaperLanternBlock extends MMOBlock {
     private static final VoxelShape SHAPE = VoxelShapes.union(POST_SHAPE, LANTERN_SHAPE);
 
     public PaperLanternBlock() {
-        super(FabricBlockSettings.of(Material.WOOD, MaterialColor.WHITE)
+        super(FabricBlockSettings.of(Material.WOOD, MapColor.WHITE)
                 .sounds(BlockSoundGroup.WOOD)
                 .breakByTool(FabricToolTags.AXES, 0)
                 .luminance(15)

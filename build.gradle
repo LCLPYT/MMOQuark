@@ -1,16 +1,15 @@
-import java.util.stream.Collectors
-
 plugins {
 	id 'fabric-loom'
 	id 'maven-publish'
+	id 'gradle-build-utils'
 }
 
-def privateProps = loadPrivateProps()
+def privateProps = loadProperties.call('publish.properties')
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = getVersion()
+version = gitVersion.call()
 group = project.maven_group
 
 repositories {
@@ -28,6 +27,8 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "work.lclpnet.mods:mmocontent:${project.mmocontent_version}"
+	modImplementation "work.lclpnet.mods:mcct:${project.mcct_version}"
+	include "work.lclpnet.mods:mcct:${project.mcct_version}"
 
 	implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
@@ -50,9 +51,9 @@ tasks.withType(JavaCompile).configureEach {
 	// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too
 	// JDK 9 introduced a new way of specifying this that will make sure no newer classes or methods are used.
 	// We'll use that if it's available, but otherwise we'll use the older option.
-	def targetVersion = 8
+	def targetVersion = 17
 	if (JavaVersion.current().isJava9Compatible()) {
-		 it.options.release = targetVersion
+		it.options.release.set(targetVersion)
 	}
 }
 
@@ -73,12 +74,7 @@ publishing {
 		mavenJava(MavenPublication) {
 			artifactId = project.archives_base_name
 
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
+			from components.java
 
 			pom {
 				name = 'MMOQuark'
@@ -108,59 +104,4 @@ publishing {
 			}
 		}
 	}
-}
-
-// helper functions
-def getVersion() {
-	try {
-		String version
-		if (System.getenv().containsKey("CI_VERSION")) version = System.getenv().get("CI_VERSION")
-		else {
-			// First, fetch all tags, to ensure all the tags are found
-			execProcess("git", "fetch", "--tags", "--force")
-
-			// now actually get latest tag with git describe
-			def (exitCode, out, err) = execProcess("git", "describe", "--tags", "--abbrev=0")
-
-			// log outputs
-			println out
-			if (!err.isEmpty()) System.err.println err
-
-			// throw on error
-			if (exitCode != 0) throw new IOException("Git error, make sure you have at least one tag")
-
-			version = out.toString().trim().split("\\r?\\n")[0]
-		}
-
-		if (!version.matches('^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[a-z0-9]+)?$')) throw new IllegalStateException("Latest tag '${version}' does not match the required versioning scheme")
-
-		return version
-	} catch (Exception ex) {
-		IllegalStateException wrapper = new IllegalStateException("Could not determine version")
-		wrapper.addSuppressed(ex)
-		throw wrapper
-	}
-}
-
-Tuple3<Integer, String, String> execProcess(String... args) {
-	ProcessBuilder builder = new ProcessBuilder(args)
-	builder.directory(project.projectDir)
-	println "Executing '" + builder.command().stream().collect(Collectors.joining(" ")) + "' in '" + builder.directory().getAbsolutePath() + "' ..."
-	Process process = builder.start()
-	StringBuilder stdout = new StringBuilder(), stderr = new StringBuilder()
-	process.consumeProcessOutput(stdout, stderr)
-	int exitCode = process.waitFor()
-	println "Process exited with code " + exitCode
-	return new Tuple3<>(exitCode, stdout.toString(), stderr.toString())
-}
-
-Properties loadPrivateProps() {
-	Properties privateProps = new Properties()
-	File privatePropsFile = new File(project.projectDir, "private.properties")
-	if (privatePropsFile.exists()) {
-		privatePropsFile.withInputStream {
-			privateProps.load(it)
-		}
-	}
-	return privateProps
 }

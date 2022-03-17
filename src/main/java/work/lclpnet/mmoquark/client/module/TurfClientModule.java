@@ -27,7 +27,7 @@ public class TurfClientModule implements IClientModule {
             ItemColors colors = ClientCommon.getItemColors();
             ItemStack grass = new ItemStack(Blocks.GRASS_BLOCK);
 
-            return colors.getColorMultiplier(grass, tintIndex);
+            return colors.getColor(grass, tintIndex);
         }, TurfModule.turfItems.toArray(new BlockItem[0]));
     }
 }

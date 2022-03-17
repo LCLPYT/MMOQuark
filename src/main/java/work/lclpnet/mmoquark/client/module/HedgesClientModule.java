@@ -32,7 +32,7 @@ public class HedgesClientModule implements IClientModule {
             HedgeBlock hedgeBlock = (HedgeBlock) ((BlockItem) stack.getItem()).getBlock();
             ItemStack leafStack = new ItemStack(hedgeBlock.leaf);
 
-            return colors.getColorMultiplier(leafStack, tintIndex);
+            return colors.getColor(leafStack, tintIndex);
         }, HedgesModule.hedgeItems.toArray(new BlockItem[0]));
     }
 }
