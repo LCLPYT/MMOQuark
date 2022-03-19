@@ -34,7 +34,7 @@
     "fabricloader": ">=0.13.3",
     "fabric": "*",
     "minecraft": "1.18.x",
-    "mmocontent": "1.6.x",
+    "mmocontent": "1.7.x",
     "java": ">=17"
   },
   "suggests": {},

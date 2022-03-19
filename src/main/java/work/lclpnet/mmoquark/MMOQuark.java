@@ -75,7 +75,8 @@ public class MMOQuark implements ModInitializer {
 			new ForgottenModule(),
 			new TurfModule(),
 			new IronRodModule(),
-			new StainedPlanksModule()
+			new StainedPlanksModule(),
+			new AzaleaWoodModule()
 	);
 
 	@Override

@@ -5,9 +5,11 @@ import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
+import work.lclpnet.mmocontent.entity.MMOBoatEntity;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.BlossomLeavesBlock;
 import work.lclpnet.mmoquark.block.BlossomSaplingBlock;
+import work.lclpnet.mmoquark.util.WoodGroupUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +20,13 @@ public class BlossomTreesModule implements IModule {
             blossomSaplingBlocks = new ArrayList<>(),
             flowerPotBlocks = new ArrayList<>();
     public static final List<BlossomSaplingBlock.BlossomSaplingGenerator> trees = new ArrayList<>();
+    public static WoodGroupUtil.WoodGroupHolder blossomWood;
 
     @Override
     public void register() {
+        MMOBoatEntity.enableMMOBoatIntegration();
+        blossomWood = WoodGroupUtil.registerWoodGroup("blossom", MapColor.RED, MapColor.BROWN);
+
         addBlossomTree("blue", MapColor.LIGHT_BLUE);
         addBlossomTree("lavender", MapColor.PINK);
         addBlossomTree("orange", MapColor.TERRACOTTA_ORANGE);

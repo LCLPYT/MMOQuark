@@ -39,7 +39,8 @@ public class MMOQuarkClient implements ClientModInitializer {
             new VariantLadderClientModule(),
             new WoodPostsClientModule(),
             new CaveRootClientModule(),
-            new ForgottenClientModule()
+            new ForgottenClientModule(),
+            new AzaleaWoodClientModule()
     );
 
     @Override

@@ -17,6 +17,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
+import work.lclpnet.mmoquark.module.BlossomTreesModule;
 
 import java.util.OptionalInt;
 import java.util.Random;
@@ -39,7 +40,7 @@ public class BlossomSaplingBlock extends SaplingBlock implements IMMOBlock {
 
         public BlossomSaplingGenerator(Block leafBlock) {
             config = new TreeFeatureConfig.Builder(
-                    BlockStateProvider.of(Blocks.SPRUCE_LOG.getDefaultState()),
+                    BlockStateProvider.of(BlossomTreesModule.blossomWood.log),
                     new LargeOakTrunkPlacer(3, 11, 0),
                     BlockStateProvider.of(leafBlock.getDefaultState()),
                     new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4), // <- Copy of what Features.FANCY_OAK uses
