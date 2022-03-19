@@ -33,7 +33,7 @@ public class BurntVinesModule implements IModule {
         MMOBlockRegistrar.Result result = new MMOBlockRegistrar(burnt_vine = new QVineBlock())
                 .register(MMOQuark.identifier("burnt_vine"), ItemGroup.DECORATIONS);
 
-        burnt_vine_item = result.item;
+        burnt_vine_item = result.item();
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             ItemStack stack = player.getStackInHand(hand);

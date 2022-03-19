@@ -17,10 +17,10 @@ public class SpeleothemsModule implements IModule {
         make("diorite", Blocks.DIORITE, false);
         make("andesite", Blocks.ANDESITE, false);
 
-        make("marble", NewStoneTypesModule.marbleBlock, false);
+        make("calcite", NewStoneTypesModule.calciteBlock, false);
         make("limestone", NewStoneTypesModule.limestoneBlock, false);
         make("jasper", NewStoneTypesModule.jasperBlock, false);
-        make("shale", NewStoneTypesModule.slateBlock, false);
+        make("shale", NewStoneTypesModule.shaleBlock, false);
         make("basalt", NewStoneTypesModule.basaltBlock, false);
     }
 

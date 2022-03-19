@@ -1,7 +1,7 @@
 {
     "variants": {
-        "type=bottom": { "model": "quark:block/polished_marble_slab" },
-        "type=top": { "model": "quark:block/polished_marble_slab_top" },
-        "type=double": { "model": "quark:block/polished_marble" }
+        "type=bottom": { "model": "quark:block/polished_calcite_slab" },
+        "type=top": { "model": "quark:block/polished_calcite_slab_top" },
+        "type=double": { "model": "quark:block/polished_calcite" }
     }
 }

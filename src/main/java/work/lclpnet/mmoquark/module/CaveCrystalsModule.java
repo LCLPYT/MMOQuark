@@ -39,7 +39,7 @@ public class CaveCrystalsModule implements IModule {
                 .register(MMOQuark.identifier(crystalName));
 
         crystalBlocks.add(crystal);
-        crystalBlockPanes.add(Objects.requireNonNull(result.pane).block);
+        crystalBlockPanes.add(Objects.requireNonNull(result.pane()).block());
 
         CaveCrystalClusterBlock crystalClusterBlock = new CaveCrystalClusterBlock(crystal);
         new MMOBlockRegistrar(crystalClusterBlock)

@@ -3,9 +3,9 @@
   "values": [
     "quark:iron_plate_slab",
     "quark:rusty_iron_plate_slab",
-    "quark:marble_bricks_slab",
-    "quark:marble_slab",
-    "quark:polished_marble_slab",
+    "quark:calcite_bricks_slab",
+    "quark:calcite_slab",
+    "quark:polished_calcite_slab",
     "quark:mossy_cobblestone_bricks_slab",
     "quark:cobblestone_bricks_slab",
     "quark:permafrost_bricks_slab",

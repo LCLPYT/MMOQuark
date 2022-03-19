@@ -37,6 +37,6 @@ public class LeafCarpetModule implements IModule {
                         ItemGroup.DECORATIONS);
 
         leafCarpetBlocks.add(leafCarpetBlock);
-        leafCarpetItems.add(result.item);
+        leafCarpetItems.add(result.item());
     }
 }

@@ -25,17 +25,17 @@ public class TurfModule implements IModule {
                 .register(MMOQuark.identifier("turf"));
 
         turfBlocks.add(turfBlock);
-        turfItems.add(result.item);
+        turfItems.add(result.item());
 
-        addRegistered(result.slab);
-        addRegistered(result.stairs);
-        addRegistered(result.verticalSlab);
+        addRegistered(result.slab());
+        addRegistered(result.stairs());
+        addRegistered(result.verticalSlab());
     }
 
     protected void addRegistered(@Nullable MMOBlockRegistrar.RegisteredBlock<?> registered) {
         if (registered == null) return;
 
-        turfBlocks.add(registered.block);
-        turfItems.add(registered.item);
+        turfBlocks.add(registered.block());
+        turfItems.add(registered.item());
     }
 }

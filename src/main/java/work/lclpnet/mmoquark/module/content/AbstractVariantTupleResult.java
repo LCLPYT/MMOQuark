@@ -16,8 +16,8 @@ public abstract class AbstractVariantTupleResult {
         List<Block> blocks = new ArrayList<>();
 
         getVariantTuples().forEach(variantTuple -> {
-            if (variantTuple.block != null) blocks.add(variantTuple.block);
-            addExtraBlocks(variantTuple.extra, blocks);
+            if (variantTuple.block() != null) blocks.add(variantTuple.block());
+            addExtraBlocks(variantTuple.extra(), blocks);
         });
 
         return blocks;
@@ -27,34 +27,34 @@ public abstract class AbstractVariantTupleResult {
         List<BlockItem> items = new ArrayList<>();
 
         getVariantTuples().forEach(variantTuple -> {
-            if (variantTuple.extra.item != null) items.add(variantTuple.extra.item);
-            addExtraItems(variantTuple.extra, items);
+            if (variantTuple.extra().item() != null) items.add(variantTuple.extra().item());
+            addExtraItems(variantTuple.extra(), items);
         });
 
         return items;
     }
 
     private void addExtraBlocks(MMOBlockRegistrar.Result result, List<Block> blocks) {
-        addRegisteredBlock(result.slab, blocks);
-        addRegisteredBlock(result.verticalSlab, blocks);
-        addRegisteredBlock(result.stairs, blocks);
-        addRegisteredBlock(result.wall, blocks);
-        addRegisteredBlock(result.pane, blocks);
+        addRegisteredBlock(result.slab(), blocks);
+        addRegisteredBlock(result.verticalSlab(), blocks);
+        addRegisteredBlock(result.stairs(), blocks);
+        addRegisteredBlock(result.wall(), blocks);
+        addRegisteredBlock(result.pane(), blocks);
     }
 
     private void addExtraItems(MMOBlockRegistrar.Result result, List<BlockItem> items) {
-        addRegisteredItem(result.slab, items);
-        addRegisteredItem(result.verticalSlab, items);
-        addRegisteredItem(result.stairs, items);
-        addRegisteredItem(result.wall, items);
-        addRegisteredItem(result.pane, items);
+        addRegisteredItem(result.slab(), items);
+        addRegisteredItem(result.verticalSlab(), items);
+        addRegisteredItem(result.stairs(), items);
+        addRegisteredItem(result.wall(), items);
+        addRegisteredItem(result.pane(), items);
     }
 
     private <T extends Block> void addRegisteredBlock(MMOBlockRegistrar.RegisteredBlock<T> item, List<Block> list) {
-        if (item != null) list.add(item.block);
+        if (item != null) list.add(item.block());
     }
 
     private void addRegisteredItem(MMOBlockRegistrar.RegisteredBlock<?> item, List<BlockItem> list) {
-        if (item != null) list.add(item.item);
+        if (item != null) list.add(item.item());
     }
 }

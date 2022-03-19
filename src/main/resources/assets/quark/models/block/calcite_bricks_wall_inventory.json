@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "quark:block/marble_bricks"
+        "wall": "quark:block/calcite_bricks"
     }
 }

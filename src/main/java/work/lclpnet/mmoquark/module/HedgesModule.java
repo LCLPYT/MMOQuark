@@ -55,6 +55,6 @@ public class HedgesModule implements IModule {
                 .register(MMOQuark.identifier(path), ItemGroup.DECORATIONS);
 
         hedgeBlocks.add(hedgeBlock);
-        hedgeItems.add(result.item);
+        hedgeItems.add(result.item());
     }
 }
