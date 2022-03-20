@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.MapColor;
@@ -24,7 +23,6 @@ public class BlossomLeavesBlock extends LeavesBlock implements IMMOBlock {
                 .strength(0.2F, 0.2F)
                 .ticksRandomly()
                 .sounds(BlockSoundGroup.GRASS)
-                .breakByTool(FabricToolTags.HOES)
                 .nonOpaque()
                 .allowsSpawning((s, r, p, t) -> false)
                 .suffocates((s, r, p) -> false)

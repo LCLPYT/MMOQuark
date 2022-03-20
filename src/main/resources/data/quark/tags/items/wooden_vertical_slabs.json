@@ -1,0 +1,15 @@
+{
+    "replace": false,
+    "values": [
+        "quark:oak_vertical_slab",
+        "quark:spruce_vertical_slab",
+        "quark:birch_vertical_slab",
+        "quark:jungle_vertical_slab",
+        "quark:acacia_vertical_slab",
+        "quark:dark_oak_vertical_slab",
+        "quark:crimson_vertical_slab",
+        "quark:warped_vertical_slab",
+        "quark:azalea_vertical_slab",
+        "quark:blossom_vertical_slab"
+    ]
+}

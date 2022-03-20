@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
@@ -23,8 +22,7 @@ public class GlowceliumBlock extends MMOBlock {
                 .ticksRandomly()
                 .strength(0.5F, 0.5F)
                 .luminance(b -> 7)
-                .sounds(BlockSoundGroup.GRASS)
-                .breakByTool(FabricToolTags.SHOVELS));
+                .sounds(BlockSoundGroup.GRASS));
     }
 
     @Override

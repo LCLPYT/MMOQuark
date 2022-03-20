@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -20,7 +19,6 @@ public class CompressedBlocksModule implements IModule {
     public void register() {
         new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MapColor.BLACK)
                 .requiresTool()
-                .breakByTool(FabricToolTags.PICKAXES)
                 .strength(0.5F, 10F)
                 .sounds(BlockSoundGroup.STONE))
                 .register(MMOQuark.identifier("charcoal_block"));

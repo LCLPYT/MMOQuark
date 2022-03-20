@@ -2,7 +2,6 @@ package work.lclpnet.mmoquark.module;
 
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -51,7 +50,6 @@ public class MoreStoneVariantsModule implements IModule {
     private Result add(String name, MapColor color, Function<AbstractBlock.Settings, MMOBlock> constr, Function<AbstractBlock.Settings, MMOPillarBlock> pillarConstr) {
         AbstractBlock.Settings settings = FabricBlockSettings.of(Material.STONE, color)
                 .requiresTool()
-                .breakByTool(FabricToolTags.PICKAXES)
                 .strength(1.5F, 6.0F);
 
         MMOBlock bricks = constr.apply(settings);

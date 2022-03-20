@@ -3,7 +3,6 @@ package work.lclpnet.mmoquark;
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
@@ -13,7 +12,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmoquark.block.BambooMatBlock;
 import work.lclpnet.mmoquark.block.ObsidianPressurePlateBlock;
 import work.lclpnet.mmoquark.block.SturdyStoneBlock;
 import work.lclpnet.mmoquark.block.ThatchBlock;
@@ -44,7 +42,7 @@ public class MMOQuark implements ModInitializer {
 			new SoulSandstoneModule(),
 			new RopeModule(),
 			new QuiltedWoolModule(),
-			new PaperDecorModule(),
+			new OrientalPaletteModule(),
 			new NetherBrickFenceModule(),
 			new MoreStoneVariantsModule(),
 			new MorePottedPlantsModule(),
@@ -83,7 +81,6 @@ public class MMOQuark implements ModInitializer {
 	public void onInitialize() {
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MapColor.GRAY)
 				.requiresTool()
-				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
 				.sounds(BlockSoundGroup.STONE))
 				.withSlab().withStairs().withWall().withVerticalSlab()
@@ -91,7 +88,6 @@ public class MMOQuark implements ModInitializer {
 
 		MMOBlock brimstone = new MMOBlock(FabricBlockSettings.of(Material.STONE, MapColor.RED)
 				.requiresTool()
-				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
 				.sounds(BlockSoundGroup.STONE));
 
@@ -109,7 +105,6 @@ public class MMOQuark implements ModInitializer {
 
 		final MMOBlock elderPrismarine = new MMOBlock(FabricBlockSettings.of(Material.STONE, MapColor.ORANGE)
 				.requiresTool()
-				.breakByTool(FabricToolTags.PICKAXES)
 				.strength(1.5F, 10F)
 				.sounds(BlockSoundGroup.STONE));
 
@@ -131,9 +126,6 @@ public class MMOQuark implements ModInitializer {
 				.sounds(BlockSoundGroup.GLASS))
 				.register(MMOQuark.identifier("elder_sea_lantern"));
 
-		new MMOBlockRegistrar(new BambooMatBlock())
-				.register(MMOQuark.identifier("bamboo_mat"), ItemGroup.DECORATIONS);
-
 		new MMOBlockRegistrar(new SturdyStoneBlock())
 				.register(MMOQuark.identifier("sturdy_stone"));
 
@@ -143,7 +135,6 @@ public class MMOQuark implements ModInitializer {
 
 		new MMOBlockRegistrar(new ObsidianPressurePlateBlock(FabricBlockSettings.of(Material.STONE, MapColor.BLACK)
 				.requiresTool()
-				.breakByTool(FabricToolTags.PICKAXES)
 				.noCollision()
 				.strength(2F, 1200F)))
 				.register(MMOQuark.identifier("obsidian_pressure_plate"), ItemGroup.REDSTONE);

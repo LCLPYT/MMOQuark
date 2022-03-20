@@ -4,9 +4,11 @@ import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.block.ext.MMOInheritedPaneBlock;
 import work.lclpnet.mmoquark.MMOQuark;
+import work.lclpnet.mmoquark.block.BambooMatBlock;
+import work.lclpnet.mmoquark.block.BambooMatCarpetBlock;
 import work.lclpnet.mmoquark.block.PaperLanternBlock;
 
-public class PaperDecorModule implements IModule {
+public class OrientalPaletteModule implements IModule {
 
     @Override
     public void register() {
@@ -25,5 +27,11 @@ public class PaperDecorModule implements IModule {
 
         new MMOBlockRegistrar(new MMOInheritedPaneBlock(parent))
                 .register(MMOQuark.identifier("paper_wall_sakura"), ItemGroup.DECORATIONS);
+
+        new MMOBlockRegistrar(new BambooMatBlock())
+                .register(MMOQuark.identifier("bamboo_mat"), ItemGroup.DECORATIONS);
+
+        new MMOBlockRegistrar(new BambooMatCarpetBlock())
+                .register(MMOQuark.identifier("bamboo_mat_carpet"), ItemGroup.DECORATIONS);
     }
 }

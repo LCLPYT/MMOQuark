@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -27,8 +26,7 @@ public class FramedGlassModule implements IModule {
     public void register() {
         AbstractBlock.Settings props = FabricBlockSettings.of(Material.GLASS)
                 .strength(3F, 10F)
-                .sounds(BlockSoundGroup.GLASS)
-                .breakByTool(FabricToolTags.PICKAXES, 1);
+                .sounds(BlockSoundGroup.GLASS);
 
         framedGlass = new MMOGlassBlock(props);
         MMOBlockRegistrar.Result result = new MMOBlockRegistrar(framedGlass)

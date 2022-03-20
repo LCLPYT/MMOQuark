@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "quark:azalea_log",
+        "quark:stripped_azalea_log",
+        "quark:azalea_wood",
+        "quark:stripped_azalea_wood"
+    ]
+}

@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -36,8 +35,7 @@ public class MoreBricksModule implements IModule {
 
         new MMOBlockRegistrar(FabricBlockSettings.copyOf(parent)
                 .strength(2F, 6F)
-                .requiresTool()
-                .breakByTool(parentMaterial == Material.SNOW_BLOCK ? FabricToolTags.SHOVELS : FabricToolTags.PICKAXES))
+                .requiresTool())
                 .withSlab().withStairs().withWall().withVerticalSlab()
                 .register(MMOQuark.identifier("%s_bricks", name));
     }

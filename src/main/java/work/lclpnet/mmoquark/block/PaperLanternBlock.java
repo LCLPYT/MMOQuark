@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
@@ -22,7 +21,6 @@ public class PaperLanternBlock extends MMOBlock {
     public PaperLanternBlock() {
         super(FabricBlockSettings.of(Material.WOOD, MapColor.WHITE)
                 .sounds(BlockSoundGroup.WOOD)
-                .breakByTool(FabricToolTags.AXES, 0)
                 .luminance(15)
                 .strength(1.5F, 1.5F));
     }
