@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 public class NewStoneTypesModule implements IModule {
 
-    public static Block calciteBlock, limestoneBlock, jasperBlock, shaleBlock, basaltBlock, myaliteBlock;
+    public static Block limestoneBlock, jasperBlock, shaleBlock, basaltBlock, myaliteBlock;
     public static final List<Block> myaliteBlocks = new ArrayList<>();
     public static final List<BlockItem> myaliteItems = new ArrayList<>();
 
@@ -30,7 +30,10 @@ public class NewStoneTypesModule implements IModule {
 
     @Override
     public void register() {
-        calciteBlock = makeStone("calcite", MapColor.OFF_WHITE, MMOBlock::new, Blocks.CALCITE).normal.block();
+        makeStone("calcite", MapColor.TERRACOTTA_WHITE, MMOBlock::new, Blocks.CALCITE);
+        makeStone("dripstone", MapColor.TERRACOTTA_BROWN, MMOBlock::new, Blocks.DRIPSTONE_BLOCK);
+        makeStone("tuff", MapColor.TERRACOTTA_GRAY, MMOBlock::new, Blocks.TUFF);
+
         limestoneBlock = makeStone("limestone", MapColor.STONE_GRAY).normal.block();
         jasperBlock = makeStone("jasper", MapColor.TERRACOTTA_RED).normal.block();
         shaleBlock = makeStone("shale", MapColor.PALE_PURPLE).normal.block();

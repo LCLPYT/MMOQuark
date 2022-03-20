@@ -54,6 +54,14 @@
     "quark:smooth_biotite_slab",
     "quark:smooth_soul_sandstone_slab",
     "quark:thatch_slab",
-    "quark:soul_sandstone_slab"
+    "quark:soul_sandstone_slab",
+    "quark:azalea_slab",
+    "quark:blossom_slab",
+    "quark:tuff_bricks_slab",
+    "quark:tuff_slab",
+    "quark:polished_tuff_slab",
+    "quark:dripstone_slab",
+    "quark:dripstone_bricks_slab",
+    "quark:polished_dripstone_slab"
   ]
 }

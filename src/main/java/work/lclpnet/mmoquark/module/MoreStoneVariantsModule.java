@@ -30,8 +30,10 @@ public class MoreStoneVariantsModule implements IModule {
         add("granite", MapColor.DIRT_BROWN);
         add("diorite", MapColor.OFF_WHITE);
         add("andesite", MapColor.STONE_GRAY);
+        add("calcite", MapColor.TERRACOTTA_WHITE);
+        add("dripstone", MapColor.TERRACOTTA_BROWN);
+        add("tuff", MapColor.TERRACOTTA_GRAY);
 
-        add("calcite", MapColor.OFF_WHITE);
         add("limestone", MapColor.STONE_GRAY);
         add("jasper", MapColor.TERRACOTTA_RED);
         add("shale", MapColor.PALE_PURPLE);

@@ -102,6 +102,12 @@
     "quark:gray_stained_planks_vertical_slab",
     "quark:orange_stained_planks_vertical_slab",
     "quark:pink_stained_planks_vertical_slab",
-    "quark:white_stained_planks_vertical_slab"
+    "quark:white_stained_planks_vertical_slab",
+    "quark:cobbled_deepslate_vertical_slab",
+    "quark:polished_deepslate_vertical_slab",
+    "quark:deepslate_brick_vertical_slab",
+    "quark:deepslate_tile_vertical_slab",
+    "quark:azalea_vertical_slab",
+    "quark:blossom_vertical_slab"
   ]
 }

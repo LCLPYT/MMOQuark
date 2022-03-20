@@ -23,7 +23,8 @@ public class WoodPostsModule implements IModule {
     @Override
     public void register() {
         ImmutableList.of(Blocks.OAK_FENCE, Blocks.SPRUCE_FENCE, Blocks.BIRCH_FENCE,
-                        Blocks.JUNGLE_FENCE, Blocks.ACACIA_FENCE, Blocks.DARK_OAK_FENCE)
+                        Blocks.JUNGLE_FENCE, Blocks.ACACIA_FENCE, Blocks.DARK_OAK_FENCE,
+                        AzaleaWoodModule.azaleaWood.fence, BlossomTreesModule.blossomWood.fence)
                 .forEach(b -> registerPosts(b, false));
         ImmutableList.of(Blocks.CRIMSON_FENCE, Blocks.WARPED_FENCE)
                 .forEach(b -> registerPosts(b, true));

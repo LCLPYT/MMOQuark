@@ -38,7 +38,6 @@ public class MMOQuark implements ModInitializer {
 			new CobblestoneBricksModule(),
 			new VariantBookshelvesModule(),
 			new VariantLaddersModule(),
-			new WoodPostsModule(),
 			new BurntVinesModule(),
 			new CompressedBlocksModule(),
 			new DuskboundBlocksModule(),
@@ -54,9 +53,11 @@ public class MMOQuark implements ModInitializer {
 			new VariantChestsModule(),
 			new GrateModule(),
 			new GoldBarsModule(),
+			new AzaleaWoodModule(),
 			new BlossomTreesModule(),
 			/* depends on BlossomTrees */ new LeafCarpetModule(),
 		    /* depends on BlossomTrees */ new HedgesModule(),
+			/* depends on AzaleaWood, BlossomTrees*/ new WoodPostsModule(),
 			new StoolsModule(),
 			new BiotiteModule(),
 			new GlowshroomModule(),
@@ -75,8 +76,7 @@ public class MMOQuark implements ModInitializer {
 			new ForgottenModule(),
 			new TurfModule(),
 			new IronRodModule(),
-			new StainedPlanksModule(),
-			new AzaleaWoodModule()
+			new StainedPlanksModule()
 	);
 
 	@Override

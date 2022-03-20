@@ -26,6 +26,7 @@ public class VariantLaddersModule implements IModule {
     public void register() {
         Arrays.stream(MiscUtil.OVERWORLD_VARIANT_WOOD_TYPES).forEach(this::addLadder);
         Arrays.stream(MiscUtil.NETHER_WOOD_TYPES).forEach(this::addLadder);
+        Arrays.stream(MiscUtil.MOD_WOOD_TYPES).forEach(this::addLadder);
 
         ironLadder = new VariantLadderBlock(FabricBlockSettings.of(Material.DECORATION)
                 .hardness(0.8F)

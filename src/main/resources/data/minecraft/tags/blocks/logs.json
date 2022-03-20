@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "quark:azalea_log",
+        "quark:stripped_azalea_log",
+        "quark:azalea_wood",
+        "quark:stripped_azalea_wood",
+        "quark:blossom_log",
+        "quark:stripped_blossom_log",
+        "quark:blossom_wood",
+        "quark:stripped_blossom_wood"
+    ]
+}
