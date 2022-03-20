@@ -29,25 +29,24 @@ public class HedgesModule implements IModule {
         addHedge(Blocks.JUNGLE_FENCE, Blocks.JUNGLE_LEAVES);
         addHedge(Blocks.ACACIA_FENCE, Blocks.ACACIA_LEAVES);
         addHedge(Blocks.DARK_OAK_FENCE, Blocks.DARK_OAK_LEAVES);
+        addHedge(Blocks.OAK_FENCE, Blocks.AZALEA_LEAVES);
+        addHedge(Blocks.OAK_FENCE, Blocks.FLOWERING_AZALEA_LEAVES);
 
         // BlossomTreesModule must be loaded before this module
-        BlossomTreesModule.trees.forEach(tree -> addHedge(Blocks.SPRUCE_FENCE, tree.leaf.getBlock()));
+        BlossomTreesModule.trees.forEach(tree -> addHedge(BlossomTreesModule.blossomWood.fence, tree.leaf.getBlock()));
 
         hedgesTag = TagRegistry.block(MMOQuark.identifier("hedges"));
     }
 
     private void addHedge(Block fence, Block leaves) {
+        final String leavesPath = RegistryUtil.getRegistryPath(leaves);
+        if (leavesPath == null) return;
+
         String path;
         if (leaves instanceof BlossomLeavesBlock) {
-            String leavesPath = RegistryUtil.getRegistryPath(leaves);
-            if (leavesPath == null) return;
-
             path = leavesPath.replaceAll("_blossom_leaves", "_blossom_hedge");
         } else {
-            String fencePath = RegistryUtil.getRegistryPath(fence);
-            if (fencePath == null) return;
-
-            path = fencePath.replaceAll("_fence", "_hedge");
+            path = leavesPath.replaceAll("_leaves", "_hedge");
         }
 
         HedgeBlock hedgeBlock = new HedgeBlock(fence, leaves);

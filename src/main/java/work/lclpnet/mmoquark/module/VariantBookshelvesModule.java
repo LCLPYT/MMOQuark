@@ -15,6 +15,7 @@ public class VariantBookshelvesModule implements IModule {
     public void register() {
         Arrays.stream(MiscUtil.OVERWORLD_VARIANT_WOOD_TYPES).forEach(this::addVariantStuff);
         Arrays.stream(MiscUtil.NETHER_WOOD_TYPES).forEach(this::addVariantStuff);
+        Arrays.stream(MiscUtil.MOD_WOOD_TYPES).forEach(this::addVariantStuff);
     }
 
     private void addVariantStuff(String woodType) {
