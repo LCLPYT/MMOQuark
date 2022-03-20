@@ -54,6 +54,14 @@
     "quark:smooth_soul_sandstone_stairs",
     "quark:soul_sandstone_stairs",
     "quark:thatch_stairs",
-    "quark:weeping_blackstone_bricks_stairs"
+    "quark:weeping_blackstone_bricks_stairs",
+    "quark:azalea_stairs",
+    "quark:blossom_stairs",
+    "quark:tuff_bricks_stairs",
+    "quark:tuff_stairs",
+    "quark:polished_tuff_stairs",
+    "quark:dripstone_stairs",
+    "quark:dripstone_bricks_stairs",
+    "quark:polished_dripstone_stairs"
   ]
 }
