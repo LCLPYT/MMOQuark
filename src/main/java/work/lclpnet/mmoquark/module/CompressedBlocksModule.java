@@ -41,6 +41,7 @@ public class CompressedBlocksModule implements IModule {
         sack("nether_wart", MapColor.RED);
         sack("gunpowder", MapColor.GRAY);
         sack("berry", MapColor.RED);
+        sack("glowberry", MapColor.YELLOW);
 
         new MMOBlockRegistrar(AbstractBlock.Settings.of(Material.GLASS, DyeColor.YELLOW)
                 .strength(0.3F, 0.3F)

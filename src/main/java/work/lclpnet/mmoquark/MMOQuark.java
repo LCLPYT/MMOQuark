@@ -22,14 +22,13 @@ import work.lclpnet.mmoquark.sound.MMOSounds;
 
 import java.util.Set;
 
-import static net.minecraft.block.AbstractBlock.Settings.copy;
-
 public class MMOQuark implements ModInitializer {
 
 	public static final String MOD_ID = "quark";
 
 	public static final Set<IModule> MODULES = ImmutableSet.of(
 			new VanillaVerticalSlabsModule(),
+			new IndustrialPaletteModule(),
 			new CaveCrystalsModule(),
 			new FramedGlassModule(),
 			new PermafrostModule(),
@@ -82,14 +81,6 @@ public class MMOQuark implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
-				.withSlab().withStairs().withVerticalSlab()
-				.register(MMOQuark.identifier("iron_plate"));
-
-		new MMOBlockRegistrar(copy(Blocks.IRON_BLOCK))
-				.withSlab().withStairs().withVerticalSlab()
-				.register(MMOQuark.identifier("rusty_iron_plate"));
-
 		new MMOBlockRegistrar(FabricBlockSettings.of(Material.STONE, MapColor.GRAY)
 				.requiresTool()
 				.breakByTool(FabricToolTags.PICKAXES)

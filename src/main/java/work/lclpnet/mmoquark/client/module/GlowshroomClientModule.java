@@ -15,5 +15,7 @@ public class GlowshroomClientModule implements IClientModule {
 
         Stream.of(GlowshroomModule.glowshroom, GlowshroomModule.potted_glowshroom)
                 .forEach(block -> MMORenderLayers.setBlockRenderType(block, RenderLayer.getCutout()));
+
+        MMORenderLayers.setBlockRenderType(GlowshroomModule.glow_lichen_growth, RenderLayer.getCutout());
     }
 }
