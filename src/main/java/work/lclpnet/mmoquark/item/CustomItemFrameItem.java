@@ -52,7 +52,6 @@ public class CustomItemFrameItem extends Item {
     }
 
     protected boolean canPlace(PlayerEntity player, Direction facing, ItemStack stack, BlockPos pos) {
-
         return !player.world.isOutOfHeightLimit(pos) && player.canPlaceOn(pos, facing, stack);
     }
 }

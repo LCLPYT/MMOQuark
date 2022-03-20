@@ -30,6 +30,11 @@ public class MiscUtil {
             "warped"
     };
 
+    public static final String[] MOD_WOOD_TYPES = new String[] {
+            "azalea",
+            "blossom"
+    };
+
     public static final Direction[] HORIZONTALS = new Direction[] {
             Direction.NORTH,
             Direction.SOUTH,
