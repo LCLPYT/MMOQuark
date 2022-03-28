@@ -6,7 +6,7 @@ import work.lclpnet.mmoquark.module.ChorusVegetationModule;
 
 import java.util.stream.Stream;
 
-public class ChorusVegetationClientBlock implements IClientModule {
+public class ChorusVegetationClientModule implements IClientModule {
 
     @Override
     public void registerClient() {

@@ -1,9 +1,6 @@
 package work.lclpnet.mmoquark.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -19,8 +16,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
-import work.lclpnet.mmocontent.client.render.block.MMORenderLayers;
-import work.lclpnet.mmocontent.util.Env;
 
 public class WoodPostBlock extends MMOBlock implements Waterloggable {
 
@@ -49,13 +44,6 @@ public class WoodPostBlock extends MMOBlock implements Waterloggable {
         for(BooleanProperty prop : CHAINED)
             state = state.with(prop, false);
         setDefaultState(state);
-
-        if (Env.isClient()) registerRenderLayer();
-    }
-
-    @Environment(EnvType.CLIENT)
-    protected void registerRenderLayer() {
-        MMORenderLayers.setBlockRenderType(this, RenderLayer.getCutout());
     }
 
     @Override
