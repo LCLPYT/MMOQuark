@@ -7,8 +7,8 @@ A lightweight Fabric port of the famous [Quark](https://github.com/VazkiiMods/Qu
 This mod does not aim to be an exact port of the original Quark mod.
 It only provides a big portion of Quark's blocks, items and entities.
 The goal of this mod is that worlds, created in MinecraftForge with the Quark mod,
-can be ported to Fabric with ease. A script / mod with instructions, for the conversion process will be
-linked here, when it is finished.
+can be ported to Fabric with ease. By design, worlds created in Forge with the original mod, can be loaded in Fabric with this mod.
+For more information about world compatibility, see below.
 
 Originally, this mod was started to provide Fabric content to LCLPServer 5.0.
 Therefore, some blocks have their functionality removed for performance reasons, e.g. pipes, the Ender Watcher.
@@ -26,6 +26,14 @@ please refer to this project's LICENSE file.
 - this project requires [FabricAPI](https://www.curseforge.com/minecraft/mc-mods/fabric-api), so download it as well, if you haven't already
 - this project requires [MMOContent](https://github.com/LCLPYT/MMOContent) (a modding library), download it as well
 - put MMOQuark, MMOContent and FabricAPI inside your `/mods` directory
+
+## World compatibility
+### Migrate 1.16 worlds to 1.18
+From 1.16 to 1.18, some blocks were replaced with other ones (e.g. marble -> calcite + variants).
+However, you will have to migrate your world manually, before you first load it.
+Since 1.18, this mod bundles [MCCT](https://github.com/LCLPYT/MCChunkTransform), a world NBT transformer mod.
+This mod automatically registers a transformer, that migrates all the blocks.
+To apply the transformation, follow the instructions provided on the [MCCT Page](https://github.com/LCLPYT/MCChunkTransform#readme).
 
 ## Dev Setup
 
