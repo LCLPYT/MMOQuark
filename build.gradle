@@ -18,6 +18,14 @@ repositories {
 	maven {
 		url "https://repo.lclpnet.work/repository/internal"
 	}
+
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -29,6 +37,16 @@ dependencies {
 	modImplementation "work.lclpnet.mods:mmocontent:${project.mmocontent_version}"
 	modImplementation "work.lclpnet.mods:mcct:${project.mcct_version}"
 	include "work.lclpnet.mods:mcct:${project.mcct_version}"
+
+	if (project.enable_sodium) {
+		modImplementation "maven.modrinth:sodium:${project.sodium_version}"
+		implementation 'org.joml:joml:1.10.4'
+	}
+
+	if (project.enable_iris) {
+		modImplementation "maven.modrinth:iris:${project.iris_version}"
+		modImplementation "org.anarres:jcpp:${project.jcpp_version}" // Preprocessing library used by Iris
+	}
 
 	implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
