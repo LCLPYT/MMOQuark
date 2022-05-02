@@ -1,6 +1,7 @@
 package work.lclpnet.mmoquark.module;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.item.ItemGroup;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
@@ -41,7 +42,7 @@ public class CaveCrystalsModule implements IModule {
         crystalBlocks.add(crystal);
         crystalBlockPanes.add(Objects.requireNonNull(result.pane()).block());
 
-        CaveCrystalClusterBlock crystalClusterBlock = new CaveCrystalClusterBlock(crystal);
+        CaveCrystalClusterBlock crystalClusterBlock = new CaveCrystalClusterBlock(Blocks.AMETHYST_CLUSTER);
         new MMOBlockRegistrar(crystalClusterBlock)
                 .register(MMOQuark.identifier(crystalName + "_cluster"), ItemGroup.DECORATIONS);
 

@@ -15,7 +15,6 @@ import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
@@ -28,7 +27,14 @@ public class CaveCrystalClusterBlock extends MMOBlock {
     public static final EnumProperty<Direction> FACING = Properties.FACING;
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public CaveCrystalClusterBlock(CaveCrystalBlock base) {
+    protected final VoxelShape northShape = Block.createCuboidShape(3, 3, 9, 13, 13, 16);
+    protected final VoxelShape southShape = Block.createCuboidShape(3, 3, 0, 13, 13, 7);
+    protected final VoxelShape eastShape  = Block.createCuboidShape(0, 3, 3, 7, 13, 13);
+    protected final VoxelShape westShape  = Block.createCuboidShape(9, 3, 3, 16, 13, 13);
+    protected final VoxelShape upShape    = Block.createCuboidShape(3, 0, 3, 13, 7, 13);
+    protected final VoxelShape downShape  = Block.createCuboidShape(3, 9, 3, 13, 16, 13);
+
+    public CaveCrystalClusterBlock(Block base) {
         super(BlockStatesUtil.copyState(base));
 
         setDefaultState(getDefaultState().with(FACING, Direction.DOWN).with(WATERLOGGED, false));
@@ -48,13 +54,28 @@ public class CaveCrystalClusterBlock extends MMOBlock {
     }
 
     @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.empty();
-    }
-
-    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.empty();
+        Direction direction = state.get(FACING);
+        switch (direction) {
+            case NORTH -> {
+                return this.northShape;
+            }
+            case SOUTH -> {
+                return this.southShape;
+            }
+            case EAST -> {
+                return this.eastShape;
+            }
+            case WEST -> {
+                return this.westShape;
+            }
+            case DOWN -> {
+                return this.downShape;
+            }
+            default -> {
+                return this.upShape;
+            }
+        }
     }
 
     @Nullable

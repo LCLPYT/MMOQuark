@@ -23,7 +23,7 @@ public class CaveCrystalBlock extends MMOGlassBlock {
     public CaveCrystalBlock(MapColor mapColor, int color) {
         super(FabricBlockSettings.of(Material.GLASS, mapColor)
                 .strength(0.3F, 0F)
-                .sounds(BlockSoundGroup.GLASS)
+                .sounds(BlockSoundGroup.AMETHYST_BLOCK)
                 .luminance(b -> 11)
                 .requiresTool()
                 .nonOpaque());
