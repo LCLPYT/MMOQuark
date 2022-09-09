@@ -14,10 +14,10 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.entity.MMOBoatEntity;
+import work.lclpnet.mmocontent.world.FeatureUtils;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.block.BlossomLeavesBlock;
 import work.lclpnet.mmoquark.block.BlossomSaplingBlock;
-import work.lclpnet.mmoquark.util.FeatureUtils;
 import work.lclpnet.mmoquark.util.WoodGroupUtil;
 
 import java.util.ArrayList;
