@@ -1,11 +1,11 @@
 package work.lclpnet.mmoquark.module;
 
-import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
+import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmocontent.block.MMOBlockRegistrar;
 import work.lclpnet.mmocontent.util.RegistryUtil;
 import work.lclpnet.mmoquark.MMOQuark;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class HedgesModule implements IModule {
 
-    public static Tag<Block> hedgesTag;
+    public static TagKey<Block> hedgesTag;
     public static List<HedgeBlock> hedgeBlocks = new ArrayList<>();
     public static List<BlockItem> hedgeItems = new ArrayList<>();
 
@@ -33,9 +33,9 @@ public class HedgesModule implements IModule {
         addHedge(Blocks.OAK_FENCE, Blocks.FLOWERING_AZALEA_LEAVES);
 
         // BlossomTreesModule must be loaded before this module
-        BlossomTreesModule.trees.forEach(tree -> addHedge(BlossomTreesModule.blossomWood.fence, tree.leaf.getBlock()));
+        BlossomTreesModule.leaves.forEach(leaf -> addHedge(BlossomTreesModule.blossomWood.fence, leaf.getBlock()));
 
-        hedgesTag = TagRegistry.block(MMOQuark.identifier("hedges"));
+        hedgesTag = TagKey.of(Registry.BLOCK_KEY, MMOQuark.identifier("hedges"));
     }
 
     private void addHedge(Block fence, Block leaves) {

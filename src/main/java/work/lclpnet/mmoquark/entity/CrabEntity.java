@@ -146,8 +146,12 @@ public class CrabEntity extends AnimalEntity {
         }
 
         Vec3d pos = getPos();
-        if (isRaving() && (jukeboxPosition == null || jukeboxPosition.getSquaredDistance(pos.x, pos.y, pos.z, true) > 24.0D || world.getBlockState(jukeboxPosition).getBlock() != Blocks.JUKEBOX))
+        if (isRaving() && (
+                jukeboxPosition == null || jukeboxPosition.getSquaredDistanceFromCenter(pos.x, pos.y, pos.z) > 24.0D
+                        || world.getBlockState(jukeboxPosition).getBlock() != Blocks.JUKEBOX
+        )) {
             party(null, false);
+        }
 
         if (isRaving() && world.isClient && age % 10 == 0) {
             BlockPos below = getBlockPos().down();

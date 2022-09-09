@@ -31,10 +31,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "1.18.x",
-    "mmocontent": "1.7.x",
+    "minecraft": "1.18.2",
+    "mmocontent": "1.11.x",
     "java": ">=17"
   },
   "suggests": {},

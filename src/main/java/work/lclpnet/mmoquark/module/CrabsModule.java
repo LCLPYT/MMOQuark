@@ -1,7 +1,6 @@
 package work.lclpnet.mmoquark.module;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -9,7 +8,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.registry.Registry;
 import work.lclpnet.mmocontent.entity.MMOEntityAttributes;
 import work.lclpnet.mmocontent.item.MMOItemRegistrar;
@@ -20,7 +19,7 @@ public class CrabsModule implements IModule {
 
     public static EntityType<CrabEntity> crabType;
 
-    public static Tag<Block> crabSpawnableTag;
+    public static TagKey<Block> crabSpawnableTag;
 
     @Override
     public void register() {
@@ -43,7 +42,7 @@ public class CrabsModule implements IModule {
         new MMOItemRegistrar()
                 .register(MMOQuark.identifier("crab_shell"), ItemGroup.BREWING);
 
-        crabSpawnableTag = TagRegistry.block(MMOQuark.identifier("crab_spawnable"));
+        crabSpawnableTag = TagKey.of(Registry.BLOCK_KEY, MMOQuark.identifier("crab_spawnable"));
 
         crabType = Registry.register(
                 Registry.ENTITY_TYPE,

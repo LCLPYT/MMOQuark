@@ -5,7 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
@@ -32,8 +32,8 @@ public class FavorBlockGoal extends Goal {
         setControls(EnumSet.of(Control.MOVE, Control.JUMP));
     }
 
-    public FavorBlockGoal(PathAwareEntity creature, double speed, Tag<Block> tag) {
-        this(creature, speed, (state) -> tag.contains(state.getBlock()));
+    public FavorBlockGoal(PathAwareEntity creature, double speed, TagKey<Block> tag) {
+        this(creature, speed, (state) -> state.isIn(tag));
     }
 
     public FavorBlockGoal(PathAwareEntity creature, double speed, Block block) {

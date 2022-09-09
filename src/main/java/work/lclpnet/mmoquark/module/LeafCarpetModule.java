@@ -25,7 +25,7 @@ public class LeafCarpetModule implements IModule {
                 .forEach(this::addLeafCarpet);
 
         // BlossomTreesModule must be loaded before this module
-        BlossomTreesModule.trees.forEach(tree -> addLeafCarpet(tree.leaf.getBlock()));
+        BlossomTreesModule.leaves.forEach(leaf -> addLeafCarpet(leaf.getBlock()));
     }
 
     private void addLeafCarpet(Block baseBlock) {

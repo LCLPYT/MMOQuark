@@ -87,10 +87,13 @@ public class CandleBlock extends MMOBlock implements Waterloggable {
     }
 
     private void checkFallable(World world, BlockPos pos) {
-        if (world.isClient || (!world.isAir(pos.down()) && (!FallingBlock.canFallThrough(world.getBlockState(pos.down())) || pos.getY() < 0))) return;
+        if (world.isClient || (
+                !world.isAir(pos.down()) && (
+                        !FallingBlock.canFallThrough(world.getBlockState(pos.down())) || pos.getY() < 0
+                )
+        )) return;
 
-        FallingBlockEntity fallingblockentity = new FallingBlockEntity(world, (double) pos.getX() + 0.5D, pos.getY(), (double) pos.getZ() + 0.5D, world.getBlockState(pos));
-        world.spawnEntity(fallingblockentity);
+        FallingBlockEntity.spawnFromBlock(world, pos, world.getBlockState(pos));
     }
 
     @Override
