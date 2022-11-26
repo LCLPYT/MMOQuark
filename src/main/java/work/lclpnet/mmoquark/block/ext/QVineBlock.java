@@ -5,7 +5,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import work.lclpnet.mmocontent.block.ext.MMOVineBlock;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class QVineBlock extends MMOVineBlock {
 

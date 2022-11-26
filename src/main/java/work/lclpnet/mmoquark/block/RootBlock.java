@@ -15,7 +15,7 @@ import net.minecraft.world.WorldAccess;
 import work.lclpnet.mmoquark.block.ext.QVineBlock;
 import work.lclpnet.mmoquark.util.MiscUtil;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class RootBlock extends QVineBlock implements Fertilizable {
 

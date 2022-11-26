@@ -3,8 +3,8 @@ package work.lclpnet.mmoquark.client.render.blockentity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.ChestBlockEntity;
+import net.minecraft.block.entity.LidOpenable;
 import net.minecraft.block.enums.ChestType;
-import net.minecraft.client.block.ChestAnimationProgress;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 import java.util.Calendar;
 
-public abstract class GenericChestBERenderer<T extends BlockEntity & ChestAnimationProgress> implements BlockEntityRenderer<T> {
+public abstract class GenericChestBERenderer<T extends BlockEntity & LidOpenable> implements BlockEntityRenderer<T> {
 
     public final ModelPart lid;
     public final ModelPart bottom;

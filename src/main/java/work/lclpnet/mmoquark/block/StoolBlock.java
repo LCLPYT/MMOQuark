@@ -29,7 +29,7 @@ import work.lclpnet.mmocontent.block.ext.MMOBlock;
 import work.lclpnet.mmoquark.entity.StoolEntity;
 import work.lclpnet.mmoquark.module.StoolsModule;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class StoolBlock extends MMOBlock implements Waterloggable {
 

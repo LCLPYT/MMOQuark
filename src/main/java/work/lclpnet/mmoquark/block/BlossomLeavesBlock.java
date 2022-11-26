@@ -11,10 +11,9 @@ import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
-
-import java.util.Random;
 
 public class BlossomLeavesBlock extends LeavesBlock implements IMMOBlock {
 

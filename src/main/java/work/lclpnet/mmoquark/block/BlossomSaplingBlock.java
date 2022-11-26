@@ -10,7 +10,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class BlossomSaplingBlock extends SaplingBlock implements IMMOBlock {
 
