@@ -37,6 +37,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3f;
+import net.minecraft.util.registry.RegistryEntry;
 import work.lclpnet.mmoquark.MMOQuark;
 import work.lclpnet.mmoquark.entity.GlassItemFrameEntity;
 
@@ -167,7 +168,7 @@ public class GlassItemFrameRenderer extends EntityRenderer<GlassItemFrameEntity>
                 float s = 1.5F;
                 if (stack.getItem() instanceof BannerItem) {
                     banner.readFrom(stack, ((BannerItem) stack.getItem()).getColor());
-                    List<Pair<BannerPattern, DyeColor>> patterns = banner.getPatterns();
+                    List<Pair<RegistryEntry<BannerPattern>, DyeColor>> patterns = banner.getPatterns();
 
                     matrices.push();
                     matrices.translate(0.0001F, -0.5001F, 0.55F);

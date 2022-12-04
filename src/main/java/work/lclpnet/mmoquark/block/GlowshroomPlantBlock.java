@@ -17,7 +17,7 @@ import net.minecraft.world.WorldView;
 import work.lclpnet.mmoquark.block.ext.QPlantBlock;
 import work.lclpnet.mmoquark.module.GlowshroomModule;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class GlowshroomPlantBlock extends QPlantBlock implements Fertilizable {
 

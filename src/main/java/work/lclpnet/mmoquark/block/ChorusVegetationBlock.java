@@ -23,7 +23,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class ChorusVegetationBlock extends MMOBlock implements Fertilizable {
 
@@ -157,10 +157,5 @@ public class ChorusVegetationBlock extends MMOBlock implements Fertilizable {
     @Override
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return (type == NavigationType.AIR && !this.collidable) || super.canPathfindThrough(state, world, pos, type);
-    }
-
-    @Override
-    public OffsetType getOffsetType() {
-        return OffsetType.XZ;
     }
 }

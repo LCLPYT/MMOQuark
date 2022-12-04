@@ -166,7 +166,7 @@ public class PickarangEntity extends ProjectileEntity {
         return ProjectileUtil.getEntityCollision(world, this, from, to, getBoundingBox().stretch(getVelocity()).expand(1.0D), (Entity entity) ->
                 !entity.isSpectator()
                         && entity.isAlive()
-                        && (entity.collides() || entity instanceof PickarangEntity)
+                        && (entity.canHit() || entity instanceof PickarangEntity)
                         && entity != getThrower()
                         && (entitiesHit == null || !entitiesHit.contains(entity.getId())));
     }

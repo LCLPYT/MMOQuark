@@ -21,9 +21,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
+import net.minecraft.util.math.random.Random;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class CandleBlock extends MMOBlock implements Waterloggable {
 

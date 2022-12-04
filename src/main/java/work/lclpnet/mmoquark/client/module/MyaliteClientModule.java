@@ -9,7 +9,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.noise.OctaveSimplexNoiseSampler;
-import net.minecraft.world.gen.random.AtomicSimpleRandom;
+import net.minecraft.util.math.random.Random;
 import work.lclpnet.mmoquark.module.MoreStoneVariantsModule;
 import work.lclpnet.mmoquark.module.NewStoneTypesModule;
 
@@ -46,7 +46,7 @@ public class MyaliteClientModule implements IClientModule {
         }, items.toArray(new BlockItem[0]));
     }
 
-    public static final OctaveSimplexNoiseSampler NOISE = new OctaveSimplexNoiseSampler(new AtomicSimpleRandom(4543543), ImmutableList.of(-4, -3, -2, -1, 0, 1, 2, 3, 4));
+    public static final OctaveSimplexNoiseSampler NOISE = new OctaveSimplexNoiseSampler(Random.create(4543543), ImmutableList.of(-4, -3, -2, -1, 0, 1, 2, 3, 4));
 
     public static int getColor(BlockPos pos, float s, float b) {
         final double sp = 0.15;

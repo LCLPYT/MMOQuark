@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import work.lclpnet.mmocontent.block.ext.MMOVerticalSlabBlock;
 
 import java.util.Optional;
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class WeatheringCopperVerticalSlabBlock extends MMOVerticalSlabBlock implements Oxidizable {
 

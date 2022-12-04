@@ -10,7 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.IMMOBlock;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class IronRodBlock extends RodBlock implements IMMOBlock {
 

@@ -15,7 +15,6 @@ import net.minecraft.screen.Generic3x3ContainerScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -25,7 +24,7 @@ import work.lclpnet.mmoquark.block.FeedingTroughBlock;
 import work.lclpnet.mmoquark.module.FeedingTroughModule;
 
 import java.util.List;
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class FeedingTroughBlockEntity extends LootableContainerBlockEntity  {
 
@@ -55,7 +54,7 @@ public class FeedingTroughBlockEntity extends LootableContainerBlockEntity  {
 
     @Override
     protected Text getContainerName() {
-        return new TranslatableText("quark.container.feeding_trough");
+        return Text.translatable("quark.container.feeding_trough");
     }
 
     @Override
@@ -64,7 +63,7 @@ public class FeedingTroughBlockEntity extends LootableContainerBlockEntity  {
     }
 
     private Random getSpecialRand() {
-        Random specialRand = new Random(internalRng);
+        Random specialRand = Random.create(internalRng);
         internalRng = specialRand.nextLong();
         return specialRand;
     }

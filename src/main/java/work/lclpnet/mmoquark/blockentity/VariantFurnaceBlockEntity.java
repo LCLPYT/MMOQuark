@@ -7,7 +7,6 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.FurnaceScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import work.lclpnet.mmoquark.module.VariantFurnacesModule;
 
@@ -19,7 +18,7 @@ public class VariantFurnaceBlockEntity extends AbstractFurnaceBlockEntity {
 
     @Override
     protected Text getContainerName() {
-        return new TranslatableText("container.furnace");
+        return Text.translatable("container.furnace");
     }
 
     @Override

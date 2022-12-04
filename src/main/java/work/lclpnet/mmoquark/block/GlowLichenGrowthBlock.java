@@ -14,7 +14,7 @@ import work.lclpnet.mmoquark.util.MiscUtil;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class GlowLichenGrowthBlock extends QPlantBlock implements Fertilizable {
 
@@ -73,7 +73,7 @@ public class GlowLichenGrowthBlock extends QPlantBlock implements Fertilizable {
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         List<Direction> list = Lists.newArrayList(MiscUtil.HORIZONTALS);
-        Collections.shuffle(list, random);
+        Collections.shuffle(list, (java.util.Random) random);
         for (Direction dir : list) {
             BlockPos offPos = pos.offset(dir);
             if (canSpread(world, offPos)) {

@@ -13,7 +13,7 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
 import work.lclpnet.mmocontent.block.ext.MMOBlock;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class GlowceliumBlock extends MMOBlock {
 

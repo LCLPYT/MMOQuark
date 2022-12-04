@@ -14,7 +14,7 @@ import work.lclpnet.mmocontent.block.ext.IMMOBlock;
 import work.lclpnet.mmoquark.asm.mixin.common.AbstractBlockAccessor;
 import work.lclpnet.mmoquark.module.GlowshroomModule;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class GlowshroomBlock extends MushroomBlock implements IMMOBlock {
 

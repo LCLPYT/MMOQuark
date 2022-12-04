@@ -13,7 +13,7 @@ import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 import work.lclpnet.mmocontent.block.ext.MMOGlassBlock;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class CaveCrystalBlock extends MMOGlassBlock {
 
