@@ -11,7 +11,7 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id 'fabric-loom' version '0.11-SNAPSHOT'
+        id 'fabric-loom' version '1.0-SNAPSHOT'
         id 'gradle-build-utils' version '1.1.0'
     }
 }
